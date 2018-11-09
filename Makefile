@@ -5,5 +5,4 @@ serve:
 	jekyll serve
 
 deploy: build
-	rsync -avz _site/* philipbl@shell.cs.utah.edu:/uusoc/res/ansrg/public_html/
-
+	rsync -avz _site/* philipbl@ssh.et.byu.edu:/fsj/philipbl/groups/net-lab/www/

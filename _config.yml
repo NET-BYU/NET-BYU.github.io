@@ -7,3 +7,4 @@ baseurl: ""
 url: http://netlab.byu.edu
 
 markdown: kramdown
+exclude: ['.gitignore', 'Makefile', 'README.md',]
