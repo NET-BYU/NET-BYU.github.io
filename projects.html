@@ -1,0 +1,17 @@
+---
+layout: default
+title: Projects
+permalink: /projects
+---
+
+<div class="projects">
+    {% for project in site.data.projects %}
+        <div class="project">
+            <h3 class="project-title">{{ project.name }}</h3>
+            <div class="project-description">
+                {{ project.description }}
+            </div>
+        </div>
+        <hr>
+    {% endfor %}
+</div>

@@ -1,0 +1,86 @@
+---
+layout: default
+title: People
+permalink: /people
+---
+
+<div class="current-faculty">
+    <div class="row">
+        {% for person in site.data.faculty %}
+            <div class="col-4">
+                {% if person.image %}
+                    <img src="{{ person.image }}">
+                {% else %}
+                    <img src="images/avatar-placeholder.png">
+                {% endif %}
+            </div>
+            <div class="col-4">
+                <h4 class="student-name">{{ person.name }}</h4>
+                {% if person.link %}
+                    <p>{{ person.description }}</p>
+                {% endif %}
+                {% if person.link %}
+                    <a href="{{ person.link }}">Personal Website</a>
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+<h2>Students</h2>
+
+{% if site.data.students %}
+    <div class="current-students">
+        <div class="student mdl-grid">
+            {% for student in site.data.students %}
+                <div class="mdl-cell mdl-cell--6-col">
+                    <div class="mdl-grid">
+                        <div class="mdl-cell mdl-cell--4-col">
+                            {% if student.image %}
+                                <img src="{{ student.image }}">
+                            {% else %}
+                                <img src="images/avatar-placeholder.png">
+                            {% endif %}
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <h4 class="student-name">{{ student.name }}</h4>
+                            {% if student.link %}
+                                <a href="{{ student.link }}">Personal Website</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% else %}
+    <div class="alert alert-primary" role="alert">
+      The lab is currently looking for graduate and undergraduate students for research. If you are interested, please contact Phil Lundrigan (lundrigan@byu.edu) to set up an appointment to talk.
+    </div>
+{% endif %}
+
+{% if site.data.past_students %}
+
+<hr>
+
+<div class="past-students">
+    <h2>Past Students</h2>
+
+    <div class="mdl-grid">
+        {% for student in site.data.past_students %}
+            <div class="mdl-cell mdl-cell--6-col">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--2-col">
+                        <i class="material-icons mdl-list__item-avatar">person</i>
+                    </div>
+                    <div class="mdl-cell mdl-cell--10-col past-student-info">
+                        <h4 class="past-student-name">{{ student.name }}</h4>
+                        <span class="past-student-company">{{ student.company }}</span>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endif %}

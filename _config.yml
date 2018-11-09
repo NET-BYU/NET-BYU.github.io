@@ -1,0 +1,9 @@
+title: NET Lab
+email: lundrigan@byu.edu
+description: >
+  The Network Enhanced Technologies Lab (NET) at Brigham Young University...
+
+baseurl: ""
+url: http://netlab.byu.edu
+
+markdown: kramdown

@@ -1,0 +1,37 @@
+- title: >
+    An In-Home IoT Architecture for Epidemiological Deployments
+  authors: >
+    P. Lundrigan, K. Min, N. Patwari, S. K. Kasera, K. Kelly, J.
+    Moore, M. Meyer, S. C. Collingwood, F. Nkoy, B. Stone, and K. Sward
+  conference: >
+    IEEE Workshop on Practical Issues in Building Sensor Network Applications (SenseApp), 2018
+  abstract: >
+    We design and build EpiFi, a novel architecture for in-home sensor
+    networks which allows epidemiologists to easily design and deploy exposure
+    sensing systems in homes.  We work collaboratively with pediatric asthma
+    researchers to design multiple studies and deploy EpiFi in homes.  Here,
+    we report on experiences from two years of deployments in 15 homes, of two
+    different types of studies, including many deployments continuously
+    monitored over the past 11 months. Based on lessons learned from these
+    deployments and researchers, we develop a new mechanism for sensors to
+    bootstrap their connectivity to a subject's home WiFi router and implement
+    data reliability mechanisms to minimize loss in the network through a
+    long-term deployment.
+  url: /assets/EpiFi.pdf
+
+- title: >
+    STRAP: Secure TRansfer of Association Protocol
+  authors: >
+    P. Lundrigan, N. Patwari, S. K. Kasera
+  conference: >
+    The 27th International Conference on Computer Communications and Networks (ICCCN), 2018
+  url: /assets/STRAP_camera_ready.pdf
+  abstract: >
+    When several internet-of-things devices are required to be installed in a
+    smart home, significant effort is required to provide each device with the
+    association information for the home's wireless router. We design and
+    build a novel protocol called Secure Transfer of Association Protocol
+    (STRAP), which securely bootstraps connectivity between a set of deployed
+    WiFi devices and a home's wireless router. We show that STRAP works in a
+    variety of environments and is faster than conventional methods for
+    connecting WiFi devices to home wireless routers.

@@ -1,0 +1,10 @@
+<header class="site-header">
+  <nav class="nav justify-content-center">
+    <a class="nav-link" href="/">Home</a>
+    {% for my_page in site.pages %}
+      {% if my_page.title %}
+      <a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
+      {% endif %}
+    {% endfor %}
+  </nav>
+</header>
