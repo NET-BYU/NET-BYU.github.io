@@ -1,2 +1,5 @@
+# - name: Self-Sustainable Air Quality Sensor
+  # description: We are building an air quality sensor that is powered by solar power and uses long range communication. This will allow for sensors to be placed in locations not possible before.
+
 - name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
-  description: Description here
+  description: This project is part of a University of Utah informatics center awarded through the NIH NIBIB project called Pediatric Research Using Integrated Sensor Monitoring Systems (PRISMS). The goal of our project is to develop systems for smart and healthly homes, including in-home and personal sensors and actuators made to monitor the exposure of residents, to reduce exposures to pollutants, and improve health. A key use case is for pediatric asthma patients.

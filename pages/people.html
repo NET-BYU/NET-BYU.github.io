@@ -9,13 +9,13 @@ permalink: /people/
         {% for person in site.data.faculty %}
             <div class="col-4">
                 {% if person.image %}
-                    <img src="{{ person.image }}">
+                    <img src="{{ person.image }}" alt="{{ person.name }}">
                 {% else %}
-                    <img src="images/avatar-placeholder.png">
+                    <img src="{{ person.email | gravatar }}" alt="{{ person.name }}">
                 {% endif %}
             </div>
-            <div class="col-4">
-                <h4 class="student-name">{{ person.name }}</h4>
+            <div class="col">
+                <h4 class="person-name">{{ person.name }}</h4>
                 {% if person.link %}
                     <p>{{ person.description }}</p>
                 {% endif %}
@@ -32,27 +32,27 @@ permalink: /people/
 
 {% if site.data.students %}
     <div class="current-students">
-        <div class="student mdl-grid">
-            {% for student in site.data.students %}
-                <div class="mdl-cell mdl-cell--6-col">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--4-col">
-                            {% if student.image %}
-                                <img src="{{ student.image }}">
-                            {% else %}
-                                <img src="images/avatar-placeholder.png">
-                            {% endif %}
-                        </div>
-                        <div class="mdl-cell mdl-cell--8-col">
-                            <h4 class="student-name">{{ student.name }}</h4>
-                            {% if student.link %}
-                                <a href="{{ student.link }}">Personal Website</a>
-                            {% endif %}
-                        </div>
+        <div class="row">
+            {% for person in site.data.students %}
+                <div class="col-4 text-center">
+                    <div class="student">
+                        {% if person.image %}
+                            <img src="{{ person.image }}" alt="{{ person.name }}">
+                        {% else %}
+                            <img src="{{ person.email | secure_gravatar | append: '?s=200&d=mp'}}" alt="{{ person.name }}">
+                        {% endif %}
+
+                        {% if person.link %}
+                            <h5 class="student-name"><a href="{{ person.link }}">{{ person.name }}</a></h5>
+                        {% else %}
+                            <h5 class="student-name">{{ person.name }}</h5>
+                        {% endif %}
+                            <p class="student-degree">{{ person.degree }}</p>
                     </div>
                 </div>
             {% endfor %}
         </div>
+
     </div>
 {% else %}
     <div class="alert alert-primary" role="alert">

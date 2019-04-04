@@ -19,13 +19,53 @@
     long-term deployment.
   url: /assets/EpiFi.pdf
 
+
+- title: >
+    Managing in-home environments through sensing, annotating, and visualizing air quality data
+  authors: >
+    J. Moore, P. Goffin, M. Meyer, P. Lundrigan, N. Patwari, K. Sward, and J. Wiese
+  conference: >
+    Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) (Ubicomp '18), September 2018
+  url: http://vdl.sci.utah.edu/publications/2018_imwut_maav/
+  abstract: >
+    Air quality is important, varies across time and space, and is largely
+    invisible. Pioneering past work deploying air quality monitors in
+    residential environments found that study participants improved their
+    awareness of and engagement with air quality. However, these systems
+    fielded a single monitor and did not support user-specified annotations,
+    inhibiting their utility. We developed MAAV– a system to Measure Air
+    quality, Annotate data streams, and Visualize real-time PM2.5 levels – to
+    explore how participants engage with an air quality system addressing
+    these challenges. MAAV supports collecting data from multiple air quality
+    monitors, annotating that data through multiple modalities, and sending
+    text message prompts when it detects a PM2.5 spike. MAAV also features an
+    interactive tablet interface for displaying measurement data and
+    annotations. Through six long-term field deployments (20-47 weeks, mean
+    37.7 weeks), participants found these system features important for
+    understanding the air quality in and around their homes. Participants
+    gained new insights from between-monitor comparisons, reflected on past
+    PM2.5 spikes with the help of their annotations, and adapted their system
+    usage as they familiarized themselves with their air quality data and
+    MAAV. These results yield important insights for designing residential
+    sensing systems that integrate into users’ everyday lives.
+
+
+- title: >
+   Smart home air filtering system: A randomized controlled trial for performance evaluation
+  authors: >
+    Kyeong T. Min, Philip Lundrigan, Neal Patwari, Katherine Sward, and Scott C. Collingwood
+  conference: >
+    3rd IEEE / ACM Conference on Connected Health: Applications, Systems, and Engineering (CHASE 2018)
+  url: http://span.ece.utah.edu/pub/CHASE_2018_Min_final.pdf
+
+
 - title: >
     STRAP: Secure TRansfer of Association Protocol
   authors: >
     P. Lundrigan, N. Patwari, S. K. Kasera
   conference: >
     The 27th International Conference on Computer Communications and Networks (ICCCN), 2018
-  url: /assets/STRAP_camera_ready.pdf
+  url: /assets/STRAP.pdf
   abstract: >
     When several internet-of-things devices are required to be installed in a
     smart home, significant effort is required to provide each device with the
@@ -35,3 +75,20 @@
     WiFi devices and a home's wireless router. We show that STRAP works in a
     variety of environments and is faster than conventional methods for
     connecting WiFi devices to home wireless routers.
+
+
+- title: >
+    An Infrastructure for Generating Exposomes: Initial Lessons from the Utah PRISMS Platform
+  authors: >
+    Katherine Sward, Philip Lundrigan, Neal Patwari, Ram Gouripeddi, Albert Lund, Julio Facelli
+  conference: >
+    Presentation and Demonstration at the 27th Annual Meeting of the International Society of Exposure Science (ISES), October 2017
+
+
+- title: >
+    Demo abstract: IASA - indoor air quality sensing and automation
+  authors: >
+    Kyeong T. Min, Philip Lundrigan, Neal Patwari
+  conference: >
+    ACM/IEEE Information Processing in Sensor Networks 2017, April 2017
+  url: http://span.ece.utah.edu/uploads/IPSN_Demo_Paper_2017_Final%20(1).pdf
