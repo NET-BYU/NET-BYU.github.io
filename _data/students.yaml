@@ -1,15 +1,15 @@
 - name: Jacob Johnson
   degree: MS
-  email: jacob.e.johnson@outlook.com
+  link: https://www.linkedin.com/in/jake-johnson-ee/
+  image: /images/johnson.jpg
 
 - name: Joseph Miera
   degree: Undergrad
-  email: joseph.r.miera@gmail.com
 
 - name: Jacob Pettingill
   degree: MS
-  email: jacobp1794@gmail.com
 
 - name: Grant Rowberry
   degree: MS
-  email: ggrantrowberry@gmail.com
+  link: https://github.com/ggrantrowberry
+  image: /images/rowberry.jpg

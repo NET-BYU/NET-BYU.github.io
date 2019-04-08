@@ -7,7 +7,7 @@ permalink: /people/
 <div class="current-faculty">
     <div class="row">
         {% for person in site.data.faculty %}
-            <div class="col-4">
+            <div class="col-5">
                 {% if person.image %}
                     <img src="{{ person.image }}" alt="{{ person.name }}">
                 {% else %}
@@ -37,9 +37,9 @@ permalink: /people/
                 <div class="col-4 text-center">
                     <div class="student">
                         {% if person.image %}
-                            <img src="{{ person.image }}" alt="{{ person.name }}">
+                            <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
                         {% else %}
-                            <img src="{{ person.email | secure_gravatar | append: '?s=200&d=mp'}}" alt="{{ person.name }}">
+                            <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
                         {% endif %}
 
                         {% if person.link %}
