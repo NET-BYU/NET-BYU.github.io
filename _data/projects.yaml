@@ -1,5 +1,18 @@
 # - name: Self-Sustainable Air Quality Sensor
   # description: We are building an air quality sensor that is powered by solar power and uses long range communication. This will allow for sensors to be placed in locations not possible before.
 
+
+- name: Mongolian Ger Air Quality Measurement and Analysis
+  images:
+    - /images/mongolia-1.jpg
+    - /images/mongolia-2.jpg
+  description: |+
+    To understand and quantify the efficacy of the ger retrofit solution, we are deploying 50 air quality sensors inside and outside of gers. This will allow us to quantify the impact that the ger retrofit has on the air quality within a ger. By placing sensors outside, we can also determine how well the retrofit is protecting against particulate matter leaking into the structure. Previously collected data has shown that the effects of the retrofit are quite dramatic in reducing the amount of particulate matter in the air inside the ger. We are deploying more sensors for longer time periods to show that this trend is statistically significant. This will prove that the retrofit solution is working as expected and meets specifications.
+
+    To make this data collection possible, we will use a long-range, low-power wireless protocol called LoRa as an alternative to WiFi. WiFi is relatively short-range and requires a lot of infrastructure to work, which gers are not equipped to provide. LoRa is designed to communicate over kilometer distances while using very little energy. Using LoRa, all sensors communicate with a gateway node in real-time, which simplifies uploading the data to the Internet.
+
 - name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
+  images:
+    - /images/epifi_architecture.jpg
+    - /images/dylos.jpg
   description: This project is part of a University of Utah informatics center awarded through the NIH NIBIB project called Pediatric Research Using Integrated Sensor Monitoring Systems (PRISMS). The goal of our project is to develop systems for smart and healthly homes, including in-home and personal sensors and actuators made to monitor the exposure of residents, to reduce exposures to pollutants, and improve health. A key use case is for pediatric asthma patients.
