@@ -1,3 +1,11 @@
+- name: Sam Ariun-Erdene
+  degree: Undergrad
+  image: /images/ariun-erdene.jpg
+  
+- name: Julia Hansen
+  degree: Undergrad
+  image: /images/hansen.jpg
+
 - name: Jacob Johnson
   degree: MS
   link: https://www.linkedin.com/in/jake-johnson-ee/
@@ -5,12 +13,4 @@
 
 - name: Joseph Miera
   degree: Undergrad
-
-- name: Jacob Pettingill
-  degree: MS
-  image: /images/pettingill.jpg
-
-- name: Grant Rowberry
-  degree: MS
-  link: https://github.com/ggrantrowberry
-  image: /images/rowberry.jpg
+  image: /images/miera.jpg
