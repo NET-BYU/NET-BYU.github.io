@@ -5,16 +5,16 @@ permalink: /people/
 ---
 
 <div class="current-faculty">
-    <div class="row">
-        {% for person in site.data.faculty %}
-            <div class="col-5">
+    {% for person in site.data.faculty %}
+        <div class="row faculty">
+            <div class="col-sm-5">
                 {% if person.image %}
                     <img src="{{ person.image }}" alt="{{ person.name }}">
                 {% else %}
                     <img src="{{ person.email | gravatar }}" alt="{{ person.name }}">
                 {% endif %}
             </div>
-            <div class="col">
+            <div class="col-sm">
                 <h4 class="person-name">{{ person.name }}</h4>
                 {% if person.link %}
                     <p>{{ person.description }}</p>
@@ -23,8 +23,8 @@ permalink: /people/
                     <a href="{{ person.link }}">Personal Website</a>
                 {% endif %}
             </div>
-        {% endfor %}
-    </div>
+        </div>
+    {% endfor %}
 </div>
 
 
@@ -34,7 +34,7 @@ permalink: /people/
     <div class="current-students">
         <div class="row">
             {% for person in site.data.students %}
-                <div class="col-4 text-center">
+                <div class="col-md-4 col-6 text-center">
                     <div class="student">
                         {% if person.image %}
                             <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
