@@ -1,10 +1,12 @@
 <header class="site-header">
   <nav>
     <div class="logo">
-        <img class="logo img-fluid" src="/images/NET Lab Logo@3x.png">
+        <a href="/">
+          <img class="logo img-fluid" src="/images/NET Lab Logo@3x.png">
+        </a>
     </div>
 
-    <ul class="nav justify-content-center">
+    <ul class="nav">
         <a class="nav-link" href="/">Home</a>
         {% for my_page in site.pages %}
           {% if my_page.title %}
