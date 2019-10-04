@@ -2,6 +2,10 @@
     padding-left: 25px;
 }
 
+.nav-link.active {
+    font-weight: bold;
+}
+
 @media (max-width: 575.98px) {
     .nav {
         padding-left: 10px;
