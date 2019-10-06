@@ -7,14 +7,14 @@ permalink: /people/
 <div class="current-faculty">
     {% for person in site.data.faculty %}
         <div class="row faculty">
-            <div class="col-sm-3">
+            <div class="col-6 col-xs-4 col-sm-3">
                 {% if person.image %}
                     <img src="{{ person.image }}" alt="{{ person.name }}">
                 {% else %}
                     <img src="{{ person.email | gravatar }}" alt="{{ person.name }}">
                 {% endif %}
             </div>
-            <div class="col-sm">
+            <div class="col-6 col-xs-8 col-sm-9">
                 <h4 class="person-name">{{ person.name }}</h4>
                 {% if person.link %}
                     <p>{{ person.description }}</p>
