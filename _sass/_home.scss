@@ -12,13 +12,19 @@ body, html {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: #f9f9f9;
     display: inline-block;
     width: 100%;
     height: 100%;
 
+    .main-logo {
+        max-width: 300px;
+        padding-bottom: 20px;
+    }
+
 
     .container {
-        background: rgba(255, 255, 255, .8);
+        background: rgba(255, 255, 255, 1);
         /*padding: 10%;*/
         padding: 5% 5%;
         border-radius: 10px;
@@ -41,7 +47,7 @@ body, html {
 
 .links {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 
     a {
         text-decoration: none;
