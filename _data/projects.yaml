@@ -22,8 +22,7 @@
 
 - name: On-Off Noise Power Communication
   images:
-    - /images/onpc-2.jpg
-    - /images/onpc-1.png
+    - /images/onpc-3.jpg
   description: |+
     We design and build a protocol called on-off noise power communication
     (ONPC), which modifies the software in commodity packet radios to allow
@@ -39,6 +38,11 @@
     interference, carrier sensing and hardware timing delays. We test ONPC in
     several situations to show that it achieves significantly longer range than
     standard WiFi.
+
+    ONPC has been covered by [BYU](https://news.byu.edu/byu-created-software-could-significantly-extend-wi-fi-range-for-smart-home-devices), 
+    [Engadget](https://www.engadget.com/2019/10/22/wifi-onpc-protocol/) ([video](https://youtu.be/wQ9qsBolR7I)), 
+    [Network World](https://www.networkworld.com/article/3449819/wireless-noise-protocol-can-extend-iot-range.html), 
+    and [Tom's Hardware](https://www.tomshardware.com/news/on-off-noise-power-communication-onpc-protocol-wifi).
 
 - name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
   images:
