@@ -1,3 +1,3 @@
-# Advanced Networks Systems Research Lab
+# Network Enhanced Technologies Lab
 
-Website for ANSR Lab at the University of Utah.
+Website for the NET Lab at the Brigham Young University.
