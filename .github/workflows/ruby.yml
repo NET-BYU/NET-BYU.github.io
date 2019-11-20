@@ -21,11 +21,6 @@ jobs:
         jekyll build
         
     - name: Uploading website
-      uses: appleboy/scp-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        source: "_site/*"
-        target: "groups/net-lab/www2/"
+      run: |
+        apt install sshpass
+        sshpass -p "${{ secrets.PASSWORD }}" scp -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
