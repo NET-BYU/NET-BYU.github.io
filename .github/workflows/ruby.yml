@@ -15,12 +15,12 @@ jobs:
       with:
         ruby-version: 2.6.x
 
-    - name: Building website
-      run: |
-        gem install jekyll -v 3.8.5
-        jekyll build
+#     - name: Building website
+#       run: |
+#         gem install jekyll -v 3.8.5
+#         jekyll build
         
     - name: Uploading website
       run: |
-        apt install sshpass
+        apt-get install sshpass
         sshpass -p "${{ secrets.PASSWORD }}" scp -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
