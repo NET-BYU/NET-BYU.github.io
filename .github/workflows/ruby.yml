@@ -20,6 +20,12 @@ jobs:
         gem install jekyll -v 3.8.5
         jekyll build
         
-    - name: Uploading files
-      run: |
-        scp -o StrictHostKeyChecking=no -r -P ${{ secrets.PORT }} _site ${{ secrets.USERNAME }}@${{ secrets.HOST }}:test
+    - name: Uploading website
+      uses: appleboy/scp-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        source: "_site"
+        target: "test"
