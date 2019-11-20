@@ -4,7 +4,7 @@ $(".abstract").click(function(event) {
 });
 
 $("#the-net > a").click(function(event) {
-    if (event.ctrlKey || event.altKey || event.metaKey) {
+    if ((event.ctrlKey || event.altKey || event.metaKey) && event.shiftKey) {
         console.log(`${event.ctrlKey} || ${event.altKey} || ${event.metaKey}`);
         window.location.href = "https://www.imdb.com/title/tt0113957/";
     }
