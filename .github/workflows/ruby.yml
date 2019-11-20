@@ -22,5 +22,5 @@ jobs:
         
     - name: Uploading website
       run: |
-        apt-get install sshpass
+        sudo apt-get install sshpass
         sshpass -p "${{ secrets.PASSWORD }}" scp -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
