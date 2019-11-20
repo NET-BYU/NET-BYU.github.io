@@ -17,3 +17,13 @@ jobs:
       run: |
         gem install jekyll -v 3.8.5
         jekyll build
+    - name: SCP Command to Transfer Files
+      uses: appleboy/scp-action@v0.0.4
+      env:
+        HOST: ${{ secrets.HOST }}
+        USERNAME: ${{ secrets.USERNAME }}
+        PORT: ${{ secrets.PORT }}
+        KEY: ${{ secrets.KEY }}
+      with:
+        source: "_site"
+        target: "test"
