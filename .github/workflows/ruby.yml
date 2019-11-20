@@ -22,4 +22,4 @@ jobs:
         
     - name: Uploading website
       run: |
-        sshpass -p "${{ secrets.PASSWORD }}" scp -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
+        sshpass -p "${{ secrets.PASSWORD }}" scp -o StrictHostKeyChecking=no -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
