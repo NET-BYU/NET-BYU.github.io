@@ -9,7 +9,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-      
+
     - name: Set up Ruby 2.6
       uses: actions/setup-ruby@v1
       with:
@@ -19,7 +19,7 @@ jobs:
       run: |
         gem install jekyll -v 3.8.5
         jekyll build
-        
+
     - name: Uploading website
       run: |
-        sshpass -p "${{ secrets.PASSWORD }}" scp -o StrictHostKeyChecking=no -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www2/
+        sshpass -p "${{ secrets.PASSWORD }}" scp -o StrictHostKeyChecking=no -P ${{ secrets.PORT }} -r _site/* ${{ secrets.USERNAME }}@${{ secrets.HOST }}:groups/net-lab/www/
