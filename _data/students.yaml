@@ -1,16 +1,20 @@
-- name: Sam Ariun-Erdene
-  degree: Undergrad
-  image: /images/ariun-erdene.jpg
-  
-- name: Julia Hansen
-  degree: Undergrad
-  image: /images/hansen.jpg
-
-- name: Jacob Johnson
+- first_name: Jacob
+  last_name: Johnson
   degree: MS
   link: https://www.linkedin.com/in/jake-johnson-ee/
   image: /images/johnson.jpg
 
-- name: Joseph Miera
+- first_name: Joseph
+  last_name: Miera
   degree: Undergrad
   image: /images/miera.jpg
+
+- first_name: Batsaikhan (Sam)
+  last_name: Ariun-Erdene
+  degree: Undergrad
+  image: /images/ariun-erdene.jpg
+
+- first_name: Julia
+  last_name: Hansen
+  degree: Undergrad
+  image: /images/hansen.jpg
