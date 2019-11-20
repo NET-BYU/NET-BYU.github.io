@@ -27,5 +27,5 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        source: "_site"
-        target: "test"
+        source: "_site/*"
+        target: "groups/net-lab/www2/"
