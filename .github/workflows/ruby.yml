@@ -22,4 +22,4 @@ jobs:
         
     - name: Uploading files
       run: |
-        scp -r -P ${{ secrets.PORT }} _site ${{ secrets.USERNAME }}@${{ secrets.HOST }}:test
+        scp -o StrictHostKeyChecking=no -r -P ${{ secrets.PORT }} _site ${{ secrets.USERNAME }}@${{ secrets.HOST }}:test
