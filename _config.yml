@@ -7,6 +7,6 @@ baseurl: ""
 url: http://netlab.byu.edu
 
 markdown: kramdown
-exclude: ['.gitignore', 'Makefile', 'README.md',]
+exclude: ['.gitignore', 'Makefile', 'README.md', 'CNAME']
 
 colors: ['#ED3F95', '#F89938', '#D8E022', '#00A775', '#89298E', '#76C044', '#00AEEF']
