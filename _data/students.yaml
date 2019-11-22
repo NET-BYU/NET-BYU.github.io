@@ -18,3 +18,8 @@
   last_name: Hansen
   degree: Undergrad
   image: /images/hansen.jpg
+  
+- first_name: Lehi
+  last_name: Alcantara
+  degree: MS
+  image: /images/alcantara.jpg
