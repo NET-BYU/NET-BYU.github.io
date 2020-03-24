@@ -26,3 +26,14 @@
   degree: MS
   link: https://www.linkedin.com/in/lehi-alcantara/
   image: /images/alcantara.jpg
+
+- first_name: Chris
+  last_name: Kitras
+  degree: Undergrad
+  link: https://www.linkedin.com/in/christopher-kitras/
+  image: /images/kitras.jpg
+
+- first_name: Ashton
+  last_name: Palacios
+  link: https://www.linkedin.com/in/ashton-palacios-345b20146/
+  degree: Undergrad
