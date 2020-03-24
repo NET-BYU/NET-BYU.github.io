@@ -7,11 +7,13 @@
 - first_name: Joseph
   last_name: Miera
   degree: Undergrad
+  link: https://www.linkedin.com/in/joseph-miera/
   image: /images/miera.jpg
 
 - first_name: Batsaikhan (Sam)
   last_name: Ariun-Erdene
   degree: Undergrad
+  link: https://www.linkedin.com/in/b-sam-ariun-erdene-1ba75a194/
   image: /images/ariun-erdene.jpg
 
 - first_name: Julia
@@ -22,5 +24,5 @@
 - first_name: Lehi
   last_name: Alcantara
   degree: MS
-  link: https://www.linkedin.com/in/lehi-alcantara
+  link: https://www.linkedin.com/in/lehi-alcantara/
   image: /images/alcantara.jpg
