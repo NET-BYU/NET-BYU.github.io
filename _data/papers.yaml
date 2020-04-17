@@ -1,3 +1,11 @@
+- title: The Hitchhiker's Guide to Successful Remote Sensing Deployments in Mongolia
+  authors: L. Alcantara, J. Miera, B. Ariun-Erdene, C. Teng, P. Lundrigan
+  conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC)
+  abstract: >
+    The health hazard of air pollution in developing countries poses a significant threat of cardiovascular, respiratory, and other diseases. Ulaanbaatar, Mongolia is among cities with the worst polluted air in the world due to the use of coal as the primary heating source in the traditional Mongolian gers where most of the local population resides. Humanitarian groups are looking for ways to improve air quality, but are unable to measure the effects of their solutions. We build a low-cost air quality sensor that can upload data in real-time in remote locations. This newly developed sensor allows for _real-time_ air quality monitoring and tracking that was not possible before in such locations. We present the implementation and deployment of this system and share experiences and lessons learned from deploying the sensors in such a unique location.
+  url: /assets/mongolia.pdf
+
+
 - title: >
     On-off Noise Power Communication
   authors: >
