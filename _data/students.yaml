@@ -45,3 +45,12 @@
   degree: Undergrad
   link: https://www.linkedin.com/in/a-pulsipher/
   image: /images/pulsipher.jpg
+
+- first_name: Emily
+  last_name: Quan
+  degree: Undergrad
+
+- first_name: Daniel
+  last_name: Sharp
+  degree: MS
+  link: https://www.linkedin.com/in/danielsharp0x21/
