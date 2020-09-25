@@ -6,7 +6,7 @@
 
 - first_name: Joseph
   last_name: Miera
-  degree: Undergrad
+  degree: MS
   link: https://www.linkedin.com/in/joseph-miera/
   image: /images/miera.jpg
 
@@ -54,3 +54,8 @@
   last_name: Sharp
   degree: MS
   link: https://www.linkedin.com/in/danielsharp0x21/
+
+- first_name: Emma
+  last_name: Davidson
+  degree: Undergrad
+  image: /images/davidson.jpg
