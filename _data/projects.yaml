@@ -1,6 +1,9 @@
 # - name: Self-Sustainable Air Quality Sensor
-  # description: We are building an air quality sensor that is powered by solar power and uses long range communication. This will allow for sensors to be placed in locations not possible before.
+# description: We are building an air quality sensor that is powered by solar power and uses long range communication. This will allow for sensors to be placed in locations not possible before.
 
+- name: Spectrum Sharing via Interference-resilient Passive Receivers and Passive-aware Active Services
+  description: |+
+    Driven by expanding scientific questions in cosmology and astrophysics and advances in receiver technology, passive radio astronomy observations now take place over the entire radio spectrum. Active wireless services, including 5G cellular networks, are increasing in spectral occupancy from L band to K band and beyond. Cooperative use of radio spectrum would be improved if observatories had more options for RFI mitigation than blanking and excision and digital domain suppression methods. This project will address technological needs at multiple layers of the passive/active spectral user cooperative space, including dynamically tunable notch filters, analog true-time-delay spatial processing for wideband interference nulling at the system front end, and passive-aware active user network protocols that cooperatively reduce interference for passive radio services. These innovative technologies will be integrated into a demonstrator system to provide a comprehensive and multilayered RFI mitigation strategy for existing and future passive and active spectrum users.
 
 - name: Mongolian Ger Air Quality Measurement and Analysis
   images:
