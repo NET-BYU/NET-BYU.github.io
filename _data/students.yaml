@@ -40,12 +40,6 @@
   link: https://www.linkedin.com/in/ianschwallier/
   image: /images/schwallier.jpg
 
-- first_name: Andrew
-  last_name: Pulsipher
-  degree: Undergrad
-  link: https://www.linkedin.com/in/a-pulsipher/
-  image: /images/pulsipher.jpg
-
 - first_name: Emily
   last_name: Quan
   degree: Undergrad
@@ -54,8 +48,7 @@
   last_name: Sharp
   degree: MS
   link: https://www.linkedin.com/in/danielsharp0x21/
-
-- first_name: Emma
-  last_name: Davidson
+  
+- first_name: Sarah
+  last_name: Cheng
   degree: Undergrad
-  image: /images/davidson.jpg
