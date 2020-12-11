@@ -48,7 +48,9 @@
   last_name: Sharp
   degree: MS
   link: https://www.linkedin.com/in/danielsharp0x21/
-  
+
 - first_name: Sarah
   last_name: Cheng
   degree: Undergrad
+  image: /images/cheng.jpg
+  link: https://www.linkedin.com/in/sarahcheng021/
