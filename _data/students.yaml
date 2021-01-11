@@ -47,6 +47,7 @@
 - first_name: Daniel
   last_name: Sharp
   degree: MS
+  image: /images/sharp.jpg
   link: https://www.linkedin.com/in/danielsharp0x21/
 
 - first_name: Sarah
