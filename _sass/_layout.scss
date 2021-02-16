@@ -92,8 +92,6 @@
     }
 }
 
-
-
 /**
  * Site footer
  */
@@ -128,29 +126,29 @@
 
 .footer-col-1 {
     width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
+    width: calc(35% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
     width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
+    width: calc(20% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-3 {
     width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
+    width: calc(45% - (#{$spacing-unit} / 2));
 }
 
 @include media-query($on-laptop) {
     .footer-col-1,
     .footer-col-2 {
         width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
+        width: calc(50% - (#{$spacing-unit} / 2));
     }
 
     .footer-col-3 {
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+        width: calc(100% - (#{$spacing-unit} / 2));
     }
 }
 
@@ -158,11 +156,9 @@
     .footer-col {
         float: none;
         width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+        width: calc(100% - (#{$spacing-unit} / 2));
     }
 }
-
-
 
 /**
  * Page content
@@ -193,8 +189,6 @@
     display: block;
     font-size: 24px;
 }
-
-
 
 /**
  * Posts
@@ -238,5 +232,72 @@
         @include media-query($on-laptop) {
             font-size: 18px;
         }
+    }
+}
+
+.firstcharacter {
+    color: $brand-color;
+    float: left;
+    font-family: omnium, sans-serif;
+    font-size: 75px;
+    line-height: 60px;
+    padding-top: 0px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+
+.mission-statement {
+    font-size: 20px;
+
+    .blockquote {
+        color: rgb(140, 140, 140);
+        margin: 20px 40px 40px 40px;
+
+        .quote {
+            font-style: italic;
+        }
+
+        .author {
+            padding-top: 10px;
+
+            &:before {
+                content: "-";
+            }
+        }
+    }
+
+    img {
+        max-width: 200px;
+        float: right;
+        margin: 5px;
+    }
+
+    ul {
+        list-style-type: none;
+    }
+
+    li {
+        margin-bottom: 25px;
+    }
+
+    .theme {
+        font-weight: 800;
+        font-style: italic;
+    }
+
+    .purpose {
+        color: #89298e;
+    }
+
+    .faith {
+        color: #ed3f95;
+    }
+
+    .collaboration {
+        color: #00a775;
+    }
+
+    .work-ethic {
+        color: #faa21e;
     }
 }

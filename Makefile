@@ -1,8 +1,8 @@
-build:
-	jekyll build
+develop:
+	docker run --rm --volume="$$PWD:/srv/jekyll" -p 4000:4000 -p 35729:35729 -it jekyll/jekyll:4.0 jekyll serve --livereload
 
-serve:
-	jekyll serve
+build:
+	docker run --rm --volume="$$PWD:/srv/jekyll" -it jekyll/jekyll:4.0 jekyll build
 
 deploy: build
 	rsync -avz _site/* philipbl@ssh.et.byu.edu:/fsj/philipbl/groups/net-lab/www/
