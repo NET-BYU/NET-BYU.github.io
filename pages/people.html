@@ -44,7 +44,8 @@ permalink: /people/
                 {% endif %}
 
                 {% if person.link %}
-                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a></h5>
+                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
+                </h5>
                 {% else %}
                 <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
                 {% endif %}
@@ -53,7 +54,6 @@ permalink: /people/
         </div>
         {% endfor %}
     </div>
-
 </div>
 {% else %}
 <div class="alert alert-primary" role="alert">
@@ -69,17 +69,24 @@ permalink: /people/
 <div class="past-students">
     <h2>Past Students</h2>
 
-    <div class="mdl-grid">
-        {% for student in site.data.past_students %}
-        <div class="mdl-cell mdl-cell--6-col">
-            <div class="mdl-grid">
-                <div class="mdl-cell mdl-cell--2-col">
-                    <i class="material-icons mdl-list__item-avatar">person</i>
-                </div>
-                <div class="mdl-cell mdl-cell--10-col past-student-info">
-                    <h4 class="past-student-name">{{ student.name }}</h4>
-                    <span class="past-student-company">{{ student.company }}</span>
-                </div>
+    <div class="row">
+        {% assign sorted_students = site.data.past_students | sort:"graduation" %}
+        {% for person in sorted_students %}
+        <div class="col-md-4 col-6 text-center">
+            <div class="student">
+                {% if person.image %}
+                <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
+                {% else %}
+                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
+                {% endif %}
+
+                {% if person.link %}
+                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
+                </h5>
+                {% else %}
+                <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
+                {% endif %}
+                <p class="student-degree">{{ person.degree }}<br>{{ person.job }}</p>
             </div>
         </div>
         {% endfor %}

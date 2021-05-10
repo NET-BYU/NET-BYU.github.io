@@ -16,12 +16,6 @@
   link: https://www.linkedin.com/in/b-sam-ariun-erdene-1ba75a194/
   image: /images/ariun-erdene.jpg
 
-- first_name: Lehi
-  last_name: Alcantara
-  degree: MS
-  link: https://www.linkedin.com/in/lehi-alcantara/
-  image: /images/alcantara.jpg
-
 - first_name: Chris
   last_name: Kitras
   degree: Undergrad
@@ -43,6 +37,7 @@
 - first_name: Emily
   last_name: Quan
   degree: Undergrad
+  image: /images/quan.png
 
 - first_name: Daniel
   last_name: Sharp
@@ -50,8 +45,16 @@
   image: /images/sharp.jpg
   link: https://www.linkedin.com/in/danielsharp0x21/
 
-- first_name: Sarah
-  last_name: Cheng
+- first_name: Dinah
+  last_name: Squire
   degree: Undergrad
-  image: /images/cheng.jpg
-  link: https://www.linkedin.com/in/sarahcheng021/
+
+- first_name: Brenden
+  last_name: Peel
+  degree: Undergrad
+  image: /images/peel.jpg
+
+- first_name: Allen
+  last_name: Schultz
+  degree: Undergrad
+  image: /images/schultz.jpg
