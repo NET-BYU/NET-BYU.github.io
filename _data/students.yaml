@@ -10,12 +10,6 @@
   link: https://www.linkedin.com/in/joseph-miera/
   image: /images/miera.jpg
 
-- first_name: Batsaikhan (Sam)
-  last_name: Ariun-Erdene
-  degree: Undergrad
-  link: https://www.linkedin.com/in/b-sam-ariun-erdene-1ba75a194/
-  image: /images/ariun-erdene.jpg
-
 - first_name: Chris
   last_name: Kitras
   degree: Undergrad
@@ -43,12 +37,7 @@
   last_name: Squire
   degree: Undergrad
 
-- first_name: Brenden
-  last_name: Peel
+- first_name: Alek
+  last_name: Farmer
   degree: Undergrad
-  image: /images/peel.jpg
-
-- first_name: Allen
-  last_name: Schultz
-  degree: Undergrad
-  image: /images/schultz.jpg
+  image: /images/farmer.jpg
