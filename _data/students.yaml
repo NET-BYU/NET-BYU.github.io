@@ -41,3 +41,8 @@
   last_name: Farmer
   degree: Undergrad
   image: /images/farmer.jpg
+
+- first_name: Sam
+  last_name: Badstubner
+  degree: Undergrad
+  image: /images/badstubner.jpg
