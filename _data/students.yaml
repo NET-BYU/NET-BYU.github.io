@@ -12,7 +12,7 @@
 
 - first_name: Chris
   last_name: Kitras
-  degree: Undergrad
+  degree: PhD
   link: https://www.linkedin.com/in/christopher-kitras/
   image: /images/kitras.jpg
 
@@ -46,3 +46,4 @@
   last_name: Badstubner
   degree: Undergrad
   image: /images/badstubner.jpg
+  link: https://www.linkedin.com/in/sam-badstubner-a5561b204/
