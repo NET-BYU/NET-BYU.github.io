@@ -1,6 +1,12 @@
 # - name: Self-Sustainable Air Quality Sensor
 # description: We are building an air quality sensor that is powered by solar power and uses long range communication. This will allow for sensors to be placed in locations not possible before.
 
+- name: Software-Based Wireless Sub-Protocols
+  images:
+    - /images/spectrum.png
+  description: |+
+    Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless devices to become an essential part of our infrastructure, they must be resilient to changing environmental conditions and function under extreme cases. However, current wireless protocols have limited adaptability. This project explores a new class of wireless protocols called “wireless sub-protocols”. Wireless sub-protocols are new protocols built on existing wireless protocols but increase their capabilities and adaptability. Wireless sub-protocols are implemented only in software and require no changes to a device’s hardware. Wireless sub-protocols add extra adaptability paving the way for future resilient wireless protocols with only a software update.
+
 - name: Vehicle-to-Everything (V2X)
   description: |+
     Vehicles are an essential part of our everyday lives, and improving safety would have a tremendous impact on society. By connecting vehicles to each other (V2V), traffic infrastructure (V2I), and even pedestrians (V2P), new and exciting traffic safety applications and autonomous systems can be developed. We are researching how to improve wireless protocols and increase network performance to bring about the next generation of traffic safety.
