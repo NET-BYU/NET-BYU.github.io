@@ -52,3 +52,8 @@
   last_name: Cook
   degree: Undergrad
   image: /images/cook.png
+
+- first_name: Bryson
+  last_name: Schiel
+  degree: PhD
+  image: /images/schiel.jpg
