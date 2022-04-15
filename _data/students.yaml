@@ -58,3 +58,16 @@
   last_name: Schiel
   degree: PhD
   image: /images/schiel.jpg
+
+- first_name: Cody
+  last_name: Arvonen
+  degree: Undergrad
+  image: /images/arvonen.jpg
+
+- first_name: Carter
+  last_name: Pollan
+  degree: Undergrad
+
+- first_name: Jon
+  last_name: Backman
+  degree: Undergrad
