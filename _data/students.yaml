@@ -67,6 +67,7 @@
 - first_name: Carter
   last_name: Pollan
   degree: Undergrad
+  image: /images/pollan.jpg
 
 - first_name: Jon
   last_name: Backman
