@@ -73,3 +73,8 @@
   last_name: Backman
   degree: Undergrad
   image: /images/backman.jpg
+
+- first_name: Camille
+  last_name: Wirthlin
+  degree: Undergrad
+  image: /images/wirthlin.jpg
