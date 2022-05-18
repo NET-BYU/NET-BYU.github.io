@@ -6,6 +6,10 @@
     font-weight: bold;
 }
 
+.nav-link {
+    color: $brand-color;
+}
+
 @media (max-width: 575.98px) {
     .nav {
         padding-left: 10px;
