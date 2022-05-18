@@ -75,9 +75,51 @@ permalink: /
                         <p></p>
                     </a>
                 </div>
+
+                <div class="col">
+                    <a href="{{ " /articles" | prepend: site.baseurl }}">
+                        <div class="icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24">
+                                <path fill="currentColor"
+                                    d="M21,4H3A2,2 0 0,0 1,6V19A2,2 0 0,0 3,21H21A2,2 0 0,0 23,19V6A2,2 0 0,0 21,4M3,19V6H11V19H3M21,19H13V6H21V19M14,9.5H20V11H14V9.5M14,12H20V13.5H14V12M14,14.5H20V16H14V14.5Z" />
+                            </svg>
+                        </div>
+                        <h4>Articles</h4>
+                        <p></p>
+                    </a>
+                </div>
+            </div>
+            <div class="row recent_articles">
+                <div class="col">
+                    <h4>Recent Articles</h4>
+                    {% assign sorted_articles = site.data.articles | sort: "date" | reverse %}
+                    {% for article in sorted_articles limit:5 %}
+                    <div class="row">
+                        <a class="card-link" href="{{ article.link }}">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{ article.image }}" class="img-fluid rounded-start">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ article.title }}</h5>
+                                            <p class="card-text"><small class="text-muted">{{ article.author }} • {{
+                                                    article.date | date: "%B %d, %Y" }} </small></p>
+                                            <p class="card-text">{{ article.lead_text }}</p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
         </div>
-        <div id="the-net" class="navbar bottom justify-content-end"><a href="javascript:void(0)">π</a></div>
+    </div>
+    <div id="the-net" class="navbar bottom justify-content-end"><a href="javascript:void(0)">π</a></div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>

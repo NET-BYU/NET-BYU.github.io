@@ -91,6 +91,18 @@ body, html {
     }
 }
 
+.recent_articles {
+    margin-top: 100px;
+
+    .card-title {
+        margin-bottom: 0px;
+    }
+
+    .card-link {
+        text-decoration: none;
+    }
+
+}
 
 #the-net {
     // position: absolute;
