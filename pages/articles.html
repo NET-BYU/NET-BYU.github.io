@@ -1,0 +1,21 @@
+---
+layout: default
+title: Articles
+permalink: /articles/
+---
+
+<div class="posts">
+    {% for article in site.data.articles %}
+    <div class="row">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ article.image }}" class="card-img-top">
+            <div class="card-body">
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text"><small class="text-muted">{{ article.author }} • {{ article.date }} </small></p>
+                <p class="card-text">{{ article.lead_text }}</p>
+                <a href="{{ article.link }}" class="btn btn-primary stretched-link">Read Article</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
