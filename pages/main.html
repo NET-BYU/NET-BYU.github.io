@@ -89,8 +89,37 @@ permalink: /
                     </a>
                 </div>
             </div>
+            <div class="row recent_articles">
+                <div class="col">
+                    <h4>Recent Articles</h4>
+                    {% for article in site.data.articles %}
+                    <div class="row">
+                        <a class="card-link" href="{{ article.link }}">
+                            <div class="card mb-3">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="{{ article.image }}" class="img-fluid rounded-start">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="card-title">{{ article.title }}</h5>
+                                            <p class="card-text"><small class="text-muted">{{ article.author }} • {{
+                                                    article.date }} </small></p>
+                                            <p class="card-text">{{ article.lead_text }}</p>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                {% endfor %}
+            </div>
         </div>
-        <div id="the-net" class="navbar bottom justify-content-end"><a href="javascript:void(0)">π</a></div>
+    </div>
+    <div id="the-net" class="navbar bottom justify-content-end"><a href="javascript:void(0)">π</a></div>
     </div>
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
