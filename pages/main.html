@@ -92,7 +92,8 @@ permalink: /
             <div class="row recent_articles">
                 <div class="col">
                     <h4>Recent Articles</h4>
-                    {% for article in site.data.articles %}
+                    {% assign sorted_articles = site.data.articles | sort: "date" | reverse %}
+                    {% for article in sorted_articles limit:5 %}
                     <div class="row">
                         <a class="card-link" href="{{ article.link }}">
                             <div class="card mb-3">
@@ -104,7 +105,7 @@ permalink: /
                                         <div class="card-body">
                                             <h5 class="card-title">{{ article.title }}</h5>
                                             <p class="card-text"><small class="text-muted">{{ article.author }} • {{
-                                                    article.date }} </small></p>
+                                                    article.date | date: "%B %d, %Y" }} </small></p>
                                             <p class="card-text">{{ article.lead_text }}</p>
                                             </p>
                                         </div>
@@ -113,9 +114,8 @@ permalink: /
                             </div>
                         </a>
                     </div>
+                    {% endfor %}
                 </div>
-
-                {% endfor %}
             </div>
         </div>
     </div>
