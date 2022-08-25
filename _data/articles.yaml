@@ -1,3 +1,10 @@
+- title: iClicker Wireless Reverse Engineering
+  link: https://byunetlab.notion.site/iClicker-Wireless-Reverse-Engineering-58144e1665cc4294abb1ac2686494e77
+  lead_text: We reverse engineer the wireless communication of an iClicker remote.
+  author: Jon Backman
+  date: 2022-05-31 00:00:00
+  image: /post_images/iclicker.jpg
+
 - title: Making an Embedded Python Block in GNU Radio
   link: https://byunetlab.notion.site/Making-an-Embedded-Python-Block-in-GNU-Radio-e8caee28a3f8495ea7429cf6ffcb307d
   lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
