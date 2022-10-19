@@ -6,7 +6,7 @@ permalink: /articles/
 
 <div class="articles">
     <div class="row row-cols-3">
-        {% assign sorted = site.data.articles | sort: 'date' | reverse %}
+        {% assign sorted = site.data.articles | sort: 'date' | reverse | modulo: 4 %}
         {% for article in sorted %}
 
         <div class="col">
