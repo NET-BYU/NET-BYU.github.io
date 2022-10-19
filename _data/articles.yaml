@@ -12,7 +12,7 @@
   date: 2022-05-04 00:00:00
   image: /post_images/gnu_radio_python.png
 
-- title: Linux Magic: Shells
+- title: Linux Magic | Shells
   link: https://kitras.io/linux/shells/
   lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
   author: Chris Kitras
