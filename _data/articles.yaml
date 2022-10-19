@@ -11,3 +11,17 @@
   author: Dinah Bronson
   date: 2022-05-04 00:00:00
   image: /post_images/gnu_radio_python.png
+
+- title: Making an Embedded Python Block in GNU Radio
+  link: https://byunetlab.notion.site/Making-an-Embedded-Python-Block-in-GNU-Radio-e8caee28a3f8495ea7429cf6ffcb307d
+  lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
+  author: Dinah Bronson
+  date: 2022-05-04 00:00:00
+  image: /post_images/gnu_radio_python.png
+  
+  - title: Making an Embedded Python Block in GNU Radio
+  link: https://byunetlab.notion.site/Making-an-Embedded-Python-Block-in-GNU-Radio-e8caee28a3f8495ea7429cf6ffcb307d
+  lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
+  author: Dinah Bronson
+  date: 2022-05-04 00:00:00
+  image: /post_images/gnu_radio_python.png
