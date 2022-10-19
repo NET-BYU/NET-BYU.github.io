@@ -8,8 +8,6 @@ permalink: /articles/
     <div class="row row-cols-3">
         {% assign sorted = site.data.articles | sort: 'date' | reverse %}
         {% for article in sorted %}
-<!--         {% for article in site.data.articles %} -->
-<!--         {% assign index = forloop.index | modulo: 4 %} -->
 
         <div class="col">
             <div class="card" style="width: 18rem;">
