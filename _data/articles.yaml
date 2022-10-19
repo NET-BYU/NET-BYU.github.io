@@ -14,7 +14,42 @@
 
 - title: Linux Magic | Shells
   link: https://kitras.io/linux/shells/
+  lead_text: Learn what all the hype is about when it comes to Linux and the terminal.
+  author: Chris Kitras
+  date: 2022-04-30 00:00:00
+  image: /post_images/gnu_radio_python.png
+
+- title: Linux Magic | Text Editors
+  link: https://kitras.io/linux/text-editors/
+  lead_text: Looking to join a text editor cult but never found the right one? Come take a look at this guide and see what whimsy awaits.
+  author: Chris Kitras
+  date: 2022-05-11 00:00:00
+  image: /post_images/gnu_radio_python.png
+  
+- title: Linux Magic | Scripts
+  link: https://kitras.io/linux/scripts/
+  lead_text: Repeating tasks by hand is really boring. Repeating tasks on a computer is insanity. Automate your Linux experience with scripts.
+  author: Chris Kitras
+  date: 2022-07-07 00:00:00
+  image: /post_images/gnu_radio_python.png
+  
+- title: Linux Magic | Remote Tools
+  link: https://kitras.io/linux/remote-tools/
+  lead_text: Sometimes the best way to get work done is at a computer that is not your own.
+  author: Chris Kitras
+  date: 2022-06-02 00:00:00
+  image: /post_images/gnu_radio_python.png
+  
+- title: Linux Magic | Man Pages
+  link: https://kitras.io/linux/man-pages/
   lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
   author: Chris Kitras
-  date: 2021-05-25 00:00:00
+  date: 2022-05-19 00:00:00
   image: /post_images/gnu_radio_python.png
+  
+- title: Linux Magic | Output Redirection
+  link: https://kitras.io/linux/output-redirection/
+  lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
+  author: Chris Kitras
+  date: 2022-06-24 00:00:00
+  image: https://lh3.googleusercontent.com/E69X11jq1Oss5P0fQL_dxkGjQotb-2eKO9DKNo_QFsCG-mldqAIeCDYxMzHwaRI=s1200
