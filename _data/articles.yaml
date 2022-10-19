@@ -17,35 +17,35 @@
   lead_text: Learn what all the hype is about when it comes to Linux and the terminal.
   author: Chris Kitras
   date: 2022-04-30 00:00:00
-  image: /post_images/gnu_radio_python.png
+  image: https://www.notion.so/image/https%3A%2F%2Fwww.redhat.com%2Fsysadmin%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Ffull%2Fpublic%2F2020-07%2Fclose-up-photography-of-white-shells-1883386.jpg%3Fitok%3D0fXvQAfq?table=block&id=8943bab7-dc45-454e-82c4-1f905c6a5674&spaceId=9b2b5d00-fe64-437c-9227-61b80db126f2&width=2000&userId=612a5ebd-de16-4fef-b099-3e5f4e04cf6e&cache=v2
 
 - title: Linux Magic | Text Editors
   link: https://kitras.io/linux/text-editors/
   lead_text: Looking to join a text editor cult but never found the right one? Come take a look at this guide and see what whimsy awaits.
   author: Chris Kitras
   date: 2022-05-11 00:00:00
-  image: /post_images/gnu_radio_python.png
+  image: https://www.notion.so/image/https%3A%2F%2Fi.redd.it%2Fg3ac9n2ls7u11.png?table=block&id=8085e5b5-a51f-483c-b93f-336c90748843&spaceId=9b2b5d00-fe64-437c-9227-61b80db126f2&width=2000&userId=612a5ebd-de16-4fef-b099-3e5f4e04cf6e&cache=v2
   
 - title: Linux Magic | Scripts
   link: https://kitras.io/linux/scripts/
   lead_text: Repeating tasks by hand is really boring. Repeating tasks on a computer is insanity. Automate your Linux experience with scripts.
   author: Chris Kitras
   date: 2022-07-07 00:00:00
-  image: /post_images/gnu_radio_python.png
+  image: https://www.notion.so/image/https%3A%2F%2Fnatedsanders.com%2FItemImages%2F000047%2FThe%2520Empire%2520Strikes%2520Back%2520Script%252054434_lg.jpeg?table=block&id=65657454-1375-4e4c-9e05-43aa53ef20cc&spaceId=9b2b5d00-fe64-437c-9227-61b80db126f2&width=2000&userId=612a5ebd-de16-4fef-b099-3e5f4e04cf6e&cache=v2
   
 - title: Linux Magic | Remote Tools
   link: https://kitras.io/linux/remote-tools/
   lead_text: Sometimes the best way to get work done is at a computer that is not your own.
   author: Chris Kitras
   date: 2022-06-02 00:00:00
-  image: /post_images/gnu_radio_python.png
+  image: https://www.notion.so/byunetlab/Remote-Tools-98ebb908c75c47969028602ae68b13a0
   
 - title: Linux Magic | Man Pages
   link: https://kitras.io/linux/man-pages/
   lead_text: This tutorial is intended to help reduce the frustration that comes with using an Embedded Python block in GNU Radio.
   author: Chris Kitras
   date: 2022-05-19 00:00:00
-  image: /post_images/gnu_radio_python.png
+  image: https://www.notion.so/image/https%3A%2F%2Fwallpaperaccess.com%2Ffull%2F2785806.jpg?table=block&id=dc463a66-48bc-4ba1-be14-951829507545&spaceId=9b2b5d00-fe64-437c-9227-61b80db126f2&width=2000&userId=612a5ebd-de16-4fef-b099-3e5f4e04cf6e&cache=v2
   
 - title: Linux Magic | Output Redirection
   link: https://kitras.io/linux/output-redirection/
