@@ -67,10 +67,10 @@ permalink: /people/
 <hr>
 
 <div class="past-students">
-    <h2>Past Students</h2>
+    <h2>Past Graduate Students</h2>
 
     <div class="row">
-        {% assign sorted_students = site.data.past_students | sort:"graduation" %}
+        {% assign sorted_students = site.data.past_students.graduate_students | sort:"graduation" %}
         {% for person in sorted_students %}
         <div class="col-md-4 col-6 text-center">
             <div class="student">
@@ -87,6 +87,24 @@ permalink: /people/
                 <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
                 {% endif %}
                 <p class="student-degree">{{ person.degree }}<br>{{ person.job }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <h2>Past Undergraduate Students</h2>
+    <div class="row">
+        {% assign sorted_students = site.data.past_students.undergraduate_students | sort: "year" | reverse %}
+        {% for person in sorted_students %}
+        <div class="col-md-4 col-6 text-center">
+            <div class="student">
+                {% if person.link %}
+                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
+                </h5>
+                {% else %}
+                <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
+                {% endif %}
+                <p class="student-degree">{{ person.year }}</p>
             </div>
         </div>
         {% endfor %}

@@ -22,26 +22,11 @@
   degree: PhD
   image: /images/palacios.jpg
 
-- first_name: Emily
-  last_name: Quan
-  degree: Undergrad
-  image: /images/quan.png
-
 - first_name: Daniel
   last_name: Sharp
   degree: MS
   image: /images/sharp.jpg
   link: https://www.linkedin.com/in/danielsharp0x21/
-
-- first_name: Dinah
-  last_name: Bronson
-  degree: Undergrad
-  image: /images/bronson.jpg
-
-- first_name: Alek
-  last_name: Farmer
-  degree: Undergrad
-  image: /images/farmer.jpg
 
 - first_name: Sam
   last_name: Badstubner
@@ -70,12 +55,22 @@
   degree: Undergrad
   image: /images/pollan.jpg
 
-- first_name: Jon
-  last_name: Backman
+- first_name: Chase
+  last_name: Bledsoe
   degree: Undergrad
-  image: /images/backman.jpg
+  image: /images/bledsoe.jpg
 
-- first_name: Camille
-  last_name: Wirthlin
+- first_name: Elle
+  last_name: Harvey
   degree: Undergrad
-  image: /images/wirthlin.jpg
+  image: /images/harvey.jpg
+
+- first_name: Sam
+  last_name: Swindler
+  degree: Undergrad
+  image: /images/swindler.jpg
+
+- first_name: Lauren
+  last_name: Landon
+  degree: MS
+  image: /images/landon.jpg

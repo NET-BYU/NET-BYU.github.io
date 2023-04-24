@@ -1,7 +1,39 @@
-- first_name: Lehi
-  last_name: Alcantara
-  degree: MS
-  link: https://www.linkedin.com/in/lehi-alcantara/
-  image: /images/alcantara.jpg
-  graduation: April 2021
-  job: Brigham Young University
+graduate_students:
+  - first_name: Lehi
+    last_name: Alcantara
+    degree: MS
+    link: https://www.linkedin.com/in/lehi-alcantara/
+    image: /images/alcantara.jpg
+    graduation: April 2021
+    job: Brigham Young University
+
+undergraduate_students:
+  - first_name: Jon
+    last_name: Backman
+    degree: Undergrad
+    image: /images/backman.jpg
+    year: 2023
+
+  - first_name: Dinah
+    last_name: Bronson
+    degree: Undergrad
+    image: /images/bronson.jpg
+    year: 2022
+
+  - first_name: Alek
+    last_name: Farmer
+    degree: Undergrad
+    image: /images/farmer.jpg
+    year: 2023
+
+  - first_name: Emily
+    last_name: Quan
+    degree: Undergrad
+    image: /images/quan.png
+    year: 2023
+
+  - first_name: Camille
+    last_name: Wirthlin
+    degree: Undergrad
+    image: /images/wirthlin.jpg
+    year: 2022
