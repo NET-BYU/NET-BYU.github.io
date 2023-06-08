@@ -1,3 +1,10 @@
+- title: Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing
+  authors: B. Schiel, A. Farmer, A. Murali, B. Corry, P. Lundrigan
+  conference: IEEE Vehicle Networking Conference (VNC), 2023
+  abstract: >
+    Vehicle-to-Everything (V2X) technologies are seeing significant growth as an element of smart cities and a more-interconnected digital world in the Internet of Things (IoT). As governing bodies like State Departments of Transportation (DOTs) contemplate Vehicle-to-Infrastructure (V2I) deployments, they need to know what V2I devices will perform best, both in general and in their specific jurisdictions. In this paper, we develop a method to test commercial, off-the-shelf (COTS) Cellular-V2X (C-V2X) roadside equipment (RSE) as a way to inform government deployment; this includes indoor and outdoor tests for thoroughness. While this method needs to be refined, it provides a strong basis for future DOTs to determine which devices will best meet their deployment needs.
+  url: https://ieeexplore.ieee.org/document/10136347
+
 - title: Utilizing a Blockchain for Managing Sensor Metadata in Exposure Health Studies
   authors: A. Sarbhai, R. Gouripeddi, P. Lundrigan, P. Chidambaram, A. Saha, R. Madsen, J. Facelli, K. Sward, S. K. Kasera
   conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC), 2022
