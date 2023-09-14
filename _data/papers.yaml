@@ -1,8 +1,14 @@
+- title: Utilizing Low-Cost Sensors to Monitor Indoor Air Quality in Mongolian Gers
+  authors: C. Flowerday, P. Lundrigan, C. Kitras, T. Nguyen, J. Hansen
+  conference: Sensors. Vol 23, 2023
+  abstract: Air quality has important climate and health effects. There is a need, therefore, to monitor air quality both indoors and outdoors. Methods of measuring air quality should be cost-effective if they are to be used widely, and one such method is low-cost sensors (LCS). This study reports on the use of LCSs in Ulaanbataar, Mongolia to measure PM2.5 concentrations inside yurts or &ldquo;gers&rdquo;. Some of these gers were part of a non-government agency (NGO) initiative to improve insulating properties of these housing structures. The goal of the NGO was to decrease particulate emissions inside the gers; a secondary result was to lower the use of coal and other biomass material. LCSs were installed in gers heated primarily by coal, and interior air quality was measured. Gers that were modified by increasing their insulating capacities showed a 17.5% reduction in PM2.5 concentrations, but this is still higher than recommended by health organizations. Gers that were insulated and used a combination of both coal and electricity showed a 19.1% reduction in PM2.5 concentrations. Insulated gers that used electricity for both heating and cooking showed a 48% reduction in PM2.5 but still had higher concentrations of PM2.5 that were 6.4 times higher than recommended by the World Health Organization (WHO). Nighttime and daytime trends followed similar patterns and trends in PM2.5 concentrations with slight variations. It was found that at nighttime the outside PM2.5 concentrations were generally higher than the inside concentrations of the gers in this study, meaning that PM2.5 would flow into the ger whenever the doors were opened, causing spikes in PM2.5 concentrations.
+  url: https://doi.org/10.3390/s23187721
+
 - title: Location Verification of Crowd-Sourced Sensors
   authors: C. Kitras, C. Pollan, K. Myers, C. Wirthlin Tischner, P. Lundrigan
   conference: The 2nd International Workshop on IoT in Emerging Fields (IoTEF), 2023
   abstract: Community-driven sensor networks have been instrumental in providing easy access to affordable, large-scale measurement recording, facilitated by the accessibility of inexpensive sensor hardware. The simplicity of this hardware makes it challenging to retrieve trustworthy location data without added hardware such as GPS. We introduce the LaMDA framework, a software-based solution run solely in a web browser to determine the location of a device with the aid of a registering device. We monitor the device for any location changes by analyzing its traceroute data from a central server. Our solution allows minimal firmware changes to be made to fleets of devices without recall or changes to hardware.
-  url: /assets/lambda.pdf
+  url: https://doi.org/10.1109/ICCCN58024.2023.10230111
 
 - title: "Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing"
   authors: B. Schiel, A. Farmer, A. Murali, B. Corry, P. Lundrigan
