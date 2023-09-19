@@ -8,7 +8,7 @@
   authors: C. Kitras, C. Pollan, K. Myers, C. Wirthlin Tischner, P. Lundrigan
   conference: The 2nd International Workshop on IoT in Emerging Fields (IoTEF), 2023
   abstract: Community-driven sensor networks have been instrumental in providing easy access to affordable, large-scale measurement recording, facilitated by the accessibility of inexpensive sensor hardware. The simplicity of this hardware makes it challenging to retrieve trustworthy location data without added hardware such as GPS. We introduce the LaMDA framework, a software-based solution run solely in a web browser to determine the location of a device with the aid of a registering device. We monitor the device for any location changes by analyzing its traceroute data from a central server. Our solution allows minimal firmware changes to be made to fleets of devices without recall or changes to hardware.
-  url: https://doi.org/10.1109/ICCCN58024.2023.10230111
+  url: /assets/lambda.pdf
 
 - title: "Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing"
   authors: B. Schiel, A. Farmer, A. Murali, B. Corry, P. Lundrigan
