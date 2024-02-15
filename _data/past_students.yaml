@@ -7,18 +7,64 @@ graduate_students:
     graduation: April 2021
     job: Brigham Young University
 
+  - first_name: Ian
+    last_name: Schwallier
+    degree: MS
+    image: /images/schwallier.jpg
+    link: https://www.linkedin.com/in/ianschwallier/
+    graduation: April 2022
+    job: L3Harris
+
+  - first_name: Daniel
+    last_name: Sharp
+    degree: MS
+    image: /images/sharp.jpg
+    link: https://www.linkedin.com/in/danielsharp0x21/
+    graduation: August 2023
+    job: Wavetronix
+
 undergraduate_students:
-  - first_name: Jon
-    last_name: Backman
+  - first_name: Batsaikhan
+    last_name: Ariun-Erdene
     degree: Undergrad
-    image: /images/backman.jpg
-    year: 2023
+    image: /images/ariun-erdene.jpg
+    year: 2020
+
+  - first_name: Andrew
+    last_name: Pulsipher
+    degree: Undergrad
+    image: /images/pulsipher.jpg
+    year: 2021
+
+  - first_name: Sarah
+    last_name: Cheng
+    degree: Undergrad
+    image: /images/cheng.jpg
+    year: 2021
 
   - first_name: Dinah
     last_name: Bronson
     degree: Undergrad
     image: /images/bronson.jpg
     year: 2022
+
+  - first_name: Camille
+    last_name: Wirthlin
+    degree: Undergrad
+    image: /images/wirthlin.jpg
+    year: 2022
+
+  - first_name: Brendan
+    last_name: Peel
+    degree: Undergrad
+    image: /images/peel.jpg
+    year: 2022
+
+  - first_name: Jon
+    last_name: Backman
+    degree: Undergrad
+    image: /images/backman.jpg
+    year: 2023
 
   - first_name: Alek
     last_name: Farmer
@@ -32,8 +78,38 @@ undergraduate_students:
     image: /images/quan.png
     year: 2023
 
-  - first_name: Camille
-    last_name: Wirthlin
+  - first_name: Lauren
+    last_name: Landon
+    degree: MS
+    image: /images/landon.jpg
+    year: 2023
+
+  - first_name: Cody
+    last_name: Arvonen
     degree: Undergrad
-    image: /images/wirthlin.jpg
-    year: 2022
+    image: /images/arvonen.jpg
+    year: 2024
+
+  - first_name: Sam
+    last_name: Badstubner
+    degree: Undergrad
+    image: /images/badstubner.jpg
+    year: 2024
+
+  - first_name: Adam
+    last_name: Cook
+    degree: Undergrad
+    image: /images/cook.png
+    year: 2024
+
+  - first_name: Sam
+    last_name: Swindler
+    degree: Undergrad
+    image: /images/swindler.jpg
+    # year: 2023
+
+  - first_name: Chase
+    last_name: Bledsoe
+    degree: Undergrad
+    image: /images/bledsoe.jpg
+    # year: 2023
