@@ -1,20 +1,20 @@
 - first_name: Jacob
   last_name: Johnson
   degree: MS
-  link: https://www.linkedin.com/in/jake-johnson-ee/
   image: /images/johnson.jpg
+  link: https://www.linkedin.com/in/jake-johnson-ee/
 
 - first_name: Joseph
   last_name: Miera
   degree: MS
-  link: https://www.linkedin.com/in/joseph-miera/
   image: /images/miera.jpg
+  link: https://www.linkedin.com/in/joseph-miera/
 
 - first_name: Chris
   last_name: Kitras
   degree: PhD
   link: https://www.linkedin.com/in/christopher-kitras/
-  image: /images/kitras.jpg
+  image: /images/Kitras.jpg
 
 - first_name: Ashton
   last_name: Palacios
@@ -22,55 +22,50 @@
   degree: PhD
   image: /images/palacios.jpg
 
-- first_name: Daniel
-  last_name: Sharp
-  degree: MS
-  image: /images/sharp.jpg
-  link: https://www.linkedin.com/in/danielsharp0x21/
-
-- first_name: Sam
-  last_name: Badstubner
-  degree: Undergrad
-  image: /images/badstubner.jpg
-  link: https://www.linkedin.com/in/sam-badstubner-a5561b204/
-
-- first_name: Adam
-  last_name: Cook
-  degree: Undergrad
-  image: /images/cook.png
-
 - first_name: Bryson
   last_name: Schiel
   degree: PhD
   image: /images/schiel.jpg
   link: https://www.linkedin.com/in/bryson-s-82926aa6/
 
-- first_name: Cody
-  last_name: Arvonen
-  degree: Undergrad
-  image: /images/arvonen.jpg
-
 - first_name: Carter
   last_name: Pollan
   degree: Undergrad
   image: /images/pollan.jpg
-
-- first_name: Chase
-  last_name: Bledsoe
-  degree: Undergrad
-  image: /images/bledsoe.jpg
+  link: https://www.linkedin.com/in/carter-pollan-b743a6292/
 
 - first_name: Elle
-  last_name: Harvey
+  last_name: Kelsey
   degree: Undergrad
-  image: /images/harvey.jpg
+  image: /images/kelsey.jpg
+  link: https://www.linkedin.com/in/elle-h-kelsey/
 
-- first_name: Sam
-  last_name: Swindler
-  degree: Undergrad
-  image: /images/swindler.jpg
-
-- first_name: Lauren
-  last_name: Landon
+- first_name: Brook
+  last_name: Hatch
   degree: MS
-  image: /images/landon.jpg
+  image: /images/hatch.jpg
+  link: https://www.linkedin.com/in/brook-hatch-5360b2193/
+
+- first_name: Jamison
+  last_name: Lofthouse
+  degree: MS
+  image: /images/lofthouse.jpg
+  link: https://www.linkedin.com/in/jdloft/
+
+- first_name: Emily
+  last_name: Schmidt
+  degree: Undergrad
+  image: /images/schmidt.jpg
+  link: https://www.linkedin.com/in/emily-schmidt-866b14291/
+
+- first_name: Brian
+  last_name: Smith
+  degree: Undergrad
+  image: /images/smith.jpg
+  link: https://www.linkedin.com/in/brian-smith-57b997284/
+
+- first_name: Joshua
+  last_name: Montierth
+  degree: Undergrad
+  image: /images/montierth.jpg
+  link: https://www.linkedin.com/in/joshua-montierth-2aa5961a9/
