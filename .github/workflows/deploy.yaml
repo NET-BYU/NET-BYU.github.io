@@ -31,3 +31,4 @@ jobs:
           port: ${{ secrets.PORT }}
           source: "_site"
           target: "groups/net-lab/www"
+          strip_components: 1
