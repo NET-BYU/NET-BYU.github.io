@@ -1,8 +1,20 @@
+- title: Network Layer Spectral Coordination Integrated With Hadamard Projection for Multilayer Interference Mitigation
+  authors: A. Palacios, D. Ward, D. Bronson, J. Backman, D. Heo, K. F. Warnick, P. Lundrigan
+  conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2024
+  abstract: Sharing crowded radio spectrum with astronomical observatories and other passive users requires a multilayer approach. We present a protocol that allows passive devices to notify nearby active users of their spectrum utilization plans, regardless of the wireless protocol used by the receiver. For non-compliant active users, we use a Hadamard projection based cancellation algorithm to remove residual interference. Hadamard projection can be implemented before additional stages of RFI rejection such as subspace projection that may occur during beamforming and imaging. The integrated system is demonstrated with laboratory and outdoor over the air experimental results. The system is able to preserve a signal of interest to the passive user while suppressing interference from both compliant and non-compliant active spectrum users.
+  url: /assets/dpass.pdf
+
+- title: Wireless Latency Shift Keying
+  authors: J. Johnson, C. Arvonen, A. Palacios, P. Lundrigan
+  conference: International Conference on Mobile Computing and Networking (MobiCom), 2024
+  abstract: IEEE 802.11 (WiFi) only has two modes of trust—complete trust or complete untrust. The lack of nuance leaves no room for sensors that a user does not fully trust but wants to connect to their network, such as a WiFi sensor. Solutions exist, but they require advanced knowledge of network administration. We solve this problem by introducing a new way of modulating data in the latency of the network, called Latency Shift Keying. We use specific characteristics of the WiFi protocol to carefully control the latency of just one device on the network. We build a transmitter, receiver, and modulation scheme that is designed to encode data in the latency of a network. We develop an application, Wicket, that solves the WiFi trust issue using Latency Shift Keying to create a new security association between an untrusted WiFi sensor and a wired device on the trusted network. We evaluate its performance and show that it works in many network conditions and environments.
+  url: /assets/WLSK.pdf
+
 - title: "Stealthy Signals: Using Ghost Modulation to Watermark Interference"
   authors: A. Palacios, C. Bledsoe, E. Kelsey, L. Landon, J. Backman, P. Lundrigan
-  conference: ACM Workshop on LEO Networking and Communication (LEO-NET)
+  conference: ACM Workshop on LEO Networking and Communication (LEO-NET), 2023
   abstract: LEO satellite constellations have changed the world for the better through Earth observations, research, and telecommunications. Recent advances, especially in telecommunications, have brought the world closer to global connectivity. While these constellations usually have intra-network communications, they generally lack inter-network communication with other networks which leads to interference and noise. This interference and noise leads to degradation of network performance. We propose Ghost Modulation (GM), a novel protocol, to enable inter-network communication and spectrum coordination between a LEO satellite and any other device that supports the GM protocol. GM changes the transmission timing of key packets to encode data while passing most packets through. We evaluate our protocol and show that it can be used to dynamically coordinate heterogeneous networks with minimal overhead.
-  url: https://dl.acm.org/doi/10.1145/3614204.3616105
+  url: /assets/stealthy-signals.pdf
 
 - title: Utilizing Low-Cost Sensors to Monitor Indoor Air Quality in Mongolian Gers
   authors: C. Flowerday, P. Lundrigan, C. Kitras, T. Nguyen, J. Hansen
@@ -82,7 +94,7 @@
   url: /assets/EpiFi.pdf
 
 - title: >
-    Managing in-home environments through sensing, annotating, and visualizing air quality data
+    Managing In-home Environments Through Sensing, Annotating, and Visualizing Air Quality Data
   authors: >
     J. Moore, P. Goffin, M. Meyer, P. Lundrigan, N. Patwari, K. Sward, and J. Wiese
   conference: >
@@ -111,7 +123,7 @@
     sensing systems that integrate into users’ everyday lives.
 
 - title: >
-    Smart home air filtering system: A randomized controlled trial for performance evaluation
+    Smart Home Air Filtering System: A Randomized Controlled Trial for Performance Evaluation
   authors: >
     Kyeong T. Min, Philip Lundrigan, Neal Patwari, Katherine Sward, and Scott C. Collingwood
   conference: >
@@ -135,17 +147,17 @@
     variety of environments and is faster than conventional methods for
     connecting WiFi devices to home wireless routers.
 
-- title: >
-    An Infrastructure for Generating Exposomes: Initial Lessons from the Utah PRISMS Platform
-  authors: >
-    Katherine Sward, Philip Lundrigan, Neal Patwari, Ram Gouripeddi, Albert Lund, Julio Facelli
-  conference: >
-    Presentation and Demonstration at the 27th Annual Meeting of the International Society of Exposure Science (ISES), October 2017
+# - title: >
+#     An Infrastructure for Generating Exposomes: Initial Lessons from the Utah PRISMS Platform
+#   authors: >
+#     Katherine Sward, Philip Lundrigan, Neal Patwari, Ram Gouripeddi, Albert Lund, Julio Facelli
+#   conference: >
+#     Presentation and Demonstration at the 27th Annual Meeting of the International Society of Exposure Science (ISES), October 2017
 
-- title: >
-    Demo abstract: IASA - indoor air quality sensing and automation
-  authors: >
-    Kyeong T. Min, Philip Lundrigan, Neal Patwari
-  conference: >
-    ACM/IEEE Information Processing in Sensor Networks 2017, April 2017
-  url: http://span.ece.utah.edu/uploads/IPSN_Demo_Paper_2017_Final%20(1).pdf
+# - title: >
+#     Demo abstract: IASA - indoor air quality sensing and automation
+#   authors: >
+#     Kyeong T. Min, Philip Lundrigan, Neal Patwari
+#   conference: >
+#     ACM/IEEE Information Processing in Sensor Networks 2017, April 2017
+#   url: http://span.ece.utah.edu/uploads/IPSN_Demo_Paper_2017_Final%20(1).pdf
