@@ -23,6 +23,14 @@ graduate_students:
     graduation: August 2023
     job: Wavetronix
 
+  - first_name: Jacob
+    last_name: Johnson
+    degree: MS
+    image: /images/johnson.jpg
+    link: https://www.linkedin.com/in/jake-johnson-ee/
+    graduation: April 2024
+    job: Vivint
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
