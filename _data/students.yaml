@@ -69,3 +69,9 @@
   degree: MS
   image: /images/hales.jpg
   link: https://www.linkedin.com/in/doughales/
+
+- first_name: Ethan
+  last_name: Sorensen
+  degree: Undergrad
+  image: /images/sorensen.jpg
+  link: https://www.linkedin.com/in/ethan-na-sorensen/
