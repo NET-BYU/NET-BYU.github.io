@@ -70,6 +70,11 @@
   image: /images/hales.jpg
   link: https://www.linkedin.com/in/doughales/
 
+- first_name: Sam
+  last_name: Swindler
+  degree: Undergrad
+  image: /images/swindler.jpg
+
 - first_name: Ethan
   last_name: Sorensen
   degree: Undergrad

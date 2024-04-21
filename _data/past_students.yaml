@@ -110,12 +110,6 @@ undergraduate_students:
     image: /images/cook.png
     year: 2024
 
-  - first_name: Sam
-    last_name: Swindler
-    degree: Undergrad
-    image: /images/swindler.jpg
-    # year: 2023
-
   - first_name: Chase
     last_name: Bledsoe
     degree: Undergrad
