@@ -1,3 +1,9 @@
+- title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs
+  authors: B. Schiel, S. Swindler, A. Farmer, D. Sharp, A. Murali, B. Corry, P. Lundrigan
+  conference: IEEE Vehicular Networking Conference (VNC), 2024
+  abstract: "Vehicle-to-Everything (V2X) technologies are seeing dramatic growth as smart cities join the Internet of Things (IoT). Overseeing the adoption of this technology, governing bodies such as State Departments of Transportation (DOTs) are starting to contemplate Vehicle-to-Infrastructure (V2I) deployments, and they need to know which V2I devices will perform best in their specific jurisdictions. In this paper, we develop several methods to test commercial, off-the-shelf (COTS) Cellular-V2X (C-V2X) roadside units (RSUs) as a way to inform government deployment. These methods compare performance between different COTS RSUs side-by-side. We present these methods all together as an open source framework which evaluates an RSU multilaterally: at specification compliance, network management, and transmission range layers."
+  url: /assets/V2X_Testing_Framework.pdf
+
 - title: Network Layer Spectral Coordination Integrated With Hadamard Projection for Multilayer Interference Mitigation
   authors: A. Palacios, D. Ward, D. Bronson, J. Backman, D. Heo, K. F. Warnick, P. Lundrigan
   conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2024
