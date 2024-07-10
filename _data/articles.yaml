@@ -60,3 +60,10 @@
   author: Elle Kelsey
   date: 2023-09-05 00:00:00
   image: /post_images/clocks.jpeg
+
+- title:
+  link: https://byunetlab.notion.site/Getting-Started-with-Radioconda-and-Software-Defined-Radios-30d1a466b14e4397ad4d11888654f4bb
+  lead_text: Navigating the complexities of Software Defined Radios (SDRs) can be challenging, but using Radioconda, a virtual environment designed to manage SDR and Python packages, can help simplify the process.
+  author: Benjamin Sterling Silver
+  date: 2024-07-02 00:00:00
+  image: /post_images/antenna.jpeg
