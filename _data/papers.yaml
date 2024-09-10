@@ -1,3 +1,9 @@
+- title: Using Orthogonal Chirps Underwater for In-Band, Full-Duplex Communication with Minimal Self-Interference Cancellation
+  authors: Bryson Schiel, Joshua Montierth, Eli Blattner, Corey E. Dobbs, Tracianne B. Nielsen, Philip Lundrigan
+  conference: ACM International Conference on Underwater Networks & Systems (WUWNet)
+  abstract: Underwater acoustic networks (UANs) have the potential to benefit greatly from advances in in-band full-duplex (IBFD) communication, as this would reduce packet collisions and timing overhead from link layer protocols. A major direction of research to achieve IBFD has been through self-interference cancellation (SIC), a process that tries to minimize the effect of self-interference (SI) caused by a device's own transmission when it is trying to receive a packet from another device. Active SIC techniques, however, can be costly in computation and energy resources. The chirp spread spectrum (CSS) modulation scheme, which already provides noise- and multipath-resistant communication in UANs, can also provide a novel solution for simplified IBFD communication. In this paper, we use orthogonal CSS to enable IBFD communication that requires absolutely no SIC filtering when the signal of interest (SOI) is within -20 dB of the power of the self-interference (SI). For situations where the SOI is weaker than -20 dB of the power of the SI, we also provide a computationally light SIC filter that maintains clear communication.
+  url: /assets/WUWNet-2024.pdf
+
 - title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs
   authors: B. Schiel, S. Swindler, A. Farmer, D. Sharp, A. Murali, B. Corry, P. Lundrigan
   conference: IEEE Vehicular Networking Conference (VNC), 2024
