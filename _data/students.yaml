@@ -22,12 +22,6 @@
   image: /images/schiel.jpg
   link: https://www.linkedin.com/in/bryson-s-82926aa6/
 
-- first_name: Carter
-  last_name: Pollan
-  degree: Undergrad
-  image: /images/pollan.jpg
-  link: https://www.linkedin.com/in/carter-pollan-b743a6292/
-
 - first_name: Elle
   last_name: Kelsey
   degree: Undergrad
@@ -87,3 +81,9 @@
   degree: MS
   image: /images/driskill.jpg
   link: https://www.linkedin.com/in/zachary-driskill/
+
+- first_name: Eli
+  last_name: Blattner
+  degree: Undergrad
+  image: /images/blattner.jpg
+  link: https://www.linkedin.com/in/eli-blattner/

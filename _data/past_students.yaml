@@ -86,7 +86,7 @@ undergraduate_students:
     image: /images/quan.png
     year: 2023
 
-  - first_name: Lauren
+  - first_name: Laura
     last_name: Landon
     degree: MS
     image: /images/landon.jpg
@@ -114,4 +114,10 @@ undergraduate_students:
     last_name: Bledsoe
     degree: Undergrad
     image: /images/bledsoe.jpg
-    # year: 2023
+    year: 2024
+
+  - first_name: Carter
+    last_name: Pollan
+    degree: Undergrad
+    image: /images/bledsoe.jpg
+    year: 2025
