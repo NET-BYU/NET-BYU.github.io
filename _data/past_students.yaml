@@ -31,6 +31,14 @@ graduate_students:
     graduation: April 2024
     job: Vivint
 
+  - first_name: Joseph
+    last_name: Miera
+    degree: MS
+    image: /images/miera.jpg
+    link: https://www.linkedin.com/in/joseph-miera/
+    graduation: December 2024
+    job: L3Harris
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
