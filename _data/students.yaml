@@ -42,7 +42,7 @@
 
 - first_name: Brian
   last_name: Smith
-  degree: Undergrad
+  degree: MS
   image: /images/smith.jpg
   link: https://www.linkedin.com/in/brian-smith-57b997284/
 
@@ -57,12 +57,6 @@
   degree: MS
   image: /images/hales.jpg
   link: https://www.linkedin.com/in/doughales/
-
-- first_name: Sam
-  last_name: Swindler
-  degree: Undergrad
-  image: /images/swindler.jpg
-  link: https://www.linkedin.com/in/sam-swindler/
 
 - first_name: Ethan
   last_name: Sorensen
