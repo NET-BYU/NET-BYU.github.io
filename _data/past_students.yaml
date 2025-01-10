@@ -129,3 +129,10 @@ undergraduate_students:
     degree: Undergrad
     image: /images/bledsoe.jpg
     year: 2025
+
+  - first_name: Sam
+    last_name: Swindler
+    degree: Undergrad
+    image: /images/swindler.jpg
+    link: https://www.linkedin.com/in/sam-swindler/
+    year: 2025
