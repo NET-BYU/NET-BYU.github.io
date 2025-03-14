@@ -1,11 +1,23 @@
+- title: "Sustainable Radon Mitigation through Optimized HVAC Scheduling"
+  authors: C. Kitras, J. D. Beard, J. D. Johnston, P. Lundrigan
+  conference: "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2025"
+  abstract: Radon is a naturally occurring radioactive gas and is the second leading cause of lung cancer after smoking tobacco. Its invisible and odorless nature often leads to it going undetected, posing a significant health threat in susceptible areas, especially schools. Although traditional mitigation strategies are reasonable for smaller private properties, their cost can become prohibitively expensive and difficult for older and larger buildings. We propose, build, and test a cost-effective, sustainable mitigation strategy that uses the existing HVAC infrastructure of susceptible buildings to remove radon before occupancy hours. We compare this to a naive approach and find that we can save time on HVAC operation and keep radon levels to an acceptable low.
+  url: /assets/Radon.pdf
+
+- title: "Hidden in Plain Sight: Communicating using Interference"
+  authors: A. Palacios, D. Harman, C. Kitras, E. Kelsey, M. C. Burnett, W. K. Harrison, P. Lundrigan
+  conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2025
+  abstract: Radio astronomy observatories examine the universe by capturing faint RF signals from space. The equipment to capture these signals is extremely sensitive, and nearby transmitters, such as LEO satellites, cause destructive interference. We propose the Spectra watermarking protocol to add an identifying fingerprint to these interfering transmitters. Spectra changes the timing of key transmissions to encode identifying information that can be decoded by examining transmission timestamps and without having to demodulate the actual transmission. We implement multiple forward error correction codes for Spectra to account for dynamic LEO satellite channels. We evaluate Spectra and show that it can operate over highly variable channels with low BER while preserving the network performance of the interfering device.
+  url: /assets/GM_v2.pdf
+
 - title: Using Orthogonal Chirps Underwater for In-Band, Full-Duplex Communication with Minimal Self-Interference Cancellation
-  authors: Bryson Schiel, Joshua Montierth, Eli Blattner, Corey E. Dobbs, Tracianne B. Nielsen, Philip Lundrigan
+  authors: B. Schiel, J. Montierth, E. Blattner, C. E. Dobbs, T. B. Nielsen, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
   abstract: Underwater acoustic networks (UANs) have the potential to benefit greatly from advances in in-band full-duplex (IBFD) communication, as this would reduce packet collisions and timing overhead from link layer protocols. A major direction of research to achieve IBFD has been through self-interference cancellation (SIC), a process that tries to minimize the effect of self-interference (SI) caused by a device's own transmission when it is trying to receive a packet from another device. Active SIC techniques, however, can be costly in computation and energy resources. The chirp spread spectrum (CSS) modulation scheme, which already provides noise- and multipath-resistant communication in UANs, can also provide a novel solution for simplified IBFD communication. In this paper, we use orthogonal CSS to enable IBFD communication that requires absolutely no SIC filtering when the signal of interest (SOI) is within -20 dB of the power of the self-interference (SI). For situations where the SOI is weaker than -20 dB of the power of the SI, we also provide a computationally light SIC filter that maintains clear communication.
   url: https://dl.acm.org/doi/10.1145/3699432.3699464
 
 - title: "Poster: Role-Based Network Addressing for Fleets of Autonomous Underwater Vehicles"
-  authors: Bryson Schiel, Philip Lundrigan
+  authors: B. Schiel, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
   abstract: This work proposes an exploratory system of network addressing and management for a fleet of autonomous underwater vehicles (AUVs). As fleets of AUVs become more common and their tasks more diverse, it become necessary to manage them more at the network layer, handling new group formations and organization. As groups form and re-form during missions, there needs to be a way to identify a particular AUV and its role in the entire network. This work proposes one such network-level addressing system for a fleet of AUVs, the Fleet Protocol (FP) addressing system.
   url: https://dl.acm.org/doi/10.1145/3699432.3699478
@@ -143,7 +155,7 @@
 - title: >
     Smart Home Air Filtering System: A Randomized Controlled Trial for Performance Evaluation
   authors: >
-    Kyeong T. Min, Philip Lundrigan, Neal Patwari, Katherine Sward, and Scott C. Collingwood
+    K. T. Min, P. Lundrigan, N. Patwari, K. Sward, and S. C. Collingwood
   conference: >
     3rd IEEE / ACM Conference on Connected Health: Applications, Systems, and Engineering (CHASE 2018)
   url: http://span.ece.utah.edu/pub/CHASE_2018_Min_final.pdf
