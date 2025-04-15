@@ -16,12 +16,6 @@
   image: /images/schiel.jpg
   link: https://www.linkedin.com/in/bryson-s-82926aa6/
 
-- first_name: Elle
-  last_name: Kelsey
-  degree: Undergrad
-  image: /images/kelsey.jpg
-  link: https://www.linkedin.com/in/elle-h-kelsey/
-
 - first_name: Brook
   last_name: Hatch
   degree: MS
@@ -33,12 +27,6 @@
   degree: MS
   image: /images/lofthouse.jpg
   link: https://www.linkedin.com/in/jdloft/
-
-- first_name: Emily
-  last_name: Schmidt
-  degree: Undergrad
-  image: /images/schmidt.jpg
-  link: https://www.linkedin.com/in/emily-schmidt-866b14291/
 
 - first_name: Brian
   last_name: Smith
@@ -75,3 +63,13 @@
   degree: Undergrad
   image: /images/blattner.jpg
   link: https://www.linkedin.com/in/eli-blattner/
+
+- first_name: Dan
+  last_name: Barry
+  degree: Undergrad
+  image: /images/barry.jpg
+
+- first_name: Ty
+  last_name: Young
+  degree: Undergrad
+  # image: /images/young.jpg

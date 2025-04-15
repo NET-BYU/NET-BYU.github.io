@@ -127,7 +127,28 @@ undergraduate_students:
   - first_name: Carter
     last_name: Pollan
     degree: Undergrad
-    image: /images/bledsoe.jpg
+    image: /images/pollan.jpg
+    year: 2025
+
+  - first_name: Elle
+    last_name: Kelsey
+    degree: Undergrad
+    image: /images/kelsey.jpg
+    link: https://www.linkedin.com/in/elle-h-kelsey/
+    year: 2025
+
+  - first_name: Emily
+    last_name: Schmidt
+    degree: Undergrad
+    image: /images/schmidt.jpg
+    link: https://www.linkedin.com/in/emily-schmidt-866b14291/
+    year: 2025
+
+  - first_name: Sam
+    last_name: Swindler
+    degree: Undergrad
+    image: /images/swindler.jpg
+    link: https://www.linkedin.com/in/sam-swindler/
     year: 2025
 
   - first_name: Sam
