@@ -68,8 +68,15 @@
   last_name: Barry
   degree: Undergrad
   image: /images/barry.jpg
+  link: https://www.linkedin.com/in/daniel-barry-724824191/
 
 - first_name: Ty
   last_name: Young
   degree: Undergrad
   image: /images/young.jpg
+
+- first_name: Yujie
+  last_name: Rao
+  degree: Undergrad
+  image: /images/rao.jpg
+  link: https://www.linkedin.com/in/yujie-rao/
