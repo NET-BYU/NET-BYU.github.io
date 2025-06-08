@@ -39,6 +39,14 @@ graduate_students:
     graduation: December 2024
     job: L3Harris
 
+  - first_name: Brook
+    last_name: Hatch
+    degree: MS
+    image: /images/hatch.jpg
+    link: https://www.linkedin.com/in/brook-hatch-5360b2193/
+    graduation: Jun 2025
+    job: The Nuclear Company
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
