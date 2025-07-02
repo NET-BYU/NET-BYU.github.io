@@ -44,8 +44,16 @@ graduate_students:
     degree: MS
     image: /images/hatch.jpg
     link: https://www.linkedin.com/in/brook-hatch-5360b2193/
-    graduation: Jun 2025
+    graduation: June 2025
     job: The Nuclear Company
+
+  - first_name: Ashton
+    last_name: Palacios
+    link: https://www.linkedin.com/in/ashton-palacios-345b20146/
+    degree: PhD
+    image: /images/palacios.jpg
+    graduation: June 2025
+    job: Rincon Research
 
 undergraduate_students:
   - first_name: Batsaikhan
@@ -53,18 +61,21 @@ undergraduate_students:
     degree: Undergrad
     image: /images/ariun-erdene.jpg
     year: 2020
+    link: https://www.linkedin.com/in/batsaikhan-ariun-erdene-412913313/
 
   - first_name: Andrew
     last_name: Pulsipher
     degree: Undergrad
     image: /images/pulsipher.jpg
     year: 2021
+    link: https://www.linkedin.com/in/a-pulsipher/
 
   - first_name: Sarah
     last_name: Cheng
     degree: Undergrad
     image: /images/cheng.jpg
     year: 2021
+    link: https://www.linkedin.com/in/sarahcheng021/
 
   - first_name: Dinah
     last_name: Bronson
@@ -77,24 +88,28 @@ undergraduate_students:
     degree: Undergrad
     image: /images/wirthlin.jpg
     year: 2022
+    link: https://www.linkedin.com/in/camille-tischner/
 
   - first_name: Brendan
     last_name: Peel
     degree: Undergrad
     image: /images/peel.jpg
     year: 2022
+    link: https://www.linkedin.com/in/brenden-peel/
 
   - first_name: Jon
     last_name: Backman
     degree: Undergrad
     image: /images/backman.jpg
     year: 2023
+    link: https://www.linkedin.com/in/jonathan-backman-416666210/
 
   - first_name: Alek
     last_name: Farmer
     degree: Undergrad
     image: /images/farmer.jpg
     year: 2023
+    link: https://www.linkedin.com/in/alekfarmer/
 
   - first_name: Emily
     last_name: Quan
@@ -107,36 +122,42 @@ undergraduate_students:
     degree: MS
     image: /images/landon.jpg
     year: 2023
+    link: https://www.linkedin.com/in/laura-m-landon/
 
   - first_name: Cody
     last_name: Arvonen
     degree: Undergrad
     image: /images/arvonen.jpg
     year: 2024
+    link: https://www.linkedin.com/in/codyarvonen/
 
   - first_name: Sam
     last_name: Badstubner
     degree: Undergrad
     image: /images/badstubner.jpg
     year: 2024
+    link: https://www.linkedin.com/in/sam-badstubner/
 
   - first_name: Adam
     last_name: Cook
     degree: Undergrad
     image: /images/cook.png
     year: 2024
+    link: https://www.linkedin.com/in/adam-c-54a203bb/
 
   - first_name: Chase
     last_name: Bledsoe
     degree: Undergrad
     image: /images/bledsoe.jpg
     year: 2025
+    link: https://www.linkedin.com/in/chase-bledsoe/
 
   - first_name: Carter
     last_name: Pollan
     degree: Undergrad
     image: /images/pollan.jpg
     year: 2025
+    link: https://www.linkedin.com/in/carter-pollan-b743a6292/
 
   - first_name: Elle
     last_name: Kelsey
