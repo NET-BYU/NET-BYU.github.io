@@ -4,7 +4,7 @@ graduate_students:
     degree: MS
     link: https://www.linkedin.com/in/lehi-alcantara/
     image: /images/alcantara.jpg
-    graduation: April 2021
+    graduation: 2021-04-01
     job: Brigham Young University
 
   - first_name: Ian
@@ -12,7 +12,7 @@ graduate_students:
     degree: MS
     image: /images/schwallier.jpg
     link: https://www.linkedin.com/in/ianschwallier/
-    graduation: April 2022
+    graduation: 2022-04-01
     job: L3Harris
 
   - first_name: Daniel
@@ -20,7 +20,7 @@ graduate_students:
     degree: MS
     image: /images/sharp.jpg
     link: https://www.linkedin.com/in/danielsharp0x21/
-    graduation: August 2023
+    graduation: 2023-08-01
     job: Wavetronix
 
   - first_name: Jacob
@@ -28,7 +28,7 @@ graduate_students:
     degree: MS
     image: /images/johnson.jpg
     link: https://www.linkedin.com/in/jake-johnson-ee/
-    graduation: April 2024
+    graduation: 2024-04-01
     job: Vivint
 
   - first_name: Joseph
@@ -36,7 +36,7 @@ graduate_students:
     degree: MS
     image: /images/miera.jpg
     link: https://www.linkedin.com/in/joseph-miera/
-    graduation: December 2024
+    graduation: 2024-12-01
     job: L3Harris
 
   - first_name: Brook
@@ -44,7 +44,7 @@ graduate_students:
     degree: MS
     image: /images/hatch.jpg
     link: https://www.linkedin.com/in/brook-hatch-5360b2193/
-    graduation: June 2025
+    graduation: 2025-06-01
     job: The Nuclear Company
 
   - first_name: Ashton
@@ -52,8 +52,16 @@ graduate_students:
     link: https://www.linkedin.com/in/ashton-palacios-345b20146/
     degree: PhD
     image: /images/palacios.jpg
-    graduation: June 2025
+    graduation: 2025-06-01
     job: Rincon Research
+
+  - first_name: Doug
+    last_name: Hales
+    link: https://www.linkedin.com/in/doughales/
+    degree: MS
+    image: /images/hales.jpg
+    graduation: 2025-07-01
+    job: Brigham Young University
 
 undergraduate_students:
   - first_name: Batsaikhan
