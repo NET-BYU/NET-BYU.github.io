@@ -63,6 +63,14 @@ graduate_students:
     graduation: 2025-07-01
     job: Brigham Young University
 
+  - first_name: Jamison
+    last_name: Lofthouse
+    degree: MS
+    image: /images/lofthouse.jpg
+    link: https://www.linkedin.com/in/jdloft/
+    graduation: 2026-04-01
+    job: Rincon Research
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
