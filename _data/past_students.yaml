@@ -71,6 +71,14 @@ graduate_students:
     graduation: 2026-04-01
     job: Rincon Research
 
+  - first_name: Zachary
+    last_name: Driskill
+    degree: MS
+    image: /images/driskill.jpg
+    link: https://www.linkedin.com/in/zachary-driskill/
+    graduation: 2026-04-02
+    job: U.S. Department of War
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene

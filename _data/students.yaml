@@ -28,12 +28,6 @@
   image: /images/sorensen.jpg
   link: https://www.linkedin.com/in/ethan-na-sorensen/
 
-- first_name: Zachary
-  last_name: Driskill
-  degree: MS
-  image: /images/driskill.jpg
-  link: https://www.linkedin.com/in/zachary-driskill/
-
 - first_name: Eli
   last_name: Blattner
   degree: Undergrad
