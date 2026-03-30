@@ -79,6 +79,14 @@ graduate_students:
     graduation: 2026-04-02
     job: U.S. Department of War
 
+  - first_name: Brian
+    last_name: Smith
+    degree: MS
+    image: /images/smith.jpg
+    link: https://www.linkedin.com/in/brian-smith-57b997284/
+    graduation: 2026-04-03
+    job: Security Blanket
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
