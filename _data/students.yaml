@@ -12,13 +12,13 @@
 
 - first_name: Joshua
   last_name: Montierth
-  degree: Undergrad
+  degree: MS
   image: /images/montierth.jpg
   link: https://www.linkedin.com/in/joshua-montierth-2aa5961a9/
 
 - first_name: Ethan
   last_name: Sorensen
-  degree: Undergrad
+  degree: PhD
   image: /images/sorensen.jpg
   link: https://www.linkedin.com/in/ethan-na-sorensen/
 
