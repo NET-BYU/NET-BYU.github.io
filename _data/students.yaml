@@ -45,3 +45,15 @@
   degree: PhD
   image: /images/rao.jpg
   link: https://www.linkedin.com/in/yujie-rao/
+
+- first_name: Chase
+  last_name: Miner
+  degree: PhD
+  image: /images/miner.jpg
+  link: https://www.linkedin.com/in/chase-miner/
+
+- first_name: Kade
+  last_name: Onines
+  degree: Undergrad
+  image: /images/onines.jpg
+  link: https://www.linkedin.com/in/kwonines/
