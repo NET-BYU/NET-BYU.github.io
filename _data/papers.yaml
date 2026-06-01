@@ -1,3 +1,9 @@
+- title: "If You Build It, Will They Connect? 6 GHz WiFi in a Stadium"
+  authors: E. Sorensen, D. Hales, C. Kitras, J. Lofthouse, J. Montierth, P. Lundrigan
+  conference: "IEEE Internation Conference on Computer Communications and Networks (ICCCN), 2026"
+  abstract: "The opening of the 6 GHz spectrum promises substantial capacity gains for dense WiFi deployments, yet real-world performance depends critically on configuration choices rather than spectrum availability alone. This paper presents a measurement study of a large-scale outdoor WiFi 6E deployment at Brigham Young University's LaVell Edwards Stadium, combining two years of operational data with targeted measurements during football games. Despite the RF advantages of 6~GHz, capacity-based configuration preferences result in only modest performance improvements compared to 5 GHz. While 6 GHz achieves 3.4x higher median throughput (28 Mbps vs 8 Mbps) and 90% lower channel utilization (3.1% vs 31.4%), both bands fall well below expected performance levels. More critically, client adoption remains the dominant limiting factor\: automated Passpoint steering redirects ~50% of stadium clients, an estimated 20% of whom are 6 GHz-capable, exclusively to 5 GHz, while WiFi chipset-level association decisions prevent manual band selection. Historical data reveals that migration to OWE transition mode increased 6 GHz adoption from near-zero to 21% of non-steered clients."
+  url: /assets/Stadium_Study.pdf
+
 - title: "Sustainable Radon Mitigation through Optimized HVAC Scheduling"
   authors: C. Kitras, J. D. Beard, J. D. Johnston, P. Lundrigan
   conference: "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2025"
