@@ -11,8 +11,8 @@
   url: "/assets/SAFEC_2.2.pdf"
 
 - title: "Long-Term Validation of a Consumer- vs. Industrial-Grade Indoor Radon and Air Quality Monitor at a School in Utah"
-  authors: J. Beard, M. Ball, C. Kitras, P.Lundrigan
-  conference: "Sensors, Vol 26, 2026"
+  authors: J. Beard, M. Ball, C. Kitras, P. Lundrigan
+  conference: "Sensors. Vol 26, 2026"
   abstract: "In recent years, the demand for indoor radon and air quality monitors has increased while more affordable consumer-grade monitors have become available. The aim of our study was to assess the validity of the less expensive, non-calibrated, consumer-grade Lüft (SunRADON LLC, Melbourne, FL, USA) compared to the more expensive, annually and manufacturer calibrated, industrial-grade Model 1028 XP (SunRADON LLC, Melbourne, FL, USA). We collected data about 24 h moving averages of barometric pressure, carbon dioxide (CO2), radon, relative humidity, temperature, and volatile organic compounds (VOC) for approximately 29 weeks in 2024 in each of six rooms in a school in Utah. The mean difference in the co-located Lüfts’ and Model 1028 XPs’ 24 h moving average radon was −0.05 pCi/L of air (95% confidence interval: −0.24, 0.14, p = 0.50) and the concordance correlation coefficient (CCC) was 0.92. The Lüfts’ and Model 1028 XPs’ 24 h moving averages were similar for barometric pressure (CCC: 0.87), but the Lüfts’ 24 h moving averages were lower than the Model 1028 XPs’ for CO2, relative humidity, and VOC and higher for temperature. The Lüft provided valid measurements of 24 h moving averages for barometric pressure and radon, but not for CO2, relative humidity, temperature, and VOC."
   url: "https://doi.org/10.3390/s26165230"
 
