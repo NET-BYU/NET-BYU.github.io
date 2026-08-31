@@ -1,3 +1,27 @@
+- title: "WiP: UnderTone: Frequency Lock Encoding on COTS Wi-Fi Hardware"
+  authors: J. Montierth, P. Lundrigan
+  conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
+  abstract: "Modern wireless systems reserve excess synchronization bandwidth to ensure reliability under worst-case conditions. Recent foundational work introduced Frequency Lock Encoding (FLE), a protocol-agnostic signaling layer that opportunistically exploits this margin by embedding data through small, controlled carrier frequency offsets (CFO). While FLE has been successfully validated using software-defined radios (SDRs) on single-carrier waveforms, deploying it on commercial off-the-shelf (COTS) Wi-Fi devices has historically been hindered by locked physical layers and highly unpredictable Medium Access Control (MAC) timing. This work-in-progress presents UnderTone, a fully software-defined FLE subprotocol implemented on standard ESP32-C5 microcontrollers. By reverse-engineering undocumented fractional-𝑁 divider registers to induce precise CFO shifts, and modeling the bursty Wi-Fi medium as an erasure channel protected by Reed-Solomon coding, UnderTone completely bypasses the need for custom SDR hardware and brings this resilient physical-layer subprotocol to consumer IoT devices."
+  url: "/assets/UnderTone.pdf"
+
+- title: "WiP: SAFEC: Slack-Aware Forward Error Correction"
+  authors: E. Sorensen, T. Young, B. Smith, P. Lundrigan
+  conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
+  abstract: "Modulation and Coding Scheme (MCS) tables expose only discrete, jointly-coupled operating points along the throughput-reliability continuum, with an average of 19.4% of achievable throughput between adjacent steps. We present Slack-Aware Forward Error Correction (SAFEC), a method that reclaims unused Forward Error Correction (FEC) correction capacity to provide fine-grained interpolation between MCS steps. SAFEC encodes a secondary data stream into the positions of deliberately-inserted, recoverable errors within a base FEC codeword, requiring no protocol redesign or new hardware. We demonstrate SAFEC’s feasibility on LDPC-coded OFDM transmissions using software-defined radios, showing throughput gains of up to 9.5% over the base protocol."
+  url: "/assets/SAFEC_2.2.pdf"
+
+- title: "Long-Term Validation of a Consumer- vs. Industrial-Grade Indoor Radon and Air Quality Monitor at a School in Utah"
+  authors: J. Beard, M. Ball, C. Kitras, P.Lundrigan
+  conference: "Sensors, Vol 26, 2026"
+  abstract: "In recent years, the demand for indoor radon and air quality monitors has increased while more affordable consumer-grade monitors have become available. The aim of our study was to assess the validity of the less expensive, non-calibrated, consumer-grade Lüft (SunRADON LLC, Melbourne, FL, USA) compared to the more expensive, annually and manufacturer calibrated, industrial-grade Model 1028 XP (SunRADON LLC, Melbourne, FL, USA). We collected data about 24 h moving averages of barometric pressure, carbon dioxide (CO2), radon, relative humidity, temperature, and volatile organic compounds (VOC) for approximately 29 weeks in 2024 in each of six rooms in a school in Utah. The mean difference in the co-located Lüfts’ and Model 1028 XPs’ 24 h moving average radon was −0.05 pCi/L of air (95% confidence interval: −0.24, 0.14, p = 0.50) and the concordance correlation coefficient (CCC) was 0.92. The Lüfts’ and Model 1028 XPs’ 24 h moving averages were similar for barometric pressure (CCC: 0.87), but the Lüfts’ 24 h moving averages were lower than the Model 1028 XPs’ for CO2, relative humidity, and VOC and higher for temperature. The Lüft provided valid measurements of 24 h moving averages for barometric pressure and radon, but not for CO2, relative humidity, temperature, and VOC."
+  url: "https://doi.org/10.3390/s26165230"
+
+- title: "Frequency Lock Encoding"
+  authors: J. Montierth, P. Lundrigan, M. Rice
+  conference: "IEEE Military Communications Conference (MILCOM), 2026"
+  abstract: "Modern wireless systems are designed with excess synchronization bandwidth to ensure reliable operation under worst-case conditions. This paper presents a protocol-agnostic secondary signaling layer that exploits this unused synchronization margin by intentionally introducing small, controlled frequency offsets into an existing communication signal to embed a parallel stream of information. These offsets are naturally absorbed by the primary receiver’s carrier frequency offset (CFO) correction mechanisms, allowing the primary data stream to remain intact while enabling simultaneous secondary communication. The proposed signaling method employs a frequency-shift-keyed overlay engineered to remain within the stable operating region of conventional carrier synchronization loops, ensuring backward compatibility and transparency to legacy receivers. We analyze the system for single-carrier protocols,characterize the trade-offs between secondary throughput and impact on the primary link, and validate performance through both simulation and over-the-air experiments using software-defined radios. Results demonstrate reliable secondary communication with negligible degradation to primary performance, making our system well-suited for ad hoc spectrum sharing and decentralized coordination at the tactical edge."
+  url: "/assets/Frequency Lock Encoding.pdf"
+
 - title: "If You Build It, Will They Connect? 6 GHz WiFi in a Stadium"
   authors: E. Sorensen, D. Hales, C. Kitras, J. Lofthouse, J. Montierth, P. Lundrigan
   conference: "IEEE International Conference on Computer Communications and Networks (ICCCN), 2026"
@@ -42,7 +66,7 @@
 
 - title: Wireless Latency Shift Keying
   authors: J. Johnson, C. Arvonen, A. Palacios, P. Lundrigan
-  conference: International Conference on Mobile Computing and Networking (MobiCom), 2024
+  conference: ACM International Conference on Mobile Computing and Networking (MobiCom), 2024
   abstract: IEEE 802.11 (WiFi) only has two modes of trust—complete trust or complete untrust. The lack of nuance leaves no room for sensors that a user does not fully trust but wants to connect to their network, such as a WiFi sensor. Solutions exist, but they require advanced knowledge of network administration. We solve this problem by introducing a new way of modulating data in the latency of the network, called Latency Shift Keying. We use specific characteristics of the WiFi protocol to carefully control the latency of just one device on the network. We build a transmitter, receiver, and modulation scheme that is designed to encode data in the latency of a network. We develop an application, Wicket, that solves the WiFi trust issue using Latency Shift Keying to create a new security association between an untrusted WiFi sensor and a wired device on the trusted network. We evaluate its performance and show that it works in many network conditions and environments.
   url: /assets/WLSK.pdf
 
