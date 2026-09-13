@@ -49,7 +49,7 @@
 - title: "Poster: Role-Based Network Addressing for Fleets of Autonomous Underwater Vehicles"
   authors: B. Schiel, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
-  abstract: This work proposes an exploratory system of network addressing and management for a fleet of autonomous underwater vehicles (AUVs). As fleets of AUVs become more common and their tasks more diverse, it become necessary to manage them more at the network layer, handling new group formations and organization. As groups form and re-form during missions, there needs to be a way to identify a particular AUV and its role in the entire network. This work proposes one such network-level addressing system for a fleet of AUVs, the Fleet Protocol (FP) addressing system.
+  abstract: This work proposes an exploratory system of network addressing and management for a fleet of autonomous underwater vehicles (AUVs). As fleets of AUVs become more common and their tasks more diverse, it becomes necessary to manage them more at the network layer, handling new group formations and organization. As groups form and re-form during missions, there needs to be a way to identify a particular AUV and its role in the entire network. This work proposes one such network-level addressing system for a fleet of AUVs, the Fleet Protocol (FP) addressing system.
   url: https://dl.acm.org/doi/10.1145/3699432.3699478
 
 - title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs

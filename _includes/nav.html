@@ -7,15 +7,13 @@
     </div>
 
     <ul class="nav">
-        <a class="nav-link" href="/">Home</a>
+        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
         {% for my_page in site.pages %}
           {% if my_page.title %}
             {% if page.url == my_page.url %}
-              <a class="nav-link active" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-              <!-- <a class="nav-link active" href="{{ my_page.url | prepend: site.baseurl }}" style="color: {{ site.colors[forloop.index0] }};">{{ my_page.title }}</a> -->
+              <li class="nav-item"><a class="nav-link active" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
             {% else %}
-              <a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a>
-              <!-- <a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}" style="color: {{ site.colors[forloop.index0] }};">{{ my_page.title }}</a> -->
+              <li class="nav-item"><a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
             {% endif %}
           {% endif %}
         {% endfor %}
