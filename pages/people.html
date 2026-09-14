@@ -16,7 +16,7 @@ permalink: /people/
         </div>
         <div class="col-6 col-xs-8 col-sm-8">
             <h4 class="person-name">{{ person.name }}</h4>
-            {% if person.link %}
+            {% if person.description %}
             <p>{{ person.description }}</p>
             {% endif %}
             {% if person.link %}
@@ -38,9 +38,9 @@ permalink: /people/
         <div class="col-md-4 col-6 text-center">
             <div class="student">
                 {% if person.image %}
-                <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
+                <img class="student-images" src="{{ person.image }}" alt="{{ person.first_name }} {{ person.last_name }}">
                 {% else %}
-                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
+                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.first_name }} {{ person.last_name }}">
                 {% endif %}
 
                 {% if person.link %}
@@ -75,9 +75,9 @@ permalink: /people/
         <div class="col-md-4 col-6 text-center">
             <div class="student">
                 {% if person.image %}
-                <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
+                <img class="student-images" src="{{ person.image }}" alt="{{ person.first_name }} {{ person.last_name }}">
                 {% else %}
-                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
+                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.first_name }} {{ person.last_name }}">
                 {% endif %}
 
                 {% if person.link %}
