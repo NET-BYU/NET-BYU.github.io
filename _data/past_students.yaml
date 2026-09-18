@@ -87,6 +87,14 @@ graduate_students:
     graduation: 2026-04-03
     job: Security Blanket
 
+  - first_name: Bryson
+    last_name: Schiel
+    degree: PhD
+    image: /images/schiel.jpg
+    link: https://www.linkedin.com/in/bryson-s-82926aa6/
+    graduation: 2026-09-18
+    job: Draper
+
 undergraduate_students:
   - first_name: Batsaikhan
     last_name: Ariun-Erdene
