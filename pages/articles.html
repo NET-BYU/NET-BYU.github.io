@@ -11,7 +11,7 @@ permalink: /articles/
 
         <div class="col">
             <div class="card" style="width: 18rem;">
-                <img src="{{ article.image }}" class="card-img-top">
+                <img src="{{ article.image }}" class="card-img-top" alt="{{ article.title }}">
                 <div class="card-body">
                     <h5 class="card-title">{{ article.title }}</h5>
                     <p class="card-text"><small class="text-muted">{{ article.author }} • {{ article.date | date: "%B
@@ -22,7 +22,7 @@ permalink: /articles/
                 </div>
             </div>
 
-            {% if index == 1 %}
+            {% if forloop.index == 1 %}
             <div class="space"></div>
             {% endif %}
         </div>
