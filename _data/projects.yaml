@@ -127,6 +127,7 @@
   area: health
   name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
   hook: "Smart, healthy homes: sensors and actuators that track and reduce children's exposure to pollutants."
+  animation_caption: "Cooking spikes PM2.5 in the kitchen. Sensors report through the home router to a research cloud, the living-room purifier switches on, and the levels fall."
   animation: proj-prisms
   images:
     - /images/epifi_architecture.jpg
