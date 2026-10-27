@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-27T13:31:44Z",
+  "title": "Design System: NET Lab",
+  "extensions": {
+    "colorMeta": {
+      "pink": {
+        "role": "primary",
+        "displayName": "Hexagon Pink",
+        "canonical": "#ED3F95",
+        "tonalRamp": [
+          "#1D000C",
+          "#490028",
+          "#7A0146",
+          "#AF0367",
+          "#DE2E89",
+          "#FF66AB",
+          "#FEAECC",
+          "#FEE8EF"
+        ]
+      },
+      "cyan": {
+        "role": "primary",
+        "displayName": "Process Cyan",
+        "canonical": "#00AEEF",
+        "tonalRamp": [
+          "#000D16",
+          "#01293C",
+          "#014865",
+          "#036A93",
+          "#048DC2",
+          "#12B2F4",
+          "#89D4FE",
+          "#DEF2FE"
+        ]
+      },
+      "orange": {
+        "role": "primary",
+        "displayName": "Trace Orange",
+        "canonical": "#F89938",
+        "tonalRamp": [
+          "#150700",
+          "#3A1D00",
+          "#623500",
+          "#8E4F01",
+          "#BC6B03",
+          "#E98B25",
+          "#FFB87A",
+          "#FFEADA"
+        ]
+      },
+      "purple": {
+        "role": "primary",
+        "displayName": "Plum",
+        "canonical": "#89298E",
+        "tonalRamp": [
+          "#19001A",
+          "#400044",
+          "#6D0072",
+          "#913196",
+          "#B655BA",
+          "#DC79E0",
+          "#FCA4FF",
+          "#FFE5FF"
+        ]
+      },
+      "lime": {
+        "role": "primary",
+        "displayName": "Leaf Lime",
+        "canonical": "#76C044",
+        "tonalRamp": [
+          "#040F00",
+          "#132D01",
+          "#254E00",
+          "#3A7204",
+          "#50980A",
+          "#72BC40",
+          "#96E267",
+          "#D1FFB8"
+        ]
+      },
+      "green": {
+        "role": "primary",
+        "displayName": "Jade",
+        "canonical": "#00A775",
+        "tonalRamp": [
+          "#000F07",
+          "#002D1D",
+          "#024F35",
+          "#057350",
+          "#009A6C",
+          "#37C08C",
+          "#64E5AF",
+          "#C2FFE1"
+        ]
+      },
+      "yellow": {
+        "role": "primary",
+        "displayName": "Chartreuse",
+        "canonical": "#D8E022",
+        "tonalRamp": [
+          "#0B0C00",
+          "#262800",
+          "#434601",
+          "#636701",
+          "#848907",
+          "#A8AE06",
+          "#CCD403",
+          "#F1FA4C"
+        ]
+      },
+      "pink-ink": {
+        "role": "secondary",
+        "displayName": "Hexagon Pink Ink",
+        "canonical": "light-dark(#B8146A, #F25CA6)",
+        "tonalRamp": [
+          "#1D000C",
+          "#490126",
+          "#7A0243",
+          "#B00163",
+          "#D83C85",
+          "#FE68A7",
+          "#FFAECA",
+          "#FFE7EF"
+        ]
+      },
+      "cyan-ink": {
+        "role": "secondary",
+        "displayName": "Process Cyan Ink",
+        "canonical": "light-dark(#006D9E, #33BFF2)",
+        "tonalRamp": [
+          "#000D17",
+          "#00283E",
+          "#024769",
+          "#026897",
+          "#338BBE",
+          "#59AFE3",
+          "#8ED2FF",
+          "#DFF2FF"
+        ]
+      },
+      "orange-ink": {
+        "role": "secondary",
+        "displayName": "Trace Orange Ink",
+        "canonical": "light-dark(#9A4F00, #F89938)",
+        "tonalRamp": [
+          "#160700",
+          "#3C1B00",
+          "#663200",
+          "#934B00",
+          "#BA6C2D",
+          "#E08F52",
+          "#FFB784",
+          "#FEEADD"
+        ]
+      },
+      "purple-ink": {
+        "role": "secondary",
+        "displayName": "Plum Ink",
+        "canonical": "light-dark(#89298E, #C07BC6)",
+        "tonalRamp": [
+          "#19001A",
+          "#400044",
+          "#6D0072",
+          "#913196",
+          "#B655BA",
+          "#DC79E0",
+          "#FCA4FF",
+          "#FFE5FF"
+        ]
+      },
+      "lime-ink": {
+        "role": "secondary",
+        "displayName": "Leaf Lime Ink",
+        "canonical": "light-dark(#3B7417, #8BCF5C)",
+        "tonalRamp": [
+          "#030F00",
+          "#112D00",
+          "#224E01",
+          "#397214",
+          "#5A943C",
+          "#7CB85F",
+          "#9FDE83",
+          "#CFFFBA"
+        ]
+      },
+      "green-ink": {
+        "role": "secondary",
+        "displayName": "Jade Ink",
+        "canonical": "light-dark(#00744F, #1FC28F)",
+        "tonalRamp": [
+          "#000F07",
+          "#002D1D",
+          "#024F35",
+          "#06734F",
+          "#38966F",
+          "#5FBA91",
+          "#84DFB4",
+          "#C2FFE0"
+        ]
+      },
+      "yellow-ink": {
+        "role": "secondary",
+        "displayName": "Chartreuse Ink",
+        "canonical": "light-dark(#666B00, #D8E022)",
+        "tonalRamp": [
+          "#0B0C00",
+          "#252800",
+          "#434602",
+          "#626703",
+          "#83892F",
+          "#A5AC54",
+          "#C9D178",
+          "#EFF79D"
+        ]
+      },
+      "purple-line": {
+        "role": "secondary",
+        "displayName": "Plum Line",
+        "canonical": "light-dark(#89298E, #B060B6)",
+        "tonalRamp": [
+          "#19001A",
+          "#400044",
+          "#6D0072",
+          "#913196",
+          "#B655BA",
+          "#DC79E0",
+          "#FCA4FF",
+          "#FFE5FF"
+        ]
+      },
+      "focus": {
+        "role": "tertiary",
+        "displayName": "Focus Blue",
+        "canonical": "light-dark(#006D9E, #33BFF2)",
+        "tonalRamp": [
+          "#000D17",
+          "#00283E",
+          "#024769",
+          "#026897",
+          "#338BBE",
+          "#59AFE3",
+          "#8ED2FF",
+          "#DFF2FF"
+        ]
+      },
+      "select": {
+        "role": "tertiary",
+        "displayName": "Selection Tint",
+        "canonical": "light-dark(rgb(0 174 239 / .22), rgb(0 174 239 / .32))",
+        "tonalRamp": [
+          "#000D16",
+          "#01293C",
+          "#014865",
+          "#036A93",
+          "#048DC2",
+          "#12B2F4",
+          "#89D4FE",
+          "#DEF2FE"
+        ]
+      },
+      "bg": {
+        "role": "neutral",
+        "displayName": "Paper / Night",
+        "canonical": "light-dark(#FAFAFB, #08090C)",
+        "tonalRamp": [
+          "#0B0B0C",
+          "#252526",
+          "#424243",
+          "#616162",
+          "#828283",
+          "#A5A5A6",
+          "#C9C9CA",
+          "#EEEEEF"
+        ]
+      },
+      "bg-2": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "light-dark(#F2F3F5, #101217)",
+        "tonalRamp": [
+          "#0A0B0C",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#A4A5A7",
+          "#C8C9CB",
+          "#EDEEF0"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "canonical": "light-dark(#FFFFFF, #0D0F13)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "canonical": "light-dark(#0A0B0F, #F3F4F6)",
+        "tonalRamp": [
+          "#0A0B0F",
+          "#242529",
+          "#404247",
+          "#5F6166",
+          "#808288",
+          "#A3A5AB",
+          "#C7C9CF",
+          "#ECEEF5"
+        ]
+      },
+      "ink-2": {
+        "role": "neutral",
+        "displayName": "Ink 2",
+        "canonical": "light-dark(#545966, #A4A9B4)",
+        "tonalRamp": [
+          "#070B15",
+          "#212530",
+          "#3D424E",
+          "#5C616E",
+          "#7D8290",
+          "#9FA5B3",
+          "#C3C9D8",
+          "#E8EEFE"
+        ]
+      },
+      "ink-3": {
+        "role": "neutral",
+        "displayName": "Ink 3",
+        "canonical": "light-dark(#666B77, #868C98)",
+        "tonalRamp": [
+          "#080B14",
+          "#21252F",
+          "#3D424D",
+          "#5C616D",
+          "#7D828F",
+          "#9FA5B2",
+          "#C3C9D7",
+          "#E9EEFC"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "light-dark(#E3E5E9, #1E2128)",
+        "tonalRamp": [
+          "#0A0B0E",
+          "#242528",
+          "#404245",
+          "#5F6165",
+          "#808286",
+          "#A3A5A9",
+          "#C7C9CD",
+          "#ECEEF2"
+        ]
+      },
+      "line-2": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "light-dark(#CFD2D8, #2E323B)",
+        "tonalRamp": [
+          "#090B0F",
+          "#23252A",
+          "#404247",
+          "#5F6166",
+          "#808288",
+          "#A2A5AB",
+          "#C6C9CF",
+          "#EBEEF5"
+        ]
+      },
+      "fig-bg": {
+        "role": "neutral",
+        "displayName": "Stage",
+        "canonical": "light-dark(#F1F2F4, #0E1015)",
+        "tonalRamp": [
+          "#0A0B0C",
+          "#242526",
+          "#414243",
+          "#606163",
+          "#818284",
+          "#A4A5A7",
+          "#C8C9CB",
+          "#EDEEF0"
+        ]
+      },
+      "fig-ink": {
+        "role": "neutral",
+        "displayName": "Figure Ink",
+        "canonical": "light-dark(#14161C, #E9EBEF)",
+        "tonalRamp": [
+          "#090B10",
+          "#23252B",
+          "#3F4249",
+          "#5E6169",
+          "#7F828A",
+          "#A2A5AD",
+          "#C6C9D1",
+          "#EBEEF7"
+        ]
+      },
+      "fig-ink-2": {
+        "role": "neutral",
+        "displayName": "Figure Ink 2",
+        "canonical": "light-dark(#5A5F6B, #9CA1AC)",
+        "tonalRamp": [
+          "#080B14",
+          "#21252F",
+          "#3D424D",
+          "#5C616D",
+          "#7D828F",
+          "#9FA5B2",
+          "#C3C9D7",
+          "#E8EEFD"
+        ]
+      },
+      "fig-ink-3": {
+        "role": "neutral",
+        "displayName": "Figure Ink 3",
+        "canonical": "light-dark(#676C78, #8A909C)",
+        "tonalRamp": [
+          "#080B14",
+          "#21252F",
+          "#3D424D",
+          "#5C616D",
+          "#7D828F",
+          "#9FA5B2",
+          "#C3C9D7",
+          "#E9EEFC"
+        ]
+      },
+      "fig-line": {
+        "role": "neutral",
+        "displayName": "Figure Line",
+        "canonical": "light-dark(#D5D8DE, #262A33)",
+        "tonalRamp": [
+          "#090B0F",
+          "#232529",
+          "#404247",
+          "#5F6166",
+          "#808288",
+          "#A2A5AB",
+          "#C6C9CF",
+          "#EBEEF5"
+        ]
+      },
+      "fig-grid": {
+        "role": "neutral",
+        "displayName": "Figure Grid",
+        "canonical": "light-dark(#E4E6EA, #181B22)",
+        "tonalRamp": [
+          "#0A0B0E",
+          "#242528",
+          "#404245",
+          "#5F6165",
+          "#808286",
+          "#A3A5A9",
+          "#C7C9CD",
+          "#ECEEF2"
+        ]
+      },
+      "fig-surface": {
+        "role": "neutral",
+        "displayName": "Figure Surface",
+        "canonical": "light-dark(#FFFFFF, #161920)",
+        "tonalRamp": [
+          "#0B0B0B",
+          "#252525",
+          "#424242",
+          "#616161",
+          "#828282",
+          "#A5A5A5",
+          "#C9C9C9",
+          "#EEEEEE"
+        ]
+      },
+      "scene-bg": {
+        "role": "neutral",
+        "displayName": "Scene Black",
+        "canonical": "#05070B",
+        "tonalRamp": [
+          "#090B10",
+          "#22252A",
+          "#3F4248",
+          "#5E6168",
+          "#7F8389",
+          "#A1A5AC",
+          "#C5C9D0",
+          "#EAEFF6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "page-title": {
+        "displayName": "Page title",
+        "purpose": "The h1 on Papers, Projects, People and Articles: one or two words, the largest type on the site."
+      },
+      "display": {
+        "displayName": "Display",
+        "purpose": "The home hero headline, two-tone, at most 21ch."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section and chapter heads, two-tone, at most 24ch."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Paper titles, project tiles, card and outreach titles."
+      },
+      "lede": {
+        "displayName": "Lede",
+        "purpose": "The paragraph opposite a page title and each chapter's hook, in ink-2, at most 46ch."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading text; prose at most 68ch, abstracts and captions 70ch."
+      },
+      "small": {
+        "displayName": "Small",
+        "purpose": "Captions, meta rows, venues and the search field."
+      },
+      "control": {
+        "displayName": "Control",
+        "purpose": "Buttons, chips and the toast."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase list headings in ink-3 (sidebar groups, footer columns); never above a headline."
+      },
+      "readout": {
+        "displayName": "Readout",
+        "purpose": "The hero decoder line."
+      },
+      "data": {
+        "displayName": "Data",
+        "purpose": "Counts, years, bit strings, the placeholder tag and labels drawn inside figures; tabular figures."
+      }
+    },
+    "shadows": [
+      {
+        "name": "float",
+        "value": "0 1px 2px light-dark(rgb(10 11 15 / .05), rgb(0 0 0 / .4)), 0 12px 32px -18px light-dark(rgb(10 11 15 / .22), rgb(0 0 0 / .6))",
+        "purpose": "The hero readout and the co-author tooltip: a contact line plus a soft, tucked drop."
+      },
+      {
+        "name": "toast",
+        "value": "0 12px 32px -10px rgb(0 0 0 / .35)",
+        "purpose": "The confirmation toast at the bottom of the screen."
+      },
+      {
+        "name": "lightbox",
+        "value": "0 30px 80px -20px rgb(0 0 0 / .6)",
+        "purpose": "An enlarged photo over an 88% near-black scrim."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease",
+        "value": "cubic-bezier(.16, 1, .3, 1)",
+        "purpose": "The house exponential ease-out for every state change, reveal and expansion."
+      },
+      {
+        "name": "duration-state",
+        "value": ".2s",
+        "purpose": "Color, border and opacity changes on links, buttons, chips and the figure pause control."
+      },
+      {
+        "name": "duration-ui",
+        "value": ".3s to .5s",
+        "purpose": "Chevron and arrow nudges (.3s), the mobile menu (.25s fade, .35s slide), search width (.4s), abstract expand (.5s)."
+      },
+      {
+        "name": "duration-zoom",
+        "value": ".5s to .7s",
+        "purpose": "Hover zoom of faces (.5s, 1.03x), gallery photos (.6s, 1.04x), card media (.7s, 1.035x) and portraits (.7s, 1.03x)."
+      },
+      {
+        "name": "power-on",
+        "value": "1s",
+        "purpose": "A figure's one-time clip-path wipe, left to right, with a 2px scan line in its area color, the first time 12% of it is visible."
+      },
+      {
+        "name": "view-transition",
+        "value": "out .18s ease; in .38s house ease with a 10px rise",
+        "purpose": "Cross-document page transitions; the header holds still. Theme switches and paper filtering also run inside a view transition."
+      },
+      {
+        "name": "caption-pop",
+        "value": ".22s in (scale .92 to 1, back ease), .18s out",
+        "purpose": "Live captions inside figures, timed to the event they explain."
+      },
+      {
+        "name": "caret-blink",
+        "value": "1.1s steps(1) infinite",
+        "purpose": "The hero readout caret; off under reduced motion."
+      },
+      {
+        "name": "loop",
+        "value": "10s to 16s",
+        "purpose": "Animation loop length; seamless, or faded over the last and first half second."
+      },
+      {
+        "name": "hero-pulse",
+        "value": "92px/s, 68px apart",
+        "purpose": "Pulse speed and spacing along the hero traces."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "people-two-columns",
+        "value": "560px"
+      },
+      {
+        "name": "publications-stack",
+        "value": "700px"
+      },
+      {
+        "name": "restack-small (faculty, footer, mission intro, code card)",
+        "value": "760px"
+      },
+      {
+        "name": "menu (nav becomes a full-screen menu)",
+        "value": "780px"
+      },
+      {
+        "name": "stack (most two-column layouts)",
+        "value": "860px"
+      },
+      {
+        "name": "restack-large (chapter body, principles, splits)",
+        "value": "960px"
+      },
+      {
+        "name": "figure-compact (figure width; animations drop secondary labels)",
+        "value": "480px"
+      },
+      {
+        "name": "figure-tag-drop (figure container width)",
+        "value": "520px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Pill Button",
+      "kind": "button",
+      "refersTo": "button",
+      "description": "The only button style: a quiet outlined pill with an optional 15px stroked icon. Used for paper actions (PDF, Abstract, Copy citation) and the 404 links.",
+      "html": "<div class=\"ds-btn-row\"><a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 1.8h5.2L12.5 5v9.2H4z\"/><path d=\"M9 1.8V5h3.5\"/></svg>PDF</a><button class=\"ds-btn\" type=\"button\" aria-expanded=\"false\">Abstract<svg class=\"ds-chev\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 6l4 4 4-4\"/></svg></button><button class=\"ds-btn\" type=\"button\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><rect x=\"5\" y=\"5\" width=\"8.5\" height=\"9\" rx=\"1.5\"/><path d=\"M3 11V3.5A1.5 1.5 0 0 1 4.5 2H10\"/></svg>Copy citation</button></div>",
+      "css": ".ds-btn-row{display:flex;flex-wrap:wrap;gap:8px}.ds-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 15px;border-radius:999px;border:1px solid var(--line-2,#CFD2D8);background:transparent;color:var(--ink,#0A0B0F);font:580 14.5px/1 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}.ds-btn:hover{background:var(--bg-2,#F2F3F5);border-color:var(--ink-3,#666B77)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px}.ds-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.ds-btn .ds-chev{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-btn[aria-expanded=\"true\"] .ds-chev{transform:rotate(180deg)}"
+    },
+    {
+      "name": "Area Filter Chips",
+      "kind": "chip",
+      "refersTo": "chip",
+      "description": "The Papers filter row. Each area chip carries its dot and a mono count; the selected chip inverts to ink and never fills with an area color.",
+      "html": "<div class=\"ds-chips\" role=\"group\" aria-label=\"Filter by research area\"><button class=\"ds-chip\" type=\"button\" aria-pressed=\"true\">All <span class=\"ds-count\">23</span></button><button class=\"ds-chip ds-area-subprotocols\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-dot\"></span>Sub-protocols <span class=\"ds-count\">6</span></button><button class=\"ds-chip ds-area-sensing\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-dot\"></span>Environmental sensing <span class=\"ds-count\">5</span></button><button class=\"ds-chip ds-area-underwater\" type=\"button\" aria-pressed=\"false\"><span class=\"ds-dot\"></span>Underwater <span class=\"ds-count\">2</span></button></div>",
+      "css": ".ds-chips{display:flex;flex-wrap:wrap;gap:8px}.ds-chip{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 14px;border-radius:999px;border:1px solid var(--line-2,#CFD2D8);background:var(--bg,#FAFAFB);color:var(--ink,#0A0B0F);font:580 14.5px/1 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}.ds-chip:hover{border-color:var(--ink-3,#666B77)}.ds-chip:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px}.ds-chip[aria-pressed=\"true\"]{background:var(--ink,#0A0B0F);border-color:var(--ink,#0A0B0F);color:var(--bg,#FAFAFB)}.ds-count{font-family:var(--mono, \"Red Hat Mono\", ui-monospace, Menlo, monospace);font-size:12.5px;font-variant-numeric:tabular-nums;color:var(--ink-3,#666B77)}.ds-chip[aria-pressed=\"true\"] .ds-count{color:color-mix(in srgb,var(--bg,#FAFAFB) 70%,transparent)}.ds-chip .ds-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--area,#00AEEF);flex:none}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
+    },
+    {
+      "name": "Search Field",
+      "kind": "input",
+      "refersTo": "search-input",
+      "description": "The paper search: a pill on the ground with an inset glyph. Focus turns the border Focus Blue and adds the 2px ring; no glow. The caret is pink-ink.",
+      "html": "<label class=\"ds-search\"><span class=\"ds-sr\">Search papers</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><circle cx=\"7\" cy=\"7\" r=\"4.6\"/><path d=\"M10.5 10.5L14 14\"/></svg><input type=\"search\" placeholder=\"Search titles, authors, venues\" autocomplete=\"off\"></label>",
+      "css": ".ds-search{position:relative;display:inline-block}.ds-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ds-search input{width:260px;max-width:100%;height:36px;padding:0 14px 0 36px;border-radius:999px;border:1px solid var(--line-2,#CFD2D8);background:var(--bg,#FAFAFB);color:var(--ink,#0A0B0F);font:400 14.5px/1 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);caret-color:var(--c-pink-ink,#B8146A);transition:border-color .2s,width .4s cubic-bezier(.16,1,.3,1)}.ds-search input::placeholder{color:var(--ink-3,#666B77)}.ds-search input:focus{outline:none;border-color:var(--focus,#006D9E)}.ds-search input:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:2px}.ds-search svg{position:absolute;left:13px;top:50%;width:15px;height:15px;transform:translateY(-50%);fill:none;stroke:var(--ink-3,#666B77);stroke-width:1.9;stroke-linecap:round;pointer-events:none}"
+    },
+    {
+      "name": "Site Header",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Sticky 64px header: wordmark, neutral links with a 2px ink bar under the current page, and the round theme toggle. The logo mark (used as-is on the site) is omitted here.",
+      "html": "<header class=\"ds-header\"><a class=\"ds-brand\" href=\"#\">NET Lab <span>BYU</span></a><nav class=\"ds-nav\" aria-label=\"Main\"><a href=\"#\" aria-current=\"page\">Projects</a><a href=\"#\">Papers</a><a href=\"#\">People</a><a href=\"#\">Articles</a><a href=\"#\">Mission</a></nav><button class=\"ds-icon-btn\" type=\"button\" aria-label=\"Switch to dark theme\"><svg viewBox=\"0 0 24 24\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6\"/></svg></button></header>",
+      "css": ".ds-header{display:flex;align-items:center;gap:24px;height:64px;padding:0 24px;background:color-mix(in srgb,var(--bg,#FAFAFB) 96%,transparent);border-bottom:1px solid var(--line,#E3E5E9)}.ds-brand{display:inline-flex;align-items:center;gap:10px;margin-right:auto;font:750 18px/1 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);letter-spacing:-0.02em;color:var(--ink,#0A0B0F);text-decoration:none;white-space:nowrap}.ds-brand span{color:var(--ink-3,#666B77);font-weight:600}.ds-nav{display:flex;align-items:center;gap:clamp(14px,2.2vw,30px)}.ds-nav a{position:relative;padding:8px 0;font:560 15.5px/1.6 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink-2,#545966);text-decoration:none;transition:color .2s}.ds-nav a:hover,.ds-nav a[aria-current=\"page\"]{color:var(--ink,#0A0B0F)}.ds-nav a[aria-current=\"page\"]::after{content:\"\";position:absolute;left:0;right:0;bottom:2px;height:2px;border-radius:2px;background:var(--ink,#0A0B0F)}.ds-nav a:focus-visible,.ds-brand:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}.ds-icon-btn{display:inline-grid;place-items:center;width:38px;height:38px;border-radius:999px;border:1px solid var(--line-2,#CFD2D8);background:transparent;color:var(--ink,#0A0B0F);cursor:pointer;transition:background-color .2s,border-color .2s}.ds-icon-btn:hover{background:var(--bg-2,#F2F3F5);border-color:var(--ink-3,#666B77)}.ds-icon-btn:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px}.ds-icon-btn svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}"
+    },
+    {
+      "name": "Two-Tone Section Head",
+      "kind": "custom",
+      "refersTo": "headline",
+      "description": "A section head: the claim in ink, its continuation in ink-3, nothing above it; the single action sits right as an arrow link.",
+      "html": "<div class=\"ds-section-head\"><h2 class=\"ds-h2\">Latest papers. <span class=\"ds-tone\">Watch how each one works.</span></h2><a class=\"ds-arrow-link\" href=\"#\"><span>All papers</span><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M3 8h10M9 4l4 4-4 4\"/></svg></a></div>",
+      "css": ".ds-section-head{display:grid;grid-template-columns:minmax(0,1fr) auto;align-items:end;gap:24px 48px}.ds-h2{margin:0;max-width:24ch;font:720 clamp(32px,3.9vw,58px)/1.02 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);letter-spacing:-0.03em;text-wrap:balance;color:var(--ink,#0A0B0F)}.ds-tone{color:var(--ink-3,#666B77)}.ds-arrow-link{display:inline-flex;align-items:center;gap:8px;font:620 clamp(16.5px,15.6px + 0.25vw,18px)/1.6 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink,#0A0B0F);text-decoration:none;white-space:nowrap}.ds-arrow-link span{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent)}.ds-arrow-link:hover span{text-decoration-color:currentColor}.ds-arrow-link svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-arrow-link:hover svg{transform:translateX(3px)}.ds-arrow-link:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}@media (max-width:860px){.ds-section-head{grid-template-columns:1fr}}"
+    },
+    {
+      "name": "Figure Stage",
+      "kind": "custom",
+      "refersTo": "figure-stage",
+      "description": "The signature component: a 16px rounded stage that powers on once with a wipe and an area-colored scan line, carries the dashed placeholder tag top-left and a pause control bottom-right, and draws the contribution in the area color over a neutral world.",
+      "html": "<figure class=\"ds-fig ds-area-subprotocols\"><div class=\"ds-fig-stage\"><svg class=\"ds-fig-svg\" viewBox=\"0 0 640 400\" role=\"img\" aria-label=\"The transmitter shifts its carrier by plus delta f to send a 1; the hidden bits run along a tape below.\"><text class=\"lab\" x=\"38\" y=\"72\">TX SPECTRUM</text><path class=\"spec-fill\" d=\"M38 297L200 296C240 295 250 160 290 157L462 157C502 160 512 295 552 296L602 297L602 310L38 310Z\"/><path class=\"spec\" d=\"M38 297L200 296C240 295 250 160 290 157L462 157C502 160 512 295 552 296L602 297\"/><path class=\"ax\" d=\"M38 310H602\"/><path class=\"nominal\" d=\"M320 108V310\"/><text class=\"lab\" x=\"320\" y=\"328\" text-anchor=\"middle\">fc</text><path class=\"acc\" d=\"M320 126H366\"/><path class=\"acc-fill\" d=\"M376 126l-10-5.5v11z\"/><text class=\"acc-ink big\" x=\"376\" y=\"104\" text-anchor=\"middle\">1</text><rect class=\"pill\" x=\"310\" y=\"216\" width=\"132\" height=\"24\" rx=\"12\"/><text class=\"acc-ink\" x=\"376\" y=\"232\" text-anchor=\"middle\">+Δf sends a 1</text><text class=\"lab\" x=\"224\" y=\"356\" text-anchor=\"end\">SECONDARY BITS</text><rect class=\"cell\" x=\"233\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"243\" y=\"356\" text-anchor=\"middle\">1</text><rect class=\"cell\" x=\"255\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"265\" y=\"356\" text-anchor=\"middle\">0</text><rect class=\"cell\" x=\"277\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"287\" y=\"356\" text-anchor=\"middle\">1</text><rect class=\"acc-fill\" x=\"299\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit-on\" x=\"309\" y=\"356\" text-anchor=\"middle\">1</text><rect class=\"cell\" x=\"321\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"331\" y=\"356\" text-anchor=\"middle\">0</text><rect class=\"cell\" x=\"343\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"353\" y=\"356\" text-anchor=\"middle\">1</text><rect class=\"cell\" x=\"365\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"375\" y=\"356\" text-anchor=\"middle\">0</text><rect class=\"cell\" x=\"387\" y=\"343\" width=\"20\" height=\"18\" rx=\"3\"/><text class=\"digit\" x=\"397\" y=\"356\" text-anchor=\"middle\">0</text></svg><button class=\"ds-fig-ctl\" type=\"button\" aria-label=\"Pause animation\" aria-pressed=\"false\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><rect x=\"3\" y=\"2\" width=\"3.5\" height=\"12\" rx=\"1\"/><rect x=\"9.5\" y=\"2\" width=\"3.5\" height=\"12\" rx=\"1\"/></svg></button></div><span class=\"ds-fig-tag\" title=\"Placeholder animation with sample data.\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M2 8h3l2-5 2 10 2-5h3\"/></svg>Suggested animation · replace me</span><figcaption>The transmitter nudges its carrier up or down to send bits. The main receiver stays locked and keeps decoding its data, while a second receiver reads the nudges back as a bit stream.</figcaption></figure>",
+      "css": ".ds-fig{position:relative;margin:0;max-width:640px;container-type:inline-size;font-family:var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif)}.ds-fig-stage{position:relative;aspect-ratio:16/10;border-radius:16px;overflow:hidden;background:var(--fig-bg,#F1F2F4);isolation:isolate}.ds-fig-svg{position:absolute;inset:0;width:100%;height:100%;display:block;animation:ds-wipe 1s cubic-bezier(.16,1,.3,1) .3s both}.ds-fig-stage::after{content:\"\";position:absolute;z-index:2;top:0;bottom:0;left:0;width:2px;background:var(--area,#ED3F95);opacity:0;pointer-events:none;animation:ds-scan 1s cubic-bezier(.16,1,.3,1) .3s both}@keyframes ds-wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}@keyframes ds-scan{0%{opacity:1;left:0}85%{opacity:1}100%{opacity:0;left:100%}}.ds-fig-ctl{position:absolute;z-index:3;right:10px;bottom:10px;display:grid;place-items:center;width:32px;height:32px;border-radius:999px;border:1px solid color-mix(in srgb,var(--fig-ink,#14161C) 22%,transparent);background:color-mix(in srgb,var(--fig-bg,#F1F2F4) 80%,transparent);color:var(--fig-ink,#14161C);opacity:0;cursor:pointer;transition:opacity .2s,background-color .2s}.ds-fig:hover .ds-fig-ctl,.ds-fig-ctl:focus-visible{opacity:1}.ds-fig-ctl:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px}@media (hover:none){.ds-fig-ctl{opacity:.85}}.ds-fig-ctl svg{width:13px;height:13px;fill:currentColor}.ds-fig-tag{position:absolute;z-index:3;top:10px;left:10px;display:inline-flex;align-items:center;gap:6px;white-space:nowrap;max-width:calc(100% - 20px);padding:5px 9px 5px 7px;border:1px dashed color-mix(in srgb,var(--fig-ink,#14161C) 45%,transparent);border-radius:7px;background:color-mix(in srgb,var(--fig-bg,#F1F2F4) 82%,transparent);color:var(--fig-ink,#14161C);font:500 11.5px/1.2 var(--mono, \"Red Hat Mono\", ui-monospace, Menlo, monospace);letter-spacing:.01em;pointer-events:none}.ds-fig-tag svg{width:12px;height:12px;flex:none;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round}@container (max-width:520px){.ds-fig-tag{position:static;margin-top:10px;color:var(--ink-2,#545966);background:transparent;border-color:color-mix(in srgb,var(--ink-2,#545966) 55%,transparent)}}.ds-fig figcaption{margin-top:12px;font-size:14.5px;line-height:1.5;color:var(--ink-2,#545966);max-width:70ch;text-wrap:pretty}.ds-fig-svg text{font-family:var(--mono, \"Red Hat Mono\", ui-monospace, Menlo, monospace)}.ds-fig-svg .lab{font-size:10.5px;letter-spacing:.4px;fill:var(--fig-ink-2,#5A5F6B)}.ds-fig-svg .ax{fill:none;stroke:var(--fig-line,#D5D8DE);stroke-width:1}.ds-fig-svg .nominal{fill:none;stroke:var(--fig-ink-3,#676C78);stroke-width:1;stroke-dasharray:3 4}.ds-fig-svg .spec-fill{fill:color-mix(in srgb,var(--fig-ink,#14161C) 6%,transparent)}.ds-fig-svg .spec{fill:none;stroke:var(--fig-ink-2,#5A5F6B);stroke-width:1.6;stroke-linejoin:round}.ds-fig-svg .acc{fill:none;stroke:var(--area,#ED3F95);stroke-width:2;stroke-linecap:round}.ds-fig-svg .acc-fill{fill:var(--area,#ED3F95)}.ds-fig-svg .acc-ink{fill:var(--area-ink,#B8146A);font-size:11.5px;font-weight:600}.ds-fig-svg .acc-ink.big{font-size:26px}.ds-fig-svg .pill{fill:var(--fig-surface,#FFFFFF);stroke:var(--area,#ED3F95);stroke-width:1}.ds-fig-svg .cell{fill:none;stroke:var(--fig-line,#D5D8DE);stroke-width:1}.ds-fig-svg .digit{font-size:11.5px;font-weight:600;fill:var(--fig-ink-2,#5A5F6B)}.ds-fig-svg .digit-on{font-size:11.5px;font-weight:600;fill:#0A0B0F}@media (prefers-reduced-motion:reduce){.ds-fig-svg,.ds-fig-stage::after{animation:none}}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
+    },
+    {
+      "name": "Paper Entry",
+      "kind": "card",
+      "refersTo": "title",
+      "description": "The text column of a paper row on the Papers page: an open row under a hairline, title underlined in the area color on hover, hook, authors (lab members linked), the area marker and venue, then pill actions.",
+      "html": "<article class=\"ds-paper ds-area-subprotocols\"><h3 class=\"ds-paper-title\"><a href=\"#\">Frequency Lock Encoding</a></h3><p class=\"ds-hook\">Sends a second stream of data in tiny carrier-frequency shifts that ordinary receivers already correct away.</p><p class=\"ds-authors\"><a href=\"#\">J. Montierth</a>, <a href=\"#\">P. Lundrigan</a>, M. Rice</p><p class=\"ds-meta\"><span class=\"ds-area-label\"><span class=\"ds-dot\"></span>Sub-protocols</span><span>IEEE Military Communications Conference (MILCOM), 2026</span></p><div class=\"ds-actions\"><a class=\"ds-btn\" href=\"#\"><svg viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 1.8h5.2L12.5 5v9.2H4z\"/><path d=\"M9 1.8V5h3.5\"/></svg>PDF</a><button class=\"ds-btn\" type=\"button\" aria-expanded=\"false\">Abstract<svg class=\"ds-chev\" viewBox=\"0 0 16 16\" aria-hidden=\"true\"><path d=\"M4 6l4 4 4-4\"/></svg></button></div></article>",
+      "css": ".ds-paper{display:flex;flex-direction:column;gap:12px;max-width:560px;padding-block:28px;border-top:1px solid var(--line,#E3E5E9);font-family:var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink,#0A0B0F)}.ds-paper h3,.ds-paper p{margin:0}.ds-paper-title{font-size:clamp(20px,1.2vw + 14px,27px);font-weight:680;letter-spacing:-0.014em;line-height:1.18;text-wrap:balance}.ds-paper-title a{color:inherit;text-decoration:none}.ds-paper-title a:hover{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:.16em;text-decoration-color:var(--area,#00AEEF)}.ds-paper a:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}.ds-hook{font-size:17px;line-height:1.5;color:var(--ink-2,#545966);text-wrap:pretty}.ds-authors{font-size:15px;line-height:1.55;color:var(--ink-2,#545966)}.ds-authors a{color:var(--ink,#0A0B0F);text-decoration-line:underline;text-decoration-thickness:1px;text-underline-offset:.22em;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent);transition:text-decoration-color .2s}.ds-authors a:hover{text-decoration-color:currentColor}.ds-meta{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;font-size:14.5px;color:var(--ink-3,#666B77)}.ds-area-label{display:inline-flex;align-items:center;gap:8px;color:var(--area-ink,#006D9E);font-weight:600;font-size:14px}.ds-area-label .ds-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:var(--area,#00AEEF);flex:none}.ds-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:4px}.ds-btn{display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 15px;border-radius:999px;border:1px solid var(--line-2,#CFD2D8);background:transparent;color:var(--ink,#0A0B0F);font:580 14.5px/1 var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);text-decoration:none;white-space:nowrap;cursor:pointer;transition:background-color .2s,border-color .2s,color .2s}.ds-btn:hover{background:var(--bg-2,#F2F3F5);border-color:var(--ink-3,#666B77)}.ds-btn:active{transform:translateY(1px)}.ds-btn:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px}.ds-btn svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none}.ds-btn .ds-chev{transition:transform .3s cubic-bezier(.16,1,.3,1)}.ds-btn[aria-expanded=\"true\"] .ds-chev{transform:rotate(180deg)}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
+    },
+    {
+      "name": "Hero Readout",
+      "kind": "custom",
+      "refersTo": "readout",
+      "description": "The decoder readout under the hero logo: a mono line with a pink-ink RX tag and a blinking pink block caret, and the last character's eight bits beneath in ink-3. The only box on the page with the Float shadow besides the tooltip.",
+      "html": "<div class=\"ds-rx\"><p class=\"ds-rx-line\"><span class=\"ds-rx-tag\">RX</span><span class=\"ds-rx-text\">BUILDING REAL SYSTEMS</span><span class=\"ds-rx-caret\"></span></p><p class=\"ds-rx-bits\">01010011  →  S</p></div>",
+      "css": ".ds-rx{display:flex;flex-direction:column;align-items:center;gap:8px}.ds-rx-line{display:flex;align-items:baseline;gap:10px;min-height:42px;margin:0;padding:10px 16px;border-radius:12px;border:1px solid var(--line-2,#CFD2D8);background:var(--bg,#FAFAFB);color:var(--ink,#0A0B0F);font:500 14px/1.45 var(--mono, \"Red Hat Mono\", ui-monospace, Menlo, monospace);letter-spacing:.03em;box-shadow:var(--shadow-1,0 1px 2px rgb(10 11 15 / .05),0 12px 32px -18px rgb(10 11 15 / .22))}.ds-rx-tag{flex:none;font-size:11.5px;font-weight:650;letter-spacing:.08em;color:var(--c-pink-ink,#B8146A)}.ds-rx-text{white-space:pre-wrap;text-align:left}.ds-rx-caret{display:inline-block;flex:none;width:.55em;height:1.1em;margin-left:-6px;align-self:center;background:var(--c-pink,#ED3F95);animation:ds-caret 1.1s steps(1) infinite}@keyframes ds-caret{50%{opacity:0}}.ds-rx-bits{margin:0;min-height:16px;font:500 12px/1.3 var(--mono, \"Red Hat Mono\", ui-monospace, Menlo, monospace);letter-spacing:.08em;color:var(--ink-3,#666B77);font-variant-numeric:tabular-nums;white-space:pre}@media (prefers-reduced-motion:reduce){.ds-rx-caret{animation:none}}"
+    },
+    {
+      "name": "Person Card",
+      "kind": "card",
+      "refersTo": "media",
+      "description": "A person on the People page: a square portrait on a 16px Mist stage (the photo goes here), name, role in ink-2, and one 8px dot per research area.",
+      "html": "<article class=\"ds-person\"><div class=\"ds-portrait\" role=\"img\" aria-label=\"Portrait\"></div><h3><a href=\"#\">Ada Lovelace</a></h3><p class=\"ds-role\">PhD student</p><p class=\"ds-dots\" aria-label=\"Research areas: Sub-protocols, Spectrum sharing\"><span class=\"ds-dot ds-area-subprotocols\"></span><span class=\"ds-dot ds-area-spectrum\"></span></p></article>",
+      "css": ".ds-person{display:flex;flex-direction:column;gap:6px;width:210px;font-family:var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink,#0A0B0F)}.ds-person h3,.ds-person p{margin:0}.ds-portrait{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--bg-2,#F2F3F5);margin-bottom:10px}.ds-person h3{font-size:18px;font-weight:660;letter-spacing:-0.01em;line-height:1.25}.ds-person h3 a{color:inherit;text-decoration:none}.ds-person h3 a:hover{text-decoration:underline}.ds-person h3 a:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}.ds-role{font-size:14.5px;line-height:1.6;color:var(--ink-2,#545966)}.ds-dots{display:flex;gap:5px;margin-top:4px}.ds-person .ds-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--area,#00AEEF)}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Living Figure",
+    "overview": "The NET Lab site is the research-lab category standard played straight, at the polish of MIT Media Lab and Google DeepMind. Its North Star is a great paper figure come alive: a quiet, nearly monochrome page is the gallery wall, and every paper and project hangs on it as a rounded stage running a live animation of its own mechanism. The page recedes so the work can lead. Color and motion live in the figures, not in the chrome.\n\nThe voice is precise, calm and quietly playful. One self-hosted grotesk carries every word, set heavy and tight in two-tone headlines whose gray second half does the job an eyebrow or kicker would do elsewhere. Red Hat Mono appears only where the machinery shows: counts, years, figure labels, the placeholder tag and the hero's decoder readout. Landing surfaces are generous and airy; the archive pages are long, orderly runs of entries between hairlines.\n\nThe logo's seven trace colors are the research areas, one color per area, everywhere; only the home hero shows them as what they literally are, the logo's traces. Motion has one grammar, exponential ease-out: each figure powers on once with a wipe and a scan line in its area color, then runs only while it is visible; pages cross-fade through view transitions; visitors who prefer reduced motion get a chosen still frame of every animation. Confirmed rejections: the Bootstrap card stack the old site used, the plexus or mesh background every networking lab ships, and costume worlds of any kind.",
+    "keyCharacteristics": [
+      "Near-white and near-black grounds, cool gray inks, 1px hairline rules.",
+      "Seven logo colors, each meaning one research area and nothing else.",
+      "Two-tone grotesk headlines (ink, then gray); no eyebrows or kickers.",
+      "Every paper and project explained by a live figure on a 16px rounded stage.",
+      "Neutral pill controls; a selected state inverts to ink.",
+      "Red Hat Mono for data and machine text only.",
+      "Flat surfaces; shadow only for what floats.",
+      "Exponential ease-out; one power-on per figure, no scroll reveals."
+    ],
+    "rules": [
+      {
+        "name": "The One Meaning Rule",
+        "body": "Each logo color means one research area, everywhere. Color enters a component only through its `data-area` attribute: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text. Anything without a research area stays neutral. Two exceptions only: the home hero, because its traces are the logo itself, and transient interaction cues (the focus ring, text selection, the caret).",
+        "section": "colors"
+      },
+      {
+        "name": "The Ink Variant Rule",
+        "body": "No text is ever set in a base logo color. Area text uses its -ink variant, which clears AA on every ground in both themes. Every base color fails AA as text in at least one theme: six of the seven on the light ground (Chartreuse at 1.4:1), Plum on the dark.",
+        "section": "colors"
+      },
+      {
+        "name": "The Neutral Chrome Rule",
+        "body": "Navigation, buttons, chips, inputs and rules are drawn in ink and gray only. A selected chip inverts to ink; it never fills with an area color. An area appears in a control only as its dot.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two-Tone Rule",
+        "body": "A headline states its claim in ink and continues in gray (ink-3) in the same run, as in \"Latest papers. Watch how each one works.\" with the second sentence gray. Nothing sits above a headline: no eyebrow, kicker or overline.",
+        "section": "typography"
+      },
+      {
+        "name": "The Mono Is Data Rule",
+        "body": "Red Hat Mono is for data and machine text: numbers, years, bit strings, figure labels and captions, the placeholder tag, the hero readout, shell commands. Headlines, body copy, buttons and navigation stay in the grotesk.",
+        "section": "typography"
+      },
+      {
+        "name": "The Hairline Rule",
+        "body": "Structure is drawn with 1px rules in Hairline, never with boxes and shadows. Paper entries, press links, sidebar lists, publications, principles and footer rows are open rows between hairlines. Shadow is reserved for what floats: the readout, the tooltip, the toast, the lightbox.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Stage Rule",
+        "body": "What you look at sits on a 16px rounded stage that clips it; what you press is a full pill. Media never floats on the page without its stage.",
+        "section": "shapes"
+      },
+      {
+        "name": "The Contribution Rule",
+        "body": "In every animation the lab's contribution (the hidden channel, the new mechanism, the key result) is drawn in the area color, and everything else (the world, baseline systems, axes, infrastructure) is neutral figure ink. A diagram uses one logo color: its area's.",
+        "section": "components"
+      },
+      {
+        "name": "The Power-On Rule",
+        "body": "A figure announces itself once, with the wipe and scan the first time it is seen, and then simply runs while visible. There are no other scroll-triggered reveals: no fade-ups, no staggered entrances.",
+        "section": "components"
+      },
+      {
+        "name": "The Placeholder Honesty Rule",
+        "body": "A figure whose animation runs on sample data wears the dashed \"Suggested animation · replace me\" tag until its item is marked final. A tag comes off when its author marks the item final, and any that remain come off together at launch through the one site setting; never by restyling the tag or hiding it in CSS.",
+        "section": "components"
+      }
+    ],
+    "dos": [
+      "Do color by research area only, through `data-area`: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text.",
+      "Do write headlines in two tones: the claim in ink, the continuation in ink-3 in the same run.",
+      "Do put every animation, photo and portrait on a 16px rounded stage that clips it, and make every control a full pill (999px).",
+      "Do separate list entries with 1px hairlines and leave the rows open.",
+      "Do draw the lab's contribution in the area color and everything else in neutral figure ink, with weight (strokes of 2px and up, filled marks) and an area-ink label.",
+      "Do keep the \"Suggested animation · replace me\" tag on every figure until its item is marked `animation_status: final`, and remove the rest at launch with `show_placeholder_markers: false`.",
+      "Do move with the house ease, cubic-bezier(.16, 1, .3, 1): .2s for color and border changes, .3–.5s for chevrons, menus and expanding panels, .5–.7s for image zooms, 1s for a figure's power-on.",
+      "Do give every animation a `still` moment and honor reduced motion everywhere: no wipe, no view transitions, no animated zooms, no blinking caret.",
+      "Do set text inside figures in fig-ink-2 or stronger, and area text in its -ink variant."
+    ],
+    "donts": [
+      "Don't use a logo color for decoration or for anything that is not a research area: not a page, a header, a button, a principle or a cover.",
+      "Don't set text in a base logo color; each one fails AA as text in at least one theme.",
+      "Don't put an eyebrow, kicker or overline above a headline. Small uppercase labels head lists (sidebar groups, footer columns) and panels inside figures, nothing else.",
+      "Don't put shadows on cards, figures or rows. Shadow belongs to the readout, the tooltip, the toast and the lightbox.",
+      "Don't set headlines, body copy, buttons or navigation in Red Hat Mono.",
+      "Don't add a decorative plexus, mesh or node-network background, or go back to a bordered card stack; node-link drawings appear only when they plot real data, as the co-author network does.",
+      "Don't add scroll reveals (fade-ups, staggered entrances); a figure's one-time power-on is the only reveal.",
+      "Don't paint a background in a diagram (the stage supplies it), and don't put anything essential under the tag (top-left 250×46) or the pause button (bottom-right 52×52).",
+      "Don't go lighter than fig-ink-3 for any text inside a figure; it is the AA floor on both stages."
+    ]
+  }
+}
