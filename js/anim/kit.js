@@ -13,6 +13,10 @@
 // Modules draw in CSS pixels (api.w × api.h); the loader handles device pixel ratio,
 // resizing, pausing offscreen, reduced motion and theme changes. Use api.rng() rather
 // than Math.random() so every frame is reproducible.
+//
+// A drawing call's `alpha` option sets the opacity for that call (it does not multiply
+// ctx.globalAlpha). To fade a whole frame, draw normally and finish with a
+// 'destination-out' fill, as safec.js does at the end of its loop.
 
 export const TAU = Math.PI * 2;
 export const clamp = (v, a = 0, b = 1) => Math.min(b, Math.max(a, v));

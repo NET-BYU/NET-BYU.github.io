@@ -34,7 +34,6 @@ export default {
     const lab = (str, x, y, o = {}) => api.text(str, x, y, { size: api.fs(10.5), color: pal.ink3, spacing: 0.4, ...o });
     const fadeAll = 1 - seg(t, P.out[0], P.out[1]);
     const ctx = api.ctx;
-    ctx.globalAlpha = fadeAll;
 
     // Geometry
     const left = w * 0.07;
@@ -167,7 +166,14 @@ export default {
       });
       api.caption('fills the gap between steps', right, gy - api.s(12), P.gain[0] + 1.2, P.gain[1], { align: 'right', color: api.accentInk, border: api.accent });
     }
-    ctx.globalAlpha = 1;
+    // Fade the whole frame out at the end of the loop without painting a background.
+    if (fadeAll < 1) {
+      ctx.save();
+      ctx.globalCompositeOperation = 'destination-out';
+      ctx.fillStyle = `rgba(0,0,0,${1 - fadeAll})`;
+      ctx.fillRect(0, 0, w, h);
+      ctx.restore();
+    }
     void clamp;
   },
 };
