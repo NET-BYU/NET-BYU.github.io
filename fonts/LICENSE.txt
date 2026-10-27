@@ -1,0 +1,5 @@
+Fonts in this folder are self-hosted copies from Google Fonts, used under the SIL Open Font License 1.1
+(https://openfontlicense.org):
+
+- Schibsted Grotesk, by Bakken & Bæck for Schibsted (schibsted-grotesk-*.woff2)
+- Red Hat Mono, by MCKL for Red Hat (red-hat-mono-*.woff2)

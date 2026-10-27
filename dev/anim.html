@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Animation harness · NET Lab</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="/css/site.css">
+<style>
+  body { padding: 20px var(--gutter) 60px; }
+  .bar { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; margin-bottom: 20px; }
+  .bar select, .bar input[type=range] { height: 36px; }
+  .bar select { padding: 0 12px; border-radius: 999px; border: 1px solid var(--line-2); background: var(--bg); }
+  .bar input[type=range] { width: min(420px, 60vw); }
+  .meta { font: 500 13px var(--mono); color: var(--ink-3); }
+  .panel .fig-stage { width: 100%; }
+  .panels { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 560px), 1fr)); gap: 28px; align-items: start; }
+  .panel { padding: 18px; border-radius: 20px; background: var(--bg); color: var(--ink); border: 1px solid var(--line); }
+  .panel h2 { font: 600 12px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); margin-bottom: 12px; }
+  .panel.wide { grid-column: 1 / -1; }
+  .panel .fig { max-width: var(--fw, 100%); }
+  .gallery-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+  .gallery-grid a { text-decoration: none; }
+  .gallery-grid p { margin-top: 8px; font: 500 13px var(--mono); color: var(--ink-2); }
+</style>
+</head>
+<body class="js">
+<div class="bar">
+  <select id="pick" aria-label="Animation"></select>
+  <button class="btn" id="play" type="button">Pause</button>
+  <input type="range" id="scrub" min="0" max="10" step="0.01" value="0" aria-label="Time">
+  <button class="btn" id="still" type="button">Reduced-motion frame</button>
+  <span class="meta" id="meta"></span>
+</div>
+<div id="root"></div>
+
+<script type="module">
+import { Figure } from '/js/figures.js';
+
+const q = new URLSearchParams(location.search);
+const list = await (await fetch('/dev/anims.json')).json();
+const pick = document.getElementById('pick');
+for (const a of list) pick.add(new Option(`${a.id}  (${a.kind}, ${a.area})`, a.id));
+pick.add(new Option('— gallery of all —', '__all'));
+const id = q.get('id') || list[0].id;
+pick.value = q.get('gallery') ? '__all' : id;
+pick.onchange = () => { location.search = pick.value === '__all' ? '?gallery=1' : `?id=${pick.value}`; };
+
+const root = document.getElementById('root');
+const figs = [];
+
+function makeFig(entry, { scheme, label, cls = '', width, ar, fw }) {
+  const panel = document.createElement('section');
+  panel.className = `panel ${cls}`;
+  if (scheme) panel.style.colorScheme = scheme;
+  if (fw) panel.style.setProperty('--fw', `${fw}px`);
+  const scene = entry.kind === 'scene';
+  panel.innerHTML = `<h2>${label}</h2>
+    <figure class="fig${scene ? ' fig--scene' : ''} is-on" data-anim="${entry.id}" data-area="${entry.area}">
+      <div class="fig-stage" style="--ar:${ar || (scene ? '21 / 9' : '16 / 10')}">
+        <button class="fig-ctl" type="button" aria-label="Pause animation"><svg class="i-pause" viewBox="0 0 16 16"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></button>
+      </div>
+      <span class="fig-tag"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h3l2-5 2 10 2-5h3"/></svg>Suggested animation · replace me</span>
+      <figcaption>${entry.caption || ''}</figcaption>
+    </figure>`;
+  root.append(panel);
+  const fig = new Figure(panel.querySelector('.fig'));
+  fig.visible = true;
+  figs.push(fig);
+  return fig;
+}
+
+let duration = 10;
+let still = 6;
+if (q.get('gallery') || pick.value === '__all') {
+  const grid = document.createElement('div');
+  grid.className = 'gallery-grid';
+  root.append(grid);
+  for (const entry of list) {
+    const a = document.createElement('a');
+    a.href = `?id=${entry.id}`;
+    a.innerHTML = `<figure class="fig${entry.kind === 'scene' ? ' fig--scene' : ''} is-on" data-anim="${entry.id}" data-area="${entry.area}"><div class="fig-stage" style="--ar:${entry.kind === 'scene' ? '21 / 9' : '16 / 10'}"></div></figure><p>${entry.id}</p>`;
+    grid.append(a);
+    const fig = new Figure(a.querySelector('.fig'));
+    fig.visible = true;
+    figs.push(fig);
+  }
+} else {
+  const entry = list.find((a) => a.id === id) || { id, kind: q.get('kind') || 'diagram', area: q.get('area') || 'subprotocols' };
+  const ar = q.get('ar');
+  const only = q.get('only'); // light | dark | phone | wide
+  const variants = [
+    { key: 'light', scheme: 'light', label: 'Light · 640px', fw: entry.kind === 'scene' ? 900 : 640 },
+    { key: 'dark', scheme: 'dark', label: 'Dark · 640px', fw: entry.kind === 'scene' ? 900 : 640 },
+    { key: 'phone', scheme: q.get('theme') || 'light', label: 'Phone · 360px', fw: 360, ar: entry.kind === 'scene' ? '4 / 3' : undefined },
+    { key: 'wide', scheme: 'dark', label: 'Wide · 1200px', cls: 'wide', fw: 1200, ar },
+  ].filter((v) => !only || only.split(',').includes(v.key));
+  for (const v of variants) makeFig(entry, { ...v, ar: v.ar || ar });
+}
+
+await Promise.all(figs.map((f) => f.load()));
+const mod = figs[0]?.mod || {};
+duration = mod.duration || 10;
+still = mod.still ?? duration * 0.6;
+const scrub = document.getElementById('scrub');
+scrub.max = duration;
+document.getElementById('meta').textContent = `duration ${duration}s · still ${still}s · scene ${!!mod.scene}`;
+
+let playing = !q.has('t');
+let t0 = performance.now();
+let base = 0;
+function seekAll(t) { for (const f of figs) f.seek(t); scrub.value = t; }
+if (q.has('t')) seekAll(Number(q.get('t')));
+document.getElementById('play').onclick = (e) => {
+  playing = !playing;
+  e.target.textContent = playing ? 'Pause' : 'Play';
+  if (playing) { base = Number(scrub.value); t0 = performance.now(); }
+};
+document.getElementById('play').textContent = playing ? 'Pause' : 'Play';
+scrub.oninput = () => { playing = false; document.getElementById('play').textContent = 'Play'; seekAll(Number(scrub.value)); };
+document.getElementById('still').onclick = () => { playing = false; document.getElementById('play').textContent = 'Play'; seekAll(still); };
+function loop(now) {
+  if (playing) {
+    const t = (base + (now - t0) / 1000) % duration;
+    for (const f of figs) { f.forcedT = t; f.render(); }
+    scrub.value = t;
+  }
+  requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+window.__ready = true;
+</script>
+</body>
+</html>
