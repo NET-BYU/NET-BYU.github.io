@@ -27,7 +27,12 @@ description: Research projects at the NET Lab, from robot swarms under ice shelv
 <section class="chapter wrap" id="{{ p.slug }}" data-area="{{ p.area }}" aria-labelledby="{{ p.slug }}-title">
   <div class="chapter-head">
     <h2 class="h2" id="{{ p.slug }}-title">{{ p.name }}</h2>
-    <p class="lede">{{ p.hook }}</p>
+    <div class="chapter-intro">
+      <p class="lede">{{ p.hook }}</p>
+      {%- if p.link %}
+      <a class="btn btn--solid" href="{{ p.link }}">{{ t.full_project_link }}{{ arrow }}</a>
+      {%- endif %}
+    </div>
   </div>
   {% include figure.html item=p kind="scene" caption=true %}
   <div class="chapter-body">
@@ -68,11 +73,6 @@ description: Research projects at the NET Lab, from robot swarms under ice shelv
           <a href="{{ img }}" data-lightbox><img src="{{ p.thumbs[forloop.index0] }}" alt="{{ p.short | default: p.name }}, photo {{ forloop.index }}" loading="lazy" decoding="async"></a>
           {%- endfor %}
         </div>
-      </div>
-      {%- endif %}
-      {%- if p.link %}
-      <div class="side">
-        <a class="arrow-link" href="{{ p.link }}"><span>Visit the full project site</span>{{ arrow }}</a>
       </div>
       {%- endif %}
     </aside>

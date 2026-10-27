@@ -3,14 +3,15 @@
 // Every figure rests on a still frame (the module's `still` moment). It plays only while someone
 // is looking at it on purpose: while the pointer is over it (or over the card it belongs to), or
 // while that card has keyboard focus. Then the moving picture wipes in over the still
-// behind an area-colored scan line, and fades back to the still when the pointer leaves. Phones
+// behind an area-colored scan line (the still is cut away as it goes, so the two never overlap),
+// and sweeps back to the still when the pointer leaves. Phones
 // can't hover, so there the one figure nearest the middle of the screen plays. Visitors who
 // prefer reduced motion only ever see the still.
 import { createApi, readPalette, AREA_COLOR } from './anim/kit.js';
 
 const reducedMQ = matchMedia('(prefers-reduced-motion: reduce)');
 const noHoverMQ = matchMedia('(hover: none)');
-const FADE_MS = 350; // matches the fade-out of .fig-live in site.css
+const FADE_MS = 600; // matches the sweep back to the still in site.css
 const live = new Set();
 const mounted = new Set();
 let raf = 0;
@@ -166,13 +167,10 @@ export class Figure {
     if (play) {
       if (!live.has(this)) this.elapsed = 0;
       this.render();
-      // Restart the wipe and scan line from the left each time.
-      this.el.classList.remove('is-playing');
-      void this.stage.offsetWidth;
-      this.el.classList.add('is-playing');
+      this.el.classList.add('is-playing'); // (re)starts the wipe and scan line from the left
       start(this);
     } else {
-      // Keep moving while the live layer fades out, then rest on the still.
+      // Keep moving while the edge sweeps back, then rest on the still.
       this.el.classList.remove('is-playing');
       this.fadeTimer = setTimeout(() => live.delete(this), FADE_MS);
     }
@@ -218,9 +216,21 @@ function zoneOf(el) {
   return el.closest('a') || el;
 }
 
+// Scrolling moves figures under a resting cursor; that isn't someone choosing to look at one, so a
+// hover only counts once the mouse itself moves.
+let lastScroll = 0;
+addEventListener('scroll', () => { lastScroll = performance.now(); }, { passive: true });
+const scrolling = () => performance.now() - lastScroll < 200;
+
 function wireZone(el, set) {
   const zone = zoneOf(el);
-  zone.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') set('hover', true); });
+  const enter = (e) => {
+    if (e.pointerType === 'touch' || scrolling()) return;
+    if (e.type === 'pointermove' && !e.movementX && !e.movementY) return;
+    set('hover', true);
+  };
+  zone.addEventListener('pointerenter', enter);
+  zone.addEventListener('pointermove', enter, { passive: true });
   zone.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch') set('hover', false); });
   zone.addEventListener('focusin', () => set('focus', zone.matches(':focus-within')));
   zone.addEventListener('focusout', (e) => { if (!zone.contains(e.relatedTarget)) set('focus', false); });
@@ -288,7 +298,7 @@ export function initFigures(root = document) {
     queueCentre();
   }, { threshold: [0, 0.5] });
 
-  return figs.map((el) => {
+  const out = figs.map((el) => {
     const fig = new Figure(el);
     el.__fig = fig;
     wireZone(el, (reason, on) => fig.want(reason, on));
@@ -296,6 +306,18 @@ export function initFigures(root = document) {
     seen.observe(el);
     return fig;
   });
+
+  // A project scene's first load and paint takes a few frames' worth of work. Do them one at a
+  // time while the browser is idle after the page opens, so none lands in the middle of scrolling.
+  const scenes = out.filter((f) => f.el.classList.contains('fig--scene'));
+  const idle = window.requestIdleCallback || ((cb) => setTimeout(cb, 120));
+  const next = () => {
+    const f = scenes.shift();
+    if (f) f.load().finally(() => idle(next, { timeout: 1500 }));
+  };
+  if (document.readyState === 'complete') idle(next, { timeout: 1500 });
+  else addEventListener('load', () => idle(next, { timeout: 1500 }), { once: true });
+  return out;
 }
 
 function repaintAll() {

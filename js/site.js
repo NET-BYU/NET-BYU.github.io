@@ -165,6 +165,14 @@ $$('.chips').forEach((row) => {
 });
 
 // ---------- Scroll-spy chip bars ----------
+// Slide only the chip row sideways to show the current chip. (scrollIntoView would also scroll the
+// page, which jerks it backwards in the middle of the visitor's own scrolling.)
+function centreChip(a) {
+  const row = a.closest('.chips');
+  if (!row || row.scrollWidth <= row.clientWidth + 2) return;
+  const left = a.offsetLeft - row.offsetLeft - (row.clientWidth - a.offsetWidth) / 2;
+  row.scrollTo({ left: Math.max(0, left), behavior: reduced() ? 'auto' : 'smooth' });
+}
 $$('[data-spy]').forEach((bar) => {
   const links = $$('a[href^="#"]', bar);
   const targets = links.map((a) => document.getElementById(a.getAttribute('href').slice(1))).filter(Boolean);
@@ -174,7 +182,7 @@ $$('[data-spy]').forEach((bar) => {
       links.forEach((a) => {
         const on = a.getAttribute('href') === `#${e.target.id}`;
         a.classList.toggle('is-current', on);
-        if (on) a.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'auto' });
+        if (on) centreChip(a);
       });
     }
   }, { rootMargin: '-35% 0px -60% 0px' });

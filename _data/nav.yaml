@@ -1,7 +1,8 @@
 # Main navigation. `also` lists other pages that highlight the same item.
 - title: Projects
   url: /projects/
-  also: [/subprotocols/]
+- title: Sub-protocols
+  url: /subprotocols/
 - title: Papers
   url: /papers/
 - title: People

@@ -563,7 +563,7 @@
       {
         "name": "power-on",
         "value": "1s",
-        "purpose": "A figure's wipe and scan line each time it starts playing on hover; the live layer fades back to the still over .35s."
+        "purpose": "A figure's wipe and scan line each time it starts playing on hover; the edge sweeps back to the still over .6s when the pointer leaves."
       },
       {
         "name": "view-transition",
@@ -754,7 +754,7 @@
       "Do separate list entries with 1px hairlines and leave the rows open.",
       "Do draw the lab's contribution in the area color and everything else in neutral figure ink, with weight (strokes of 2px and up, filled marks) and an area-ink label.",
       "Do keep the \"Suggested animation · replace me\" tag on every figure until its item is marked `animation_status: final`, and remove the rest at launch with `show_placeholder_markers: false`.",
-      "Do move with the house ease, cubic-bezier(.16, 1, .3, 1): .2s for color and border changes, .3–.5s for chevrons, menus and expanding panels, .5–.7s for image zooms, 1s for a figure's wipe, .35s for its fade back to the still.",
+      "Do move with the house ease, cubic-bezier(.16, 1, .3, 1): .2s for color and border changes, .3–.5s for chevrons, menus and expanding panels, .5–.7s for image zooms, 1s for a figure's wipe, .6s for its sweep back to the still.",
       "Do give every animation a `still` moment and honor reduced motion everywhere: no wipe, no view transitions, no animated zooms, no blinking caret.",
       "Do set text inside figures in fig-ink-2 or stronger, and area text in its -ink variant."
     ],

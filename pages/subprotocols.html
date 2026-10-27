@@ -23,11 +23,11 @@ description: Building a framework for software-based wireless sub-protocols, an 
 <nav class="subnav needs-js" aria-label="On this page" data-spy style="margin-top: clamp(40px, 5vw, 64px)">
   <div class="wrap">
     <div class="chips">
-      <a class="chip" href="#about">About</a>
-      <a class="chip" href="#personnel">Personnel</a>
-      <a class="chip" href="#publications">Publications</a>
-      <a class="chip" href="#code">Code</a>
-      <a class="chip" href="#outreach">Education &amp; outreach</a>
+      <a class="chip" href="#about">{{ t.about_heading }}</a>
+      <a class="chip" href="#publications">{{ t.publications_heading }}</a>
+      <a class="chip" href="#personnel">{{ t.personnel_heading }}</a>
+      <a class="chip" href="#code">{{ t.code_heading }}</a>
+      <a class="chip" href="#outreach">{{ t.outreach_heading }}</a>
     </div>
   </div>
 </nav>
@@ -41,6 +41,21 @@ description: Building a framework for software-based wireless sub-protocols, an 
       <figcaption>{{ t.about_photo_caption }}</figcaption>
     </figure>
   </div>
+</section>
+
+<section class="wrap section" id="publications" aria-labelledby="pubs-title">
+  <div class="section-head">
+    <h2 class="h2" id="pubs-title">{{ t.publications_heading }}</h2>
+    <a class="arrow-link" href="/papers/?area=subprotocols"><span>{{ t.publications_link }}</span>{{ arrow }}</a>
+  </div>
+  <ul class="pubs">
+    {%- for pub in site.data.subprotocols.publications %}
+    <li>
+      <p>{{ pub.citation }}</p>
+      <a class="btn" href="{{ pub.url }}">Read</a>
+    </li>
+    {%- endfor %}
+  </ul>
 </section>
 
 <section class="wrap section" id="personnel" aria-labelledby="personnel-title">
@@ -67,21 +82,6 @@ description: Building a framework for software-based wireless sub-protocols, an 
     </article>
     {%- endfor %}
   </div>
-</section>
-
-<section class="wrap section" id="publications" aria-labelledby="pubs-title">
-  <div class="section-head">
-    <h2 class="h2" id="pubs-title">{{ t.publications_heading }}</h2>
-    <a class="arrow-link" href="/papers/?area=subprotocols"><span>{{ t.publications_link }}</span>{{ arrow }}</a>
-  </div>
-  <ul class="pubs">
-    {%- for pub in site.data.subprotocols.publications %}
-    <li>
-      <p>{{ pub.citation }}</p>
-      <a class="btn" href="{{ pub.url }}">Read</a>
-    </li>
-    {%- endfor %}
-  </ul>
 </section>
 
 <section class="wrap section" id="code" aria-labelledby="code-title">

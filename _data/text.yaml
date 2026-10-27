@@ -33,6 +33,7 @@ home:
 projects:
   title: "Projects"
   intro: "Real systems, built and tested where they will be used."
+  full_project_link: "See the full project"   # under the blurb of a project that has its own page
   # Each project's name, one-line hook and description are in projects.yaml.
 
 papers:
@@ -95,10 +96,10 @@ subprotocols:
     rapidly. This project will enable a new research area of wireless sub-protocols, impacting
     future designs of wireless devices.
   about_photo_caption: "Sub-protocol testbed"
-  personnel_heading: "Personnel"         # the people are in subprotocols.yaml
-  past_personnel_heading: "Past personnel"
   publications_heading: "Publications"   # the list is in subprotocols.yaml
   publications_link: "All sub-protocol papers"
+  personnel_heading: "Personnel"         # the people are in subprotocols.yaml
+  past_personnel_heading: "Past personnel"
   code_heading: "Code"
   code:
     name: "WLSK"

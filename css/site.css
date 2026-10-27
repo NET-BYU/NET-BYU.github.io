@@ -257,10 +257,14 @@ abbr[title] { text-decoration: none; }
 }
 .fig figcaption { margin-top: 12px; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); max-width: 60ch; text-wrap: pretty; }
 .fig-fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--fig-ink-2); font-size: 14px; }
-/* At rest a figure shows its still frame. While someone hovers it, the moving picture wipes in over
-   the still behind a thin line in the area color; when they leave it fades back to the still. */
-.fig-stage > canvas.fig-live { clip-path: inset(0 100% 0 0); opacity: 0; transition: opacity .35s var(--ease), clip-path 0s .35s; }
-.fig.is-playing .fig-stage > canvas.fig-live { clip-path: inset(0 0 0 0); opacity: 1; transition: clip-path 1s var(--ease); }
+/* At rest a figure shows its still frame. While someone hovers it, the moving picture wipes in from
+   the left behind a thin line in the area color, and the still is cut away exactly where the moving
+   picture begins, so the two never overlap (diagrams are transparent; the stage is their ground).
+   When they leave, the edge sweeps back and the still returns. */
+.fig-stage > canvas.fig-live { clip-path: inset(0 100% 0 0); transition: clip-path .6s var(--ease); }
+.fig-stage > canvas.fig-still { clip-path: inset(0 0 0 0); transition: clip-path .6s var(--ease); }
+.fig.is-playing .fig-stage > canvas.fig-live { clip-path: inset(0 0 0 0); transition: clip-path 1s var(--ease); }
+.fig.is-playing .fig-stage > canvas.fig-still { clip-path: inset(0 0 0 100%); transition: clip-path 1s var(--ease); }
 .js .fig-stage::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; width: 2px; background: var(--area); opacity: 0; transform: translateX(-4px); pointer-events: none; }
 .js .fig.is-playing .fig-stage::after { animation: fig-scan 1s var(--ease) forwards; }
 @keyframes fig-scan { 0% { opacity: 1; transform: translateX(-4px); } 85% { opacity: 1; } 100% { opacity: 0; transform: translateX(var(--stage-w, 600px)); } }
@@ -380,9 +384,10 @@ html:not(.js) .needs-js { display: none !important; }
 .chapter { padding-top: clamp(64px, 8vw, 128px); scroll-margin-top: calc(var(--header-h) + 64px); }
 .chapter-head { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 16px 64px; align-items: end; margin-bottom: clamp(24px, 3vw, 40px); }
 .chapter-head .h2 { max-width: 18ch; }
-.chapter-head .lede { justify-self: end; max-width: 42ch; }
+.chapter-intro { justify-self: end; max-width: 42ch; display: flex; flex-direction: column; align-items: flex-start; gap: 20px; }
+.chapter-intro .btn { height: 44px; padding: 0 20px; font-size: 15.5px; }
 .chapter-head .area-label { grid-column: 1 / -1; order: 3; }
-@media (max-width: 860px) { .chapter-head { grid-template-columns: 1fr; } .chapter-head .lede { justify-self: start; } }
+@media (max-width: 860px) { .chapter-head { grid-template-columns: 1fr; } .chapter-intro { justify-self: start; } }
 .chapter .fig--scene .fig-stage { --ar: 21 / 9; }
 @media (max-width: 860px) { .chapter .fig--scene .fig-stage { --ar: 4 / 3; } }
 .chapter-body { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 40px clamp(32px, 5vw, 80px); margin-top: clamp(28px, 3vw, 44px); }
@@ -456,6 +461,8 @@ html:not(.js) .needs-js { display: none !important; }
 /* ---------- Sub-protocols ---------- */
 .subnav { position: sticky; top: var(--header-h); z-index: 20; background: color-mix(in srgb, var(--bg) 96%, transparent); border-bottom: 1px solid var(--line); }
 .subnav .wrap { padding-block: 12px; }
+/* One column: the NSF line sits under the title, not beside it. */
+.sp-hero { grid-template-columns: 1fr; gap: 20px; }
 .sp-hero .page-title { max-width: 22ch; font-size: clamp(36px, 4.2vw, 60px); line-height: 1.04; }
 .award { display: inline-flex; align-items: center; gap: 12px; font-size: 15px; color: var(--ink-2); }
 .award img { width: 44px; height: 44px; }
@@ -521,6 +528,7 @@ html:not(.js) .needs-js { display: none !important; }
   *, *::before, *::after { scroll-behavior: auto !important; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
   .fig-stage > canvas.fig-live { display: none; }
+  .fig-stage > canvas.fig-still { clip-path: none !important; }
   .js .fig.is-playing .fig-stage::after { animation: none; }
   .abstract { transition: none; }
   .tile .fig-stage, .card-media img, .gallery img, .person .portrait img, .face img { transition: none; }

@@ -110,7 +110,8 @@ When someone graduates, move their entry from `students.yaml` to `past_students.
 ### A project: `_data/projects.yaml`
 
 Same idea, with `id`, `short` (a short name for buttons), `area`, `name`, `hook`, `images` and a
-Markdown `description`. `link` points to a page with more (the sub-protocols project has one).
+Markdown `description`. `link` points to a page with more (the sub-protocols project has one); it
+shows as a "See the full project" button under the project's hook.
 
 ### An article: `_data/articles.yaml`
 

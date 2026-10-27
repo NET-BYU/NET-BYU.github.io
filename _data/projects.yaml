@@ -6,7 +6,7 @@
 #   hook:      one plain-English sentence shown under the name
 #   animation: js/anim/<animation>.js; animation_status: placeholder (default) or final
 #   animation_caption: the sentence under the animation
-#   link:      optional page with more (e.g. the sub-protocols project site)
+#   link:      optional page with more (e.g. the sub-protocols page); shown as a button under the hook
 
 - id: subprotocols
   short: Wireless sub-protocols
