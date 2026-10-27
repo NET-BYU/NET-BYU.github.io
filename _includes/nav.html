@@ -1,22 +1,35 @@
-<header class="site-header">
-  <nav>
-    <div class="logo">
-        <a href="/">
-          <img class="logo img-fluid" src="/images/NET Lab Logo@3x.png">
-        </a>
-    </div>
-
-    <ul class="nav">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        {% for my_page in site.pages %}
-          {% if my_page.title %}
-            {% if page.url == my_page.url %}
-              <li class="nav-item"><a class="nav-link active" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-            {% else %}
-              <li class="nav-item"><a class="nav-link" href="{{ my_page.url | prepend: site.baseurl }}">{{ my_page.title }}</a></li>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-    </ul>
-  </nav>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header" id="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="NET Lab home">
+      <img src="/images/logo-64.png" alt="" width="30" height="30">
+      NET Lab <span>BYU</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      {%- for item in site.data.nav %}
+      <a href="{{ item.url }}"{% if page.url == item.url or item.also contains page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+      {%- endfor %}
+    </nav>
+    <button class="icon-btn theme-btn" type="button" data-theme-toggle aria-label="Switch color theme">
+      <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>
+      <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.6A8.2 8.2 0 0 1 9.4 4a8.2 8.2 0 1 0 10.6 10.6z"/></svg>
+    </button>
+    <button class="icon-btn menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="menu-panel">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 8h16M4 16h16"/></svg>
+    </button>
+  </div>
 </header>
+<div class="menu-panel" id="menu-panel" role="dialog" aria-modal="true" aria-label="Menu">
+  <div class="menu-top">
+    <a class="brand" href="/"><img src="/images/logo-64.png" alt="" width="30" height="30">NET Lab</a>
+    <button class="icon-btn" type="button" data-menu-close aria-label="Close menu">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav aria-label="Main">
+    <a href="/"{% if page.url == '/' %} aria-current="page"{% endif %}>Home</a>
+    {%- for item in site.data.nav %}
+    <a href="{{ item.url }}"{% if page.url == item.url or item.also contains page.url %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    {%- endfor %}
+  </nav>
+</div>

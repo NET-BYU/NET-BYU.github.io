@@ -1,0 +1,16 @@
+# Research areas. Each one owns one of the seven logo colors (see css/site.css).
+# Every paper and project names its area with `area: <id>`.
+- id: subprotocols
+  name: Sub-protocols
+- id: underwater
+  name: Underwater
+- id: vehicles
+  name: Vehicles
+- id: spectrum
+  name: Spectrum sharing
+- id: sensing
+  name: Environmental sensing
+- id: health
+  name: Health & home
+- id: wifi
+  name: Wi-Fi & long range

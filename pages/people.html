@@ -2,112 +2,88 @@
 layout: default
 title: People
 permalink: /people/
+description: The students, faculty and alumni of the NET Lab at Brigham Young University.
 ---
+{%- assign current = site.data.students | sort: "last_name" -%}
+{%- assign grads = site.data.past_students.graduate_students | sort: "graduation" | reverse -%}
+{%- assign undergrads = site.data.past_students.undergraduate_students | sort: "year" | reverse -%}
+{%- assign uyears = undergrads | map: "year" | uniq -%}
 
-<div class="current-faculty">
-    {% for person in site.data.faculty %}
-    <div class="row faculty">
-        <div class="col-6 col-xs-4 col-sm-4">
-            {% if person.image %}
-            <img src="{{ person.image }}" alt="{{ person.name }}">
-            {% else %}
-            <img src="{{ person.email | gravatar }}" alt="{{ person.name }}">
-            {% endif %}
-        </div>
-        <div class="col-6 col-xs-8 col-sm-8">
-            <h4 class="person-name">{{ person.name }}</h4>
-            {% if person.link %}
-            <p>{{ person.description }}</p>
-            {% endif %}
-            {% if person.link %}
-            <a href="{{ person.link }}">Personal Website</a>
-            {% endif %}
-        </div>
-    </div>
-    {% endfor %}
+<div class="wrap page-head">
+  <h1 class="page-title">People</h1>
+  <p class="lede">{{ current.size }} students and a professor today, and alumni now at places like Draper Laboratory, L3Harris and Rincon Research.</p>
 </div>
 
-
-<h2>Students</h2>
-
-{% if site.data.students %}
-<div class="current-students">
-    <div class="row">
-        {% assign sorted_students = site.data.students | sort:"last_name" %}
-        {% for person in sorted_students %}
-        <div class="col-md-4 col-6 text-center">
-            <div class="student">
-                {% if person.image %}
-                <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
-                {% else %}
-                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
-                {% endif %}
-
-                {% if person.link %}
-                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
-                </h5>
-                {% else %}
-                <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
-                {% endif %}
-                <p class="student-degree">{{ person.degree }}</p>
-            </div>
-        </div>
-        {% endfor %}
+<section class="wrap section" style="padding-top: 0" aria-label="Faculty">
+  {%- for person in site.data.faculty %}
+  <div class="faculty" id="{{ person.slug }}">
+    <img src="{{ person.thumb | default: person.image }}" alt="{{ person.name }}" width="480" height="600">
+    <div>
+      <h2 class="h2">{{ person.name }}</h2>
+      <p class="lede" style="margin-top: 10px">Professor, Electrical &amp; Computer Engineering</p>
+      <div class="prose"><p>{{ person.description }}</p></div>
+      {%- if person.link %}
+      <p style="margin-top: 22px"><a class="arrow-link" href="{{ person.link }}"><span>Personal website</span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a></p>
+      {%- endif %}
     </div>
-</div>
-{% else %}
-<div class="alert alert-primary" role="alert">
-    The lab is currently looking for graduate and undergraduate students for research. If you are interested, please
-    contact Phil Lundrigan (lundrigan@byu.edu) to set up an appointment to talk.
-</div>
-{% endif %}
+  </div>
+  {%- endfor %}
+</section>
 
-{% if site.data.past_students %}
+<section class="wrap section" aria-labelledby="students-title">
+  <div class="section-head">
+    <h2 class="h2" id="students-title">Students</h2>
+  </div>
+  <div class="people">
+    {%- for person in current %}
+    {% include person.html person=person %}
+    {%- endfor %}
+  </div>
+</section>
 
-<hr>
+<section class="wrap section" aria-labelledby="network-title">
+  <div class="section-head">
+    <h2 class="h2" id="network-title">Who works with whom. <span class="tone">Drawn from every paper on this site.</span></h2>
+  </div>
+  <div class="network needs-js">
+    <script type="application/json" class="network-data">{{ site.data.coauthor_graph | jsonify }}</script>
+    <canvas aria-hidden="true"></canvas>
+    <div class="network-tip" role="status"></div>
+  </div>
+  <div class="network-legend needs-js">
+    {%- for area in site.data.areas %}
+    <span data-area="{{ area.id }}"><span class="dot"></span>{{ area.name }}</span>
+    {%- endfor %}
+    <span>Filled circles are current members, rings are alumni. Larger circles mean more papers. Hover or tap a person to see their collaborators.</span>
+  </div>
+</section>
 
-<div class="past-students">
-    <h2>Past Graduate Students</h2>
+<section class="wrap section" aria-labelledby="alumni-title">
+  <div class="section-head">
+    <h2 class="h2" id="alumni-title">Alumni. <span class="tone">Where our graduate students went next.</span></h2>
+  </div>
+  <div class="people">
+    {%- for person in grads %}
+    {% include person.html person=person alumni=true %}
+    {%- endfor %}
+  </div>
+</section>
 
-    <div class="row">
-        {% assign sorted_students = site.data.past_students.graduate_students | sort:"graduation" | reverse %}
-        {% for person in sorted_students %}
-        <div class="col-md-4 col-6 text-center">
-            <div class="student">
-                {% if person.image %}
-                <img class="student-images" src="{{ person.image }}" alt="{{ person.name }}">
-                {% else %}
-                <img class="student-images" src="/images/no-image.jpg" alt="{{ person.name }}">
-                {% endif %}
-
-                {% if person.link %}
-                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
-                </h5>
-                {% else %}
-                <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
-                {% endif %}
-                <p class="student-degree">{{ person.degree }}<br>{{ person.job }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-
-    <h2>Past Undergraduate Students</h2>
-    <div class="row">
-        {% assign sorted_students = site.data.past_students.undergraduate_students | sort: "year" | reverse %}
-        {% for person in sorted_students %}
-        <div class="col-md-4 col-6 text-center">
-            <div class="student">
-                {% if person.link %}
-                <h5 class="student-name"><a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>
-                </h5>
-                {% else %}
-                <h5 class="student-name">{{ person.first_name }} {{ person.last_name }}</h5>
-                {% endif %}
-                <p class="student-degree">{{ person.year }}</p>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
-</div>
-{% endif %}
+<section class="wrap section" aria-labelledby="undergrads-title">
+  <div class="section-head">
+    <h2 class="h2" id="undergrads-title">Past undergraduate researchers</h2>
+  </div>
+  <div class="undergrads">
+    {%- for y in uyears %}
+    <section aria-label="{{ y }}">
+      <h3>{{ y }}</h3>
+      <ul>
+        {%- assign group = undergrads | where: "year", y | sort: "last_name" %}
+        {%- for person in group %}
+        <li id="{{ person.slug }}">{% if person.link %}<a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>{% else %}{{ person.first_name }} {{ person.last_name }}{% endif %}</li>
+        {%- endfor %}
+      </ul>
+    </section>
+    {%- endfor %}
+  </div>
+</section>

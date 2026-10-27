@@ -190,9 +190,11 @@ export function createApi(ctx, opts = {}) {
     get accentInk() {
       return api.pal[`${api.area}Ink`];
     },
-    // Size relative to a 640px-wide reference figure.
+    // Size relative to a 640px-wide reference figure. Above 640px it grows more slowly,
+    // so wide scenes gain detail instead of just getting bigger.
     s(v) {
-      return v * clamp(api.w / 640, 0.55, 2);
+      const k = api.w / 640;
+      return v * (k > 1 ? Math.min(1.8, Math.pow(k, 0.7)) : Math.max(0.55, k));
     },
     // Font size relative to the reference, never below 10px.
     fs(v) {

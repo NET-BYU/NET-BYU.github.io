@@ -2,33 +2,46 @@
 layout: default
 title: Papers
 permalink: /papers/
+description: Publications from the NET Lab at Brigham Young University, each with a live animation of how it works.
 ---
+{%- assign years = site.data.papers | map: "year" | uniq | sort | reverse -%}
 
-<div class="papers">
-    {% for paper in site.data.papers %}
-        <div class="paper">
-            <h3 class="paper-title">
-                {{ paper.title }}
-            </h3>
-            <p class="paper-authors">{{ paper.authors }}</p>
-            <p class="paper-conference">{{ paper.conference }}</p>
-            {% if paper.abstract %}
-                <div>
-                    <a href="javascript:void(0)" class="abstract">Abstract</a>
-                </div>
-                <div class="hide" id="description">
-                    <p class="paper-description">
-                        {{ paper.abstract }}
-                    </p>
-                </div>
-            {% endif %}
-            {% if paper.url %}
-                <div>
-                    <a href="{{ paper.url }}" class="">Paper</a>
-                </div>
+<div class="wrap page-head">
+  <h1 class="page-title">Papers</h1>
+  <p class="lede">{{ site.data.papers.size }} papers on wireless sub-protocols, underwater and vehicular networks, spectrum sharing and environmental sensing. Each one comes with a live animation of how it works.</p>
+</div>
 
-            {% endif %}
-        </div>
-        <hr>
-    {% endfor %}
+<div class="toolbar needs-js">
+  <div class="wrap">
+    <div class="chips" role="group" aria-label="Filter by research area">
+      <button class="chip" type="button" data-filter="all" aria-pressed="true">All <span class="count">{{ site.data.papers.size }}</span></button>
+      {%- for area in site.data.areas %}
+      {%- assign n = site.data.papers | where: "area", area.id | size %}
+      {%- if n > 0 %}
+      <button class="chip" type="button" data-filter="{{ area.id }}" data-area="{{ area.id }}" aria-pressed="false"><span class="dot"></span>{{ area.name }} <span class="count">{{ n }}</span></button>
+      {%- endif %}
+      {%- endfor %}
+    </div>
+    <label class="search">
+      <span class="sr-only">Search papers</span>
+      <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg>
+      <input type="search" placeholder="Search titles, authors, venues" data-search-input autocomplete="off">
+    </label>
+    <span class="result-count" data-result-count aria-live="polite"></span>
+  </div>
+</div>
+
+<div class="wrap" data-papers>
+  {%- for y in years %}
+  {%- assign ps = site.data.papers | where: "year", y %}
+  <section class="year-group" aria-labelledby="year-{{ y }}">
+    <h2 class="year" id="year-{{ y }}">{{ y }}</h2>
+    <div>
+      {%- for p in ps %}
+      {% include paper.html paper=p %}
+      {%- endfor %}
+    </div>
+  </section>
+  {%- endfor %}
+  <p class="no-results" hidden>No papers match that. Try another area or search term.</p>
 </div>

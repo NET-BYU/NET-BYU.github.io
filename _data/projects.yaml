@@ -1,29 +1,64 @@
-- name: Underwater Networking
+# Research projects. Each entry:
+#   id:        short name; used for the page anchor (/projects/#id). Papers list it as `project:`.
+#   area:      research area id from _data/areas.yaml (sets the color)
+#   name, images, description (Markdown): as before; short: a short name for chips
+#   hook:      one plain-English sentence shown under the name
+#   animation: js/anim/<animation>.js; animation_status: placeholder (default) or final
+#   animation_caption: the sentence under the animation
+#   link:      optional page with more (e.g. the sub-protocols project site)
+
+- id: underwater
+  short: Underwater networking
+  area: underwater
+  name: Underwater Networking
+  hook: "Robot swarms that explore beneath ice shelves, coordinated by underwater acoustic networks."
+  animation: proj-underwater
   images:
     - /images/AdobeStock_521095649.jpeg
   description: |+
     The goal of this project is to develop a mothership-and-passenger sampling system to reach difficult-to-access glacier grounding zones via the open ocean to measure the extent of ice cavities and surrounding water properties. The project will innovate along three main areas of inquiry: 1) passenger robot design, 2) acoustic communication protocols and hardware, and 3) mothership-and-passenger coordination algorithms. Novel, low-cost passenger robots will be conceived that can switch through different operation modes to optimize maneuverability, power consumption, or a combination of both, as needed for various tasks throughout a deployment. Acoustic communication protocols and hardware will be developed to prioritize robust communication between passenger robots over throughput and permit swarm self-localization by utilizing time-of-flight and angle-of-arrival between passengers to estimate relative positions. Swarm coordination algorithms will be designed to estimate flow direction and strength from the passenger robots’ relative positions to optimize navigation and power consumption. The performance of the network will be tested in increasingly challenging environments, i.e., tests will be conducted in a pool, an unfrozen lake, and finally in a frozen lake, while network capabilities with a larger swarm will be modeled to ensure the scalability of the system to ocean deployments. Finally, the software developed for the mothership-and-passenger communication and self-localization protocols will be generalizable and made available open-source to allow other research teams to adapt the system to their own needs. The mothership-and-passenger sampling system will not only advance under-ice-observation capabilities but also have wider oceanographic applications such as detection and monitoring of underwater harmful algal blooms or anoxic events threatening fisheries. [Press release](https://today.oregonstate.edu/news/osu-researchers-receive-nsf-grant-develop-robot-swarm-can-explore-under-ice-shelves)
 
-- name: Software-Based Wireless Sub-Protocols ([Project site](/subprotocols))
+- id: subprotocols
+  short: Wireless sub-protocols
+  area: subprotocols
+  name: Software-Based Wireless Sub-Protocols
+  hook: "New wireless capabilities built on top of existing protocols, delivered with only a software update."
+  animation: proj-subprotocols
+  link: /subprotocols/
   images:
     - /images/spectrum.png
   description: |+
     Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless devices to become an essential part of our infrastructure, they must be resilient to changing environmental conditions and function under extreme cases. However, current wireless protocols have limited adaptability. This project explores a new class of wireless protocols called “wireless sub-protocols”. Wireless sub-protocols are new protocols built on existing wireless protocols but increase their capabilities and adaptability. Wireless sub-protocols are implemented only in software and require no changes to a device’s hardware. Wireless sub-protocols add extra adaptability paving the way for future resilient wireless protocols with only a software update.
 
-- name: Vehicle-to-Everything (V2X)
+- id: v2x
+  short: Vehicle-to-everything
+  area: vehicles
+  name: Vehicle-to-Everything (V2X)
+  hook: "Better wireless protocols for vehicles talking to each other, to traffic infrastructure, and to pedestrians."
+  animation: proj-v2x
   description: |+
     Vehicles are an essential part of our everyday lives, and improving safety would have a tremendous impact on society. By connecting vehicles to each other (V2V), traffic infrastructure (V2I), and even pedestrians (V2P), new and exciting traffic safety applications and autonomous systems can be developed. We are researching how to improve wireless protocols and increase network performance to bring about the next generation of traffic safety.
 
-- name: Spectrum Sharing via Interference-resilient Passive Receivers and Passive-aware Active Services
+- id: spectrum
+  short: Spectrum sharing
+  area: spectrum
+  name: Spectrum Sharing via Interference-resilient Passive Receivers and Passive-aware Active Services
+  hook: "Helping radio telescopes and active wireless services share the same crowded spectrum."
+  animation: proj-spectrum
   description: |+
     Driven by expanding scientific questions in cosmology and astrophysics and advances in receiver technology, passive radio astronomy observations now take place over the entire radio spectrum. Active wireless services, including 5G cellular networks, are increasing in spectral occupancy from L band to K band and beyond. Cooperative use of radio spectrum would be improved if observatories had more options for RFI mitigation than blanking and excision and digital domain suppression methods. This project will address technological needs at multiple layers of the passive/active spectral user cooperative space, including dynamically tunable notch filters, analog true-time-delay spatial processing for wideband interference nulling at the system front end, and passive-aware active user network protocols that cooperatively reduce interference for passive radio services. These innovative technologies will be integrated into a demonstrator system to provide a comprehensive and multilayered RFI mitigation strategy for existing and future passive and active spectrum users.
 
-- name: Mongolian Ger Air Quality Measurement and Analysis
+- id: mongolia
+  short: Mongolian ger air quality
+  area: sensing
+  name: Mongolian Ger Air Quality Measurement and Analysis
+  hook: "Fifty air quality sensors measuring whether retrofitted gers really breathe cleaner."
+  animation: proj-mongolia
   images:
     - /images/mongolia-1.jpg
     - /images/mongolia-3.jpg
   description: |+
-    Previous work has been done to retrofit gers so that a electric heater can
+    Previous work has been done to retrofit gers so that an electric heater can
     be used instead of a coal heater. To understand and quantify the efficacy of
     the ger retrofit solution, we are deploying 50 air quality sensors inside
     and outside of gers. This will allow us to quantify the impact that the ger
@@ -36,7 +71,28 @@
     significant. This will prove that the retrofit solution is working as
     expected and meets specifications.
 
-- name: On-Off Noise Power Communication
+- id: onpc
+  short: On-off noise power
+  area: wifi
+  name: On-Off Noise Power Communication
+  hook: "Commodity Wi-Fi radios that reach far past their normal range by switching their power on and off."
+  animation: proj-onpc
+  press:
+    - outlet: BYU News
+      title: Researchers create way to significantly extend Wi-Fi range for smart-home devices
+      url: https://news.byu.edu/byu-created-software-could-significantly-extend-wi-fi-range-for-smart-home-devices
+    - outlet: Engadget
+      title: BYU researchers extend WiFi range by 200 feet with a software upgrade
+      url: https://www.engadget.com/2019/10/22/wifi-onpc-protocol/
+    - outlet: Ars Technica
+      title: Where the Wi-Fi sucks is where a new wireless protocol does its magic
+      url: https://arstechnica.com/gadgets/2019/11/where-the-wi-fi-sucks-is-where-a-new-wireless-protocol-does-its-magic
+    - outlet: Network World
+      title: Wireless noise protocol can extend IoT range
+      url: https://www.networkworld.com/article/3449819/wireless-noise-protocol-can-extend-iot-range.html
+    - outlet: Tom's Hardware
+      title: Researchers find way to extend Wi-Fi range without new hardware
+      url: https://www.tomshardware.com/news/on-off-noise-power-communication-onpc-protocol-wifi
   images:
     - /images/onpc-3.jpg
   description: |+
@@ -60,7 +116,12 @@
     [Network World](https://www.networkworld.com/article/3449819/wireless-noise-protocol-can-extend-iot-range.html), 
     and [Tom's Hardware](https://www.tomshardware.com/news/on-off-noise-power-communication-onpc-protocol-wifi).
 
-- name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
+- id: prisms
+  short: PRISMS
+  area: health
+  name: Pediatric Research using Integrated Sensor Monitoring Systems (PRISMS)
+  hook: "Smart, healthy homes: sensors and actuators that track and reduce children's exposure to pollutants."
+  animation: proj-prisms
   images:
     - /images/epifi_architecture.jpg
     - /images/dylos.jpg

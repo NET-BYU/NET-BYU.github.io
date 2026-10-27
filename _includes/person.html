@@ -1,0 +1,18 @@
+{%- assign person = include.person -%}
+<article class="person" id="{{ person.slug }}">
+  <div class="portrait">
+    <img src="{{ person.thumb | default: person.image | default: '/images/no-image.jpg' }}" alt="{{ person.first_name }} {{ person.last_name }}" loading="lazy" decoding="async" width="480" height="480">
+  </div>
+  <h3>{% if person.link %}<a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>{% else %}{{ person.first_name }} {{ person.last_name }}{% endif %}</h3>
+  {%- if include.alumni %}
+  <p class="role">{{ person.degree }}{% if person.graduation %}, {{ person.graduation | date: "%Y" }}{% endif %}</p>
+  {%- if person.job %}<p class="now">Now at {{ person.job }}</p>{% endif %}
+  {%- else %}
+  <p class="role">{% case person.degree %}{% when "PhD" %}PhD student{% when "MS" %}Master's student{% when "Undergrad" %}Undergraduate researcher{% else %}{{ person.degree }}{% endcase %}</p>
+  {%- endif %}
+  {%- if person.areas.size > 0 %}
+  <p class="dots" aria-label="Research areas: {% for a in person.areas %}{% assign area = site.data.areas | where: 'id', a | first %}{{ area.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
+    {%- for a in person.areas %}<span class="dot" data-area="{{ a }}"></span>{% endfor -%}
+  </p>
+  {%- endif %}
+</article>

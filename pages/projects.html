@@ -2,26 +2,84 @@
 layout: default
 title: Projects
 permalink: /projects/
+description: Research projects at the NET Lab, from robot swarms under ice shelves to air quality sensors in Mongolian gers.
 ---
+{%- assign arrow = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' -%}
+{%- assign out_arrow = '<svg viewBox="0 0 16 16" aria-hidden="true" class="out"><path d="M5 11l6-6M6.5 5H11v4.5"/></svg>' -%}
 
-<div class="projects">
-    {% for project in site.data.projects %}
-    <div class="project">
-        <h3 class="project-title">{{ project.name | markdownify }}</h3>
-        {% if project.images %}
-        <div class="project-images row">
-            {% for image in project.images %}
-            <div class="col">
-                <img class="project-image" src="{{image}}" />
-            </div>
-            {% endfor %}
-        </div>
+<div class="wrap page-head">
+  <h1 class="page-title">Projects</h1>
+  <p class="lede">From robot swarms under ice shelves to air quality sensors in Mongolian gers: real systems, built and tested where they will be used.</p>
+</div>
 
-        {% endif %}
-        <div class="project-description">
-            {{ project.description | markdownify }}
-        </div>
+<nav class="jump needs-js" aria-label="Projects on this page" data-spy>
+  <div class="wrap">
+    <div class="chips">
+      {%- for p in site.data.projects %}
+      <a class="chip" href="#{{ p.slug }}" data-area="{{ p.area }}"><span class="dot"></span>{{ p.short | default: p.name }}</a>
+      {%- endfor %}
     </div>
-    <hr>
-    {% endfor %}
+  </div>
+</nav>
+
+{%- for p in site.data.projects %}
+<section class="chapter wrap" id="{{ p.slug }}" data-area="{{ p.area }}" aria-labelledby="{{ p.slug }}-title">
+  <div class="chapter-head">
+    <h2 class="h2" id="{{ p.slug }}-title">{{ p.name }}</h2>
+    <p class="lede">{{ p.hook }}</p>
+  </div>
+  {% include figure.html item=p kind="scene" caption=true %}
+  <div class="chapter-body">
+    <div class="readmore prose">
+      <div class="readmore-inner">{{ p.description | markdownify }}</div>
+      <button class="btn needs-js" type="button" aria-expanded="false"><span>Read the full description</span><svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></button>
+    </div>
+    <aside class="chapter-side" aria-label="{{ p.short | default: p.name }} details">
+      <div class="side">
+        <h3>Area</h3>
+        <p class="area-label"><span class="dot"></span>{{ p.area_name }}</p>
+      </div>
+      {%- if p.related.size > 0 %}
+      <div class="side">
+        <h3>Papers</h3>
+        <ul class="side-list">
+          {%- for r in p.related %}
+          <li><a href="/papers/#{{ r.slug }}"><span>{{ r.title }}</span><span class="yr">{{ r.year }}</span></a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+      {%- if p.press %}
+      <div class="side">
+        <h3>In the news</h3>
+        <ul class="side-list">
+          {%- for n in p.press %}
+          <li><a href="{{ n.url }}"><span>{{ n.outlet }}</span>{{ out_arrow }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+      {%- endif %}
+      {%- if p.images %}
+      <div class="side">
+        <h3>Photos</h3>
+        <div class="gallery">
+          {%- for img in p.images %}
+          <a href="{{ img }}" data-lightbox><img src="{{ p.thumbs[forloop.index0] }}" alt="{{ p.short | default: p.name }}, photo {{ forloop.index }}" loading="lazy" decoding="async"></a>
+          {%- endfor %}
+        </div>
+      </div>
+      {%- endif %}
+      {%- if p.link %}
+      <div class="side">
+        <a class="arrow-link" href="{{ p.link }}"><span>Visit the full project site</span>{{ arrow }}</a>
+      </div>
+      {%- endif %}
+    </aside>
+  </div>
+</section>
+{%- endfor %}
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+  <img alt="">
+  <button class="icon-btn" type="button" aria-label="Close photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
 </div>

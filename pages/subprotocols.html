@@ -1,225 +1,131 @@
 ---
-title: Subprotocols
+layout: default
+title: Wireless Sub-Protocols
 permalink: /subprotocols/
+description: Building a framework for software-based wireless sub-protocols, an NSF-funded project (award 2153317) at the NET Lab, Brigham Young University.
 ---
-<!DOCTYPE html>
-<html lang="en">
+{%- assign project = site.data.projects | where: "slug", "subprotocols" | first -%}
+{%- assign arrow = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' -%}
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Wireless Sub-protocols</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-    <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
-    <!-- SimpleLightbox plugin CSS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="/css/subprotocol-styles.css" rel="stylesheet" />
-</head>
+<div class="wrap page-head sp-hero" data-area="subprotocols">
+  <h1 class="page-title">Building A Framework for Software-Based Wireless Sub-Protocols</h1>
+  <p class="award"><img src="/images/nsf-logo.png" alt="" width="44" height="44">Supported by the National Science Foundation, award #2153317</p>
+</div>
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top"></a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#personnel">Personnel</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#code">Code</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#outreach">Outreach</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">Building A Framework for Software-Based Wireless Sub-Protocols</h1>
-                    <hr class="divider" />
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless devices to become an essential part of our infrastructure, they must be resilient to changing environmental conditions and function under extreme cases. However, current wireless protocols have limited adaptability. This project explores a new class of wireless protocols called "wireless sub-protocols". Wireless sub-protocols are new protocols built on existing wireless protocols but increase their capabilities and adaptability. Wireless sub-protocols are implemented only in software and require no changes to a device's hardware. Wireless sub-protocols add extra adaptability paving the way for future resilient wireless protocols with only a software update.
-                    </p>
-                    <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- About-->
-    <section class="page-section bg-primary" id="about">
-        <div class="container px-4 px-lg-5">
-            <div class="row justify-content-md-center">
-                <div class="col-lg-5">
-                    <p>More flexibility in wireless protocols is necessary to accommodate the ever-expanding use cases that new wireless devices demand and bring about ultra-resilient wireless systems. To address the need for adaptability and resiliency, this project explores the novel idea of building a wireless protocol layering approach where additional functionality is added to a wireless protocol using "wireless sub-protocols". A wireless sub-protocol is a protocol built on top of another wireless protocol. They provide a way for a base protocol to increase its abilities beyond what the original protocol designers intended. A communication scheme can be built on top of an existing protocol by measuring and controlling the physical layer properties in user space software. This innovative technique allows a device to gain new capabilities and thus adaptability, with only a software update. Sub-protocols coexist with the base protocol, allowing the application developer to decide when to use one or the other. This project will build a framework for prototyping, building, and testing different types of wireless sub-protocols. The project will use wireless testbeds to prototype new wireless sub-protocols rapidly. This project will enable a new research area of wireless sub-protocols, impacting future designs of wireless devices.</p>
-                </div>
-                <div class="col-lg-4">
-                    <figure class="figure">
-                        <img src="/images/subprotocol-testbed.jpg" class="figure-img img-fluid rounded" alt="Subprotocol Testbed">
-                        <figcaption class="figure-caption text-center text-white-75">Sub-protocol Testbed</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Personnel -->
-    <section class="page-section" id="personnel">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Personnel</h2>
-            <hr class="divider" />
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/lundrigan-3.jpg" alt="Philip Lundrigan"></div>
-                        <h3 class="h4 mb-2">Philip Lundrigan</h3>
-                        <p class="text-muted mb-0">Principal Investigator</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/palacios.jpg" alt="Ashton Palacios"></div>
-                        <h3 class="h4 mb-2">Ashton Palacios</h3>
-                        <p class="text-muted mb-0">Lead PhD Research Assistant</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/kelsey.jpg" alt="Elle Kelsey"></div>
-                        <h3 class="h4 mb-2">Elle Kelsey</h3>
-                        <p class="text-muted mb-0">Undergraduate Research Assistant</p>
-                    </div>
-                </div>
-            </div>
-            <h3 class="mt-5">Past Personnel</h3>
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/landon.jpg" alt="Laura Landon"></div>
-                        <h3 class="h4 mb-2">Laura Landon</h3>
-                        <p class="text-muted mb-0">Undergraduate Research Assistant</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/backman.jpg" alt="Jon Backman"></div>
-                        <h3 class="h4 mb-2">Jon Backman</h3>
-                        <p class="text-muted mb-0">Undergraduate Research Assistant</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Publications -->
-    <section class="page-section" id="publications">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Publications</h2>
-            <hr class="divider" />
-            <div class="row">
-                <div class="col-lg-12 col-xl-12">
-                    <p>A. Palacios, C. Bledsoe, E. Kelsey, L Landon, J. Backman, P. Lundrigan, “Stealthy Signals: Using Ghost Modulation to Watermark Interference”, in 1st International Workshop on LEO Networking and Communication (LEO-NET), 2023.</p>
-                    <a class="btn btn-primary" href="https://dl.acm.org/doi/10.1145/3614204.3616105">Read</a>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 col-xl-12">
-                    <p>Jacob Johnson, Ashton Palacios, Cody Arvonen, and Philip Lundrigan. 2024. Wireless Latency Shift Keying. In Proceedings of the 30th Annual International Conference on Mobile Computing and Networking (ACM MobiCom '24). Association for Computing Machinery, New York, NY, USA, 452–466.</p>
-                    <a class="btn btn-primary" href="https://dl.acm.org/doi/10.1145/3636534.3649373">Read</a>
-                </div>
-            </div>
-            <div class="row mt-5">
-                <div class="col-lg-12 col-xl-12">
-                    <p>Ashton Palacios, Daniel Harman, Christopher Kitras, Elle Kelsey, Mitchell Burnett, Willie K Harrison, Philip Lundrigan. "Hidden in Plain Sight: Communicating using Interference", IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2025.</p>
-                    <a class="btn btn-primary" href="/assets/GM_v2.pdf">Read</a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Code-->
-    <section class="page-section" id="code">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Code</h2>
-            <hr class="divider" />
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <a href="https://github.com/NET-BYU/wireless-latency-shift-keying">
-                            <div class="mb-2"><img class="img-fluid" src="/images/LSK_architecture.png" alt="LSK architecture"></div>
-                            <h3 class="h4 mb-2">WLSK</h3>
-                            <p class="text-muted mb-0">An IoT protocol for partial trust using a WiFi network.</p>
-                        </a>
-                    </div>
-                </div>
-                <!-- <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><img class="img-fluid" src="/images/palacios.jpg" alt="Ashton Palacios"></div>
-                        <h3 class="h4 mb-2">Ghost Modulation</h3>
-                        <p class="text-muted mb-0">Encoding watermark information in interference by modulating inter-packet delay.</p>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- Outreach-->
-    <section class="page-section" id="outreach">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Education & Outreach</h2>
-            <hr class="divider" />
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="fa-duotone fa-chalkboard-user fa-8x"></i></div>
-                        <h3 class="h4 mb-2">Subprotocol Lectures</h3>
-                        <p class="text-muted mb-0">A set of lectures and slides that covers sub-protocols in the context of spectrum sharing.</p>
-                        <a class="btn btn-primary mt-4" href="https://byu.box.com/s/5t5hwpjtzp90bqjk6vo7okqjz092inbb">View</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="fa-duotone fa-newspaper fa-8x"></i></div>
-                        <h3 class="h4 mb-2">Articles</h3>
-                        <p class="text-muted mb-0">A set of articles on technical topics created by students working on this project.</p>
-                        <a class="btn btn-primary mt-4" href="/articles">Read</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 text-center">
-                    <div class="mt-5">
-                        <div class="mb-2"><i class="fa-duotone fa-graduation-cap fa-8x"></i></div>
-                        <h3 class="h4 mb-2">IMMERSE</h3>
-                        <p class="text-muted mb-0">A summer program to involve undergraduate students in the research process.</p>
-                        <a class="btn btn-primary mt-4" href="https://immerse.byu.edu">Learn More</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">
-                <p>This project is supported by NSF #2153317.</p>
-                <img src="/images/nsf-logo.png" alt="NSF Logo" class="img-fluid" style="max-width: 100px;">
-            </div>
+<section class="wrap" aria-label="Project overview" data-area="subprotocols">
+  <div class="prose" style="max-width: 72ch; margin-bottom: clamp(28px, 4vw, 48px)">
+    <p class="lede" style="max-width: none">Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless devices to become an essential part of our infrastructure, they must be resilient to changing environmental conditions and function under extreme cases. However, current wireless protocols have limited adaptability. This project explores a new class of wireless protocols called “wireless sub-protocols”. Wireless sub-protocols are new protocols built on existing wireless protocols but increase their capabilities and adaptability. Wireless sub-protocols are implemented only in software and require no changes to a device's hardware. Wireless sub-protocols add extra adaptability paving the way for future resilient wireless protocols with only a software update.</p>
+  </div>
+  {% include figure.html item=project kind="scene" caption=true %}
+</section>
 
-        </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="/js/subprotocol-scripts.js"></script>
-    <script src="https://kit.fontawesome.com/624d595ebf.js" crossorigin="anonymous"></script>
-</body>
+<nav class="subnav needs-js" aria-label="On this page" data-spy style="margin-top: clamp(40px, 5vw, 64px)">
+  <div class="wrap">
+    <div class="chips">
+      <a class="chip" href="#about">About</a>
+      <a class="chip" href="#personnel">Personnel</a>
+      <a class="chip" href="#publications">Publications</a>
+      <a class="chip" href="#code">Code</a>
+      <a class="chip" href="#outreach">Education &amp; outreach</a>
+    </div>
+  </div>
+</nav>
 
-</html>
+<section class="wrap section" id="about" aria-labelledby="about-title" data-area="subprotocols">
+  <div class="section-head"><h2 class="h2" id="about-title">About</h2></div>
+  <div class="split">
+    <div class="prose">
+      <p>More flexibility in wireless protocols is necessary to accommodate the ever-expanding use cases that new wireless devices demand and bring about ultra-resilient wireless systems. To address the need for adaptability and resiliency, this project explores the novel idea of building a wireless protocol layering approach where additional functionality is added to a wireless protocol using “wireless sub-protocols”. A wireless sub-protocol is a protocol built on top of another wireless protocol. They provide a way for a base protocol to increase its abilities beyond what the original protocol designers intended. A communication scheme can be built on top of an existing protocol by measuring and controlling the physical layer properties in user space software. This innovative technique allows a device to gain new capabilities and thus adaptability, with only a software update. Sub-protocols coexist with the base protocol, allowing the application developer to decide when to use one or the other. This project will build a framework for prototyping, building, and testing different types of wireless sub-protocols. The project will use wireless testbeds to prototype new wireless sub-protocols rapidly. This project will enable a new research area of wireless sub-protocols, impacting future designs of wireless devices.</p>
+    </div>
+    <figure class="photo">
+      <a href="/images/subprotocol-testbed.jpg" data-lightbox><img src="/images/thumbs/subprotocol-testbed.webp" alt="The sub-protocol testbed" loading="lazy" decoding="async"></a>
+      <figcaption>Sub-protocol testbed</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="wrap section" id="personnel" aria-labelledby="personnel-title">
+  <div class="section-head"><h2 class="h2" id="personnel-title">Personnel</h2></div>
+  <div class="people">
+    {%- for entry in site.data.subprotocols.personnel %}
+    {%- assign person = site.data.students | concat: site.data.faculty | where: "slug", entry.slug | first %}
+    <article class="person">
+      <div class="portrait"><img src="{{ entry.image | default: person.thumb | default: person.image }}" alt="{{ entry.name }}" loading="lazy" decoding="async" width="480" height="480"></div>
+      <h3><a href="/people/#{{ entry.slug }}">{{ entry.name }}</a></h3>
+      <p class="role">{{ entry.role }}</p>
+    </article>
+    {%- endfor %}
+  </div>
+  <h3 class="h3" style="margin: clamp(48px, 6vw, 80px) 0 28px">Past personnel</h3>
+  <div class="people">
+    {%- assign alumni = site.data.past_students.graduate_students | concat: site.data.past_students.undergraduate_students %}
+    {%- for entry in site.data.subprotocols.past_personnel %}
+    {%- assign person = alumni | where: "slug", entry.slug | first %}
+    <article class="person">
+      <div class="portrait"><img src="{{ person.thumb | default: person.image | default: '/images/no-image.jpg' }}" alt="{{ entry.name }}" loading="lazy" decoding="async" width="480" height="480"></div>
+      <h3><a href="/people/#{{ entry.slug }}">{{ entry.name }}</a></h3>
+      <p class="role">{{ entry.role }}</p>
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<section class="wrap section" id="publications" aria-labelledby="pubs-title">
+  <div class="section-head">
+    <h2 class="h2" id="pubs-title">Publications</h2>
+    <a class="arrow-link" href="/papers/?area=subprotocols"><span>All sub-protocol papers</span>{{ arrow }}</a>
+  </div>
+  <ul class="pubs">
+    {%- for pub in site.data.subprotocols.publications %}
+    <li>
+      <p>{{ pub.citation }}</p>
+      <a class="btn" href="{{ pub.url }}">Read</a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>
+
+<section class="wrap section" id="code" aria-labelledby="code-title">
+  <div class="section-head"><h2 class="h2" id="code-title">Code</h2></div>
+  <a class="code-card" href="https://github.com/NET-BYU/wireless-latency-shift-keying">
+    <img src="/images/LSK_architecture.png" alt="Architecture of Wireless Latency Shift Keying" loading="lazy" decoding="async">
+    <div>
+      <h3 class="h3">WLSK</h3>
+      <p class="muted" style="margin-top: 8px">An IoT protocol for partial trust using a WiFi network.</p>
+      <p style="margin-top: 18px"><span class="arrow-link"><span>View on GitHub</span>{{ arrow }}</span></p>
+    </div>
+  </a>
+</section>
+
+<section class="wrap section" id="outreach" aria-labelledby="outreach-title">
+  <div class="section-head"><h2 class="h2" id="outreach-title">Education &amp; outreach</h2></div>
+  <div class="outreach">
+    <a href="https://byu.box.com/s/5t5hwpjtzp90bqjk6vo7okqjz092inbb">
+      <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="16" rx="2"/><path d="M11 27h10M16 21v6M9 15l4-4 3 3 6-6"/></svg>
+      <h3 class="h3">Subprotocol lectures</h3>
+      <p>A set of lectures and slides that covers sub-protocols in the context of spectrum sharing.</p>
+      <span class="arrow-link"><span>View</span>{{ arrow }}</span>
+    </a>
+    <a href="/articles/">
+      <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="2"/><path d="M10 10h12M10 15h12M10 20h7"/></svg>
+      <h3 class="h3">Articles</h3>
+      <p>A set of articles on technical topics created by students working on this project.</p>
+      <span class="arrow-link"><span>Read</span>{{ arrow }}</span>
+    </a>
+    <a href="https://immerse.byu.edu">
+      <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12l13-6 13 6-13 6z"/><path d="M8 14.5V21c0 2 4 4 8 4s8-2 8-4v-6.5M29 12v8"/></svg>
+      <h3 class="h3">IMMERSE</h3>
+      <p>A summer program to involve undergraduate students in the research process.</p>
+      <span class="arrow-link"><span>Learn more</span>{{ arrow }}</span>
+    </a>
+  </div>
+</section>
+
+<section class="wrap" aria-label="Funding">
+  <p class="nsf"><img src="/images/nsf-logo.png" alt="National Science Foundation logo" width="64" height="64" loading="lazy">This project is supported by NSF #2153317.</p>
+</section>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo">
+  <img alt="">
+  <button class="icon-btn" type="button" aria-label="Close photo"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+</div>

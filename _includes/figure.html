@@ -1,0 +1,35 @@
+{%- comment -%}
+  An animation slot. Parameters:
+    item:    a paper or project from _data (uses animation, animation_status, animation_caption,
+             animation_video, animation_image, animation_embed, area)
+    kind:    "scene" for cinematic project scenes, otherwise a diagram
+    ar:      optional aspect ratio override, e.g. "4 / 3"
+    caption: true to show the caption under the figure
+{%- endcomment -%}
+{%- assign it = include.item -%}
+{%- assign status = it.animation_status | default: "placeholder" -%}
+{%- assign media = it.animation_video | default: it.animation_image | default: it.animation_embed -%}
+{%- capture label -%}{{ it.animation_caption | default: it.hook | default: it.title | default: it.name }}{%- endcapture -%}
+<figure class="fig{% if include.kind == 'scene' %} fig--scene{% endif %}" data-area="{{ it.area }}"{% unless media %} data-anim="{{ it.animation }}"{% endunless %}>
+  <div class="fig-stage"{% if include.ar %} style="--ar: {{ include.ar }}"{% endif %} role="img" aria-label="Animation: {{ label | strip_html | escape }}">
+    {%- if it.animation_video %}
+    <video src="{{ it.animation_video }}" muted loop playsinline autoplay preload="metadata"{% if it.animation_poster %} poster="{{ it.animation_poster }}"{% endif %}></video>
+    {%- elsif it.animation_image %}
+    <img src="{{ it.animation_image }}" alt="" loading="lazy" decoding="async" class="contain">
+    {%- elsif it.animation_embed %}
+    <iframe src="{{ it.animation_embed }}" title="{{ label | strip_html | escape }}" loading="lazy" allowfullscreen></iframe>
+    {%- endif %}
+    {%- unless it.animation_image or it.animation_embed %}
+    <button class="fig-ctl needs-js" type="button" aria-label="Pause animation" aria-pressed="false">
+      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
+      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
+    </button>
+    {%- endunless %}
+  </div>
+  {%- if site.show_placeholder_markers and status != "final" %}
+  <span class="fig-tag" title="Placeholder animation with sample data. Authors: see the README to replace it."><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h3l2-5 2 10 2-5h3"/></svg>Suggested animation · replace me</span>
+  {%- endif %}
+  {%- if include.caption and it.animation_caption %}
+  <figcaption>{{ it.animation_caption }}</figcaption>
+  {%- endif %}
+</figure>

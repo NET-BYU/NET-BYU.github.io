@@ -1,0 +1,25 @@
+{%- assign p = include.paper -%}
+{%- capture haystack -%}{{ p.title }} {{ p.authors }} {{ p.conference }} {{ p.hook }} {{ p.abstract }}{%- endcapture -%}
+<article class="paper" id="{{ p.slug }}" data-area="{{ p.area }}" data-search="{{ haystack | downcase | strip_newlines | escape }}">
+  {% include figure.html item=p caption=true %}
+  <div class="paper-body">
+    <h3 class="h3 paper-title"><a href="#{{ p.slug }}">{{ p.title }}</a></h3>
+    {%- if p.hook %}
+    <p class="hook">{{ p.hook }}</p>
+    {%- endif %}
+    <p class="authors">{% for a in p.authors_list %}{% if a.url %}<a href="{{ a.url }}">{{ a.name }}</a>{% else %}{{ a.name }}{% endif %}{% unless forloop.last %}, {% endunless %}{% endfor %}</p>
+    <p class="meta-row"><span class="area-label"><span class="dot"></span>{{ p.area_name }}</span><span>{{ p.conference }}</span></p>
+    <div class="actions">
+      {%- if p.url %}
+      <a class="btn" href="{{ p.url }}"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 1.8h5.2L12.5 5v9.2H4z"/><path d="M9 1.8V5h3.5"/></svg>{% if p.url contains '.pdf' %}PDF{% else %}Paper{% endif %}</a>
+      {%- endif %}
+      {%- if p.abstract %}
+      <button class="btn needs-js" type="button" aria-expanded="false" aria-controls="abs-{{ p.slug }}">Abstract<svg class="chev" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 6l4 4 4-4"/></svg></button>
+      {%- endif %}
+      <button class="btn needs-js" type="button" data-cite="{{ p.citation | escape }}"><svg viewBox="0 0 16 16" aria-hidden="true"><rect x="5" y="5" width="8.5" height="9" rx="1.5"/><path d="M3 11V3.5A1.5 1.5 0 0 1 4.5 2H10"/></svg>Copy citation</button>
+    </div>
+    {%- if p.abstract %}
+    <div class="abstract" id="abs-{{ p.slug }}"><div><p>{{ p.abstract }}</p></div></div>
+    {%- endif %}
+  </div>
+</article>

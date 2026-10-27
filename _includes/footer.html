@@ -1,0 +1,36 @@
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <img src="/images/logo-64.png" alt="" width="56" height="56">
+        <div>
+          <strong>Network Enhanced Technologies Lab</strong>
+          <span>{{ site.department }}</span>
+        </div>
+      </div>
+      <div>
+        <h2>Explore</h2>
+        <ul>
+          {%- for item in site.data.nav %}
+          <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+          {%- endfor %}
+          <li><a href="/subprotocols/">Sub-protocols project</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+          <li><a href="{{ site.github }}">GitHub</a></li>
+          <li><a href="https://philip.lundrigan.org">Phil Lundrigan</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-base">
+      <span>© {{ site.time | date: "%Y" }} NET Lab, Brigham Young University</span>
+      {%- if page.url == "/" %}
+      <a class="the-net" id="the-net" href="#top" aria-label="Back to top">π</a>
+      {%- endif %}
+    </div>
+  </div>
+</footer>

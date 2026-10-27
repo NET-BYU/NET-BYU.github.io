@@ -1,23 +1,26 @@
 <head>
   <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>{% if page.title %}{{ page.title | escape | append: " • " | append: site.title }}{% else %}{{ site.title |
-    escape }}{% endif %}</title>
-  <meta name="description"
-    content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_html }}{% endif %}">
-
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-
-  <link rel="stylesheet" href="{{ " /css/main.css" | prepend: site.baseurl }}">
-
-  <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-  <!-- <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css"> -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
-
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ " /icon/favicon-32x32.png" | prepend: site.baseurl }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ " /icon/favicon-16x16.png" | prepend: site.baseurl }}">
-
+  {%- capture page_title -%}{% if page.title %}{{ page.title }} · {{ site.title }}{% else %}{{ site.title }} · Network Enhanced Technologies Lab at BYU{% endif %}{%- endcapture -%}
+  {%- assign page_desc = page.description | default: site.description | strip_html | normalize_whitespace | truncate: 200 -%}
+  <title>{{ page_title }}</title>
+  <meta name="description" content="{{ page_desc | escape }}">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#FAFAFB" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#08090C" media="(prefers-color-scheme: dark)">
+  <link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.baseurl | prepend: site.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:title" content="{{ page_title | escape }}">
+  <meta property="og:description" content="{{ page_desc | escape }}">
+  <meta property="og:url" content="{{ page.url | prepend: site.url }}">
+  <meta property="og:image" content="{{ '/images/logo-640.webp' | prepend: site.url }}">
+  <meta name="twitter:card" content="summary">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <link rel="preload" href="/fonts/schibsted-grotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{ '/css/site.css' | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ '/icon/favicon-32x32.png' | prepend: site.baseurl }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ '/icon/favicon-16x16.png' | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" href="{{ '/icon/favicon-96x96.png' | prepend: site.baseurl }}">
+  <script type="module" src="{{ '/js/site.js' | prepend: site.baseurl }}"></script>
 </head>

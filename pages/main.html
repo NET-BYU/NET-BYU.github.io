@@ -1,119 +1,121 @@
 ---
+layout: default
 permalink: /
 ---
+{%- assign arrow = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' -%}
 
-<!DOCTYPE html>
-<html>
-
-{% include head.html %}
-
-<body>
-    <div class="jumbotron jumbotron-fluid" id="background_image">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <img class="main-logo mx-auto d-block" src="images/NET Lab Logo@3x.png">
-                </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <p class="lead">{{ site.description }}</p>
-                </div>
-            </div>
-            <div class="row links">
-                <div class="col">
-                    <a href="{{ " /papers" | prepend: site.baseurl }}">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M19,18H9A2,2 0 0,1 7,16V4A2,2 0 0,1 9,2H10V7L12,5.5L14,7V2H19A2,2 0 0,1 21,4V16A2,2 0 0,1 19,18M17,20V22H5A2,2 0 0,1 3,20V6H5V20H17Z" />
-                            </svg>
-                        </div>
-                        <h4>Papers</h4>
-                        <p></p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="{{ " /people" | prepend: site.baseurl }}">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M1.5,4V5.5C1.5,9.65 3.71,13.28 7,15.3V20H22V18C22,15.34 16.67,14 14,14C14,14 13.83,14 13.75,14C9,14 5,10 5,5.5V4M14,4A4,4 0 0,0 10,8A4,4 0 0,0 14,12A4,4 0 0,0 18,8A4,4 0 0,0 14,4Z" />
-                            </svg>
-                        </div>
-                        <h4>People</h4>
-                        <p></p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="{{ " /projects" | prepend: site.baseurl }}">
-                        <div class="icon">
-                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="24" height="24" viewBox="0 0 24 24">
-                                <path d="M14,12H15.5V14.82L17.94,16.23L17.19,17.53L14,15.69V12M4,2H18A2,2 0 0,1 20,4V10.1C21.24,11.36 22,13.09 22,15A7,7 0 0,1 15,22C13.09,22 11.36,21.24 10.1,20H4A2,2 0 0,1 2,18V4A2,2 0 0,1 4,2M4,15V18H8.67C8.24,17.09 8,16.07 8,15H4M4,8H10V5H4V8M18,8V5H12V8H18M4,13H8.29C8.63,11.85 9.26,10.82 10.1,10H4V13M15,10.15A4.85,4.85 0 0,0 10.15,15C10.15,17.68 12.32,19.85 15,19.85A4.85,4.85 0 0,0 19.85,15C19.85,12.32 17.68,10.15 15,10.15Z" />
-                            </svg>
-                        </div>
-                        <h4>Projects</h4>
-                        <p></p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="{{ " /mission" | prepend: site.baseurl }}">
-                        <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M17.8,20C17.4,21.2 16.3,22 15,22H5C3.3,22 2,20.7 2,19V18H5L14.2,18C14.6,19.2 15.7,20 17,20H17.8M19,2H8C6.3,2 5,3.3 5,5V16H16V17C16,17.6 16.4,18 17,18H18V5C18,4.4 18.4,4 19,4C19.6,4 20,4.4 20,5V6H22V5C22,3.3 20.7,2 19,2Z" />
-                            </svg>
-                        </div>
-                        <h4>Mission</h4>
-                        <p></p>
-                    </a>
-                </div>
-
-                <div class="col">
-                    <a href="{{ " /articles" | prepend: site.baseurl }}">
-                        <div class="icon">
-                            <svg width="24" height="24" viewBox="0 0 24 24">
-                                <path fill="currentColor" d="M21,4H3A2,2 0 0,0 1,6V19A2,2 0 0,0 3,21H21A2,2 0 0,0 23,19V6A2,2 0 0,0 21,4M3,19V6H11V19H3M21,19H13V6H21V19M14,9.5H20V11H14V9.5M14,12H20V13.5H14V12M14,14.5H20V16H14V14.5Z" />
-                            </svg>
-                        </div>
-                        <h4>Articles</h4>
-                        <p></p>
-                    </a>
-                </div>
-            </div>
-            <div class="row recent_articles">
-                <div class="col">
-                    <h4>Recent Articles</h4>
-                    {% assign sorted_articles = site.data.articles | sort: "date" | reverse %}
-                    {% for article in sorted_articles limit:5 %}
-                    <div class="row">
-                        <a class="card-link" href="{{ article.link }}">
-                            <div class="card mb-3">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="{{ article.image }}" class="img-fluid rounded-start">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ article.title }}</h5>
-                                            <p class="card-text"><small class="text-muted">{{ article.author }} • {{
-                                                    article.date | date: "%B %d, %Y" }} </small></p>
-                                            <p class="card-text">{{ article.lead_text }}</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </div>
+<section class="hero" aria-labelledby="hero-title">
+  <canvas class="hero-canvas" aria-hidden="true"></canvas>
+  <div class="hero-vis">
+    <div class="hero-logo">
+      <img src="/images/logo-640.webp" alt="NET Lab logo" width="640" height="640" fetchpriority="high">
     </div>
-    <div id="the-net" class="navbar bottom justify-content-end"><a href="javascript:void(0)">π</a></div>
+    <div class="hero-rx needs-js">
+      <p class="rx-line" aria-hidden="true"><span class="rx-tag">RX</span><span class="rx-text"></span><span class="rx-caret"></span></p>
+      <p class="rx-bits" aria-hidden="true"></p>
+      <p class="rx-hint" aria-hidden="true">Move across the traces to decode the hidden message</p>
+      <p class="sr-only">Pulses run along circuit traces from the lab's logo. Each one hides part of a message: {{ site.description | strip_html | normalize_whitespace }}</p>
+    </div>
+  </div>
+  <div class="hero-copy wrap">
+    <h1 class="display" id="hero-title">We make wireless networks do more <span class="tone">than they were built for.</span></h1>
+    <p class="lede">{{ site.description }}</p>
+  </div>
+</section>
 
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-    <script type="text/javascript" src="/js/main.js"></script>
-</body>
+<section class="section" aria-labelledby="build-title" data-rail>
+  <div class="wrap section-head">
+    <h2 class="h2" id="build-title">What we build. <span class="tone">{{ site.data.projects.size }} projects, each a real system.</span></h2>
+    <div class="rail-ctl needs-js">
+      <button class="icon-btn" type="button" data-rail-prev aria-label="Previous projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+      <button class="icon-btn" type="button" data-rail-next aria-label="More projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    </div>
+  </div>
+  <div class="rail" role="list">
+    {%- for project in site.data.projects %}
+    <a class="tile" role="listitem" href="/projects/#{{ project.slug }}" data-area="{{ project.area }}">
+      {% include figure.html item=project kind="scene" ar="4 / 3" %}
+      <h3 class="h3">{{ project.short | default: project.name }}</h3>
+      <p>{{ project.hook }}</p>
+    </a>
+    {%- endfor %}
+  </div>
+</section>
 
-</html>
+<section class="section" aria-labelledby="latest-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="latest-title">Latest papers. <span class="tone">Watch how each one works.</span></h2>
+      <a class="arrow-link" href="/papers/"><span>All {{ site.data.papers.size }} papers</span>{{ arrow }}</a>
+    </div>
+    <div class="latest">
+      {%- for paper in site.data.papers limit: 4 %}
+      <article data-area="{{ paper.area }}">
+        {% include figure.html item=paper %}
+        <h3 class="h3"><a class="paper-link" href="/papers/#{{ paper.slug }}">{{ paper.title }}</a></h3>
+        <p class="hook">{{ paper.hook }}</p>
+        <p class="venue">{{ paper.conference }}</p>
+      </article>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+{%- assign onpc = site.data.projects | where: "slug", "onpc" | first %}
+{%- if onpc.press %}
+<section class="section" aria-labelledby="news-title" data-area="wifi">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="news-title">In the news. <span class="tone">ONPC made headlines in 2019.</span></h2>
+      <a class="arrow-link" href="/projects/#onpc"><span>About the project</span>{{ arrow }}</a>
+    </div>
+    <div class="press">
+      {%- for item in onpc.press %}
+      <a href="{{ item.url }}">
+        <span class="press-title">{{ item.title }}<span class="src">{{ item.outlet }}</span></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<section class="section" aria-labelledby="people-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="people-title">The people. <span class="tone">Students and faculty building it.</span></h2>
+      <a class="arrow-link" href="/people/"><span>Meet everyone</span>{{ arrow }}</a>
+    </div>
+    <div class="faces">
+      {%- assign current = site.data.students | sort: "last_name" %}
+      {%- for person in site.data.faculty %}
+      <a class="face" href="/people/#{{ person.slug }}">
+        <img src="{{ person.thumb | default: person.image }}" alt="" loading="lazy" width="240" height="240">
+        <strong>{{ person.name }}</strong><span>Faculty</span>
+      </a>
+      {%- endfor %}
+      {%- for person in current %}
+      <a class="face" href="/people/#{{ person.slug }}">
+        <img src="{{ person.thumb | default: person.image | default: '/images/no-image.jpg' }}" alt="" loading="lazy" width="240" height="240">
+        <strong>{{ person.first_name }} {{ person.last_name }}</strong><span>{{ person.degree }}</span>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="section" aria-labelledby="articles-title">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="articles-title">From the lab. <span class="tone">Technical write-ups by lab members.</span></h2>
+      <a class="arrow-link" href="/articles/"><span>All articles</span>{{ arrow }}</a>
+    </div>
+    <div class="cards">
+      {%- assign recent = site.data.articles | sort: "date" | reverse %}
+      {%- for article in recent limit: 3 %}
+      {% include article-card.html article=article index=forloop.index %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>

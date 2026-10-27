@@ -7,6 +7,19 @@ baseurl: ""
 url: https://netlab.byu.edu
 
 markdown: kramdown
-exclude: ['.gitignore', 'Makefile', 'README.md', 'CNAME', 'PRODUCT.md', 'DESIGN.md', 'dev', 'vendor']
+exclude: ['.gitignore', 'Makefile', 'README.md', 'CNAME', 'PRODUCT.md', 'DESIGN.md', 'dev', 'vendor', 'scripts', '.playwright-cli']
 
 colors: ['#ED3F95', '#F89938', '#D8E022', '#00A775', '#89298E', '#76C044', '#00AEEF']
+
+# Show the "Suggested animation · replace me" tag on every animation that is not marked
+# `animation_status: final`. Set to false at launch to hide all of them at once.
+show_placeholder_markers: true
+
+# Contact shown in the footer.
+github: https://github.com/NET-BYU
+department: Electrical & Computer Engineering, Brigham Young University
+
+# Preview server only (`jekyll serve`): always revalidate, so edits show up on reload.
+webrick:
+  headers:
+    Cache-Control: no-cache

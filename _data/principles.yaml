@@ -1,0 +1,22 @@
+# The lab's core principles (Mission page). Text is the lab's own; each gets a logo color
+# and a small animated motif from js/anim/.
+- name: Purpose
+  area: subprotocols
+  animation: mission-purpose
+  alt: A signal travels from a transmitter and lands exactly on its receiver.
+  text: In all that we do, there should be a clear purpose and vision. That purpose should be centered around helping people and enriching lives through enhanced technologies.
+- name: Faith
+  area: spectrum
+  animation: mission-faith
+  alt: Noisy samples average together until the true signal underneath appears.
+  text: We uphold the value of faith in the scientific community and recognize its role in our daily work. Our research is built on the pure pursuit of truth.
+- name: Collaboration
+  area: underwater
+  animation: mission-collaboration
+  alt: Several weak waves line up and add into one strong signal.
+  text: Problems can rarely be solved in isolation. We recognize the value and richness other fields can bring to our research. We encourage collaboration with others, especially those from different fields.
+- name: Work Ethic
+  area: vehicles
+  animation: mission-work-ethic
+  alt: Steady, precise ticks build a structure one block at a time.
+  text: We do great work with uncompromising quality. We work on the problems that matter most. From ideation to publication, we uphold the highest standard of quality. We work hard because we know our work matters.

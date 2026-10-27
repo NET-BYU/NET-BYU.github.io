@@ -1,0 +1,40 @@
+# Content for the Wireless Sub-Protocols project page (/subprotocols/), NSF award #2153317.
+# `slug` links each person to their entry on the People page (first-last, lowercase).
+personnel:
+  - name: Philip Lundrigan
+    slug: phil-lundrigan
+    role: Principal Investigator
+    image: /images/thumbs/lundrigan-3.webp
+  # Current students below were inferred from sub-protocol paper authorship (FLE, UnderTone, SAFEC);
+  # edit this list to match the people actually funded by the award.
+  - name: Joshua Montierth
+    slug: joshua-montierth
+    role: Graduate Research Assistant
+  - name: Ethan Sorensen
+    slug: ethan-sorensen
+    role: PhD Research Assistant
+  - name: Ty Young
+    slug: ty-young
+    role: Undergraduate Research Assistant
+
+past_personnel:
+  - name: Ashton Palacios
+    slug: ashton-palacios
+    role: Lead PhD Research Assistant
+  - name: Elle Kelsey
+    slug: elle-kelsey
+    role: Undergraduate Research Assistant
+  - name: Laura Landon
+    slug: laura-landon
+    role: Undergraduate Research Assistant
+  - name: Jon Backman
+    slug: jon-backman
+    role: Undergraduate Research Assistant
+
+publications:
+  - citation: "A. Palacios, C. Bledsoe, E. Kelsey, L. Landon, J. Backman, P. Lundrigan, “Stealthy Signals: Using Ghost Modulation to Watermark Interference”, in 1st International Workshop on LEO Networking and Communication (LEO-NET), 2023."
+    url: https://dl.acm.org/doi/10.1145/3614204.3616105
+  - citation: "Jacob Johnson, Ashton Palacios, Cody Arvonen, and Philip Lundrigan. 2024. Wireless Latency Shift Keying. In Proceedings of the 30th Annual International Conference on Mobile Computing and Networking (ACM MobiCom '24). Association for Computing Machinery, New York, NY, USA, 452–466."
+    url: https://dl.acm.org/doi/10.1145/3636534.3649373
+  - citation: "Ashton Palacios, Daniel Harman, Christopher Kitras, Elle Kelsey, Mitchell Burnett, Willie K Harrison, Philip Lundrigan. “Hidden in Plain Sight: Communicating using Interference”, IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2025."
+    url: /assets/GM_v2.pdf

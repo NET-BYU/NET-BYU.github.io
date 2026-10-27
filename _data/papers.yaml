@@ -1,115 +1,196 @@
-- title: "WiP: UnderTone: Frequency Lock Encoding on COTS Wi-Fi Hardware"
+# Papers, newest first. Each entry:
+#   id:        short name; used for the page anchor (/papers/#id) and the animation (js/anim/<id>.js)
+#   area:      research area id from _data/areas.yaml (sets the color)
+#   project:   optional project id from _data/projects.yaml (lists the paper under that project)
+#   hook:      one plain-English sentence shown under the title
+#   title, authors, conference, abstract, url: as before
+#   animation_status: placeholder (default) or final, once you have replaced the suggested animation
+#   animation_caption: the sentence under the animation
+#   animation / animation_video / animation_image / animation_embed: see README "Animations"
+
+- id: undertone
+  area: subprotocols
+  project: subprotocols
+  hook: "Brings Frequency Lock Encoding to off-the-shelf ESP32 Wi-Fi chips, with no software-defined radio required."
+  title: "WiP: UnderTone: Frequency Lock Encoding on COTS Wi-Fi Hardware"
   authors: J. Montierth, P. Lundrigan
   conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
   abstract: "Modern wireless systems reserve excess synchronization bandwidth to ensure reliability under worst-case conditions. Recent foundational work introduced Frequency Lock Encoding (FLE), a protocol-agnostic signaling layer that opportunistically exploits this margin by embedding data through small, controlled carrier frequency offsets (CFO). While FLE has been successfully validated using software-defined radios (SDRs) on single-carrier waveforms, deploying it on commercial off-the-shelf (COTS) Wi-Fi devices has historically been hindered by locked physical layers and highly unpredictable Medium Access Control (MAC) timing. This work-in-progress presents UnderTone, a fully software-defined FLE subprotocol implemented on standard ESP32-C5 microcontrollers. By reverse-engineering undocumented fractional-𝑁 divider registers to induce precise CFO shifts, and modeling the bursty Wi-Fi medium as an erasure channel protected by Reed-Solomon coding, UnderTone completely bypasses the need for custom SDR hardware and brings this resilient physical-layer subprotocol to consumer IoT devices."
   url: "/assets/UnderTone.pdf"
 
-- title: "WiP: SAFEC: Slack-Aware Forward Error Correction"
+- id: safec
+  area: subprotocols
+  project: subprotocols
+  hook: "Turns an error-correcting code's unused capacity into a second data stream, filling the gaps between MCS steps."
+  title: "WiP: SAFEC: Slack-Aware Forward Error Correction"
   authors: E. Sorensen, T. Young, B. Smith, P. Lundrigan
   conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
   abstract: "Modulation and Coding Scheme (MCS) tables expose only discrete, jointly-coupled operating points along the throughput-reliability continuum, with an average of 19.4% of achievable throughput between adjacent steps. We present Slack-Aware Forward Error Correction (SAFEC), a method that reclaims unused Forward Error Correction (FEC) correction capacity to provide fine-grained interpolation between MCS steps. SAFEC encodes a secondary data stream into the positions of deliberately-inserted, recoverable errors within a base FEC codeword, requiring no protocol redesign or new hardware. We demonstrate SAFEC’s feasibility on LDPC-coded OFDM transmissions using software-defined radios, showing throughput gains of up to 9.5% over the base protocol."
   url: "/assets/SAFEC_2.2.pdf"
 
-- title: "Long-Term Validation of a Consumer- vs. Industrial-Grade Indoor Radon and Air Quality Monitor at a School in Utah"
+- id: radon-monitors
+  area: sensing
+  hook: "Six rooms, 29 weeks: a consumer radon monitor matched an industrial one on radon, but not on CO₂ or humidity."
+  title: "Long-Term Validation of a Consumer- vs. Industrial-Grade Indoor Radon and Air Quality Monitor at a School in Utah"
   authors: J. Beard, M. Ball, C. Kitras, P. Lundrigan
   conference: "Sensors. Vol 26, 2026"
   abstract: "In recent years, the demand for indoor radon and air quality monitors has increased while more affordable consumer-grade monitors have become available. The aim of our study was to assess the validity of the less expensive, non-calibrated, consumer-grade Lüft (SunRADON LLC, Melbourne, FL, USA) compared to the more expensive, annually and manufacturer calibrated, industrial-grade Model 1028 XP (SunRADON LLC, Melbourne, FL, USA). We collected data about 24 h moving averages of barometric pressure, carbon dioxide (CO2), radon, relative humidity, temperature, and volatile organic compounds (VOC) for approximately 29 weeks in 2024 in each of six rooms in a school in Utah. The mean difference in the co-located Lüfts’ and Model 1028 XPs’ 24 h moving average radon was −0.05 pCi/L of air (95% confidence interval: −0.24, 0.14, p = 0.50) and the concordance correlation coefficient (CCC) was 0.92. The Lüfts’ and Model 1028 XPs’ 24 h moving averages were similar for barometric pressure (CCC: 0.87), but the Lüfts’ 24 h moving averages were lower than the Model 1028 XPs’ for CO2, relative humidity, and VOC and higher for temperature. The Lüft provided valid measurements of 24 h moving averages for barometric pressure and radon, but not for CO2, relative humidity, temperature, and VOC."
   url: "https://doi.org/10.3390/s26165230"
 
-- title: "Frequency Lock Encoding"
+- id: frequency-lock-encoding
+  area: subprotocols
+  project: subprotocols
+  hook: "Sends a second stream of data in tiny carrier-frequency shifts that ordinary receivers already correct away."
+  title: "Frequency Lock Encoding"
   authors: J. Montierth, P. Lundrigan, M. Rice
   conference: "IEEE Military Communications Conference (MILCOM), 2026"
-  abstract: "Modern wireless systems are designed with excess synchronization bandwidth to ensure reliable operation under worst-case conditions. This paper presents a protocol-agnostic secondary signaling layer that exploits this unused synchronization margin by intentionally introducing small, controlled frequency offsets into an existing communication signal to embed a parallel stream of information. These offsets are naturally absorbed by the primary receiver’s carrier frequency offset (CFO) correction mechanisms, allowing the primary data stream to remain intact while enabling simultaneous secondary communication. The proposed signaling method employs a frequency-shift-keyed overlay engineered to remain within the stable operating region of conventional carrier synchronization loops, ensuring backward compatibility and transparency to legacy receivers. We analyze the system for single-carrier protocols,characterize the trade-offs between secondary throughput and impact on the primary link, and validate performance through both simulation and over-the-air experiments using software-defined radios. Results demonstrate reliable secondary communication with negligible degradation to primary performance, making our system well-suited for ad hoc spectrum sharing and decentralized coordination at the tactical edge."
+  abstract: "Modern wireless systems are designed with excess synchronization bandwidth to ensure reliable operation under worst-case conditions. This paper presents a protocol-agnostic secondary signaling layer that exploits this unused synchronization margin by intentionally introducing small, controlled frequency offsets into an existing communication signal to embed a parallel stream of information. These offsets are naturally absorbed by the primary receiver’s carrier frequency offset (CFO) correction mechanisms, allowing the primary data stream to remain intact while enabling simultaneous secondary communication. The proposed signaling method employs a frequency-shift-keyed overlay engineered to remain within the stable operating region of conventional carrier synchronization loops, ensuring backward compatibility and transparency to legacy receivers. We analyze the system for single-carrier protocols, characterize the trade-offs between secondary throughput and impact on the primary link, and validate performance through both simulation and over-the-air experiments using software-defined radios. Results demonstrate reliable secondary communication with negligible degradation to primary performance, making our system well-suited for ad hoc spectrum sharing and decentralized coordination at the tactical edge."
   url: "/assets/Frequency Lock Encoding.pdf"
 
-- title: "If You Build It, Will They Connect? 6 GHz WiFi in a Stadium"
+- id: stadium-6ghz
+  area: wifi
+  hook: "Two years of data from LaVell Edwards Stadium: 6 GHz Wi-Fi is faster, but few phones end up using it."
+  title: "If You Build It, Will They Connect? 6 GHz WiFi in a Stadium"
   authors: E. Sorensen, D. Hales, C. Kitras, J. Lofthouse, J. Montierth, P. Lundrigan
   conference: "IEEE International Conference on Computer Communications and Networks (ICCCN), 2026"
-  abstract: "The opening of the 6 GHz spectrum promises substantial capacity gains for dense WiFi deployments, yet real-world performance depends critically on configuration choices rather than spectrum availability alone. This paper presents a measurement study of a large-scale outdoor WiFi 6E deployment at Brigham Young University's LaVell Edwards Stadium, combining two years of operational data with targeted measurements during football games. Despite the RF advantages of 6~GHz, capacity-based configuration preferences result in only modest performance improvements compared to 5 GHz. While 6 GHz achieves 3.4x higher median throughput (28 Mbps vs 8 Mbps) and 90% lower channel utilization (3.1% vs 31.4%), both bands fall well below expected performance levels. More critically, client adoption remains the dominant limiting factor: automated Passpoint steering redirects ~50% of stadium clients, an estimated 20% of whom are 6 GHz-capable, exclusively to 5 GHz, while WiFi chipset-level association decisions prevent manual band selection. Historical data reveals that migration to OWE transition mode increased 6 GHz adoption from near-zero to 21% of non-steered clients."
+  abstract: "The opening of the 6 GHz spectrum promises substantial capacity gains for dense WiFi deployments, yet real-world performance depends critically on configuration choices rather than spectrum availability alone. This paper presents a measurement study of a large-scale outdoor WiFi 6E deployment at Brigham Young University's LaVell Edwards Stadium, combining two years of operational data with targeted measurements during football games. Despite the RF advantages of 6 GHz, capacity-based configuration preferences result in only modest performance improvements compared to 5 GHz. While 6 GHz achieves 3.4x higher median throughput (28 Mbps vs 8 Mbps) and 90% lower channel utilization (3.1% vs 31.4%), both bands fall well below expected performance levels. More critically, client adoption remains the dominant limiting factor: automated Passpoint steering redirects ~50% of stadium clients, an estimated 20% of whom are 6 GHz-capable, exclusively to 5 GHz, while WiFi chipset-level association decisions prevent manual band selection. Historical data reveals that migration to OWE transition mode increased 6 GHz adoption from near-zero to 21% of non-steered clients."
   url: /assets/Stadium_Study.pdf
 
-- title: "Sustainable Radon Mitigation through Optimized HVAC Scheduling"
+- id: radon-hvac
+  area: sensing
+  hook: "Uses a school's existing HVAC system, on a smarter schedule, to clear radon before students arrive."
+  title: "Sustainable Radon Mitigation through Optimized HVAC Scheduling"
   authors: C. Kitras, J. D. Beard, J. D. Johnston, P. Lundrigan
   conference: "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2025"
   abstract: Radon is a naturally occurring radioactive gas and is the second leading cause of lung cancer after smoking tobacco. Its invisible and odorless nature often leads to it going undetected, posing a significant health threat in susceptible areas, especially schools. Although traditional mitigation strategies are reasonable for smaller private properties, their cost can become prohibitively expensive and difficult for older and larger buildings. We propose, build, and test a cost-effective, sustainable mitigation strategy that uses the existing HVAC infrastructure of susceptible buildings to remove radon before occupancy hours. We compare this to a naive approach and find that we can save time on HVAC operation and keep radon levels to an acceptable low.
   url: /assets/Radon.pdf
 
-- title: "Hidden in Plain Sight: Communicating using Interference"
+- id: hidden-in-plain-sight
+  area: subprotocols
+  project: subprotocols
+  hook: "Fingerprints interfering satellites by nudging the timing of their transmissions, so radio observatories can tell who is interfering."
+  title: "Hidden in Plain Sight: Communicating using Interference"
   authors: A. Palacios, D. Harman, C. Kitras, E. Kelsey, M. C. Burnett, W. K. Harrison, P. Lundrigan
   conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2025
   abstract: Radio astronomy observatories examine the universe by capturing faint RF signals from space. The equipment to capture these signals is extremely sensitive, and nearby transmitters, such as LEO satellites, cause destructive interference. We propose the Spectra watermarking protocol to add an identifying fingerprint to these interfering transmitters. Spectra changes the timing of key transmissions to encode identifying information that can be decoded by examining transmission timestamps and without having to demodulate the actual transmission. We implement multiple forward error correction codes for Spectra to account for dynamic LEO satellite channels. We evaluate Spectra and show that it can operate over highly variable channels with low BER while preserving the network performance of the interfering device.
   url: /assets/GM_v2.pdf
 
-- title: Using Orthogonal Chirps Underwater for In-Band, Full-Duplex Communication with Minimal Self-Interference Cancellation
+- id: orthogonal-chirps
+  area: underwater
+  project: underwater
+  hook: "Lets underwater nodes talk and listen at the same time in the same band, with almost no self-interference cancellation."
+  title: Using Orthogonal Chirps Underwater for In-Band, Full-Duplex Communication with Minimal Self-Interference Cancellation
   authors: B. Schiel, J. Montierth, E. Blattner, C. E. Dobbs, T. B. Nielsen, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
   abstract: Underwater acoustic networks (UANs) have the potential to benefit greatly from advances in in-band full-duplex (IBFD) communication, as this would reduce packet collisions and timing overhead from link layer protocols. A major direction of research to achieve IBFD has been through self-interference cancellation (SIC), a process that tries to minimize the effect of self-interference (SI) caused by a device's own transmission when it is trying to receive a packet from another device. Active SIC techniques, however, can be costly in computation and energy resources. The chirp spread spectrum (CSS) modulation scheme, which already provides noise- and multipath-resistant communication in UANs, can also provide a novel solution for simplified IBFD communication. In this paper, we use orthogonal CSS to enable IBFD communication that requires absolutely no SIC filtering when the signal of interest (SOI) is within -20 dB of the power of the self-interference (SI). For situations where the SOI is weaker than -20 dB of the power of the SI, we also provide a computationally light SIC filter that maintains clear communication.
   url: https://dl.acm.org/doi/10.1145/3699432.3699464
 
-- title: "Poster: Role-Based Network Addressing for Fleets of Autonomous Underwater Vehicles"
+- id: auv-addressing
+  area: underwater
+  project: underwater
+  hook: "An addressing scheme that tracks each underwater robot's role as fleets split and regroup mid-mission."
+  title: "Poster: Role-Based Network Addressing for Fleets of Autonomous Underwater Vehicles"
   authors: B. Schiel, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
   abstract: This work proposes an exploratory system of network addressing and management for a fleet of autonomous underwater vehicles (AUVs). As fleets of AUVs become more common and their tasks more diverse, it becomes necessary to manage them more at the network layer, handling new group formations and organization. As groups form and re-form during missions, there needs to be a way to identify a particular AUV and its role in the entire network. This work proposes one such network-level addressing system for a fleet of AUVs, the Fleet Protocol (FP) addressing system.
   url: https://dl.acm.org/doi/10.1145/3699432.3699478
 
-- title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs
+- id: v2i-framework
+  area: vehicles
+  project: v2x
+  hook: "An open-source way for transportation departments to compare commercial roadside units before deploying them."
+  title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs
   authors: B. Schiel, S. Swindler, A. Farmer, D. Sharp, A. Murali, B. Corry, P. Lundrigan
   conference: IEEE Vehicular Networking Conference (VNC), 2024
   abstract: "Vehicle-to-Everything (V2X) technologies are seeing dramatic growth as smart cities join the Internet of Things (IoT). Overseeing the adoption of this technology, governing bodies such as State Departments of Transportation (DOTs) are starting to contemplate Vehicle-to-Infrastructure (V2I) deployments, and they need to know which V2I devices will perform best in their specific jurisdictions. In this paper, we develop several methods to test commercial, off-the-shelf (COTS) Cellular-V2X (C-V2X) roadside units (RSUs) as a way to inform government deployment. These methods compare performance between different COTS RSUs side-by-side. We present these methods all together as an open source framework which evaluates an RSU multilaterally: at specification compliance, network management, and transmission range layers."
   url: https://ieeexplore.ieee.org/document/10575957
 
-- title: Network Layer Spectral Coordination Integrated With Hadamard Projection for Multilayer Interference Mitigation
+- id: spectral-coordination
+  area: spectrum
+  project: spectrum
+  hook: "Passive receivers announce when they are listening; active users step aside, and whoever doesn't gets cancelled out."
+  title: Network Layer Spectral Coordination Integrated With Hadamard Projection for Multilayer Interference Mitigation
   authors: A. Palacios, D. Ward, D. Bronson, J. Backman, D. Heo, K. F. Warnick, P. Lundrigan
   conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2024
   abstract: Sharing crowded radio spectrum with astronomical observatories and other passive users requires a multilayer approach. We present a protocol that allows passive devices to notify nearby active users of their spectrum utilization plans, regardless of the wireless protocol used by the receiver. For non-compliant active users, we use a Hadamard projection based cancellation algorithm to remove residual interference. Hadamard projection can be implemented before additional stages of RFI rejection such as subspace projection that may occur during beamforming and imaging. The integrated system is demonstrated with laboratory and outdoor over the air experimental results. The system is able to preserve a signal of interest to the passive user while suppressing interference from both compliant and non-compliant active spectrum users.
   url: /assets/dpass.pdf
 
-- title: Wireless Latency Shift Keying
+- id: wlsk
+  area: subprotocols
+  project: subprotocols
+  hook: "Encodes data in network latency so an untrusted Wi-Fi sensor can pair securely with a device on a trusted network."
+  title: Wireless Latency Shift Keying
   authors: J. Johnson, C. Arvonen, A. Palacios, P. Lundrigan
   conference: ACM International Conference on Mobile Computing and Networking (MobiCom), 2024
   abstract: IEEE 802.11 (WiFi) only has two modes of trust—complete trust or complete untrust. The lack of nuance leaves no room for sensors that a user does not fully trust but wants to connect to their network, such as a WiFi sensor. Solutions exist, but they require advanced knowledge of network administration. We solve this problem by introducing a new way of modulating data in the latency of the network, called Latency Shift Keying. We use specific characteristics of the WiFi protocol to carefully control the latency of just one device on the network. We build a transmitter, receiver, and modulation scheme that is designed to encode data in the latency of a network. We develop an application, Wicket, that solves the WiFi trust issue using Latency Shift Keying to create a new security association between an untrusted WiFi sensor and a wired device on the trusted network. We evaluate its performance and show that it works in many network conditions and environments.
   url: /assets/WLSK.pdf
 
-- title: "Stealthy Signals: Using Ghost Modulation to Watermark Interference"
+- id: ghost-modulation
+  area: subprotocols
+  project: subprotocols
+  hook: "Encodes data in the timing of a LEO satellite's key packets so separate networks can coordinate their spectrum."
+  title: "Stealthy Signals: Using Ghost Modulation to Watermark Interference"
   authors: A. Palacios, C. Bledsoe, E. Kelsey, L. Landon, J. Backman, P. Lundrigan
   conference: ACM Workshop on LEO Networking and Communication (LEO-NET), 2023
   abstract: LEO satellite constellations have changed the world for the better through Earth observations, research, and telecommunications. Recent advances, especially in telecommunications, have brought the world closer to global connectivity. While these constellations usually have intra-network communications, they generally lack inter-network communication with other networks which leads to interference and noise. This interference and noise leads to degradation of network performance. We propose Ghost Modulation (GM), a novel protocol, to enable inter-network communication and spectrum coordination between a LEO satellite and any other device that supports the GM protocol. GM changes the transmission timing of key packets to encode data while passing most packets through. We evaluate our protocol and show that it can be used to dynamically coordinate heterogeneous networks with minimal overhead.
   url: /assets/stealthy-signals.pdf
 
-- title: Utilizing Low-Cost Sensors to Monitor Indoor Air Quality in Mongolian Gers
+- id: ger-sensors
+  area: sensing
+  project: mongolia
+  hook: "Low-cost sensors inside Ulaanbaatar gers measured how much insulation and electric heat cut indoor PM2.5."
+  title: Utilizing Low-Cost Sensors to Monitor Indoor Air Quality in Mongolian Gers
   authors: C. Flowerday, P. Lundrigan, C. Kitras, T. Nguyen, J. Hansen
   conference: Sensors. Vol 23, 2023
-  abstract: Air quality has important climate and health effects. There is a need, therefore, to monitor air quality both indoors and outdoors. Methods of measuring air quality should be cost-effective if they are to be used widely, and one such method is low-cost sensors (LCS). This study reports on the use of LCSs in Ulaanbataar, Mongolia to measure PM2.5 concentrations inside yurts or &ldquo;gers&rdquo;. Some of these gers were part of a non-government agency (NGO) initiative to improve insulating properties of these housing structures. The goal of the NGO was to decrease particulate emissions inside the gers; a secondary result was to lower the use of coal and other biomass material. LCSs were installed in gers heated primarily by coal, and interior air quality was measured. Gers that were modified by increasing their insulating capacities showed a 17.5% reduction in PM2.5 concentrations, but this is still higher than recommended by health organizations. Gers that were insulated and used a combination of both coal and electricity showed a 19.1% reduction in PM2.5 concentrations. Insulated gers that used electricity for both heating and cooking showed a 48% reduction in PM2.5 but still had higher concentrations of PM2.5 that were 6.4 times higher than recommended by the World Health Organization (WHO). Nighttime and daytime trends followed similar patterns and trends in PM2.5 concentrations with slight variations. It was found that at nighttime the outside PM2.5 concentrations were generally higher than the inside concentrations of the gers in this study, meaning that PM2.5 would flow into the ger whenever the doors were opened, causing spikes in PM2.5 concentrations.
+  abstract: Air quality has important climate and health effects. There is a need, therefore, to monitor air quality both indoors and outdoors. Methods of measuring air quality should be cost-effective if they are to be used widely, and one such method is low-cost sensors (LCS). This study reports on the use of LCSs in Ulaanbaatar, Mongolia to measure PM2.5 concentrations inside yurts or &ldquo;gers&rdquo;. Some of these gers were part of a non-government agency (NGO) initiative to improve insulating properties of these housing structures. The goal of the NGO was to decrease particulate emissions inside the gers; a secondary result was to lower the use of coal and other biomass material. LCSs were installed in gers heated primarily by coal, and interior air quality was measured. Gers that were modified by increasing their insulating capacities showed a 17.5% reduction in PM2.5 concentrations, but this is still higher than recommended by health organizations. Gers that were insulated and used a combination of both coal and electricity showed a 19.1% reduction in PM2.5 concentrations. Insulated gers that used electricity for both heating and cooking showed a 48% reduction in PM2.5 but still had higher concentrations of PM2.5 that were 6.4 times higher than recommended by the World Health Organization (WHO). Nighttime and daytime trends followed similar patterns and trends in PM2.5 concentrations with slight variations. It was found that at nighttime the outside PM2.5 concentrations were generally higher than the inside concentrations of the gers in this study, meaning that PM2.5 would flow into the ger whenever the doors were opened, causing spikes in PM2.5 concentrations.
   url: https://doi.org/10.3390/s23187721
 
-- title: Location Verification of Crowd-Sourced Sensors
+- id: lamda
+  area: sensing
+  hook: "Verifies where a crowd-sourced sensor really is using only a web browser and traceroutes, with no GPS."
+  title: Location Verification of Crowd-Sourced Sensors
   authors: C. Kitras, C. Pollan, K. Myers, C. Wirthlin Tischner, P. Lundrigan
   conference: IEEE International Workshop on IoT in Emerging Fields (IoTEF), 2023
   abstract: Community-driven sensor networks have been instrumental in providing easy access to affordable, large-scale measurement recording, facilitated by the accessibility of inexpensive sensor hardware. The simplicity of this hardware makes it challenging to retrieve trustworthy location data without added hardware such as GPS. We introduce the LaMDA framework, a software-based solution run solely in a web browser to determine the location of a device with the aid of a registering device. We monitor the device for any location changes by analyzing its traceroute data from a central server. Our solution allows minimal firmware changes to be made to fleets of devices without recall or changes to hardware.
   url: /assets/lambda.pdf
 
-- title: "Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing"
+- id: v2i-poster
+  area: vehicles
+  project: v2x
+  hook: "Indoor and outdoor tests of commercial roadside units, to help transportation departments choose what to deploy."
+  title: "Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing"
   authors: B. Schiel, A. Farmer, A. Murali, B. Corry, P. Lundrigan
-  conference: IEEE Vehicle Networking Conference (VNC), 2023
+  conference: IEEE Vehicular Networking Conference (VNC), 2023
   abstract: >
     Vehicle-to-Everything (V2X) technologies are seeing significant growth as an element of smart cities and a more-interconnected digital world in the Internet of Things (IoT). As governing bodies like State Departments of Transportation (DOTs) contemplate Vehicle-to-Infrastructure (V2I) deployments, they need to know what V2I devices will perform best, both in general and in their specific jurisdictions. In this paper, we develop a method to test commercial, off-the-shelf (COTS) Cellular-V2X (C-V2X) roadside equipment (RSE) as a way to inform government deployment; this includes indoor and outdoor tests for thoroughness. While this method needs to be refined, it provides a strong basis for future DOTs to determine which devices will best meet their deployment needs.
   url: https://ieeexplore.ieee.org/document/10136347
 
-- title: Utilizing a Blockchain for Managing Sensor Metadata in Exposure Health Studies
+- id: blockchain-metadata
+  area: health
+  hook: "A permissioned blockchain that records every sensor deployment event, so data errors can be traced to their cause."
+  title: Utilizing a Blockchain for Managing Sensor Metadata in Exposure Health Studies
   authors: A. Sarbhai, R. Gouripeddi, P. Lundrigan, P. Chidambaram, A. Saha, R. Madsen, J. Facelli, K. Sward, S. K. Kasera
   conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC), 2022
   abstract: >
     Commercial Internet of Things (IoT) sensors enable continuous data collection that benefits exposomic studies. The Exposure Health Informatics Ecosystem (EHIE) is one such sensor-based informatics platform for performing multiple simultaneous exposomic studies. It captures data from networks of sensors designed to record air quality in homes of the study’s participants and neighboring areas. In such cases where sensors are continually streaming data, it is crucial to monitor, in real time, the operational status of the network and record possible anomalies. Data collected by these sensors is only useful if it is free of errors. Therefore, maintaining the proper integrity of devices requires the capture of all deployment events that can cause anomalies. Tracking faults by recording system metadata is a difficult task, and we need a mechanism to capture the trajectories of devices within and across studies, systematically capture metadata of deployed version, and assign appropriate provenance to data recorded from each sensor. In this paper, we propose the use of a permissioned blockchain to manage the metadata and connect seemingly unrelated changes to create a trajectory of events that could result in the errors we observe. We implement a preliminary version of our blockchain solution in Hyperledger Fabric to help track errors in such a volatile setup. We also highlight how the properties of blockchain fulfill the essential needs for a metadata management solution needed in our case study.
   url: https://ieeexplore.ieee.org/document/9796689
 
-- title: The Hitchhiker's Guide to Successful Remote Sensing Deployments in Mongolia
+- id: mongolia-deployment
+  area: sensing
+  project: mongolia
+  hook: "Building and deploying real-time, low-cost air quality sensors in Ulaanbaatar, and what we learned doing it."
+  title: The Hitchhiker's Guide to Successful Remote Sensing Deployments in Mongolia
   authors: L. Alcantara, J. Miera, B. Ariun-Erdene, C. Teng, P. Lundrigan
   conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC), 2020
   abstract: >
-    The health hazard of air pollution in developing countries poses a significant threat of cardiovascular, respiratory, and other diseases. Ulaanbaatar, Mongolia is among cities with the worst polluted air in the world due to the use of coal as the primary heating source in the traditional Mongolian gers where most of the local population resides. Humanitarian groups are looking for ways to improve air quality, but are unable to measure the effects of their solutions. We build a low-cost air quality sensor that can upload data in real-time in remote locations. This newly developed sensor allows for _real-time_ air quality monitoring and tracking that was not possible before in such locations. We present the implementation and deployment of this system and share experiences and lessons learned from deploying the sensors in such a unique location.
+    The health hazard of air pollution in developing countries poses a significant threat of cardiovascular, respiratory, and other diseases. Ulaanbaatar, Mongolia is among cities with the worst polluted air in the world due to the use of coal as the primary heating source in the traditional Mongolian gers where most of the local population resides. Humanitarian groups are looking for ways to improve air quality, but are unable to measure the effects of their solutions. We build a low-cost air quality sensor that can upload data in real-time in remote locations. This newly developed sensor allows for real-time air quality monitoring and tracking that was not possible before in such locations. We present the implementation and deployment of this system and share experiences and lessons learned from deploying the sensors in such a unique location.
   url: /assets/mongolia.pdf
 
-- title: >
+- id: onpc
+  area: wifi
+  project: onpc
+  hook: "Uses ordinary Wi-Fi radios as on/off power sources to send slow data far beyond normal Wi-Fi range."
+  title: >
     On-off Noise Power Communication
   authors: >
     P. Lundrigan, N. Patwari, S. K. Kasera
@@ -132,7 +213,11 @@
     standard WiFi.
   url: /assets/ONPC.pdf
 
-- title: >
+- id: epifi
+  area: health
+  project: prisms
+  hook: "An in-home sensor network that epidemiologists can design and deploy themselves, run for two years in 15 homes."
+  title: >
     An In-Home IoT Architecture for Epidemiological Deployments
   authors: >
     P. Lundrigan, K. Min, N. Patwari, S. K. Kasera, K. Kelly, J.
@@ -153,13 +238,16 @@
     long-term deployment.
   url: /assets/EpiFi.pdf
 
-- title: >
+- id: maav
+  area: health
+  hook: "A home air quality system that measures, annotates and visualizes PM2.5, studied in six long-term deployments."
+  title: >
     Managing In-home Environments Through Sensing, Annotating, and Visualizing Air Quality Data
   authors: >
     J. Moore, P. Goffin, M. Meyer, P. Lundrigan, N. Patwari, K. Sward, and J. Wiese
   conference: >
     Proceedings of the ACM on Interactive, Mobile, Wearable and Ubiquitous Technologies (IMWUT) (Ubicomp '18), September 2018
-  url: http://vdl.sci.utah.edu/publications/2018_imwut_maav/
+  url: https://vdl.sci.utah.edu/publications/2018_imwut_maav/
   abstract: >
     Air quality is important, varies across time and space, and is largely
     invisible. Pioneering past work deploying air quality monitors in
@@ -182,15 +270,21 @@
     MAAV. These results yield important insights for designing residential
     sensing systems that integrate into users’ everyday lives.
 
-- title: >
+- id: smart-air-filter
+  area: health
+  hook: "A randomized controlled trial of a smart home air filtering system."
+  title: >
     Smart Home Air Filtering System: A Randomized Controlled Trial for Performance Evaluation
   authors: >
     K. T. Min, P. Lundrigan, N. Patwari, K. Sward, and S. C. Collingwood
   conference: >
     3rd IEEE / ACM Conference on Connected Health: Applications, Systems, and Engineering (CHASE 2018)
-  url: http://span.ece.utah.edu/pub/CHASE_2018_Min_final.pdf
+  url: https://span.ece.utah.edu/pub/CHASE_2018_Min_final.pdf
 
-- title: >
+- id: strap
+  area: wifi
+  hook: "Securely connects a whole set of new Wi-Fi devices to a home router at once, faster than setting each one up."
+  title: >
     STRAP: Secure TRansfer of Association Protocol
   authors: >
     P. Lundrigan, N. Patwari, S. K. Kasera
@@ -220,4 +314,4 @@
 #     Kyeong T. Min, Philip Lundrigan, Neal Patwari
 #   conference: >
 #     ACM/IEEE Information Processing in Sensor Networks 2017, April 2017
-#   url: http://span.ece.utah.edu/uploads/IPSN_Demo_Paper_2017_Final%20(1).pdf
+#   url: https://span.ece.utah.edu/uploads/IPSN_Demo_Paper_2017_Final%20(1).pdf

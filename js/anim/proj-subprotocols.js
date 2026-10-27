@@ -149,8 +149,9 @@ export default {
       const ta = P(x0, th, Z_LENS);
       const tb = P(x1, th, Z_LENS);
       api.line([ta, tb], { color: 'rgba(237,63,149,0.75)', width: api.s(1.2), dash: [api.s(5), api.s(5)] });
-      api.text('DECODER', c[2][0] - api.s(8), c[2][1] + api.fs(13), { size: api.fs(11), color: 'rgba(250,180,215,0.9)', weight: 600, spacing: 1, align: 'right' });
-      if (!api.compact) api.text('1 above · 0 below', tb[0] - api.s(8), tb[1] - api.s(7), { size: api.fs(10.5), color: 'rgba(250,180,215,0.75)', align: 'right' });
+      const edge = w - api.s(24);
+      api.text('DECODER', Math.min(c[2][0] - api.s(8), edge), c[2][1] + api.fs(13), { size: api.fs(11), color: 'rgba(250,180,215,0.9)', weight: 600, spacing: 1, align: 'right' });
+      if (!api.compact) api.text('1 above · 0 below', Math.min(tb[0] - api.s(8), edge), tb[1] - api.s(7), { size: api.fs(10.5), color: 'rgba(250,180,215,0.75)', align: 'right' });
     };
 
     let lensDrawn = false;
