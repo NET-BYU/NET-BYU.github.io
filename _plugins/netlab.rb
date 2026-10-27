@@ -2,6 +2,7 @@
 #
 # Papers gain: slug (anchor id), year, area, animation (falls back to "generic" when
 # js/anim/<id>.js does not exist), authors_list (lab members linked to People), citation.
+# Current students are ordered by degree (PhD, MS, undergrad), then last name.
 # People gain: slug, thumb, papers_count, areas. Projects gain: slug, area, related papers.
 
 module NetLab
@@ -56,6 +57,9 @@ Jekyll::Hooks.register :site, :post_read do |site|
     register.call(f, "faculty", f["first_name"], f["last_name"])
   end
   (data["students"] || []).each { |s| register.call(s, "current", s["first_name"], s["last_name"]) }
+  # Current students list PhD first, then master's, then undergraduates, by last name within each.
+  degree_rank = { "PhD" => 0, "MS" => 1, "Undergrad" => 2 }
+  data["students"]&.sort_by! { |s| [degree_rank.fetch(s["degree"].to_s, 3), s["last_name"].to_s.downcase, s["first_name"].to_s.downcase] }
   past = data["past_students"] || {}
   (past["graduate_students"] || []).each { |s| register.call(s, "alumni", s["first_name"], s["last_name"]) }
   (past["undergraduate_students"] || []).each { |s| register.call(s, "alumni-undergrad", s["first_name"], s["last_name"]) }

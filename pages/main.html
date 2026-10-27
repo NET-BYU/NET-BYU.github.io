@@ -86,7 +86,7 @@ permalink: /
       <a class="arrow-link" href="/people/"><span>Meet everyone</span>{{ arrow }}</a>
     </div>
     <div class="faces">
-      {%- assign current = site.data.students | sort: "last_name" %}
+      {%- assign current = site.data.students %}
       {%- for person in site.data.faculty %}
       <a class="face" href="/people/#{{ person.slug }}">
         <img src="{{ person.thumb | default: person.image }}" alt="" loading="lazy" width="240" height="240">

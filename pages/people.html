@@ -4,7 +4,7 @@ title: People
 permalink: /people/
 description: The students, faculty and alumni of the NET Lab at Brigham Young University.
 ---
-{%- assign current = site.data.students | sort: "last_name" -%}
+{%- assign current = site.data.students -%}
 {%- assign grads = site.data.past_students.graduate_students | sort: "graduation" | reverse -%}
 {%- assign undergrads = site.data.past_students.undergraduate_students | sort: "year" | reverse -%}
 {%- assign uyears = undergrads | map: "year" | uniq -%}

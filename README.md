@@ -56,6 +56,9 @@ Add a square headshot to `images/` (at least 480 px) and an entry:
   link: https://www.linkedin.com/in/...
 ```
 
+Order in the file doesn't matter: current students are shown PhD first, then master's, then
+undergraduates, by last name within each. Alumni are shown newest graduation first.
+
 When someone graduates, move their entry from `students.yaml` to `past_students.yaml`
 (`graduate_students` with `graduation:` and `job:`, or `undergraduate_students` with `year:`).
 
