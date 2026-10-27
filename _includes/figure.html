@@ -11,11 +11,11 @@
 {%- assign media = it.animation_video | default: it.animation_image | default: it.animation_embed -%}
 {%- capture label -%}{{ it.animation_caption | default: it.hook | default: it.title | default: it.name }}{%- endcapture -%}
 <figure class="fig{% if include.kind == 'scene' %} fig--scene{% endif %}" data-area="{{ it.area }}"{% unless media %} data-anim="{{ it.animation }}"{% endunless %}>
-  <div class="fig-stage"{% if include.ar %} style="--ar: {{ include.ar }}"{% endif %} role="img" aria-label="Animation: {{ label | strip_html | escape }}">
+  <div class="fig-stage"{% if include.ar %} style="--ar: {{ include.ar }}"{% endif %} data-label="Animation: {{ label | strip_html | escape }}">
     {%- if it.animation_video %}
-    <video src="{{ it.animation_video }}" muted loop playsinline autoplay preload="metadata"{% if it.animation_poster %} poster="{{ it.animation_poster }}"{% endif %}></video>
+    <video src="{{ it.animation_video }}" muted loop playsinline autoplay preload="metadata" aria-label="{{ label | strip_html | escape }}"{% if it.animation_poster %} poster="{{ it.animation_poster }}"{% endif %}></video>
     {%- elsif it.animation_image %}
-    <img src="{{ it.animation_image }}" alt="" loading="lazy" decoding="async" class="contain">
+    <img src="{{ it.animation_image }}" alt="{{ label | strip_html | escape }}" loading="lazy" decoding="async" class="contain">
     {%- elsif it.animation_embed %}
     <iframe src="{{ it.animation_embed }}" title="{{ label | strip_html | escape }}" loading="lazy" allowfullscreen></iframe>
     {%- endif %}

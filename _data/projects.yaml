@@ -23,6 +23,7 @@
   area: subprotocols
   name: Software-Based Wireless Sub-Protocols
   hook: "New wireless capabilities built on top of existing protocols, delivered with only a software update."
+  animation_caption: "Ordinary Wi-Fi frames stream toward you on three channels. A decoder reads one hidden bit from each frame's power as it passes, spelling out a message, while the frames themselves arrive unchanged."
   animation: proj-subprotocols
   link: /subprotocols/
   images:

@@ -37,7 +37,13 @@ export class Figure {
         }
       }
       this.canvas = document.createElement('canvas');
-      this.canvas.setAttribute('aria-hidden', 'true');
+      const label = this.stage.dataset.label;
+      if (label) {
+        this.canvas.setAttribute('role', 'img');
+        this.canvas.setAttribute('aria-label', label);
+      } else {
+        this.canvas.setAttribute('aria-hidden', 'true');
+      }
       this.stage.prepend(this.canvas);
       this.ctx = this.canvas.getContext('2d');
       this.api = createApi(this.ctx, { area: this.area, seed: this.el.dataset.seed || this.id });

@@ -458,6 +458,7 @@ export function initHero(hero) {
   function refresh() {
     readColors();
     layout();
+    if (rxHint) rxHint.hidden = reducedMQ.matches;
     if (reducedMQ.matches) {
       stop();
       decoded = message;
@@ -469,7 +470,7 @@ export function initHero(hero) {
   readColors();
   layout();
   renderReadout();
-  if (reducedMQ.matches) { decoded = message; renderReadout(); drawStatic(); }
+  if (reducedMQ.matches) { decoded = message; renderReadout(); drawStatic(); if (rxHint) rxHint.hidden = true; }
 
   new ResizeObserver(() => { layout(); if (!running) drawStatic(); }).observe(hero);
   new IntersectionObserver(([e]) => (e.isIntersecting ? start() : stop()), { threshold: 0.05 }).observe(hero);

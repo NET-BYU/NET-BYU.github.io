@@ -22,6 +22,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Turns an error-correcting code's unused capacity into a second data stream, filling the gaps between MCS steps."
+  animation_caption: "SAFEC flips chosen bits on purpose, and where each flip lands carries two secondary bits. The decoder corrects every error, so the base data arrives intact and throughput lands between two MCS steps."
   title: "WiP: SAFEC: Slack-Aware Forward Error Correction"
   authors: E. Sorensen, T. Young, B. Smith, P. Lundrigan
   conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
@@ -41,6 +42,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Sends a second stream of data in tiny carrier-frequency shifts that ordinary receivers already correct away."
+  animation_caption: "The transmitter nudges its carrier up or down to send bits. The main receiver stays locked and keeps decoding its data, while a second receiver reads the nudges back as a bit stream."
   title: "Frequency Lock Encoding"
   authors: J. Montierth, P. Lundrigan, M. Rice
   conference: "IEEE Military Communications Conference (MILCOM), 2026"
