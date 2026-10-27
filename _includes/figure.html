@@ -19,12 +19,6 @@
     {%- elsif it.animation_embed %}
     <iframe src="{{ it.animation_embed }}" title="{{ label | strip_html | escape }}" loading="lazy" allowfullscreen></iframe>
     {%- endif %}
-    {%- unless it.animation_image or it.animation_embed %}
-    <button class="fig-ctl needs-js" type="button" aria-label="Pause animation" aria-pressed="false">
-      <svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg>
-      <svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg>
-    </button>
-    {%- endunless %}
   </div>
   {%- if site.show_placeholder_markers and status != "final" %}
   <span class="fig-tag" title="Placeholder animation with sample data. Authors: see the README to replace it."><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h3l2-5 2 10 2-5h3"/></svg>Suggested animation · replace me</span>

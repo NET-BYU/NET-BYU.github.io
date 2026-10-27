@@ -48,7 +48,7 @@ What a neighboring lab could not truthfully copy:
 
 ## Brand Commitments
 
-- The NET Lab hexagon logo (`images/NET Lab Logo@3x.png`) is used as-is.
+- The NET Lab hexagon logo is used as-is, from the vector original (`images/netlab-logo.svg`).
 - The site palette is built from the logo's seven trace colors, already listed in `_config.yml`: `#ED3F95` pink, `#F89938` orange, `#D8E022` yellow-green, `#00A775` green, `#89298E` purple, `#76C044` light green, `#00AEEF` cyan.
 - joshuamontierth.github.io is a bar for craft, creativity and live per-topic figures, not a look to borrow.
 - Standing visual preference (chosen 2026-10-27 over two rounds of themed directions): the research-lab category standard, played straight, at the craft level of MIT Media Lab (media.mit.edu) and Google DeepMind (deepmind.google). No costume worlds.

@@ -35,6 +35,26 @@ systemDark.addEventListener('change', () => {
 });
 labelThemeButtons();
 
+// ---------- Animations on/off (one switch for the whole site, remembered) ----------
+function labelMotionButtons() {
+  const off = root.dataset.motion === 'off';
+  $$('[data-motion-toggle]').forEach((b) => {
+    b.setAttribute('aria-pressed', String(off));
+    b.textContent = off ? 'Play animations' : 'Pause animations';
+  });
+}
+$$('[data-motion-toggle]').forEach((btn) =>
+  btn.addEventListener('click', () => {
+    const off = root.dataset.motion !== 'off';
+    if (off) root.dataset.motion = 'off';
+    else delete root.dataset.motion;
+    try { localStorage.setItem('motion', off ? 'off' : 'on'); } catch { /* private mode */ }
+    document.dispatchEvent(new CustomEvent('motionchange', { detail: off ? 'off' : 'on' }));
+    labelMotionButtons();
+  }),
+);
+labelMotionButtons();
+
 // ---------- Header ----------
 const header = document.querySelector('.site-header');
 const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -227,7 +247,3 @@ document.getElementById('the-net')?.addEventListener('click', (e) => {
 
 // ---------- Page modules ----------
 initFigures(document);
-const hero = document.querySelector('.hero');
-if (hero) import('./hero.js').then((m) => m.initHero(hero));
-const network = document.querySelector('.network');
-if (network) import('./coauthors.js').then((m) => m.initNetwork(network));

@@ -3,6 +3,8 @@
 import { createApi, readPalette, AREA_COLOR } from './anim/kit.js';
 
 const reducedMQ = matchMedia('(prefers-reduced-motion: reduce)');
+// Still frames when the visitor prefers reduced motion or paused animations in the footer.
+const stillOnly = () => reducedMQ.matches || document.documentElement.dataset.motion === 'off';
 const live = new Set();
 const mounted = new Set();
 let raf = 0;
@@ -15,7 +17,6 @@ export class Figure {
     this.id = el.dataset.anim;
     this.area = AREA_COLOR[el.dataset.area] || el.dataset.color || 'cyan';
     this.visible = false;
-    this.paused = false;
     this.elapsed = Number(el.dataset.start || 0);
     this.mod = null;
     this.state = null;
@@ -90,7 +91,7 @@ export class Figure {
     const api = this.api;
     const d = this.mod.duration || 10;
     api.pal = this.pal || (this.pal = readPalette(this.el));
-    api.reduced = reducedMQ.matches;
+    api.reduced = stillOnly();
     api.t = this.forcedT ?? (api.reduced ? (this.mod.still ?? d * 0.6) : this.elapsed % d);
     const ctx = this.ctx;
     ctx.setTransform(api.dpr, 0, 0, api.dpr, 0, 0);
@@ -112,17 +113,6 @@ export class Figure {
     this.render();
   }
 
-  setPaused(p) {
-    this.paused = p;
-    this.el.classList.toggle('is-paused', p);
-    const btn = this.el.querySelector('.fig-ctl');
-    if (btn) {
-      btn.setAttribute('aria-pressed', String(p));
-      btn.setAttribute('aria-label', p ? 'Play animation' : 'Pause animation');
-    }
-    if (!p && this.visible) start(this);
-  }
-
   fail() {
     this.failed = true;
     this.el.classList.add('is-failed');
@@ -140,7 +130,7 @@ function tick(now) {
   const dt = Math.min(0.05, (now - last) / 1000 || 0);
   last = now;
   for (const f of live) {
-    if (f.paused || f.api.reduced || f.forcedT !== undefined) continue;
+    if (f.api.reduced || f.forcedT !== undefined) continue;
     f.elapsed += dt;
     f.api.dt = dt;
     f.render();
@@ -161,30 +151,22 @@ function stop(fig) {
   live.delete(fig);
 }
 
-function wireControls(fig) {
-  const btn = fig.el.querySelector('.fig-ctl');
-  if (btn) btn.addEventListener('click', () => fig.setPaused(!fig.paused));
-}
-
-// Video figures pause offscreen and honor the same pause button.
+// Video figures play only while visible, and not at all when animations are off.
+const videos = new Set();
 function wireVideo(el) {
   const video = el.querySelector('video');
   if (!video) return;
-  if (reducedMQ.matches) video.removeAttribute('autoplay');
-  const btn = el.querySelector('.fig-ctl');
-  let userPaused = reducedMQ.matches;
-  el.classList.toggle('is-paused', userPaused);
-  btn?.addEventListener('click', () => {
-    userPaused = !userPaused;
-    el.classList.toggle('is-paused', userPaused);
-    btn.setAttribute('aria-label', userPaused ? 'Play animation' : 'Pause animation');
-    if (userPaused) video.pause();
-    else video.play().catch(() => {});
-  });
+  video.removeAttribute('autoplay');
+  const entry = { video, visible: false };
+  videos.add(entry);
   new IntersectionObserver(([e]) => {
-    if (e.isIntersecting && !userPaused) video.play().catch(() => {});
-    else video.pause();
+    entry.visible = e.isIntersecting;
+    syncVideo(entry);
   }, { threshold: 0.15 }).observe(el);
+}
+function syncVideo({ video, visible }) {
+  if (visible && !stillOnly()) video.play().catch(() => {});
+  else video.pause();
 }
 
 export function initFigures(root = document) {
@@ -216,7 +198,6 @@ export function initFigures(root = document) {
   const out = figs.map((el) => {
     const fig = new Figure(el);
     el.__fig = fig;
-    wireControls(fig);
     near.observe(el);
     seen.observe(el);
     return fig;
@@ -236,10 +217,13 @@ function repaintAll() {
 
 document.addEventListener('themechange', repaintAll);
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', repaintAll);
-reducedMQ.addEventListener('change', () => {
+function motionChanged() {
   repaintAll();
   for (const f of mounted) if (f.visible) start(f);
-});
+  videos.forEach(syncVideo);
+}
+reducedMQ.addEventListener('change', motionChanged);
+document.addEventListener('motionchange', motionChanged);
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && live.size && !raf) {
     last = performance.now();

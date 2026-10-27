@@ -30,9 +30,5 @@
   {"id": "proj-onpc", "kind": "scene", "area": "wifi"},
   {"id": "proj-prisms", "kind": "scene", "area": "health"},
   {"id": "generic", "kind": "diagram", "area": "spectrum"},
-  {"id": "mission-purpose", "kind": "diagram", "area": "subprotocols"},
-  {"id": "mission-faith", "kind": "diagram", "area": "spectrum"},
-  {"id": "mission-collaboration", "kind": "diagram", "area": "underwater"},
-  {"id": "mission-work-ethic", "kind": "diagram", "area": "vehicles"},
   {"id": "packet-lost", "kind": "diagram", "area": "subprotocols"}
 ]

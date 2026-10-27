@@ -57,9 +57,7 @@ function makeFig(entry, { scheme, label, cls = '', width, ar, fw }) {
   const scene = entry.kind === 'scene';
   panel.innerHTML = `<h2>${label}</h2>
     <figure class="fig${scene ? ' fig--scene' : ''} is-on" data-anim="${entry.id}" data-area="${entry.area}">
-      <div class="fig-stage" style="--ar:${ar || (scene ? '21 / 9' : '16 / 10')}">
-        <button class="fig-ctl" type="button" aria-label="Pause animation"><svg class="i-pause" viewBox="0 0 16 16"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16"><path d="M4 2.5v11l9-5.5z"/></svg></button>
-      </div>
+      <div class="fig-stage" style="--ar:${ar || (scene ? '21 / 9' : '16 / 10')}"></div>
       <span class="fig-tag"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 8h3l2-5 2 10 2-5h3"/></svg>Suggested animation · replace me</span>
       <figcaption>${entry.caption || ''}</figcaption>
     </figure>`;

@@ -2,7 +2,7 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/images/logo-64.png" alt="" width="56" height="56">
+        <img src="/images/netlab-logo.svg" alt="" width="51" height="56">
         <div>
           <strong>Network Enhanced Technologies Lab</strong>
           <span>{{ site.department }}</span>
@@ -28,6 +28,7 @@
     </div>
     <div class="foot-base">
       <span>© {{ site.time | date: "%Y" }} NET Lab, Brigham Young University</span>
+      <button class="motion-btn needs-js" type="button" data-motion-toggle aria-pressed="false">Pause animations</button>
       {%- if page.url == "/" %}
       <a class="the-net" id="the-net" href="#top" aria-label="Back to top">π</a>
       {%- endif %}

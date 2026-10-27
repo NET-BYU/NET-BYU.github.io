@@ -11,7 +11,7 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
 
 <div class="wrap page-head">
   <h1 class="page-title">People</h1>
-  <p class="lede">{{ current.size }} students and a professor today, and alumni now at places like Draper Laboratory, L3Harris and Rincon Research.</p>
+  <p class="lede">The students, faculty and alumni of the NET Lab.</p>
 </div>
 
 <section class="wrap section" style="padding-top: 0" aria-label="Faculty">
@@ -41,26 +41,9 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
   </div>
 </section>
 
-<section class="wrap section" aria-labelledby="network-title">
-  <div class="section-head">
-    <h2 class="h2" id="network-title">Who works with whom. <span class="tone">Drawn from every paper on this site.</span></h2>
-  </div>
-  <div class="network needs-js">
-    <script type="application/json" class="network-data">{{ site.data.coauthor_graph | jsonify }}</script>
-    <canvas aria-hidden="true"></canvas>
-    <div class="network-tip" role="status"></div>
-  </div>
-  <div class="network-legend needs-js">
-    {%- for area in site.data.areas %}
-    <span data-area="{{ area.id }}"><span class="dot"></span>{{ area.name }}</span>
-    {%- endfor %}
-    <span>Filled circles are current members, rings are alumni. Larger circles mean more papers. Hover or tap a person to see their collaborators.</span>
-  </div>
-</section>
-
 <section class="wrap section" aria-labelledby="alumni-title">
   <div class="section-head">
-    <h2 class="h2" id="alumni-title">Alumni. <span class="tone">Where our graduate students went next.</span></h2>
+    <h2 class="h2" id="alumni-title">Alumni</h2>
   </div>
   <div class="people">
     {%- for person in grads %}

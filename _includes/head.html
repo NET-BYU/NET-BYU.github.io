@@ -14,13 +14,14 @@
   <meta property="og:title" content="{{ page_title | escape }}">
   <meta property="og:description" content="{{ page_desc | escape }}">
   <meta property="og:url" content="{{ page.url | prepend: site.url }}">
-  <meta property="og:image" content="{{ '/images/logo-640.webp' | prepend: site.url }}">
+  <meta property="og:image" content="{{ '/images/netlab-logo-1200.png' | prepend: site.url }}">
   <meta name="twitter:card" content="summary">
-  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);}catch(e){}})();</script>
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')d.setAttribute('data-theme',t);if(localStorage.getItem('motion')==='off')d.setAttribute('data-motion','off');}catch(e){}})();</script>
   <link rel="preload" href="/fonts/schibsted-grotesk-normal-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{ '/css/site.css' | prepend: site.baseurl }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/images/netlab-logo.svg' | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" sizes="32x32" href="{{ '/icon/favicon-32x32.png' | prepend: site.baseurl }}">
   <link rel="icon" type="image/png" sizes="16x16" href="{{ '/icon/favicon-16x16.png' | prepend: site.baseurl }}">
-  <link rel="apple-touch-icon" href="{{ '/icon/favicon-96x96.png' | prepend: site.baseurl }}">
+  <link rel="apple-touch-icon" href="{{ '/icon/apple-touch-icon.png' | prepend: site.baseurl }}">
   <script type="module" src="{{ '/js/site.js' | prepend: site.baseurl }}"></script>
 </head>

@@ -92,8 +92,8 @@ please replace yours.
    (Add your id to `dev/anims.json` if it is new.)
 3. Keep to the house style: draw your contribution in your area's color (`api.accent`) and everything
    else in neutral ink; keep labels short; make it work at 360 px wide; leave the top-left corner
-   clear (the tag sits there) and the bottom-right corner clear (pause button); pick a `still`
-   moment for visitors who prefer reduced motion.
+   clear (the tag sits there); pick a `still` moment for visitors who prefer reduced motion or
+   pause animations.
 
 **Option 2: use a video, image or embed** by adding one of these to the paper's YAML entry instead:
 
@@ -120,13 +120,14 @@ To hide every remaining tag at once (for launch), set `show_placeholder_markers:
 | `_data/` | All content (papers, projects, people, articles, areas, navigation, principles) |
 | `pages/` | One file per page; `404.html` is the not-found page |
 | `_layouts/`, `_includes/` | The page shell, header, footer, figure slot, paper and person entries |
-| `_plugins/netlab.rb` | Build-time helper: years, anchors, citations, author links, the co-author network, thumbnails |
+| `_plugins/netlab.rb` | Build-time helper: years, anchors, citations, author links, thumbnails |
 | `css/site.css` | All styles. Colors are tokens at the top (light and dark) |
-| `js/site.js` | Theme toggle, menu, filters, search, citations |
-| `js/hero.js`, `js/coauthors.js` | The home page hero and the People page network |
+| `js/site.js` | Theme toggle, animation switch, menu, filters, search, citations |
 | `js/figures.js`, `js/anim/` | The animation loader and the animations |
+| `images/netlab-logo.svg` | The logo, converted from the lab's vector original (`netlab-logo-1200.png` and `icon/` are renders of it) |
 | `fonts/` | Self-hosted Schibsted Grotesk and Red Hat Mono (SIL Open Font License) |
 | `scripts/make-thumbs.py` | Makes small WebP copies of photos in `images/thumbs/` (needs ffmpeg). Optional: the site falls back to the originals |
 
 Light and dark mode follow the visitor's system setting, and the button in the header switches them.
-Animations pause when they are off screen, and visitors who prefer reduced motion see a still frame.
+Animations pause when they are off screen. Visitors who prefer reduced motion, or who click "Pause animations" in
+the footer (remembered per browser), see a still frame of each one.

@@ -3,7 +3,6 @@
 # Papers gain: slug (anchor id), year, area, animation (falls back to "generic" when
 # js/anim/<id>.js does not exist), authors_list (lab members linked to People), citation.
 # People gain: slug, thumb, papers_count, areas. Projects gain: slug, area, related papers.
-# A co-author network (site.data["coauthor_graph"]) is built from the papers.
 
 module NetLab
   module_function
@@ -90,7 +89,6 @@ Jekyll::Hooks.register :site, :post_read do |site|
 
   # ---- Papers ----
   papers = data["papers"] || []
-  edges = Hash.new { |h, k| h[k] = { "weight" => 0, "papers" => [] } }
   papers.each_with_index do |paper, index|
     paper["title"] = NetLab.clean(paper["title"])
     paper["conference"] = NetLab.clean(paper["conference"])
@@ -106,13 +104,11 @@ Jekyll::Hooks.register :site, :post_read do |site|
     paper["animation_status"] ||= "placeholder"
     project["related"] << paper if project
 
-    lab = []
     paper["authors_list"] = NetLab.split_authors(paper["authors"]).map do |name|
       person = find_person.call(name)
       if person
         person["papers_count"] += 1
         person["areas"] << paper["area"] unless person["areas"].include?(paper["area"])
-        lab << person
         { "name" => name, "url" => "/people/##{person['slug']}", "slug" => person["slug"] }
       else
         { "name" => name }
@@ -120,30 +116,7 @@ Jekyll::Hooks.register :site, :post_read do |site|
     end
     paper["authors"] = NetLab.clean(paper["authors"])
     paper["citation"] = "#{paper['authors']}. “#{paper['title']}.” #{paper['conference']}."
-
-    lab.uniq.combination(2).each do |a, b|
-      key = [a["slug"], b["slug"]].sort.join("|")
-      edges[key]["weight"] += 1
-      edges[key]["papers"] << paper["title"]
-    end
   end
-
-  # ---- Co-author network ----
-  nodes = people.values.select { |p| p["papers_count"].to_i > 0 }.map do |p|
-    {
-      "id" => p["slug"],
-      "name" => p["full_name"],
-      "role" => p["role"],
-      "papers" => p["papers_count"],
-      "areas" => p["areas"],
-      "url" => "/people/##{p['slug']}",
-    }
-  end
-  links = edges.map do |key, e|
-    a, b = key.split("|")
-    { "source" => a, "target" => b, "weight" => e["weight"], "papers" => e["papers"] }
-  end
-  data["coauthor_graph"] = { "nodes" => nodes, "links" => links }
 
   # ---- Articles ----
   (data["articles"] || []).each do |a|

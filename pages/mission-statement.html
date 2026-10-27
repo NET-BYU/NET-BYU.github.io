@@ -6,17 +6,17 @@ description: The NET Lab's mission and the principles we work by.
 ---
 {%- assign principles = site.data.principles -%}
 
-<div class="wrap page-head" style="grid-template-columns: 1fr">
-  <h1 class="sr-only">Our mission</h1>
-  <figure>
+<div class="wrap page-head">
+  <h1 class="page-title">Our mission</h1>
+  <figure class="quote-fig">
     <blockquote class="quote">The people who are crazy enough to think they can change the world are the ones who do.</blockquote>
     <figcaption class="quote-by">Steve Jobs</figcaption>
   </figure>
 </div>
 
-<section class="wrap section" style="padding-top: clamp(24px, 4vw, 56px)" aria-label="Mission">
+<section class="wrap section" style="padding-top: 0" aria-label="Mission">
   <div class="mission-intro">
-    <img src="/images/logo-640.webp" alt="NET Lab logo" width="240" height="240" loading="lazy">
+    <img src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" loading="lazy">
     <div class="prose">
       <p class="dropcap">In the NET Lab, we believe in the power of working together to change the world. Our research is centered on innovative ways of making a difference in the community and improving people's lives. We value all ideas, cultures, and backgrounds and recognize the power that comes from diversity. Our research makes a difference.</p>
       <p>As a lab, we believe in the following core principles:</p>
@@ -30,11 +30,6 @@ description: The NET Lab's mission and the principles we work by.
     <div class="principle" data-area="{{ pr.area }}">
       <h2><span class="dot" aria-hidden="true"></span>{{ pr.name }}</h2>
       <p>{{ pr.text }}</p>
-      <figure class="fig" data-area="{{ pr.area }}" data-anim="{{ pr.animation }}">
-        <div class="fig-stage" data-label="{{ pr.alt }}">
-          <button class="fig-ctl needs-js" type="button" aria-label="Pause animation" aria-pressed="false"><svg class="i-pause" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="2" width="3.5" height="12" rx="1"/><rect x="9.5" y="2" width="3.5" height="12" rx="1"/></svg><svg class="i-play" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2.5v11l9-5.5z"/></svg></button>
-        </div>
-      </figure>
     </div>
     {%- endfor %}
   </div>
