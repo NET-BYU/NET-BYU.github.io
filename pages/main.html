@@ -14,11 +14,6 @@ permalink: /
     </p>
   </div>
   <img class="hero-logo" src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" fetchpriority="high">
-  <ul class="hero-areas" aria-label="Research areas">
-    {%- for area in site.data.areas %}
-    <li data-area="{{ area.id }}"><a href="/papers/?area={{ area.id }}"><span class="dot" aria-hidden="true"></span>{{ area.name }}</a></li>
-    {%- endfor %}
-  </ul>
 </section>
 
 <section class="section" aria-labelledby="build-title" data-rail>
@@ -59,26 +54,6 @@ permalink: /
   </div>
 </section>
 
-{%- assign onpc = site.data.projects | where: "slug", "onpc" | first %}
-{%- if onpc.press %}
-<section class="section" aria-labelledby="news-title" data-area="wifi">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="h2" id="news-title">In the news</h2>
-      <a class="arrow-link" href="/projects/#onpc"><span>About the project</span>{{ arrow }}</a>
-    </div>
-    <div class="press">
-      {%- for item in onpc.press %}
-      <a href="{{ item.url }}">
-        <span class="press-title">{{ item.title }}<span class="src">{{ item.outlet }}</span></span>
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
-      </a>
-      {%- endfor %}
-    </div>
-  </div>
-</section>
-{%- endif %}
-
 <section class="section" aria-labelledby="people-title">
   <div class="wrap">
     <div class="section-head">
@@ -102,6 +77,27 @@ permalink: /
     </div>
   </div>
 </section>
+
+{%- assign onpc = site.data.projects | where: "slug", "onpc" | first %}
+{%- if onpc.press %}
+<section class="section" aria-labelledby="news-title" data-area="wifi">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="h2" id="news-title">In the news</h2>
+      <a class="arrow-link" href="/projects/#onpc"><span>About the project</span>{{ arrow }}</a>
+    </div>
+    <div class="press">
+      {%- for item in onpc.press %}
+      {%- assign tint = forloop.index0 | modulo: site.data.areas.size %}
+      <a href="{{ item.url }}" data-area="{{ site.data.areas[tint].id }}">
+        <span class="press-title"><span class="press-head">{{ item.title }}</span><span class="src">{{ item.outlet }}</span></span>
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17L17 7M9 7h8v8"/></svg>
+      </a>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
 
 <section class="section" aria-labelledby="articles-title">
   <div class="wrap">

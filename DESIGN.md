@@ -233,7 +233,7 @@ On the light figure stage five of these are faint as thin lines (Chartreuse 1.3:
 
 ### Named Rules
 
-**The One Meaning Rule.** Each logo color means one research area, everywhere. Color enters a component only through its `data-area` attribute: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text. Anything without a research area stays neutral. Two exceptions only: the logo itself, and transient interaction cues (the focus ring, text selection, the caret).
+**The One Meaning Rule.** Each logo color means one research area, everywhere. Color enters a component only through its `data-area` attribute: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text. Anything without a research area stays neutral. Three exceptions only: the logo itself; the home page's press links, which cycle through the seven colors in area order so each hover underline differs, like the project tiles above them (the PI asked for this); and transient interaction cues (the focus ring, text selection, the caret).
 
 **The Ink Variant Rule.** No text is ever set in a base logo color. Area text uses its -ink variant, which clears AA on every ground in both themes. Every base color fails AA as text in at least one theme: six of the seven on the light ground (Chartreuse at 1.4:1), Plum on the dark.
 
@@ -303,7 +303,7 @@ Two radii and a pill. Anything that shows something (animations, photos, portrai
 - **Default:** no fill, Hairline Strong outline, ink label at control weight.
 - **Hover / Focus:** fills with Mist and darkens the outline to ink-3 over .2s; pressing nudges it down 1px; keyboard focus shows the 2px Focus Blue ring at 3px. A button that expands something rotates its chevron 180° with the house ease.
 - **Icon button:** a 38px circle with the same outline and hover, holding an 18px icon (1.7 stroke): theme toggle, menu, rail arrows, close.
-- **Arrow link (tertiary):** the action at the end of a section head: a label at 620 with a 35% underline that firms up on hover, and a 16px arrow that slides 3px right. Outbound press links use a diagonal arrow that slides up and to the right.
+- **Arrow link (tertiary):** the action at the end of a section head: a label at 620 with a 35% underline that firms up on hover, and a 16px arrow that slides 3px right. Outbound press links are large open rows: on hover the headline takes a 2px underline in its link's color and the diagonal arrow slides up and to the right in that color's ink.
 
 ### Chips
 - **Style:** pill, 36px, ground fill, Hairline Strong outline, ink label at control weight. Area chips lead with the area's dot and end with a mono count in ink-3.
@@ -349,15 +349,15 @@ A paper figure come alive.
 **The Placeholder Honesty Rule.** A figure whose animation runs on sample data wears the dashed "Suggested animation · replace me" tag until its item is marked final. A tag comes off when its author marks the item final, and any that remain come off together at launch through the one site setting; never by restyling the tag or hiding it in CSS.
 
 ### Home Hero
-Calm and text-first, so someone who has never heard of the lab knows what it does before anything moves. Left: the two-tone Display headline, the lede (the lab's one-paragraph description), then a solid ink pill ("See our projects", 44px tall) beside an arrow link ("Read our papers"). Right: the unaltered vector logo at clamp(200px, 22vw, 340px), still. Under both, across the full width after a hairline: the seven research areas as dot-and-name links (560, 15px, ink-2, turning area ink on hover), each opening Papers filtered to that area. Nothing in the hero animates; the figures further down carry the motion. At 860px and below it is one column and the logo is dropped, since the header already shows it.
+Calm and text-first, so someone who has never heard of the lab knows what it does before anything moves. Left: the two-tone Display headline, the lede (the lab's one-paragraph description), then a solid ink pill ("See our projects", 44px tall) beside an arrow link ("Read our papers"). Right: the unaltered vector logo at clamp(200px, 22vw, 340px), still. Nothing in the hero animates; the figures further down carry the motion. At 860px and below it is one column and the logo is dropped, since the header already shows it.
 
 ### Area Marker
-- **Dot:** a 9px circle in the area color; on person cards, one 8px dot per area under the role.
+- **Dot:** a 9px circle in the area color.
 - **Label:** the dot, then the area's name at 600, 14px in the area ink. It appears in paper meta rows and the project sidebar; filter chips pair the dot with an ink label.
 - **Hover:** paper titles and project tiles take a 2px underline in the area color.
 
 ### People
-- **Person card:** a square portrait on a 16px stage (Mist behind it) that eases in to 1.03× on hover; the name (660, 18px), the role in ink-2, the employer in ink for alumni (no "Now at": it's implied), then the area dots. A person reached by a link anchor gets a 3px Focus Blue outline around the portrait.
+- **Person card:** a square portrait on a 16px stage (Mist behind it) that eases in to 1.03× on hover; the name (660, 18px), the role in ink-2, the employer in ink for alumni (no "Now at": it's implied). No area dots: with the co-author graph gone they explained nothing. A person reached by a link anchor gets a 3px Focus Blue outline around the portrait.
 
 ## Do's and Don'ts
 
@@ -373,7 +373,7 @@ Calm and text-first, so someone who has never heard of the lab knows what it doe
 - **Do** set text inside figures in fig-ink-2 or stronger, and area text in its -ink variant.
 
 ### Don't:
-- **Don't** use a logo color for decoration or for anything that is not a research area: not a page, a header, a button, a principle or a cover.
+- **Don't** use a logo color for decoration or for anything that is not a research area: not a page, a header, a button, a principle, a person or a cover. The press links' hover underlines are the one sanctioned exception.
 - **Don't** set text in a base logo color; each one fails AA as text in at least one theme.
 - **Don't** put an eyebrow, kicker or overline above a headline. Small uppercase labels head lists (sidebar groups, footer columns) and panels inside figures, nothing else.
 - **Don't** put shadows on cards, figures or rows. Shadow belongs to the toast and the lightbox.
@@ -381,7 +381,7 @@ Calm and text-first, so someone who has never heard of the lab knows what it doe
 - **Don't** add a decorative plexus, mesh or node-network background, or go back to a bordered card stack; node-link drawings appear only when they plot real data.
 - **Don't** add scroll reveals (fade-ups, staggered entrances); a figure's one-time power-on is the only reveal.
 - **Don't** paint a background in a diagram (the stage supplies it), and don't put anything essential under the tag (top-left 250×46).
-- **Don't** animate the home hero or fill it with traces, pulses or puzzles; it says what the lab does, plainly.
+- **Don't** animate the home hero or fill it with traces, pulses, puzzles or tag bars; it says what the lab does, plainly.
 - **Don't** add pause or play buttons to individual figures; the footer switch covers the whole site.
 - **Don't** recite counts in headlines and ledes ("7 projects", "23 papers", "9 students"); counts belong in filter chips and result lines.
 - **Don't** go lighter than fig-ink-3 for any text inside a figure; it is the AA floor on both stages.

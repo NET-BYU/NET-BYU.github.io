@@ -677,9 +677,9 @@
       "name": "Person Card",
       "kind": "card",
       "refersTo": "media",
-      "description": "A person on the People page: a square portrait on a 16px Mist stage (the photo goes here), name, role in ink-2, and one 8px dot per research area.",
-      "html": "<article class=\"ds-person\"><div class=\"ds-portrait\" role=\"img\" aria-label=\"Portrait\"></div><h3><a href=\"#\">Ada Lovelace</a></h3><p class=\"ds-role\">PhD student</p><p class=\"ds-dots\" aria-label=\"Research areas: Sub-protocols, Spectrum sharing\"><span class=\"ds-dot ds-area-subprotocols\"></span><span class=\"ds-dot ds-area-spectrum\"></span></p></article>",
-      "css": ".ds-person{display:flex;flex-direction:column;gap:6px;width:210px;font-family:var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink,#0A0B0F)}.ds-person h3,.ds-person p{margin:0}.ds-portrait{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--bg-2,#F2F3F5);margin-bottom:10px}.ds-person h3{font-size:18px;font-weight:660;letter-spacing:-0.01em;line-height:1.25}.ds-person h3 a{color:inherit;text-decoration:none}.ds-person h3 a:hover{text-decoration:underline}.ds-person h3 a:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}.ds-role{font-size:14.5px;line-height:1.6;color:var(--ink-2,#545966)}.ds-dots{display:flex;gap:5px;margin-top:4px}.ds-person .ds-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--area,#00AEEF)}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
+      "description": "A person on the People page: a square portrait on a 16px Mist stage (the photo goes here), name and role in ink-2; alumni add their employer in ink.",
+      "html": "<article class=\"ds-person\"><div class=\"ds-portrait\" role=\"img\" aria-label=\"Portrait\"></div><h3><a href=\"#\">Ada Lovelace</a></h3><p class=\"ds-role\">PhD student</p></article>",
+      "css": ".ds-person{display:flex;flex-direction:column;gap:6px;width:210px;font-family:var(--font, \"Schibsted Grotesk\", ui-sans-serif, system-ui, sans-serif);color:var(--ink,#0A0B0F)}.ds-person h3,.ds-person p{margin:0}.ds-portrait{aspect-ratio:1;border-radius:16px;overflow:hidden;background:var(--bg-2,#F2F3F5);margin-bottom:10px}.ds-person h3{font-size:18px;font-weight:660;letter-spacing:-0.01em;line-height:1.25}.ds-person h3 a{color:inherit;text-decoration:none}.ds-person h3 a:hover{text-decoration:underline}.ds-person h3 a:focus-visible{outline:2px solid var(--focus,#006D9E);outline-offset:3px;border-radius:4px}.ds-role{font-size:14.5px;line-height:1.6;color:var(--ink-2,#545966)}.ds-area-subprotocols{--area:var(--c-pink,#ED3F95);--area-ink:var(--c-pink-ink,#B8146A)}.ds-area-sensing{--area:var(--c-lime,#76C044);--area-ink:var(--c-lime-ink,#3B7417)}.ds-area-underwater{--area:var(--c-cyan,#00AEEF);--area-ink:var(--c-cyan-ink,#006D9E)}.ds-area-spectrum{--area:var(--c-purple-line,#89298E);--area-ink:var(--c-purple-ink,#89298E)}"
     }
   ],
   "narrative": {
@@ -698,7 +698,7 @@
     "rules": [
       {
         "name": "The One Meaning Rule",
-        "body": "Each logo color means one research area, everywhere. Color enters a component only through its `data-area` attribute: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text. Anything without a research area stays neutral. Two exceptions only: the logo itself, and transient interaction cues (the focus ring, text selection, the caret).",
+        "body": "Each logo color means one research area, everywhere. Color enters a component only through its `data-area` attribute: `--area` for fills, strokes, dots and hover underlines, `--area-ink` for text. Anything without a research area stays neutral. Three exceptions only: the logo itself; the home page's press links, which cycle through the seven colors in area order so each hover underline differs, like the project tiles above them (the PI asked for this); and transient interaction cues (the focus ring, text selection, the caret).",
         "section": "colors"
       },
       {
@@ -759,7 +759,7 @@
       "Do set text inside figures in fig-ink-2 or stronger, and area text in its -ink variant."
     ],
     "donts": [
-      "Don't use a logo color for decoration or for anything that is not a research area: not a page, a header, a button, a principle or a cover.",
+      "Don't use a logo color for decoration or for anything that is not a research area: not a page, a header, a button, a principle, a person or a cover. The press links' hover underlines are the one sanctioned exception.",
       "Don't set text in a base logo color; each one fails AA as text in at least one theme.",
       "Don't put an eyebrow, kicker or overline above a headline. Small uppercase labels head lists (sidebar groups, footer columns) and panels inside figures, nothing else.",
       "Don't put shadows on cards, figures or rows. Shadow belongs to the toast and the lightbox.",
@@ -767,7 +767,7 @@
       "Don't add a decorative plexus, mesh or node-network background, or go back to a bordered card stack; node-link drawings appear only when they plot real data.",
       "Don't add scroll reveals (fade-ups, staggered entrances); a figure's one-time power-on is the only reveal.",
       "Don't paint a background in a diagram (the stage supplies it), and don't put anything essential under the tag (top-left 250×46).",
-      "Don't animate the home hero or fill it with traces, pulses or puzzles; it says what the lab does, plainly.",
+      "Don't animate the home hero or fill it with traces, pulses, puzzles or tag bars; it says what the lab does, plainly.",
       "Don't add pause or play buttons to individual figures; the footer switch covers the whole site.",
       "Don't recite counts in headlines and ledes (\"7 projects\", \"23 papers\", \"9 students\"); counts belong in filter chips and result lines.",
       "Don't go lighter than fig-ink-3 for any text inside a figure; it is the AA floor on both stages."

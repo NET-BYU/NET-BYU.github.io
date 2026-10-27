@@ -10,9 +10,4 @@
   {%- else %}
   <p class="role">{% case person.degree %}{% when "PhD" %}PhD student{% when "MS" %}Master's student{% when "Undergrad" %}Undergraduate researcher{% else %}{{ person.degree }}{% endcase %}</p>
   {%- endif %}
-  {%- if person.areas.size > 0 %}
-  <p class="dots" aria-label="Research areas: {% for a in person.areas %}{% assign area = site.data.areas | where: 'id', a | first %}{{ area.name }}{% unless forloop.last %}, {% endunless %}{% endfor %}">
-    {%- for a in person.areas %}<span class="dot" data-area="{{ a }}"></span>{% endfor -%}
-  </p>
-  {%- endif %}
 </article>

@@ -3,7 +3,7 @@
 # Papers gain: slug (anchor id), year, area, animation (falls back to "generic" when
 # js/anim/<id>.js does not exist), authors_list (lab members linked to People), citation.
 # Current students are ordered by degree (PhD, MS, undergrad), then last name.
-# People gain: slug, thumb, papers_count, areas. Projects gain: slug, area, related papers.
+# People gain: slug, thumb. Projects gain: slug, area, related papers.
 
 module NetLab
   module_function
@@ -46,8 +46,6 @@ Jekyll::Hooks.register :site, :post_read do |site|
     person["full_name"] ||= full
     person["role"] = role
     person["thumb"] ||= NetLab.thumb_for(site, person["image"])
-    person["papers_count"] = 0
-    person["areas"] = []
     people[NetLab.person_key(first, last)] = person
   end
   (data["faculty"] || []).each do |f|
@@ -111,8 +109,6 @@ Jekyll::Hooks.register :site, :post_read do |site|
     paper["authors_list"] = NetLab.split_authors(paper["authors"]).map do |name|
       person = find_person.call(name)
       if person
-        person["papers_count"] += 1
-        person["areas"] << paper["area"] unless person["areas"].include?(paper["area"])
         { "name" => name, "url" => "/people/##{person['slug']}", "slug" => person["slug"] }
       else
         { "name" => name }
