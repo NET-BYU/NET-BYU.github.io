@@ -18,6 +18,7 @@
   author: Chris Kitras
   date: 2022-04-30 00:00:00
   cover: "Shells"
+  cover_cmd: "echo $SHELL"
 
 - title: Linux Magic | Text Editors
   link: https://kitras.io/linux/text-editors/
@@ -25,6 +26,7 @@
   author: Chris Kitras
   date: 2022-05-11 00:00:00
   cover: "Text Editors"
+  cover_cmd: "vim notes.txt"
 
 - title: Linux Magic | Scripts
   link: https://kitras.io/linux/scripts/
@@ -32,6 +34,7 @@
   author: Chris Kitras
   date: 2022-07-07 00:00:00
   cover: "Scripts"
+  cover_cmd: "./backup.sh"
 
 - title: Linux Magic | Remote Tools
   link: https://kitras.io/linux/remote-tools/
@@ -39,6 +42,7 @@
   author: Chris Kitras
   date: 2022-06-02 00:00:00
   cover: "Remote Tools"
+  cover_cmd: "ssh netlab"
 
 - title: Linux Magic | Man Pages
   link: https://kitras.io/linux/man-pages/
@@ -46,6 +50,7 @@
   author: Chris Kitras
   date: 2022-05-19 00:00:00
   cover: "Man Pages"
+  cover_cmd: "man man"
 
 - title: Linux Magic | Output Redirection
   link: https://kitras.io/linux/output-redirection/

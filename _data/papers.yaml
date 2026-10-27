@@ -12,6 +12,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Brings Frequency Lock Encoding to off-the-shelf ESP32 Wi-Fi chips, with no software-defined radio required."
+  animation_caption: "Wi-Fi frames from an ESP32-C5 each carry a small frequency shift, +Δf or −Δf. Slots where the MAC sent nothing become erasures that Reed-Solomon coding fills back in."
   title: "WiP: UnderTone: Frequency Lock Encoding on COTS Wi-Fi Hardware"
   authors: J. Montierth, P. Lundrigan
   conference: "ACM International Conference on Mobile Computing and Networking (MobiCom), 2026"
@@ -32,6 +33,7 @@
 - id: radon-monitors
   area: sensing
   hook: "Six rooms, 29 weeks: a consumer radon monitor matched an industrial one on radon, but not on CO₂ or humidity."
+  animation_caption: "A consumer monitor and an industrial one share a classroom for 29 weeks. They agree on radon; then the figure steps through CO₂, humidity, VOC, temperature and pressure."
   title: "Long-Term Validation of a Consumer- vs. Industrial-Grade Indoor Radon and Air Quality Monitor at a School in Utah"
   authors: J. Beard, M. Ball, C. Kitras, P. Lundrigan
   conference: "Sensors. Vol 26, 2026"
@@ -52,6 +54,7 @@
 - id: stadium-6ghz
   area: wifi
   hook: "Two years of data from LaVell Edwards Stadium: 6 GHz Wi-Fi is faster, but few phones end up using it."
+  animation_caption: "Clients in the stands, colored by band. Passpoint steering keeps about half of them on 5 GHz, and OWE transition mode lifts 6 GHz adoption to 21% of the rest."
   title: "If You Build It, Will They Connect? 6 GHz WiFi in a Stadium"
   authors: E. Sorensen, D. Hales, C. Kitras, J. Lofthouse, J. Montierth, P. Lundrigan
   conference: "IEEE International Conference on Computer Communications and Networks (ICCCN), 2026"
@@ -61,6 +64,7 @@
 - id: radon-hvac
   area: sensing
   hook: "Uses a school's existing HVAC system, on a smarter schedule, to clear radon before students arrive."
+  animation_caption: "Radon builds up overnight in a school. The optimized schedule runs the existing HVAC just before classes and clears it below the action level in fewer hours than a naive one."
   title: "Sustainable Radon Mitigation through Optimized HVAC Scheduling"
   authors: C. Kitras, J. D. Beard, J. D. Johnston, P. Lundrigan
   conference: "IEEE/ACM Conference on Connected Health: Applications, Systems, and Engineering Technologies (CHASE), 2025"
@@ -71,6 +75,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Fingerprints interfering satellites by nudging the timing of their transmissions, so radio observatories can tell who is interfering."
+  animation_caption: "A satellite sends key packets slightly early or late. The observatory reads only their arrival times, never the packets, and error correction repairs a bit lost to a fade."
   title: "Hidden in Plain Sight: Communicating using Interference"
   authors: A. Palacios, D. Harman, C. Kitras, E. Kelsey, M. C. Burnett, W. K. Harrison, P. Lundrigan
   conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2025
@@ -81,6 +86,7 @@
   area: underwater
   project: underwater
   hook: "Lets underwater nodes talk and listen at the same time in the same band, with almost no self-interference cancellation."
+  animation_caption: "Two nodes transmit at once with opposite chirps. Dechirping turns the far node's symbol into one sharp spike while the node's own signal spreads flat, with no cancellation filter."
   title: Using Orthogonal Chirps Underwater for In-Band, Full-Duplex Communication with Minimal Self-Interference Cancellation
   authors: B. Schiel, J. Montierth, E. Blattner, C. E. Dobbs, T. B. Nielsen, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
@@ -91,6 +97,7 @@
   area: underwater
   project: underwater
   hook: "An addressing scheme that tracks each underwater robot's role as fleets split and regroup mid-mission."
+  animation_caption: "Each vehicle's address names its role, group and id. A packet sent to a role reaches whoever holds it, even after the fleet regroups mid-mission."
   title: "Poster: Role-Based Network Addressing for Fleets of Autonomous Underwater Vehicles"
   authors: B. Schiel, P. Lundrigan
   conference: ACM International Conference on Underwater Networks & Systems (WUWNet), 2024
@@ -101,6 +108,7 @@
   area: vehicles
   project: v2x
   hook: "An open-source way for transportation departments to compare commercial roadside units before deploying them."
+  animation_caption: "Two commercial roadside units tested layer by layer: specification compliance, network management, then range as a car drives away from both."
   title: A Multi-Layered Framework for Informing V2I Deployment Decisions Using Commercial Hardware-In-The-Loop Testing of RSUs
   authors: B. Schiel, S. Swindler, A. Farmer, D. Sharp, A. Murali, B. Corry, P. Lundrigan
   conference: IEEE Vehicular Networking Conference (VNC), 2024
@@ -111,6 +119,7 @@
   area: spectrum
   project: spectrum
   hook: "Passive receivers announce when they are listening; active users step aside, and whoever doesn't gets cancelled out."
+  animation_caption: "A radio telescope broadcasts the band it is protecting. Compliant users step aside, and a Hadamard projection cancels the one interferer that doesn't."
   title: Network Layer Spectral Coordination Integrated With Hadamard Projection for Multilayer Interference Mitigation
   authors: A. Palacios, D. Ward, D. Bronson, J. Backman, D. Heo, K. F. Warnick, P. Lundrigan
   conference: IEEE International Symposium on Dynamic Spectrum Access Networks (DySPAN), 2024
@@ -121,6 +130,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Encodes data in network latency so an untrusted Wi-Fi sensor can pair securely with a device on a trusted network."
+  animation_caption: "An untrusted sensor makes the access point hold traffic for one device. A wired receiver's ping times rise and fall with it and decode into the bits of a trust handshake."
   title: Wireless Latency Shift Keying
   authors: J. Johnson, C. Arvonen, A. Palacios, P. Lundrigan
   conference: ACM International Conference on Mobile Computing and Networking (MobiCom), 2024
@@ -131,6 +141,7 @@
   area: subprotocols
   project: subprotocols
   hook: "Encodes data in the timing of a LEO satellite's key packets so separate networks can coordinate their spectrum."
+  animation_caption: "Most packets in a satellite's stream pass untouched, but key packets wait behind a short or long gap. Measuring those gaps spells out a coordination message."
   title: "Stealthy Signals: Using Ghost Modulation to Watermark Interference"
   authors: A. Palacios, C. Bledsoe, E. Kelsey, L. Landon, J. Backman, P. Lundrigan
   conference: ACM Workshop on LEO Networking and Communication (LEO-NET), 2023
@@ -141,6 +152,7 @@
   area: sensing
   project: mongolia
   hook: "Low-cost sensors inside Ulaanbaatar gers measured how much insulation and electric heat cut indoor PM2.5."
+  animation_caption: "Indoor PM2.5 over a day in coal-heated, insulated and fully electric gers. Door openings let dirtier night air in; the bars show the reductions the study reports."
   title: Utilizing Low-Cost Sensors to Monitor Indoor Air Quality in Mongolian Gers
   authors: C. Flowerday, P. Lundrigan, C. Kitras, T. Nguyen, J. Hansen
   conference: Sensors. Vol 23, 2023
@@ -150,6 +162,7 @@
 - id: lamda
   area: sensing
   hook: "Verifies where a crowd-sourced sensor really is using only a web browser and traceroutes, with no GPS."
+  animation_caption: "A sensor registers from a browser with help from a phone. Traceroutes to it become a fingerprint, and when the sensor moves, the new path no longer matches."
   title: Location Verification of Crowd-Sourced Sensors
   authors: C. Kitras, C. Pollan, K. Myers, C. Wirthlin Tischner, P. Lundrigan
   conference: IEEE International Workshop on IoT in Emerging Fields (IoTEF), 2023
@@ -160,6 +173,7 @@
   area: vehicles
   project: v2x
   hook: "Indoor and outdoor tests of commercial roadside units, to help transportation departments choose what to deploy."
+  animation_caption: "Roadside units tested indoors, through an attenuator on the bench, and outdoors, as a car drives away and fewer of their messages get through."
   title: "Poster: Informing V2I Deployment Decisions Using Commercial Hardware-in-the-loop Testing"
   authors: B. Schiel, A. Farmer, A. Murali, B. Corry, P. Lundrigan
   conference: IEEE Vehicular Networking Conference (VNC), 2023
@@ -170,6 +184,7 @@
 - id: blockchain-metadata
   area: health
   hook: "A permissioned blockchain that records every sensor deployment event, so data errors can be traced to their cause."
+  animation_caption: "Every deployment event is written to a permissioned chain. When the sensor's data goes wrong, a walk back along the chain ties it to a firmware update."
   title: Utilizing a Blockchain for Managing Sensor Metadata in Exposure Health Studies
   authors: A. Sarbhai, R. Gouripeddi, P. Lundrigan, P. Chidambaram, A. Saha, R. Madsen, J. Facelli, K. Sward, S. K. Kasera
   conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC), 2022
@@ -181,6 +196,7 @@
   area: sensing
   project: mongolia
   hook: "Building and deploying real-time, low-cost air quality sensors in Ulaanbaatar, and what we learned doing it."
+  animation_caption: "Sensors around Ulaanbaatar upload over cellular. During an outage they buffer readings locally, then backfill the server's timeline when the link returns."
   title: The Hitchhiker's Guide to Successful Remote Sensing Deployments in Mongolia
   authors: L. Alcantara, J. Miera, B. Ariun-Erdene, C. Teng, P. Lundrigan
   conference: Intermountain Engineering, Technology, and Computing Conference (i-ETC), 2020
@@ -192,6 +208,7 @@
   area: wifi
   project: onpc
   hook: "Uses ordinary Wi-Fi radios as on/off power sources to send slow data far beyond normal Wi-Fi range."
+  animation_caption: "Each bit becomes an on/off pattern of Wi-Fi frames. The receiver measures only noise power, and correlating with the code pulls clean bits out of other devices' interference."
   title: >
     On-off Noise Power Communication
   authors: >
@@ -219,6 +236,7 @@
   area: health
   project: prisms
   hook: "An in-home sensor network that epidemiologists can design and deploy themselves, run for two years in 15 homes."
+  animation_caption: "In-home sensors join the home Wi-Fi one by one. When the router drops they buffer their readings, then upload everything once it returns, so nothing is lost."
   title: >
     An In-Home IoT Architecture for Epidemiological Deployments
   authors: >
@@ -243,6 +261,7 @@
 - id: maav
   area: health
   hook: "A home air quality system that measures, annotates and visualizes PM2.5, studied in six long-term deployments."
+  animation_caption: "A kitchen monitor catches a PM2.5 spike, the participant gets a text and tags it “cooking”, and the annotated spike lands on the tablet's timeline."
   title: >
     Managing In-home Environments Through Sensing, Annotating, and Visualizing Air Quality Data
   authors: >
@@ -275,6 +294,7 @@
 - id: smart-air-filter
   area: health
   hook: "A randomized controlled trial of a smart home air filtering system."
+  animation_caption: "Homes are randomized into smart-filter and control groups. The filters switch on when particles rise, and the two groups' exposure curves pull apart."
   title: >
     Smart Home Air Filtering System: A Randomized Controlled Trial for Performance Evaluation
   authors: >
@@ -286,6 +306,7 @@
 - id: strap
   area: wifi
   hook: "Securely connects a whole set of new Wi-Fi devices to a home router at once, faster than setting each one up."
+  animation_caption: "Setting up devices one password at a time, versus STRAP sending encrypted credentials from one connected device to all of them at once."
   title: >
     STRAP: Secure TRansfer of Association Protocol
   authors: >

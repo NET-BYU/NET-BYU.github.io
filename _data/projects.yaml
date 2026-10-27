@@ -12,6 +12,7 @@
   area: underwater
   name: Underwater Networking
   hook: "Robot swarms that explore beneath ice shelves, coordinated by underwater acoustic networks."
+  animation_caption: "Beneath an ice shelf, robots released from a mothership ping one another. Time of flight and angle of arrival let the swarm locate itself and sense the current."
   animation: proj-underwater
   images:
     - /images/AdobeStock_521095649.jpeg
@@ -36,6 +37,7 @@
   area: vehicles
   name: Vehicle-to-Everything (V2X)
   hook: "Better wireless protocols for vehicles talking to each other, to traffic infrastructure, and to pedestrians."
+  animation_caption: "Two cars approach a corner neither can see around. The roadside unit relays one car's safety messages, and the other gets a warning in time to brake."
   animation: proj-v2x
   description: |+
     Vehicles are an essential part of our everyday lives, and improving safety would have a tremendous impact on society. By connecting vehicles to each other (V2V), traffic infrastructure (V2I), and even pedestrians (V2P), new and exciting traffic safety applications and autonomous systems can be developed. We are researching how to improve wireless protocols and increase network performance to bring about the next generation of traffic safety.
@@ -45,6 +47,7 @@
   area: spectrum
   name: Spectrum Sharing via Interference-resilient Passive Receivers and Passive-aware Active Services
   hook: "Helping radio telescopes and active wireless services share the same crowded spectrum."
+  animation_caption: "Interference buries a radio telescope's faint spectral line. Transmitters notch out the protected band, a projection removes the one that doesn't, and the line returns."
   animation: proj-spectrum
   description: |+
     Driven by expanding scientific questions in cosmology and astrophysics and advances in receiver technology, passive radio astronomy observations now take place over the entire radio spectrum. Active wireless services, including 5G cellular networks, are increasing in spectral occupancy from L band to K band and beyond. Cooperative use of radio spectrum would be improved if observatories had more options for RFI mitigation than blanking and excision and digital domain suppression methods. This project will address technological needs at multiple layers of the passive/active spectral user cooperative space, including dynamically tunable notch filters, analog true-time-delay spatial processing for wideband interference nulling at the system front end, and passive-aware active user network protocols that cooperatively reduce interference for passive radio services. These innovative technologies will be integrated into a demonstrator system to provide a comprehensive and multilayered RFI mitigation strategy for existing and future passive and active spectrum users.
@@ -54,6 +57,7 @@
   area: sensing
   name: Mongolian Ger Air Quality Measurement and Analysis
   hook: "Fifty air quality sensors measuring whether retrofitted gers really breathe cleaner."
+  animation_caption: "A coal-heated ger and an insulated, electric one on a winter night. Sensors inside and out stream PM2.5, and an opened door lets the dirtier night air pour in."
   animation: proj-mongolia
   images:
     - /images/mongolia-1.jpg
@@ -77,6 +81,7 @@
   area: wifi
   name: On-Off Noise Power Communication
   hook: "Commodity Wi-Fi radios that reach far past their normal range by switching their power on and off."
+  animation_caption: "On/off bursts from an ordinary Wi-Fi radio cross a valley far past normal Wi-Fi range, and the receiver on the far ridge pulls each bit out of the noise."
   animation: proj-onpc
   press:
     - outlet: BYU News

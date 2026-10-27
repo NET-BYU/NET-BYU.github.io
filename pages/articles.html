@@ -13,7 +13,7 @@ description: Technical write-ups and tutorials by members of the NET Lab.
   <div class="cards">
     {%- assign sorted = site.data.articles | sort: "date" | reverse %}
     {%- for article in sorted %}
-    {% include article-card.html article=article index=forloop.index %}
+    {% include article-card.html article=article index=forloop.index level=2 %}
     {%- endfor %}
   </div>
 </section>

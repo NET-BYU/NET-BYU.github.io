@@ -1,16 +1,17 @@
 {%- assign a = include.article -%}
-{%- assign covers = "pink,cyan,orange,lime,purple,green,yellow" | split: "," -%}
-{%- assign ci = include.index | modulo: 7 -%}
+{%- assign covers = "pink,cyan,orange,lime,green,yellow" | split: "," -%}
+{%- assign ci = include.index | modulo: 6 -%}
+{%- assign level = include.level | default: 3 -%}
 <a class="card" href="{{ a.link }}">
   <div class="card-media">
     {%- if a.image %}
     <img src="{{ a.thumb | default: a.image }}" alt="" loading="lazy" decoding="async">
     {%- else %}
     {%- assign series = a.title | split: "|" | first | strip %}
-    <div class="cover-gen" style="--area: var(--c-{{ covers[ci] }})"><span class="series">{{ series }}</span><span class="sub">{{ a.cover | default: a.title }}</span></div>
+    <div class="cover-gen" style="--area: var(--c-{{ covers[ci] }})" aria-hidden="true"><span class="series">{{ series }}</span><span class="cmd">$ {{ a.cover_cmd | default: a.cover | default: a.title | downcase }}</span><span class="sub">{{ a.cover | default: a.title }}</span></div>
     {%- endif %}
   </div>
-  <h3 class="h3">{{ a.title }}</h3>
+  <h{{ level }} class="h3">{{ a.title }}</h{{ level }}>
   <p class="meta">{{ a.author }} · <time datetime="{{ a.date | date_to_xmlschema }}">{{ a.date | date: "%B %-d, %Y" }}</time></p>
   <p>{{ a.lead_text }}</p>
 </a>
