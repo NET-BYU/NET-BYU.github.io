@@ -5,8 +5,53 @@ systems that enhance and extend wireless networks, Internet of Things, security,
 reliability.
 
 This is our website, live at [netlab.byu.edu](https://netlab.byu.edu). It is a
-[Jekyll](https://jekyllrb.com) site: almost everything you will want to change lives in plain YAML
-files in `_data/`.
+[Jekyll](https://jekyllrb.com) site: almost everything you will want to change lives in plain text
+files in `_data/`, so you can edit it right here on GitHub without installing anything.
+
+## Editing the site
+
+### The quick way: on GitHub, in your browser
+
+1. Find the file in the table below and open it on GitHub.
+2. Click the pencil icon (**Edit this file**) at the top right of the file.
+3. Change the words. Keep the indentation and the names before each colon as they are.
+4. Click **Commit changes…**. Committing to `master` publishes the change to netlab.byu.edu in a
+   minute or two. To have someone look first, choose **Create a new branch** and open a pull request.
+5. If the site doesn't update, open the repository's **Actions** tab: a red ✗ there names the file and
+   line that has a typo (usually a missing quote or a wrong indent). Fix it the same way.
+
+### Where everything is
+
+| To change… | Edit |
+| --- | --- |
+| Any heading, intro paragraph or button label on a page (home, Projects, Papers, People, Articles, Mission, Sub-protocols, the not-found page, the footer headings) | `_data/text.yaml` |
+| The paragraph under the home page headline (also the site's description in search results) | `description` in `_config.yml` |
+| Papers | `_data/papers.yaml` ([details](#a-paper-_datapapersyaml)) |
+| Projects: name, one-line hook, description, photos, order on the site | `_data/projects.yaml` ([details](#a-project-_dataprojectsyaml)) |
+| The "In the news" stories on the home page | `press:` under the ONPC project in `_data/projects.yaml` |
+| Current students | `_data/students.yaml` ([details](#a-person-_datastudentsyaml-_datapast_studentsyaml-_datafacultyyaml)) |
+| Alumni and past undergraduates | `_data/past_students.yaml` |
+| Faculty | `_data/faculty.yaml` |
+| Articles | `_data/articles.yaml` |
+| The Mission page's principles | `_data/principles.yaml` |
+| Research area names | `_data/areas.yaml` |
+| Sub-protocols page: people and publications | `_data/subprotocols.yaml` (its paragraphs are in `_data/text.yaml`) |
+| Menu items | `_data/nav.yaml` |
+| Contact email, GitHub link, department line, the easter egg's message | `_config.yml` |
+| A page's browser-tab title and its description for search engines | the `title:` and `description:` lines at the top of that page's file in `pages/` |
+| Photos and PDFs | upload to `images/` or `assets/` (**Add file → Upload files** on GitHub), then refer to them as `/images/name.jpg` |
+| Animations | see [Animations](#animations) |
+
+### Text file tips
+
+- Text with a colon (`:`) or a `#` in it, or text starting with a quote mark, must be inside
+  `"double quotes"`. To be safe, quote any text you type.
+- Indentation is part of the format: use spaces (never tabs) and line things up the way the entries
+  around them are.
+- Longer paragraphs sit under a `|` and are indented. A blank line starts a new paragraph. They accept
+  Markdown: `**bold**`, `*italic*` and `[link text](https://example.com)`.
+- Lists of things (papers, people, projects) are entries that start with `- `. Copy a nearby entry
+  and change its values.
 
 ## Previewing your changes
 
@@ -74,7 +119,8 @@ a generated cover; `cover:` sets its text.
 
 ### The sub-protocols project page
 
-`pages/subprotocols.html`, with its personnel and publications in `_data/subprotocols.yaml`.
+Its words are under `subprotocols:` in `_data/text.yaml`; its personnel and publications are in
+`_data/subprotocols.yaml`. The layout is `pages/subprotocols.html`.
 
 ## Animations
 
@@ -95,8 +141,8 @@ please replace yours.
    (Add your id to `dev/anims.json` if it is new.)
 3. Keep to the house style: draw your contribution in your area's color (`api.accent`) and everything
    else in neutral ink; keep labels short; make it work at 360 px wide; leave the top-left corner
-   clear (the tag sits there); pick a `still` moment for visitors who prefer reduced motion or
-   pause animations.
+   clear (the tag sits there); pick a good `still` moment, because that frame is what everyone sees
+   until they hover over the animation.
 
 **Option 2: use a video, image or embed** by adding one of these to the paper's YAML entry instead:
 
@@ -125,12 +171,15 @@ To hide every remaining tag at once (for launch), set `show_placeholder_markers:
 | `_layouts/`, `_includes/` | The page shell, header, footer, figure slot, paper and person entries |
 | `_plugins/netlab.rb` | Build-time helper: years, anchors, citations, author links, thumbnails |
 | `css/site.css` | All styles. Colors are tokens at the top (light and dark) |
-| `js/site.js` | Theme toggle, animation switch, menu, filters, search, citations |
+| `js/site.js` | Theme toggle, menu, filters, search, citations |
+| `js/egg.js` | The easter egg (ctrl- or ⌘-click a NET Lab logo; the message is `easter_egg` in `_config.yml`) |
 | `js/figures.js`, `js/anim/` | The animation loader and the animations |
 | `images/netlab-logo.svg` | The logo, converted from the lab's vector original (`netlab-logo-1200.png` and `icon/` are renders of it) |
 | `fonts/` | Self-hosted Schibsted Grotesk and Red Hat Mono (SIL Open Font License) |
 | `scripts/make-thumbs.py` | Makes small WebP copies of photos in `images/thumbs/` (needs ffmpeg). Optional: the site falls back to the originals |
 
 Light and dark mode follow the visitor's system setting, and the button in the header switches them.
-Animations pause when they are off screen. Visitors who prefer reduced motion, or who click "Pause animations" in
-the footer (remembered per browser), see a still frame of each one.
+Each animation shows its still frame until someone hovers over it (or tabs to it); then it wipes in
+and plays, and it goes back to the still when they move away. On phones, which can't hover, the
+animation nearest the middle of the screen plays. Visitors who prefer reduced motion only see the
+still frames.

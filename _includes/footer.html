@@ -2,14 +2,14 @@
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <img src="/images/netlab-logo.svg" alt="" width="51" height="56">
+        <img src="/images/netlab-logo.svg" alt="" width="51" height="56" data-egg="{{ site.easter_egg | escape }}">
         <div>
           <strong>Network Enhanced Technologies Lab</strong>
           <span>{{ site.department }}</span>
         </div>
       </div>
       <div>
-        <h2>Explore</h2>
+        <h2>{{ site.data.text.footer.explore_heading }}</h2>
         <ul>
           {%- for item in site.data.nav %}
           <li><a href="{{ item.url }}">{{ item.title }}</a></li>
@@ -18,7 +18,7 @@
         </ul>
       </div>
       <div>
-        <h2>Contact</h2>
+        <h2>{{ site.data.text.footer.contact_heading }}</h2>
         <ul>
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
           <li><a href="{{ site.github }}">GitHub</a></li>
@@ -28,10 +28,6 @@
     </div>
     <div class="foot-base">
       <span>© {{ site.time | date: "%Y" }} NET Lab, Brigham Young University</span>
-      <button class="motion-btn needs-js" type="button" data-motion-toggle aria-pressed="false">Pause animations</button>
-      {%- if page.url == "/" %}
-      <a class="the-net" id="the-net" href="#top" aria-label="Back to top">π</a>
-      {%- endif %}
     </div>
   </div>
 </footer>

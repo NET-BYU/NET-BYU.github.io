@@ -1,10 +1,16 @@
 // Mounts animation modules (js/anim/<id>.js) into .fig[data-anim] slots.
-// Modules load when a figure nears the viewport and only animate while visible.
+//
+// Every figure rests on a still frame (the module's `still` moment). It plays only while someone
+// is looking at it on purpose: while the pointer is over it (or over the card it belongs to), or
+// while that card has keyboard focus. Then the moving picture wipes in over the still
+// behind an area-colored scan line, and fades back to the still when the pointer leaves. Phones
+// can't hover, so there the one figure nearest the middle of the screen plays. Visitors who
+// prefer reduced motion only ever see the still.
 import { createApi, readPalette, AREA_COLOR } from './anim/kit.js';
 
 const reducedMQ = matchMedia('(prefers-reduced-motion: reduce)');
-// Still frames when the visitor prefers reduced motion or paused animations in the footer.
-const stillOnly = () => reducedMQ.matches || document.documentElement.dataset.motion === 'off';
+const noHoverMQ = matchMedia('(hover: none)');
+const FADE_MS = 350; // matches the fade-out of .fig-live in site.css
 const live = new Set();
 const mounted = new Set();
 let raf = 0;
@@ -17,7 +23,9 @@ export class Figure {
     this.id = el.dataset.anim;
     this.area = AREA_COLOR[el.dataset.area] || el.dataset.color || 'cyan';
     this.visible = false;
-    this.elapsed = Number(el.dataset.start || 0);
+    this.wanted = { hover: false, focus: false, centre: false };
+    this.playing = false;
+    this.elapsed = 0;
     this.mod = null;
     this.state = null;
     this.failed = false;
@@ -37,16 +45,22 @@ export class Figure {
           return;
         }
       }
-      this.canvas = document.createElement('canvas');
+      // Two layers: the still frame underneath, the moving picture on top.
+      this.still = document.createElement('canvas');
+      this.still.className = 'fig-still';
       const label = this.stage.dataset.label;
       if (label) {
-        this.canvas.setAttribute('role', 'img');
-        this.canvas.setAttribute('aria-label', label);
+        this.still.setAttribute('role', 'img');
+        this.still.setAttribute('aria-label', label);
       } else {
-        this.canvas.setAttribute('aria-hidden', 'true');
+        this.still.setAttribute('aria-hidden', 'true');
       }
-      this.stage.prepend(this.canvas);
+      this.canvas = document.createElement('canvas');
+      this.canvas.className = 'fig-live';
+      this.canvas.setAttribute('aria-hidden', 'true');
+      this.stage.prepend(this.still, this.canvas);
       this.ctx = this.canvas.getContext('2d');
+      this.stillCtx = this.still.getContext('2d');
       this.api = createApi(this.ctx, { area: this.area, seed: this.el.dataset.seed || this.id });
       this.measure();
       try {
@@ -59,13 +73,14 @@ export class Figure {
       this.ro = new ResizeObserver(() => {
         if (this.measure()) {
           if (this.mod.resize) this.state = this.mod.resize(this.api, this.state) ?? this.state;
-          this.render();
+          this.paintStill();
+          if (this.playing || this.forcedT !== undefined) this.render();
         }
       });
       this.ro.observe(this.stage);
       mounted.add(this);
-      this.render();
-      if (this.visible) start(this);
+      this.paintStill();
+      this.update();
     })();
     return this.loading;
   }
@@ -77,8 +92,10 @@ export class Figure {
     const w = Math.max(1, Math.round(r.width));
     const h = Math.max(1, Math.round(r.height));
     if (w === this.api.w && h === this.api.h && dpr === this.api.dpr) return false;
-    this.canvas.width = Math.round(w * dpr);
-    this.canvas.height = Math.round(h * dpr);
+    for (const c of [this.canvas, this.still]) {
+      c.width = Math.round(w * dpr);
+      c.height = Math.round(h * dpr);
+    }
     this.api.w = w;
     this.api.h = h;
     this.api.dpr = dpr;
@@ -86,13 +103,18 @@ export class Figure {
     return true;
   }
 
-  render() {
-    if (!this.mod || this.failed) return;
-    const api = this.api;
+  get stillT() {
     const d = this.mod.duration || 10;
+    return this.mod.still ?? d * 0.6;
+  }
+
+  // Draw one moment of the animation onto the top (live) canvas.
+  draw(t) {
+    if (!this.mod || this.failed) return false;
+    const api = this.api;
     api.pal = this.pal || (this.pal = readPalette(this.el));
-    api.reduced = stillOnly();
-    api.t = this.forcedT ?? (api.reduced ? (this.mod.still ?? d * 0.6) : this.elapsed % d);
+    api.reduced = reducedMQ.matches;
+    api.t = t;
     const ctx = this.ctx;
     ctx.setTransform(api.dpr, 0, 0, api.dpr, 0, 0);
     ctx.globalAlpha = 1;
@@ -103,20 +125,64 @@ export class Figure {
     } catch (err) {
       console.error(`[figure] draw failed for "${this.id}"`, err);
       this.fail();
+      return false;
     }
     api.frame++;
+    return true;
   }
 
-  // Draw one fixed moment and stop (used by the dev harness and screenshots).
+  // The resting picture: the module's still moment, copied to the bottom canvas.
+  paintStill() {
+    if (!this.draw(this.stillT)) return;
+    this.stillCtx.setTransform(1, 0, 0, 1, 0, 0);
+    this.stillCtx.clearRect(0, 0, this.still.width, this.still.height);
+    this.stillCtx.drawImage(this.canvas, 0, 0);
+  }
+
+  render() {
+    if (!this.mod) return;
+    const d = this.mod.duration || 10;
+    this.draw(this.forcedT ?? this.elapsed % d);
+  }
+
+  // Draw one fixed moment on the live layer (used by the dev harness and screenshots).
   seek(t) {
     this.forcedT = t;
     this.render();
   }
 
+  // Play while the pointer, keyboard focus or (on phones) the middle of the screen is on it.
+  want(reason, on) {
+    this.wanted[reason] = on;
+    this.update();
+  }
+
+  update() {
+    const w = this.wanted;
+    const play = !!this.mod && !this.failed && !reducedMQ.matches && this.visible && (w.hover || w.focus || w.centre);
+    if (play === this.playing) return;
+    this.playing = play;
+    clearTimeout(this.fadeTimer);
+    if (play) {
+      if (!live.has(this)) this.elapsed = 0;
+      this.render();
+      // Restart the wipe and scan line from the left each time.
+      this.el.classList.remove('is-playing');
+      void this.stage.offsetWidth;
+      this.el.classList.add('is-playing');
+      start(this);
+    } else {
+      // Keep moving while the live layer fades out, then rest on the still.
+      this.el.classList.remove('is-playing');
+      this.fadeTimer = setTimeout(() => live.delete(this), FADE_MS);
+    }
+  }
+
   fail() {
     this.failed = true;
     this.el.classList.add('is-failed');
-    if (this.canvas) this.canvas.remove();
+    this.canvas?.remove();
+    this.still?.remove();
     if (!this.stage.querySelector('.fig-fallback')) {
       const msg = document.createElement('p');
       msg.className = 'fig-fallback';
@@ -130,7 +196,7 @@ function tick(now) {
   const dt = Math.min(0.05, (now - last) / 1000 || 0);
   last = now;
   for (const f of live) {
-    if (f.api.reduced || f.forcedT !== undefined) continue;
+    if (f.forcedT !== undefined) continue;
     f.elapsed += dt;
     f.api.dt = dt;
     f.render();
@@ -139,7 +205,6 @@ function tick(now) {
 }
 
 function start(fig) {
-  if (!fig.mod || fig.failed) return;
   live.add(fig);
   if (!raf && !document.hidden) {
     last = performance.now();
@@ -147,31 +212,63 @@ function start(fig) {
   }
 }
 
-function stop(fig) {
-  live.delete(fig);
+// What counts as "looking at" a figure: the whole card when the figure sits in a link (the home
+// page's project tiles), otherwise the figure itself.
+function zoneOf(el) {
+  return el.closest('a') || el;
 }
 
-// Video figures play only while visible, and not at all when animations are off.
-const videos = new Set();
+function wireZone(el, set) {
+  const zone = zoneOf(el);
+  zone.addEventListener('pointerenter', (e) => { if (e.pointerType !== 'touch') set('hover', true); });
+  zone.addEventListener('pointerleave', (e) => { if (e.pointerType !== 'touch') set('hover', false); });
+  zone.addEventListener('focusin', () => set('focus', zone.matches(':focus-within')));
+  zone.addEventListener('focusout', (e) => { if (!zone.contains(e.relatedTarget)) set('focus', false); });
+}
+
+// Phones: the figure nearest the middle of the screen plays, the rest rest.
+let centreQueued = false;
+function pickCentre() {
+  centreQueued = false;
+  if (!noHoverMQ.matches) return;
+  const mid = innerHeight / 2;
+  let best = null;
+  let bestD = innerHeight * 0.3;
+  for (const f of mounted) {
+    if (!f.visible) continue;
+    const r = f.stage.getBoundingClientRect();
+    const d = Math.abs(r.top + r.height / 2 - mid);
+    if (d < bestD) { best = f; bestD = d; }
+  }
+  for (const f of mounted) if (f.wanted.centre !== (f === best)) f.want('centre', f === best);
+}
+function queueCentre() {
+  if (!centreQueued && noHoverMQ.matches) {
+    centreQueued = true;
+    requestAnimationFrame(pickCentre);
+  }
+}
+addEventListener('scroll', queueCentre, { passive: true });
+addEventListener('resize', queueCentre);
+
+// Video figures follow the same rules: first frame at rest, playing while looked at.
 function wireVideo(el) {
   const video = el.querySelector('video');
   if (!video) return;
   video.removeAttribute('autoplay');
-  const entry = { video, visible: false };
-  videos.add(entry);
-  new IntersectionObserver(([e]) => {
-    entry.visible = e.isIntersecting;
-    syncVideo(entry);
-  }, { threshold: 0.15 }).observe(el);
-}
-function syncVideo({ video, visible }) {
-  if (visible && !stillOnly()) video.play().catch(() => {});
-  else video.pause();
+  video.pause();
+  wireZone(el, (reason, on) => {
+    if (on && !reducedMQ.matches) video.play().catch(() => {});
+    else if (!on) { video.pause(); video.currentTime = 0; }
+  });
 }
 
 export function initFigures(root = document) {
   const figs = [...root.querySelectorAll('.fig[data-anim]')].filter((el) => !el.__fig);
-  if (!figs.length && !root.querySelector('.fig video')) return [];
+  root.querySelectorAll('.fig').forEach((el) => {
+    if (el.querySelector('video')) wireVideo(el);
+  });
+  if (!figs.length) return [];
 
   const near = new IntersectionObserver((entries) => {
     for (const e of entries) {
@@ -185,45 +282,37 @@ export function initFigures(root = document) {
   const seen = new IntersectionObserver((entries) => {
     for (const e of entries) {
       const fig = e.target.__fig;
-      fig.visible = e.isIntersecting && e.intersectionRatio > 0.12;
-      if (fig.visible) {
-        e.target.classList.add('is-on');
-        start(fig);
-      } else {
-        stop(fig);
-      }
+      fig.visible = e.isIntersecting;
+      fig.update();
     }
-  }, { threshold: [0, 0.12, 0.5] });
+    queueCentre();
+  }, { threshold: [0, 0.5] });
 
-  const out = figs.map((el) => {
+  return figs.map((el) => {
     const fig = new Figure(el);
     el.__fig = fig;
+    wireZone(el, (reason, on) => fig.want(reason, on));
     near.observe(el);
     seen.observe(el);
     return fig;
   });
-  root.querySelectorAll('.fig').forEach((el) => {
-    if (el.querySelector('video')) wireVideo(el);
-  });
-  return out;
 }
 
 function repaintAll() {
   for (const f of mounted) {
     f.pal = null;
-    f.render();
+    f.paintStill();
+    if (f.playing) f.render();
   }
 }
 
 document.addEventListener('themechange', repaintAll);
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', repaintAll);
-function motionChanged() {
-  repaintAll();
-  for (const f of mounted) if (f.visible) start(f);
-  videos.forEach(syncVideo);
-}
-reducedMQ.addEventListener('change', motionChanged);
-document.addEventListener('motionchange', motionChanged);
+reducedMQ.addEventListener('change', () => { for (const f of mounted) f.update(); });
+noHoverMQ.addEventListener('change', () => {
+  for (const f of mounted) f.want('centre', false);
+  queueCentre();
+});
 document.addEventListener('visibilitychange', () => {
   if (!document.hidden && live.size && !raf) {
     last = performance.now();

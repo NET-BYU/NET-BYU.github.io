@@ -178,7 +178,7 @@ The NET Lab site is the research-lab category standard played straight, at the p
 
 The voice is precise, calm and quietly playful. One self-hosted grotesk carries every word, set heavy and tight in two-tone headlines whose gray second half does the job an eyebrow or kicker would do elsewhere. Red Hat Mono appears only where the machinery shows: counts, years, figure labels and the placeholder tag. Landing surfaces are generous and airy; the archive pages are long, orderly runs of entries between hairlines.
 
-The logo's seven trace colors are the research areas, one color per area, everywhere. The home page opens calmly: a plain statement of what the lab does beside the logo, so a visitor who has never heard of the lab understands it first. Motion has one grammar, exponential ease-out: each figure powers on once with a wipe and a scan line in its area color, then runs only while it is visible; pages cross-fade through view transitions; visitors who prefer reduced motion, or who pause animations from the footer, get a chosen still frame of every animation. Confirmed rejections: the Bootstrap card stack the old site used, the plexus or mesh background every networking lab ships, costume worlds of any kind, a busy animated hero (the lab's PI found the first one confusing for newcomers), per-figure pause buttons, and copy that recites counts ("7 projects, 23 papers").
+The logo's seven trace colors are the research areas, one color per area, everywhere. The home page opens calmly: a plain statement of what the lab does beside the logo, so a visitor who has never heard of the lab understands it first. Motion has one grammar, exponential ease-out, and it is asked for, never imposed: every figure rests on a chosen still frame, and only the one being hovered (or focused, or on a phone the one in the middle of the screen) wipes in behind a scan line in its area color and plays; pages cross-fade through view transitions; visitors who prefer reduced motion only ever see the stills. The aim is smooth and beautiful, never overstimulating. Confirmed rejections: the Bootstrap card stack the old site used, the plexus or mesh background every networking lab ships, costume worlds of any kind, a busy animated hero (the lab's PI found the first one confusing for newcomers), per-figure pause buttons, and copy that recites counts ("7 projects, 23 papers").
 
 **Key Characteristics:**
 - Near-white and near-black grounds, cool gray inks, 1px hairline rules.
@@ -188,7 +188,7 @@ The logo's seven trace colors are the research areas, one color per area, everyw
 - Neutral pill controls; a selected state inverts to ink.
 - Red Hat Mono for data and machine text only.
 - Flat surfaces; shadow only for what floats.
-- Exponential ease-out; one power-on per figure, no scroll reveals.
+- Exponential ease-out; figures rest on a still and play on hover, no scroll reveals.
 
 ## Colors
 
@@ -226,7 +226,7 @@ On the light figure stage five of these are faint as thin lines (Chartreuse 1.3:
 - **Ink 2** (`ink-2`): ledes, hooks, captions, abstracts, author lines, idle nav links.
 - **Ink 3** (`ink-3`): the gray half of every two-tone headline, year numerals, venues and meta lines, list labels, counts. It holds 5.1:1 on the page ground, so it is safe for small text.
 - **Hairline** (`line`): every rule and row divider, and the header's bottom edge once the page scrolls.
-- **Hairline Strong** (`line-2`): the outlines of buttons, chips, the search field and icon buttons; the scrollbar; the faint footer π.
+- **Hairline Strong** (`line-2`): the outlines of buttons, chips, the search field and icon buttons; the scrollbar.
 - **Stage** (`fig-bg`): figure stages.
 - **Figure Inks** (`fig-ink`, `fig-ink-2`, `fig-ink-3`, `fig-line`, `fig-grid`, `fig-surface`): the neutral world inside every animation, read by the toolkit (`js/anim/kit.js`) each time a figure draws. `fig-ink` and `fig-ink-2` carry text and primary marks; `fig-ink-3` is the quietest ink, for tick labels, ghost traces and secondary marks; it still measures 4.7:1 on the light stage and 5.9:1 on the dark one, so small labels stay legible. `fig-line` draws axes and rules, `fig-grid` grids, `fig-surface` the caption pills.
 - **Scene Black** (`scene-bg`): the stage behind cinematic project scenes, identical in both themes; each scene paints its own deep gradient over it.
@@ -327,16 +327,16 @@ Two radii and a pill. Anything that shows something (animations, photos, portrai
 - **Header:** sticky, 64px, the ground at 92% (96% plus a hairline once the page scrolls), The brand is the vector logo (`images/netlab-logo.svg`, 34px tall) and "NET Lab" at 750, 18px, −0.02em. BYU is named in the footer, never in the header.
 - **Links:** 560, 15.5px, ink-2; hover and the current page turn ink, and the current page gets a 2px ink bar beneath (2px radius). A parent stays current for its children (Projects for Sub-protocols).
 - **Mobile (780px and below):** a menu button opens a full-screen panel of large links (720, clamp(36px, 10vw, 56px)); the current link turns ink-3; focus stays inside and Escape closes it.
-- **Footer:** a hairline, then three columns (brand, Explore, Contact) under uppercase list labels; links in ink-2 turn ink and underline on hover. The base row holds the copyright (which names BYU), then, pushed right, the "Pause animations" switch (a text button in ink-3 with a faint underline) and the faint π in Hairline Strong.
+- **Footer:** a hairline, then three columns (brand, Explore, Contact) under uppercase list labels; links in ink-2 turn ink and underline on hover. The base row holds only the copyright, which names BYU.
 
 ### Figure Stage (signature)
 A paper figure come alive.
 - **Stage:** 16px radius on the Stage tone, clipping its canvas; 16:10 by default, 21:9 for scenes in project chapters on desktop, 4:3 for scenes in the home rail and on phones. Scenes sit on Scene Black and paint their own background.
-- **Power-on:** the first time 12% of a figure is visible, its drawing wipes in from left to right (1s, house ease) behind a 2px scan line in its area color. After that it runs only while visible and stops offscreen.
-- **No per-figure controls.** Figures often sit inside links (the home rail's tiles), where a button would also follow the link. One switch in the footer, "Pause animations" / "Play animations", stops every figure and video on the site at its still frame; the choice is remembered per browser and applied before first paint (`data-motion="off"` on the root).
+- **Rest and play:** at rest a figure shows its module's `still` frame on a bottom canvas. While the pointer is over it (or over the link card it sits in), or that card has keyboard focus, the moving picture on a top canvas wipes in from left to right over the still (1s, house ease) behind a 2px scan line in its area color, starting from the top of its loop; when the pointer leaves, the top layer fades out over .35s and the still remains. Every hover replays the wipe. Phones can't hover, so there the one figure nearest the middle of the screen plays. Video figures follow the same rules.
+- **No controls.** Figures often sit inside links (the home rail's tiles), where a button would also follow the link, and since nothing moves unless someone hovers, there is nothing to pause.
 - **Placeholder tag:** "Suggested animation · replace me" with a small pulse glyph, 10px from the top-left: mono 11.5px in fig-ink on the stage tone at 82%, a 1px dashed border at 45%, 7px radius. It shows on every figure whose item is not marked `animation_status: final` while `show_placeholder_markers` is true in `_config.yml`. When a figure is narrower than 520px the tag drops below the stage as a plain line in ink-2, so it never covers the drawing.
 - **Caption:** 14.5px in ink-2, 12px under the stage, at most 60ch.
-- **Fallbacks:** a module that fails shows one centered sentence in fig-ink-2, and without script every page still reads in full. Visitors who prefer reduced motion, or who pause animations, see each animation's chosen `still` moment (key idea visible, captions showing) with no wipe.
+- **Fallbacks:** a module that fails shows one centered sentence in fig-ink-2, and without script every page still reads in full. The `still` moment is what everyone sees first, so it shows the key idea with its captions; visitors who prefer reduced motion see only that, with no wipe.
 
 ### Animation House Style (signature)
 - **Diagrams (papers):** a transparent canvas over the stage. Labels are mono; panel titles are small uppercase mono (10.5px at the 640px reference width) tracked 0.4px; text sits in fig-ink-2 or stronger. Data lines 1.6–2.2px, axes 1px, corners 3px, all scaled to the figure; margins at least 6% of the width. Two to four live captions per loop, as pills (fig-surface fill, mono 600) that pop in exactly when their event happens; the contribution's captions take the area ink with an area-colored border. Keep the top-left 250×46 (tag) clear, and read well at 360, 640 and 1200px wide. Loops run 10–16s and either close seamlessly or fade over their last and first half second; motion is calm and eased, and nothing flashes more than three times a second.
@@ -344,12 +344,15 @@ A paper figure come alive.
 
 **The Contribution Rule.** In every animation the lab's contribution (the hidden channel, the new mechanism, the key result) is drawn in the area color, and everything else (the world, baseline systems, axes, infrastructure) is neutral figure ink. A diagram uses one logo color: its area's.
 
-**The Power-On Rule.** A figure announces itself once, with the wipe and scan the first time it is seen, and then simply runs while visible. There are no other scroll-triggered reveals: no fade-ups, no staggered entrances.
+**The Hover-To-Play Rule.** A figure moves only while someone is looking at it on purpose, and announces itself each time with the wipe and scan. Nothing on a page moves on its own: no autoplaying figures, no scroll-triggered reveals, no fade-ups, no staggered entrances.
 
 **The Placeholder Honesty Rule.** A figure whose animation runs on sample data wears the dashed "Suggested animation · replace me" tag until its item is marked final. A tag comes off when its author marks the item final, and any that remain come off together at launch through the one site setting; never by restyling the tag or hiding it in CSS.
 
 ### Home Hero
 Calm and text-first, so someone who has never heard of the lab knows what it does before anything moves. Left: the two-tone Display headline, the lede (the lab's one-paragraph description), then a solid ink pill ("See our projects", 44px tall) beside an arrow link ("Read our papers"). Right: the unaltered vector logo at clamp(200px, 22vw, 340px), still. Nothing in the hero animates; the figures further down carry the motion. At 860px and below it is one column and the logo is dropped, since the header already shows it.
+
+### Easter Egg
+Ctrl- or ⌘-click any still NET Lab logo (the hero's, the Mission page's or the footer's; not the header's, which is a link): short lit segments, each a white core in a glow of its trace's color, run along the logo's colored traces three times, while the toast decodes a message one character at a time (each letter's eight bits flicker in, then settle) after a π. A nod to the π backdoor in The Net (1995); the message is `easter_egg` in `_config.yml`. With reduced motion the message simply appears. Nothing on the page hints at it.
 
 ### Area Marker
 - **Dot:** a 9px circle in the area color.
@@ -368,7 +371,7 @@ Calm and text-first, so someone who has never heard of the lab knows what it doe
 - **Do** separate list entries with 1px hairlines and leave the rows open.
 - **Do** draw the lab's contribution in the area color and everything else in neutral figure ink, with weight (strokes of 2px and up, filled marks) and an area-ink label.
 - **Do** keep the "Suggested animation · replace me" tag on every figure until its item is marked `animation_status: final`, and remove the rest at launch with `show_placeholder_markers: false`.
-- **Do** move with the house ease, cubic-bezier(.16, 1, .3, 1): .2s for color and border changes, .3–.5s for chevrons, menus and expanding panels, .5–.7s for image zooms, 1s for a figure's power-on.
+- **Do** move with the house ease, cubic-bezier(.16, 1, .3, 1): .2s for color and border changes, .3–.5s for chevrons, menus and expanding panels, .5–.7s for image zooms, 1s for a figure's wipe, .35s for its fade back to the still.
 - **Do** give every animation a `still` moment and honor reduced motion everywhere: no wipe, no view transitions, no animated zooms, no blinking caret.
 - **Do** set text inside figures in fig-ink-2 or stronger, and area text in its -ink variant.
 
@@ -379,9 +382,9 @@ Calm and text-first, so someone who has never heard of the lab knows what it doe
 - **Don't** put shadows on cards, figures or rows. Shadow belongs to the toast and the lightbox.
 - **Don't** set headlines, body copy, buttons or navigation in Red Hat Mono.
 - **Don't** add a decorative plexus, mesh or node-network background, or go back to a bordered card stack; node-link drawings appear only when they plot real data.
-- **Don't** add scroll reveals (fade-ups, staggered entrances); a figure's one-time power-on is the only reveal.
+- **Don't** add scroll reveals (fade-ups, staggered entrances) or autoplaying motion; a figure plays only while hovered.
 - **Don't** paint a background in a diagram (the stage supplies it), and don't put anything essential under the tag (top-left 250×46).
 - **Don't** animate the home hero or fill it with traces, pulses, puzzles or tag bars; it says what the lab does, plainly.
-- **Don't** add pause or play buttons to individual figures; the footer switch covers the whole site.
+- **Don't** add pause or play buttons to figures; nothing plays unless someone hovers.
 - **Don't** recite counts in headlines and ledes ("7 projects", "23 papers", "9 students"); counts belong in filter chips and result lines.
 - **Don't** go lighter than fig-ink-3 for any text inside a figure; it is the AA floor on both stages.

@@ -15,6 +15,10 @@ colors: ['#ED3F95', '#F89938', '#D8E022', '#00A775', '#89298E', '#76C044', '#00A
 # `animation_status: final`. Set to false at launch to hide all of them at once.
 show_placeholder_markers: true
 
+# The easter egg: ctrl- or ⌘-click a NET Lab logo on the page (not the one in the header) and
+# signals run through its traces while this message is decoded next to a π. A nod to The Net (1995).
+easter_egg: "ACCESS GRANTED"
+
 # Contact shown in the footer.
 github: https://github.com/NET-BYU
 department: Electrical & Computer Engineering, Brigham Young University

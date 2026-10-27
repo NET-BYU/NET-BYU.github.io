@@ -35,26 +35,6 @@ systemDark.addEventListener('change', () => {
 });
 labelThemeButtons();
 
-// ---------- Animations on/off (one switch for the whole site, remembered) ----------
-function labelMotionButtons() {
-  const off = root.dataset.motion === 'off';
-  $$('[data-motion-toggle]').forEach((b) => {
-    b.setAttribute('aria-pressed', String(off));
-    b.textContent = off ? 'Play animations' : 'Pause animations';
-  });
-}
-$$('[data-motion-toggle]').forEach((btn) =>
-  btn.addEventListener('click', () => {
-    const off = root.dataset.motion !== 'off';
-    if (off) root.dataset.motion = 'off';
-    else delete root.dataset.motion;
-    try { localStorage.setItem('motion', off ? 'off' : 'on'); } catch { /* private mode */ }
-    document.dispatchEvent(new CustomEvent('motionchange', { detail: off ? 'off' : 'on' }));
-    labelMotionButtons();
-  }),
-);
-labelMotionButtons();
-
 // ---------- Header ----------
 const header = document.querySelector('.site-header');
 const onScroll = () => header?.classList.toggle('is-scrolled', window.scrollY > 8);
@@ -237,13 +217,15 @@ if (paperList) {
   apply();
 }
 
-// ---------- The π easter egg (modifier + Shift click) ----------
-document.getElementById('the-net')?.addEventListener('click', (e) => {
-  if ((e.ctrlKey || e.altKey || e.metaKey) && e.shiftKey) {
-    e.preventDefault();
-    window.location.href = 'https://www.imdb.com/title/tt0113957/';
-  }
-});
+// ---------- Easter egg: ctrl- or ⌘-click a logo (see js/egg.js) ----------
+function egg(e) {
+  const logo = e.target.closest?.('[data-egg]');
+  if (!logo || !(e.ctrlKey || e.metaKey)) return;
+  e.preventDefault();
+  import('./egg.js').then((m) => m.play(logo, toastEl));
+}
+document.addEventListener('click', egg);
+document.addEventListener('contextmenu', egg); // ctrl-click on a Mac arrives as a right-click
 
 // ---------- Page modules ----------
 initFigures(document);

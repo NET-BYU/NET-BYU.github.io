@@ -10,8 +10,9 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
 {%- assign uyears = undergrads | map: "year" | uniq -%}
 
 <div class="wrap page-head">
-  <h1 class="page-title">People</h1>
-  <p class="lede">The students, faculty and alumni of the NET Lab.</p>
+  {%- assign t = site.data.text.people %}
+  <h1 class="page-title">{{ t.title }}</h1>
+  <p class="lede">{{ t.intro }}</p>
 </div>
 
 <section class="wrap section" style="padding-top: 0" aria-label="Faculty">
@@ -32,7 +33,7 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
 
 <section class="wrap section" aria-labelledby="students-title">
   <div class="section-head">
-    <h2 class="h2" id="students-title">Students</h2>
+    <h2 class="h2" id="students-title">{{ t.students_heading }}</h2>
   </div>
   <div class="people">
     {%- for person in current %}
@@ -43,7 +44,7 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
 
 <section class="wrap section" aria-labelledby="alumni-title">
   <div class="section-head">
-    <h2 class="h2" id="alumni-title">Alumni</h2>
+    <h2 class="h2" id="alumni-title">{{ t.alumni_heading }}</h2>
   </div>
   <div class="people">
     {%- for person in grads %}
@@ -54,7 +55,7 @@ description: The students, faculty and alumni of the NET Lab at Brigham Young Un
 
 <section class="wrap section" aria-labelledby="undergrads-title">
   <div class="section-head">
-    <h2 class="h2" id="undergrads-title">Past undergraduate researchers</h2>
+    <h2 class="h2" id="undergrads-title">{{ t.undergrads_heading }}</h2>
   </div>
   <div class="undergrads">
     {%- for y in uyears %}

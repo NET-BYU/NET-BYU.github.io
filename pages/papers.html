@@ -7,8 +7,9 @@ description: Publications from the NET Lab at Brigham Young University, each wit
 {%- assign years = site.data.papers | map: "year" | uniq | sort | reverse -%}
 
 <div class="wrap page-head">
-  <h1 class="page-title">Papers</h1>
-  <p class="lede">Our publications on wireless sub-protocols, underwater and vehicular networks, spectrum sharing and environmental sensing.</p>
+  {%- assign t = site.data.text.papers %}
+  <h1 class="page-title">{{ t.title }}</h1>
+  <p class="lede">{{ t.intro }}</p>
 </div>
 
 <div class="toolbar needs-js">
@@ -25,7 +26,7 @@ description: Publications from the NET Lab at Brigham Young University, each wit
     <label class="search">
       <span class="sr-only">Search papers</span>
       <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="4.6"/><path d="M10.5 10.5L14 14"/></svg>
-      <input type="search" placeholder="Search titles, authors, venues" data-search-input autocomplete="off">
+      <input type="search" placeholder="{{ t.search_placeholder | escape }}" data-search-input autocomplete="off">
     </label>
     <span class="result-count" data-result-count aria-live="polite"></span>
   </div>

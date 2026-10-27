@@ -6,8 +6,9 @@ sitemap: false
 ---
 <section class="wrap lost" aria-labelledby="lost-title">
   <div>
-    <h1 class="page-title" id="lost-title">Packet lost. <span class="tone">This page never arrived.</span></h1>
-    <p class="lede" style="margin-top: 20px">The link may be old, or the page may have moved when the site was redesigned.</p>
+    {%- assign t = site.data.text.not_found %}
+    <h1 class="page-title" id="lost-title">{{ t.headline }}{% if t.headline_gray != "" %} <span class="tone">{{ t.headline_gray }}</span>{% endif %}</h1>
+    <p class="lede" style="margin-top: 20px">{{ t.intro }}</p>
     <div class="actions">
       <a class="btn" href="/">Home</a>
       <a class="btn" href="/papers/">Papers</a>

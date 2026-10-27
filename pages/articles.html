@@ -5,8 +5,9 @@ permalink: /articles/
 description: Technical write-ups and tutorials by members of the NET Lab.
 ---
 <div class="wrap page-head">
-  <h1 class="page-title">Articles</h1>
-  <p class="lede">Technical write-ups and tutorials by lab members, from reverse-engineering an iClicker to getting started with software-defined radios.</p>
+  {%- assign t = site.data.text.articles %}
+  <h1 class="page-title">{{ t.title }}</h1>
+  <p class="lede">{{ t.intro }}</p>
 </div>
 
 <section class="wrap" aria-label="Articles">

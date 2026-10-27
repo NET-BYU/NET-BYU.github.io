@@ -257,11 +257,12 @@ abbr[title] { text-decoration: none; }
 }
 .fig figcaption { margin-top: 12px; font-size: 14.5px; line-height: 1.5; color: var(--ink-2); max-width: 60ch; text-wrap: pretty; }
 .fig-fallback { position: absolute; inset: 0; display: grid; place-items: center; padding: 24px; text-align: center; color: var(--fig-ink-2); font-size: 14px; }
-/* Power-on: the canvas wipes in behind a thin line in the area color the first time it is seen. */
-.js .fig-stage > canvas { clip-path: inset(0 100% 0 0); }
-.js .fig.is-on .fig-stage > canvas { clip-path: inset(0 0 0 0); transition: clip-path 1s var(--ease); }
+/* At rest a figure shows its still frame. While someone hovers it, the moving picture wipes in over
+   the still behind a thin line in the area color; when they leave it fades back to the still. */
+.fig-stage > canvas.fig-live { clip-path: inset(0 100% 0 0); opacity: 0; transition: opacity .35s var(--ease), clip-path 0s .35s; }
+.fig.is-playing .fig-stage > canvas.fig-live { clip-path: inset(0 0 0 0); opacity: 1; transition: clip-path 1s var(--ease); }
 .js .fig-stage::after { content: ""; position: absolute; z-index: 2; top: 0; bottom: 0; left: 0; width: 2px; background: var(--area); opacity: 0; transform: translateX(-4px); pointer-events: none; }
-.js .fig.is-on .fig-stage::after { animation: fig-scan 1s var(--ease) forwards; }
+.js .fig.is-playing .fig-stage::after { animation: fig-scan 1s var(--ease) forwards; }
 @keyframes fig-scan { 0% { opacity: 1; transform: translateX(-4px); } 85% { opacity: 1; } 100% { opacity: 0; transform: translateX(var(--stage-w, 600px)); } }
 html:not(.js) .needs-js { display: none !important; }
 
@@ -444,7 +445,7 @@ html:not(.js) .needs-js { display: none !important; }
 .mission-intro { display: grid; grid-template-columns: minmax(0, 240px) minmax(0, 1fr); gap: 32px clamp(32px, 5vw, 80px); align-items: start; }
 .mission-intro img { width: 100%; max-width: 220px; height: auto; }
 .mission-intro .prose { max-width: 48ch; font-size: clamp(18px, 0.6vw + 15px, 22px); line-height: 1.55; }
-.dropcap::first-letter { float: left; font-size: 3.3em; line-height: .86; font-weight: 760; margin: .06em .1em 0 0; color: var(--c-cyan-ink); }
+.dropcap > p:first-child::first-letter { float: left; font-size: 3.3em; line-height: .86; font-weight: 760; margin: .06em .1em 0 0; color: var(--c-cyan-ink); }
 @media (max-width: 760px) { .mission-intro { grid-template-columns: 1fr; } .mission-intro img { max-width: 160px; } }
 .principles { display: grid; gap: 0; border-top: 1px solid var(--line); }
 .principle { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.7fr); gap: 12px clamp(24px, 4vw, 64px); align-items: baseline; padding-block: clamp(26px, 3vw, 40px); border-bottom: 1px solid var(--line); }
@@ -465,7 +466,7 @@ html:not(.js) .needs-js { display: none !important; }
 .photo figcaption { margin-top: 10px; font-size: 14.5px; color: var(--ink-2); }
 .pubs { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
 .pubs li { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 16px 32px; align-items: center; padding-block: 22px; border-bottom: 1px solid var(--line); }
-.pubs p { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 80ch; }
+.pubs p { font-size: 16px; line-height: 1.55; color: var(--ink-2); max-width: 62ch; }
 .pubs p strong { color: var(--ink); font-weight: 640; }
 @media (max-width: 700px) { .pubs li { grid-template-columns: 1fr; } }
 .code-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 24px clamp(24px, 4vw, 56px); align-items: center; text-decoration: none; color: inherit; padding: clamp(18px, 2.5vw, 32px); border-radius: var(--radius); background: var(--bg-2); }
@@ -493,15 +494,15 @@ html:not(.js) .needs-js { display: none !important; }
 .site-footer a { text-decoration: none; color: var(--ink-2); }
 .site-footer a:hover { color: var(--ink); text-decoration: underline; }
 .foot-base { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: clamp(40px, 5vw, 64px); padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-3); font-size: 14px; }
-.motion-btn { margin-left: auto; padding: 4px 0; border: 0; background: none; color: var(--ink-3); font: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .22em; text-decoration-color: color-mix(in srgb, currentColor 35%, transparent); transition: color .2s; }
-.motion-btn:hover { color: var(--ink); }
-.the-net { color: var(--line-2); text-decoration: none; font-size: 15px; padding: 4px 8px; transition: color .6s; }
-.the-net:hover { color: var(--ink-3); }
 @media (max-width: 760px) { .foot-grid { grid-template-columns: 1fr 1fr; } .foot-brand { grid-column: 1 / -1; } }
 
 /* ---------- Toast ---------- */
 .toast { position: fixed; z-index: 90; left: 50%; bottom: 24px; transform: translate(-50%, 16px); padding: 11px 18px; border-radius: 999px; background: var(--ink); color: var(--bg); font-weight: 580; font-size: 14.5px; box-shadow: 0 12px 32px -10px rgb(0 0 0 / .35); opacity: 0; pointer-events: none; transition: opacity .2s, transform .35s var(--ease); }
 .toast.is-on { opacity: 1; transform: translate(-50%, 0); }
+.toast--egg { display: inline-flex; align-items: baseline; gap: 10px; font: 600 14px/1.3 var(--mono); letter-spacing: .06em; white-space: nowrap; }
+.toast--egg .egg-pi { font-family: var(--font); font-size: 17px; font-weight: 700; letter-spacing: 0; }
+.toast--egg .egg-bits { margin-left: .5em; font-weight: 500; opacity: .55; letter-spacing: .02em; }
+.egg-overlay { position: absolute; z-index: 40; pointer-events: none; overflow: visible; }
 
 /* ---------- 404 ---------- */
 .lost { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 40px clamp(32px, 5vw, 80px); align-items: center; padding-block: clamp(56px, 8vw, 120px); }
@@ -519,8 +520,8 @@ html:not(.js) .needs-js { display: none !important; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none; }
-  .js .fig-stage > canvas { clip-path: none !important; }
-  .js .fig.is-on .fig-stage::after { animation: none; }
+  .fig-stage > canvas.fig-live { display: none; }
+  .js .fig.is-playing .fig-stage::after { animation: none; }
   .abstract { transition: none; }
   .tile .fig-stage, .card-media img, .gallery img, .person .portrait img, .face img { transition: none; }
 }

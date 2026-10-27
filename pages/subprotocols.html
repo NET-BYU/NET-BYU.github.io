@@ -5,16 +5,17 @@ permalink: /subprotocols/
 description: Building a framework for software-based wireless sub-protocols, an NSF-funded project (award 2153317) at the NET Lab, Brigham Young University.
 ---
 {%- assign project = site.data.projects | where: "slug", "subprotocols" | first -%}
+{%- assign t = site.data.text.subprotocols -%}{%- comment -%} The words on this page are in _data/text.yaml; people and publications in _data/subprotocols.yaml {%- endcomment -%}
 {%- assign arrow = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' -%}
 
 <div class="wrap page-head sp-hero" data-area="subprotocols">
-  <h1 class="page-title">Building A Framework for Software-Based Wireless Sub-Protocols</h1>
-  <p class="award"><img src="/images/nsf-logo.png" alt="" width="44" height="44">Supported by the National Science Foundation, award #2153317</p>
+  <h1 class="page-title">{{ t.title }}</h1>
+  <p class="award"><img src="/images/nsf-logo.png" alt="" width="44" height="44">{{ t.award }}</p>
 </div>
 
 <section class="wrap" aria-label="Project overview" data-area="subprotocols">
   <div class="prose" style="max-width: 72ch; margin-bottom: clamp(28px, 4vw, 48px)">
-    <p class="lede" style="max-width: none">Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless devices to become an essential part of our infrastructure, they must be resilient to changing environmental conditions and function under extreme cases. However, current wireless protocols have limited adaptability. This project explores a new class of wireless protocols called “wireless sub-protocols”. Wireless sub-protocols are new protocols built on existing wireless protocols but increase their capabilities and adaptability. Wireless sub-protocols are implemented only in software and require no changes to a device's hardware. Wireless sub-protocols add extra adaptability paving the way for future resilient wireless protocols with only a software update.</p>
+    <div class="lede" style="max-width: none">{{ t.overview | markdownify }}</div>
   </div>
   {% include figure.html item=project kind="scene" caption=true %}
 </section>
@@ -32,20 +33,18 @@ description: Building a framework for software-based wireless sub-protocols, an 
 </nav>
 
 <section class="wrap section" id="about" aria-labelledby="about-title" data-area="subprotocols">
-  <div class="section-head"><h2 class="h2" id="about-title">About</h2></div>
+  <div class="section-head"><h2 class="h2" id="about-title">{{ t.about_heading }}</h2></div>
   <div class="split">
-    <div class="prose">
-      <p>More flexibility in wireless protocols is necessary to accommodate the ever-expanding use cases that new wireless devices demand and bring about ultra-resilient wireless systems. To address the need for adaptability and resiliency, this project explores the novel idea of building a wireless protocol layering approach where additional functionality is added to a wireless protocol using “wireless sub-protocols”. A wireless sub-protocol is a protocol built on top of another wireless protocol. They provide a way for a base protocol to increase its abilities beyond what the original protocol designers intended. A communication scheme can be built on top of an existing protocol by measuring and controlling the physical layer properties in user space software. This innovative technique allows a device to gain new capabilities and thus adaptability, with only a software update. Sub-protocols coexist with the base protocol, allowing the application developer to decide when to use one or the other. This project will build a framework for prototyping, building, and testing different types of wireless sub-protocols. The project will use wireless testbeds to prototype new wireless sub-protocols rapidly. This project will enable a new research area of wireless sub-protocols, impacting future designs of wireless devices.</p>
-    </div>
+    <div class="prose">{{ t.about | markdownify }}</div>
     <figure class="photo">
       <a href="/images/subprotocol-testbed.jpg" data-lightbox><img src="/images/thumbs/subprotocol-testbed.webp" alt="The sub-protocol testbed" loading="lazy" decoding="async"></a>
-      <figcaption>Sub-protocol testbed</figcaption>
+      <figcaption>{{ t.about_photo_caption }}</figcaption>
     </figure>
   </div>
 </section>
 
 <section class="wrap section" id="personnel" aria-labelledby="personnel-title">
-  <div class="section-head"><h2 class="h2" id="personnel-title">Personnel</h2></div>
+  <div class="section-head"><h2 class="h2" id="personnel-title">{{ t.personnel_heading }}</h2></div>
   <div class="people">
     {%- for entry in site.data.subprotocols.personnel %}
     {%- assign person = site.data.students | concat: site.data.faculty | where: "slug", entry.slug | first %}
@@ -56,7 +55,7 @@ description: Building a framework for software-based wireless sub-protocols, an 
     </article>
     {%- endfor %}
   </div>
-  <h3 class="h3" style="margin: clamp(48px, 6vw, 80px) 0 28px">Past personnel</h3>
+  <h3 class="h3" style="margin: clamp(48px, 6vw, 80px) 0 28px">{{ t.past_personnel_heading }}</h3>
   <div class="people">
     {%- assign alumni = site.data.past_students.graduate_students | concat: site.data.past_students.undergraduate_students %}
     {%- for entry in site.data.subprotocols.past_personnel %}
@@ -72,8 +71,8 @@ description: Building a framework for software-based wireless sub-protocols, an 
 
 <section class="wrap section" id="publications" aria-labelledby="pubs-title">
   <div class="section-head">
-    <h2 class="h2" id="pubs-title">Publications</h2>
-    <a class="arrow-link" href="/papers/?area=subprotocols"><span>All sub-protocol papers</span>{{ arrow }}</a>
+    <h2 class="h2" id="pubs-title">{{ t.publications_heading }}</h2>
+    <a class="arrow-link" href="/papers/?area=subprotocols"><span>{{ t.publications_link }}</span>{{ arrow }}</a>
   </div>
   <ul class="pubs">
     {%- for pub in site.data.subprotocols.publications %}
@@ -86,43 +85,40 @@ description: Building a framework for software-based wireless sub-protocols, an 
 </section>
 
 <section class="wrap section" id="code" aria-labelledby="code-title">
-  <div class="section-head"><h2 class="h2" id="code-title">Code</h2></div>
-  <a class="code-card" href="https://github.com/NET-BYU/wireless-latency-shift-keying">
-    <img src="/images/LSK_architecture.png" alt="Architecture of Wireless Latency Shift Keying" loading="lazy" decoding="async">
+  <div class="section-head"><h2 class="h2" id="code-title">{{ t.code_heading }}</h2></div>
+  <a class="code-card" href="{{ t.code.url }}">
+    <img src="{{ t.code.image }}" alt="{{ t.code.image_alt | escape }}" loading="lazy" decoding="async">
     <div>
-      <h3 class="h3">WLSK</h3>
-      <p class="muted" style="margin-top: 8px">An IoT protocol for partial trust using a WiFi network.</p>
-      <p style="margin-top: 18px"><span class="arrow-link"><span>View on GitHub</span>{{ arrow }}</span></p>
+      <h3 class="h3">{{ t.code.name }}</h3>
+      <p class="muted" style="margin-top: 8px">{{ t.code.text }}</p>
+      <p style="margin-top: 18px"><span class="arrow-link"><span>{{ t.code.link_label }}</span>{{ arrow }}</span></p>
     </div>
   </a>
 </section>
 
 <section class="wrap section" id="outreach" aria-labelledby="outreach-title">
-  <div class="section-head"><h2 class="h2" id="outreach-title">Education &amp; outreach</h2></div>
+  <div class="section-head"><h2 class="h2" id="outreach-title">{{ t.outreach_heading }}</h2></div>
   <div class="outreach">
-    <a href="https://byu.box.com/s/5t5hwpjtzp90bqjk6vo7okqjz092inbb">
-      <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="16" rx="2"/><path d="M11 27h10M16 21v6M9 15l4-4 3 3 6-6"/></svg>
-      <h3 class="h3">Subprotocol lectures</h3>
-      <p>A set of lectures and slides that covers sub-protocols in the context of spectrum sharing.</p>
-      <span class="arrow-link"><span>View</span>{{ arrow }}</span>
-    </a>
-    <a href="/articles/">
+    {%- for item in t.outreach %}
+    <a href="{{ item.url }}">
+      {%- case item.icon %}
+      {%- when "article" %}
       <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="5" y="4" width="22" height="24" rx="2"/><path d="M10 10h12M10 15h12M10 20h7"/></svg>
-      <h3 class="h3">Articles</h3>
-      <p>A set of articles on technical topics created by students working on this project.</p>
-      <span class="arrow-link"><span>Read</span>{{ arrow }}</span>
-    </a>
-    <a href="https://immerse.byu.edu">
+      {%- when "school" %}
       <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><path d="M3 12l13-6 13 6-13 6z"/><path d="M8 14.5V21c0 2 4 4 8 4s8-2 8-4v-6.5M29 12v8"/></svg>
-      <h3 class="h3">IMMERSE</h3>
-      <p>A summer program to involve undergraduate students in the research process.</p>
-      <span class="arrow-link"><span>Learn more</span>{{ arrow }}</span>
+      {%- else %}
+      <svg class="ic" viewBox="0 0 32 32" aria-hidden="true"><rect x="4" y="5" width="24" height="16" rx="2"/><path d="M11 27h10M16 21v6M9 15l4-4 3 3 6-6"/></svg>
+      {%- endcase %}
+      <h3 class="h3">{{ item.title }}</h3>
+      <p>{{ item.text }}</p>
+      <span class="arrow-link"><span>{{ item.link_label }}</span>{{ arrow }}</span>
     </a>
+    {%- endfor %}
   </div>
 </section>
 
 <section class="wrap" aria-label="Funding">
-  <p class="nsf"><img src="/images/nsf-logo.png" alt="National Science Foundation logo" width="64" height="64" loading="lazy">This project is supported by NSF #2153317.</p>
+  <p class="nsf"><img src="/images/nsf-logo.png" alt="National Science Foundation logo" width="64" height="64" loading="lazy">{{ t.funding }}</p>
 </section>
 
 <div class="lightbox" role="dialog" aria-modal="true" aria-label="Photo">

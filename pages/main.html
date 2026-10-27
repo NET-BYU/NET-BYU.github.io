@@ -3,22 +3,23 @@ layout: default
 permalink: /
 ---
 {%- assign arrow = '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8h10M9 4l4 4-4 4"/></svg>' -%}
+{%- assign t = site.data.text.home -%}{%- comment -%} The words on this page are in _data/text.yaml {%- endcomment -%}
 
 <section class="hero wrap" aria-labelledby="hero-title">
   <div class="hero-copy">
-    <h1 class="display" id="hero-title">We make wireless networks do more <span class="tone">than they were built for.</span></h1>
+    <h1 class="display" id="hero-title">{{ t.headline }}{% if t.headline_gray != "" %} <span class="tone">{{ t.headline_gray }}</span>{% endif %}</h1>
     <p class="lede">{{ site.description }}</p>
     <p class="hero-links">
-      <a class="btn btn--solid" href="/projects/">See our projects</a>
-      <a class="arrow-link" href="/papers/"><span>Read our papers</span>{{ arrow }}</a>
+      <a class="btn btn--solid" href="/projects/">{{ t.projects_button }}</a>
+      <a class="arrow-link" href="/papers/"><span>{{ t.papers_link }}</span>{{ arrow }}</a>
     </p>
   </div>
-  <img class="hero-logo" src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" fetchpriority="high">
+  <img class="hero-logo" src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" fetchpriority="high" data-egg="{{ site.easter_egg | escape }}">
 </section>
 
 <section class="section" aria-labelledby="build-title" data-rail>
   <div class="wrap section-head">
-    <h2 class="h2" id="build-title">What we build</h2>
+    <h2 class="h2" id="build-title">{{ t.projects_heading }}</h2>
     <div class="rail-ctl needs-js">
       <button class="icon-btn" type="button" data-rail-prev aria-label="Previous projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
       <button class="icon-btn" type="button" data-rail-next aria-label="More projects"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
@@ -38,8 +39,8 @@ permalink: /
 <section class="section" aria-labelledby="latest-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="latest-title">Latest papers</h2>
-      <a class="arrow-link" href="/papers/"><span>All papers</span>{{ arrow }}</a>
+      <h2 class="h2" id="latest-title">{{ t.papers_heading }}</h2>
+      <a class="arrow-link" href="/papers/"><span>{{ t.papers_heading_link }}</span>{{ arrow }}</a>
     </div>
     <div class="latest">
       {%- for paper in site.data.papers limit: 4 %}
@@ -57,8 +58,8 @@ permalink: /
 <section class="section" aria-labelledby="people-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="people-title">The people</h2>
-      <a class="arrow-link" href="/people/"><span>Meet everyone</span>{{ arrow }}</a>
+      <h2 class="h2" id="people-title">{{ t.people_heading }}</h2>
+      <a class="arrow-link" href="/people/"><span>{{ t.people_heading_link }}</span>{{ arrow }}</a>
     </div>
     <div class="faces">
       {%- assign current = site.data.students %}
@@ -83,8 +84,8 @@ permalink: /
 <section class="section" aria-labelledby="news-title" data-area="wifi">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="news-title">In the news</h2>
-      <a class="arrow-link" href="/projects/#onpc"><span>About the project</span>{{ arrow }}</a>
+      <h2 class="h2" id="news-title">{{ t.news_heading }}</h2>
+      <a class="arrow-link" href="/projects/#onpc"><span>{{ t.news_heading_link }}</span>{{ arrow }}</a>
     </div>
     <div class="press">
       {%- for item in onpc.press %}
@@ -102,8 +103,8 @@ permalink: /
 <section class="section" aria-labelledby="articles-title">
   <div class="wrap">
     <div class="section-head">
-      <h2 class="h2" id="articles-title">From the lab</h2>
-      <a class="arrow-link" href="/articles/"><span>All articles</span>{{ arrow }}</a>
+      <h2 class="h2" id="articles-title">{{ t.articles_heading }}</h2>
+      <a class="arrow-link" href="/articles/"><span>{{ t.articles_heading_link }}</span>{{ arrow }}</a>
     </div>
     <div class="cards">
       {%- assign recent = site.data.articles | sort: "date" | reverse %}

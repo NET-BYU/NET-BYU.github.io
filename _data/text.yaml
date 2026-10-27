@@ -1,0 +1,137 @@
+# The words on the site's pages: headings, intros, button labels and the longer paragraphs.
+#
+# How to edit:
+#   - Change the text after the colon; leave the name before the colon alone.
+#   - Keep text in "double quotes" when it is in quotes already (needed when it contains a colon
+#     or starts with a special character). Inside quotes, write \" for a quotation mark.
+#   - Text under a "|" is one or more paragraphs. Keep it indented; a blank line starts a new
+#     paragraph, and line breaks inside a paragraph don't matter.
+#     Paragraphs accept Markdown: **bold**, *italic* and [link text](https://example.com).
+#   - Headings marked "gray" are the second half of a two-tone heading, shown in gray right after
+#     the black part. Use "" to have none.
+#
+# Lists live in their own files: papers, projects (and their news links), people, articles and the
+# Mission principles are in this folder (_data/). The site's one-paragraph description and the
+# footer's contact details are in _config.yml. The README has the full map.
+
+home:
+  headline: "We make wireless networks do more"
+  headline_gray: "than they were built for."
+  # The paragraph under the headline is `description` in _config.yml (search engines use it too).
+  projects_button: "See our projects"
+  papers_link: "Read our papers"
+  projects_heading: "What we build"
+  papers_heading: "Latest papers"
+  papers_heading_link: "All papers"
+  people_heading: "The people"
+  people_heading_link: "Meet everyone"
+  news_heading: "In the news"           # the stories are `press:` under ONPC in projects.yaml
+  news_heading_link: "About the project"
+  articles_heading: "From the lab"
+  articles_heading_link: "All articles"
+
+projects:
+  title: "Projects"
+  intro: "Real systems, built and tested where they will be used."
+  # Each project's name, one-line hook and description are in projects.yaml.
+
+papers:
+  title: "Papers"
+  intro: "Our publications on wireless sub-protocols, underwater and vehicular networks, spectrum sharing and environmental sensing."
+  search_placeholder: "Search titles, authors, venues"
+
+people:
+  title: "People"
+  intro: "The students, faculty and alumni of the NET Lab."
+  students_heading: "Students"
+  alumni_heading: "Alumni"
+  undergrads_heading: "Past undergraduate researchers"
+
+articles:
+  title: "Articles"
+  intro: "Technical write-ups and tutorials by lab members, from reverse-engineering an iClicker to getting started with software-defined radios."
+
+mission:
+  title: "Our mission"
+  quote: "The people who are crazy enough to think they can change the world are the ones who do."
+  quote_by: "Steve Jobs"
+  intro: |
+    In the NET Lab, we believe in the power of working together to change the world. Our research is
+    centered on innovative ways of making a difference in the community and improving people's
+    lives. We value all ideas, cultures, and backgrounds and recognize the power that comes from
+    diversity. Our research makes a difference.
+
+    As a lab, we believe in the following core principles:
+  # The principles themselves (name, text, color) are in principles.yaml.
+
+subprotocols:
+  title: "Building A Framework for Software-Based Wireless Sub-Protocols"
+  award: "Supported by the National Science Foundation, award #2153317"
+  overview: |
+    Resiliency is a crucial challenge for the next generation of wireless protocols. For wireless
+    devices to become an essential part of our infrastructure, they must be resilient to changing
+    environmental conditions and function under extreme cases. However, current wireless protocols
+    have limited adaptability. This project explores a new class of wireless protocols called
+    “wireless sub-protocols”. Wireless sub-protocols are new protocols built on existing wireless
+    protocols but increase their capabilities and adaptability. Wireless sub-protocols are
+    implemented only in software and require no changes to a device's hardware. Wireless
+    sub-protocols add extra adaptability paving the way for future resilient wireless protocols with
+    only a software update.
+  about_heading: "About"
+  about: |
+    More flexibility in wireless protocols is necessary to accommodate the ever-expanding use cases
+    that new wireless devices demand and bring about ultra-resilient wireless systems. To address
+    the need for adaptability and resiliency, this project explores the novel idea of building a
+    wireless protocol layering approach where additional functionality is added to a wireless
+    protocol using “wireless sub-protocols”. A wireless sub-protocol is a protocol built on top of
+    another wireless protocol. They provide a way for a base protocol to increase its abilities
+    beyond what the original protocol designers intended. A communication scheme can be built on top
+    of an existing protocol by measuring and controlling the physical layer properties in user space
+    software. This innovative technique allows a device to gain new capabilities and thus
+    adaptability, with only a software update. Sub-protocols coexist with the base protocol,
+    allowing the application developer to decide when to use one or the other. This project will
+    build a framework for prototyping, building, and testing different types of wireless
+    sub-protocols. The project will use wireless testbeds to prototype new wireless sub-protocols
+    rapidly. This project will enable a new research area of wireless sub-protocols, impacting
+    future designs of wireless devices.
+  about_photo_caption: "Sub-protocol testbed"
+  personnel_heading: "Personnel"         # the people are in subprotocols.yaml
+  past_personnel_heading: "Past personnel"
+  publications_heading: "Publications"   # the list is in subprotocols.yaml
+  publications_link: "All sub-protocol papers"
+  code_heading: "Code"
+  code:
+    name: "WLSK"
+    text: "An IoT protocol for partial trust using a WiFi network."
+    url: "https://github.com/NET-BYU/wireless-latency-shift-keying"
+    image: /images/LSK_architecture.png
+    image_alt: "Architecture of Wireless Latency Shift Keying"
+    link_label: "View on GitHub"
+  outreach_heading: "Education & outreach"
+  outreach:                             # icon: slides, article or school
+    - title: "Subprotocol lectures"
+      text: "A set of lectures and slides that covers sub-protocols in the context of spectrum sharing."
+      url: "https://byu.box.com/s/5t5hwpjtzp90bqjk6vo7okqjz092inbb"
+      link_label: "View"
+      icon: slides
+    - title: "Articles"
+      text: "A set of articles on technical topics created by students working on this project."
+      url: /articles/
+      link_label: "Read"
+      icon: article
+    - title: "IMMERSE"
+      text: "A summer program to involve undergraduate students in the research process."
+      url: "https://immerse.byu.edu"
+      link_label: "Learn more"
+      icon: school
+  funding: "This project is supported by NSF #2153317."
+
+not_found:
+  headline: "Packet lost."
+  headline_gray: "This page never arrived."
+  intro: "The link may be old, or the page may have moved when the site was redesigned."
+
+footer:
+  explore_heading: "Explore"
+  contact_heading: "Contact"
+  # The email, GitHub link and department line are in _config.yml.

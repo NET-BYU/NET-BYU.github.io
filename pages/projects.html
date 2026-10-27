@@ -8,8 +8,9 @@ description: Research projects at the NET Lab, from robot swarms under ice shelv
 {%- assign out_arrow = '<svg viewBox="0 0 16 16" aria-hidden="true" class="out"><path d="M5 11l6-6M6.5 5H11v4.5"/></svg>' -%}
 
 <div class="wrap page-head">
-  <h1 class="page-title">Projects</h1>
-  <p class="lede">Real systems, built and tested where they will be used.</p>
+  {%- assign t = site.data.text.projects %}
+  <h1 class="page-title">{{ t.title }}</h1>
+  <p class="lede">{{ t.intro }}</p>
 </div>
 
 <nav class="jump needs-js" aria-label="Projects on this page" data-spy>

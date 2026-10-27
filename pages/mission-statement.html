@@ -5,22 +5,20 @@ permalink: /mission/
 description: The NET Lab's mission and the principles we work by.
 ---
 {%- assign principles = site.data.principles -%}
+{%- assign t = site.data.text.mission -%}{%- comment -%} The words on this page are in _data/text.yaml {%- endcomment -%}
 
 <div class="wrap page-head">
-  <h1 class="page-title">Our mission</h1>
+  <h1 class="page-title">{{ t.title }}</h1>
   <figure class="quote-fig">
-    <blockquote class="quote">The people who are crazy enough to think they can change the world are the ones who do.</blockquote>
-    <figcaption class="quote-by">Steve Jobs</figcaption>
+    <blockquote class="quote">{{ t.quote }}</blockquote>
+    <figcaption class="quote-by">{{ t.quote_by }}</figcaption>
   </figure>
 </div>
 
 <section class="wrap section" style="padding-top: 0" aria-label="Mission">
   <div class="mission-intro">
-    <img src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" loading="lazy">
-    <div class="prose">
-      <p class="dropcap">In the NET Lab, we believe in the power of working together to change the world. Our research is centered on innovative ways of making a difference in the community and improving people's lives. We value all ideas, cultures, and backgrounds and recognize the power that comes from diversity. Our research makes a difference.</p>
-      <p>As a lab, we believe in the following core principles:</p>
-    </div>
+    <img src="/images/netlab-logo.svg" alt="NET Lab logo" width="262" height="287" loading="lazy" data-egg="{{ site.easter_egg | escape }}">
+    <div class="prose dropcap">{{ t.intro | markdownify }}</div>
   </div>
 </section>
 
