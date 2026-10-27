@@ -357,7 +357,7 @@ Calm and text-first, so someone who has never heard of the lab knows what it doe
 - **Hover:** paper titles and project tiles take a 2px underline in the area color.
 
 ### People
-- **Person card:** a square portrait on a 16px stage (Mist behind it) that eases in to 1.03× on hover; the name (660, 18px), the role in ink-2, "Now at …" in ink for alumni, then the area dots. A person reached by a link anchor gets a 3px Focus Blue outline around the portrait.
+- **Person card:** a square portrait on a 16px stage (Mist behind it) that eases in to 1.03× on hover; the name (660, 18px), the role in ink-2, the employer in ink for alumni (no "Now at": it's implied), then the area dots. A person reached by a link anchor gets a 3px Focus Blue outline around the portrait.
 
 ## Do's and Don'ts
 

@@ -6,7 +6,7 @@
   <h3>{% if person.link %}<a href="{{ person.link }}">{{ person.first_name }} {{ person.last_name }}</a>{% else %}{{ person.first_name }} {{ person.last_name }}{% endif %}</h3>
   {%- if include.alumni %}
   <p class="role">{{ person.degree }}{% if person.graduation %}, {{ person.graduation | date: "%Y" }}{% endif %}</p>
-  {%- if person.job %}<p class="now">Now at {{ person.job }}</p>{% endif %}
+  {%- if person.job %}<p class="now">{{ person.job }}</p>{% endif %}
   {%- else %}
   <p class="role">{% case person.degree %}{% when "PhD" %}PhD student{% when "MS" %}Master's student{% when "Undergrad" %}Undergraduate researcher{% else %}{{ person.degree }}{% endcase %}</p>
   {%- endif %}
